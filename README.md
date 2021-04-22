@@ -10,7 +10,8 @@ This project is an application and company website for a digital marketing busin
 # Table of Contents
 
 - [1. UX](#ux)
-  * [User Stories](#user-stories)
+    * [User Personas - Four Examples](#user-personas-four-examples)
+    * [User Stories](#user-stories)
       - [*First Time User Stories*](#first-time-user-stories)
       - [*Returning User Stories*](#returning-user-stories)
       - [*Accessibility User Stories*](#accessibility-user-stories)
@@ -96,7 +97,7 @@ This project is an application and company website for a digital marketing busin
 
 # UX
 
-## 4 Example User Personas
+## User Personas - Four Examples
 
 1. __Tom Lynch__ is a __sole trader__. He runs a tiny, stylish hipster coffee shop in Kinsale, Co. Cork. He is fairly tech-savvy and enjoys managing his social media accounts, but does not have the inclination or the time to develop his own website. A friend made one for him using a template site, but he doesn't feel like it reflects the quality of his business. He wants to hire a professional developer to better align his online presence with his offline business. He has a budget of €2,500 for this purpose.
 
@@ -104,9 +105,10 @@ This project is an application and company website for a digital marketing busin
 
 3. __Rosemary Geoghan__ is the __CEO__ of a mid-sized plumbing company based in Dublin. The business already has a strong industry reputation and its primary clients are large construction firms. Rosemary wants a client portal added to the business's existing website so that detailed and customized project information can be viewed easily by clients.
 
-4. __David Murphy__ is a makeup artist based in Kildare. He is expanding his business and has launched a product line of branded makeup brushes. He wants to delegate out both his social media management and his content creation, so that he can focus on strategy and his day-to-day business.
+4. __David Murphy__ is a makeup artist based in Kildare. He is expanding his business and has launched a product line of branded makeup brushes. He wants to delegate both his social media management and his content creation, so that he can focus on strategy and his day-to-day business.
 
 ## User Stories
+
 This application is targeted at Sole Traders, SMEs and larger businesses who are looking to outsource aspects of their digital marketing strategy. The services on offer include website creation, SEO services, social media management and content creation.
 
 
@@ -121,9 +123,45 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 5. View a website that is visually and creatively appealing and physically easy to look at.
 6. Notice the login/register options and easily navigate to those pages.
 7. Understand the purpose of user registration and the benefits thereof.
-8. Register a free account using my email.
 
-## Returning User Stories 
+## Returning User Stories
+## *As a returning user I want to be able to...*
+
+### Registration, Login & User Dashboard
+1. Easily register a free account using my email.
+2. Receive an email confirmation of my registration.
+3. Login to my user account, using my email and password.
+4. View my personalized user dashboard. 
+5. Edit my account information: change my password, username & other details.
+6. Recover my password if I forget it.
+7. Delete my account.
+8. Receive email confirmation of my account deletion, outlining the data to be deleted, including all order information.
+
+### Pricing
+1. View a transparent pricing structure for services and digital products.
+2. Use quote calculators to determine a reliable estimate for more detailed custom services.
+
+### Information Gathering
+1. Gather more in depth information about the services and products on offer.
+2. Easily contact Lionize to ask for specific information about the services and products on offer.
+
+### Orders: Payment
+1. Easily and quickly see how to order a service or product that I'm interested in.
+2. Order the product/service online and pay via a payment portal on the application.
+3. Receive confirmation of my order via email.
+4. See that confirmation and order reflected on my user dashboard.
+
+### Orders: Subscriptions
+1. Subscribe to a service and set up a monthly recurring payment via a secure payment portal.
+2. Alter my subscription (downgrade or upgrade).
+3. Cancel my subscription.
+4. Easily view information about my subscription billing.
+
+### Orders: Communication
+1. Email Lionize about specific details regarding the service(s) they are providing to me.
+2. View wireframes, designs and other files Lionize have created as part of the service they are providing me.
+
+
 
 ## Persona Based User Stories
 
