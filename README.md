@@ -312,3 +312,8 @@ The crux of this application's purpose is as a B2B service provider that allows 
 ## User Flow
 
 #### back to [contents](#table-of-contents) 
+
+# Libraries / Technology Used
+
+- django-sass-processor
+- django-libsass
