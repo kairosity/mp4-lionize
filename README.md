@@ -4,7 +4,7 @@
 
 ## Code Institute Milestone Project 4
 
-This project is an application and company website for a digital marketing business called "Lionize". The application both showcases the digital services offered and also allows clients to register a free account. Once registered the client has access to further information about the services, quote calculators and they also have the ability to order and pay for certain digital products online.
+This project is an application and company website for a digital marketing business called "Lionize". The application both showcases the digital services offered and also allows clients to register a free account. Once registered the client is given access to further information about the services, as well as quote calculators and they also have the ability to order and pay for certain digital products online.
  
 
 # Table of Contents
@@ -145,7 +145,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 1. Gather more in depth information about the services and products on offer.
 2. Easily contact Lionize to ask for specific information about the services and products on offer.
 
-### Orders: Payment
+### Orders: One off payment
 1. Easily and quickly see how to order a service or product that I'm interested in.
 2. Order the product/service online and pay via a payment portal on the application.
 3. Receive confirmation of my order via email.
@@ -166,11 +166,35 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 ## Persona Based User Stories
 
 ### Tom Lynch - Hipster Coffee Shop Owner
+### *As a sole trading small business owner I want to be able to...*
+1. Order a professional looking website for my small business.
+2. See some examples of Lionize's web design work prior to ordering.
+3. Easily understand all the various web design options available to me.
+4. Create a custom estimate/quote that reflects my requirements, so as to get a solid idea of pricing.
+5. Easily communicate with Lionize about my requirements, my order and my billing.
 
 ### Annalise Maior - Real Estate Marketing Manager
+### *As a regional marketing manager of a large corporation I want to be able to...*
+1. Delegate the social media management of our Irish branch to specialists.
+2. Improve all social media KPIs and see a measurable return on investment.
 
 ### Rosemary Geoghan - Plumbing Co. CEO
+### *As the CEO of a plumbing company seeking to future-proof how we communicate with clients, I want to be able to...*
+1. Get a custom quotation for integrating a client portal into our current website.
+2. Get the project up and running and then delegate the project management to our marketing dept.
 
 ### David Murphy - Entrepreneurial Make-up Artist
+### *As a createive professional whose brand is focused around my personality, I want to be able to...*
+1. Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.
+2. Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.
 
 ## Accessibility User Stories
+- __*As a user who is colourblind*__, I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.
+- __*As a keyboard user*__, I want to be able to navigate the application using the keyboard.
+- __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
+
+## Application Creator User Stories
+### *As the application creator and Lionize business stakeholder I want to be able to...*
+- Create and maintain a user-friendly platform allowing business owners, stakeholders and employees to easily see and understand the services on offer.
+- Ensure that the application is as accessible as possible to include as wide a variety of users as possible.
+- Increase Lionize's client base and profits through use of the website and associated ease of online orders.
