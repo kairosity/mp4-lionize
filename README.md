@@ -14,7 +14,9 @@ This project is an application and company website for a digital marketing busin
     * [User Stories](#user-stories)
       - [*First Time User Stories*](#first-time-user-stories)
       - [*Returning User Stories*](#returning-user-stories)
+      - [*Persona Based User Stories*](#persona-based-user-stories)
       - [*Accessibility User Stories*](#accessibility-user-stories)
+      - [*Application Creator User Stories*](#application-creator-user-stories)
   * [Strategy](#strategy)
       - [*Project Goals*](#project-goals)
       - [*Target Users*](#target-users)
@@ -162,7 +164,6 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 2. View wireframes, designs and other files Lionize have created as part of the service they are providing me.
 
 
-
 ## Persona Based User Stories
 
 ### Tom Lynch - Hipster Coffee Shop Owner
@@ -187,6 +188,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 ### *As a createive professional whose brand is focused around my personality, I want to be able to...*
 1. Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.
 2. Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.
+3. Easily set up an online recurring payment for the social media management services so that I don't need to worry about it every month.
 
 ## Accessibility User Stories
 - __*As a user who is colourblind*__, I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.
@@ -197,6 +199,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 ### *As the application creator and Lionize business stakeholder I want to be able to...*
 - Create and maintain a user-friendly platform allowing business owners, stakeholders and employees to easily see and understand the services on offer.
 - Ensure that the application is as accessible as possible to include as wide a variety of users as possible.
+- Accept online one-off and recurring payments from users.
 - Increase Lionize's client base and profits through use of the website and associated ease of online orders.
 
 # Strategy
@@ -205,16 +208,68 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 To create a web application that successfully showcases Lionize's services and offers clients access to a B2B order and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
 
 ## Target Users
-As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella. 
+As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella.
 
 ## Research
-The user registration / dashboard formula for web applications has been around a good while now. It is a tried and tested structure for client communication and engagement. 
+The user registration / dashboard formula for web applications has been around a good while now. It is a tried and tested structure for client communication and engagement.
 
 To research the best design and structural mechanisms to use for this project, I visited a number of Saas and online store websites to see how they present their information and how they structure their payment portals.
 
 ## Value to the User
-All classes of users benefit from a versatile online ordering and payment system. It streamlines the design process for website orders and it cuts out needless administration for orders that are recurring such as social media management. 
+All classes of users benefit from a versatile online ordering and payment system. It streamlines the design process for website orders and it cuts out needless administration for orders that are recurring, such as social media management. 
 
-The informational aspects of the website deliver value insofar as they communication information about the services on offer, allowing potential clients to make informed decisions on whether or not they want to work with Lionize. 
+The informational aspects of the website deliver value insofar as they communicate information about the services on offer, allowing potential clients to make informed decisions on whether or not they want to work with Lionize. 
 
 The user dashboard access, after registration delivers a more personalized service to clients, but in an efficient digital way in keeping with the fast pace of technological innovation.
+
+# Scope
+
+## Core Theme
+The crux of this application's purpose is as a B2B service provider that allows clients to register and login and access an order and payments portal that makes doing business with Lionize streamlined and easy.
+
+## Feature Ideas Table
+
+ #|Opportunity/Potential Feature | Importance | Viability | Score
+---|------------ | -------------|--------------|------------------
+. | __*GUEST USER FUNCTIONALITY & FEATURES*__ 
+1.| Browse the website easily and view separate pages for each service offered.  | 10 | 10 | 20
+2.| Contact Lionize with questions. | 9 | 10 | 19
+. | __*USER REGISTRATION FUNCTIONALITY & FEATURES*__ 
+1.| Register as a new user  | 10 | 10 | 20
+2.| Register using an email address | 7 | 10 | 17
+3.| Confirm password when registering | 7 | 7 | 14
+4.| Register a username as separate from login email | 3 | 9 | 12
+5.| Receive an email link to confirm the user is supplying a genuine email address |3 | 5 | 8
+6.| Receive an email confirmation of registration. |3 | 5 | 8
+. | __*USER LOGIN / LOGOUT FUNCTIONALITY & FEATURES*__ 
+1.| Users can login with email and password |10 | 10 | 20
+2.| When a user logs in, they are brought to their user dashboard |7 | 10 | 17
+3.| A session is started and the user's login status is remembered as they use the application |9 | 9 | 18
+4.| When a user is logged in they can view their account information.  |10 | 9 | 19
+5.| A user has to be logged in, in order to acccess their dashboard. |10 | 9 | 19
+6.| A user can logout to end their session. |10 | 10 | 20
+. | __*USER DASHBOARD FUNCTIONALITY & FEATURES*__ 
+1.| The user dashboard is divided into service sections. |6 | 10 | 16
+2.| Individual service sections on the user dahsboard include custom quote calculators. |6 | 6 | 12
+3.| Users can order digital products directly from their dashboards. |6 | 6 | 12
+4.| Users can send in web design consultation requests directly from their dashboards. |4 | 5 | 9
+5.| Users can view their orders and payments in a billing section on their dashboards. |8 | 8 | 16
+6.| The status of any orders is communicated to users via their dashboards.  |5 | 5 | 10
+7.| When a user creates a custom quote, the consultation form is pre-filled with the quote details. |3 | 3 | 6
+8.| A user can view & update their account information directly from their dashboard. |6 | 6 | 12
+9.| Lionize can upload designs, contracts and other files so that they are accessible to users from their dashboards. |2 | 3 | 5
+. | __*ORDER & PAYMENT PORTAL FUNCTIONALITY & FEATURES*__ 
+1.| When an initial order consultation with Lionize has been completed and a price is agreed upon for a custom service, the user can view a link to pay the service deposit. |8 | 9 | 17
+2.| Clicking the "PAY" link next to the deposit amount in the account section of the user dashboard, will bring the user to a Stripe payment portal where they can complete the payment. |9 | 9 | 18
+3.| Once paid, users will receive email confirmation of payment. |8 | 8 | 16
+4.| When an initial order consultation with Lionize has been completed, users can subscribe to social media management services via a link on their user dashboard. They are brought to a Stripe payment portal and can sign up for a monthly recurring payment.  |8 | 9 | 17
+5.| Users receive an email confirmation each time the subscription payment occurs. |7 | 8 | 15
+. | __*OTHER FUNCTIONALITY & FEATURES*__ 
+1.| Users can upload / select palettes & typography they like for their web design projects. |2 | 2 | 4
+
+
+
+ ## List of Final Features 
+ *(for a MVP)*
+
+
