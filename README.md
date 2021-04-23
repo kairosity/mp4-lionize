@@ -30,13 +30,12 @@ This project is an application and company website for a digital marketing busin
   * [Structure](#structure)
       - [*Interaction Design*](#interaction-design)
         - [*Navigation*](#navigation)
-        - [*Consistency, conventions and predictability*](#consistency-conventions-and-predictability)
+        - [*Consistency and conventions*](#consistency-and-conventions)
         - [*Learnability and Communication of Functionality*](#learnability-and-communication-of-functionality)
         - [*Feedback*](#feedback)
-        - [*Flash Messages*](#flash-messages)
+        - [*Messages Framework*](#messages-framework)
         - [*Form Validation Messages*](#form-validation-messages)
         - [*Deletion Confirmation Modals*](#deletion-confirmation-modals)
-        - [*Small Specific Messages*](#small-specific-messages)
         - [*State Changes*](#state-changes)
         - [*Error Pages*](#error-pages)
         - [*Pre-Loader*](#pre-loader)
@@ -109,10 +108,12 @@ This project is an application and company website for a digital marketing busin
 
 4. __David Murphy__ is a makeup artist based in Kildare. He is expanding his business and has launched a product line of branded makeup brushes. He wants to delegate both his social media management and his content creation, so that he can focus on strategy and his day-to-day business.
 
+#### back to [contents](#table-of-contents) 
+<br>
+
 ## User Stories
 
 This application is targeted at Sole Traders, SMEs and larger businesses who are looking to outsource aspects of their digital marketing strategy. The services on offer include website creation, SEO services, social media management and content creation.
-
 
 ## First Time User Stories
 
@@ -202,6 +203,10 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 - Accept online one-off and recurring payments from users.
 - Increase Lionize's client base and profits through use of the website and associated ease of online orders.
 
+#### back to [contents](#table-of-contents) 
+<br>
+
+
 # Strategy
 
 ## Project Goals
@@ -221,6 +226,9 @@ All classes of users benefit from a versatile online ordering and payment system
 The informational aspects of the website deliver value insofar as they communicate information about the services on offer, allowing potential clients to make informed decisions on whether or not they want to work with Lionize. 
 
 The user dashboard access, after registration delivers a more personalized service to clients, but in an efficient digital way in keeping with the fast pace of technological innovation.
+
+#### back to [contents](#table-of-contents) 
+<br>
 
 # Scope
 
@@ -267,9 +275,40 @@ The crux of this application's purpose is as a B2B service provider that allows 
 . | __*OTHER FUNCTIONALITY & FEATURES*__ 
 1.| Users can upload / select palettes & typography they like for their web design projects. |2 | 2 | 4
 
-
+<br>
 
  ## List of Final Features 
  *(for a MVP)*
 
+ #### back to [contents](#table-of-contents) 
+ <br>
 
+# Structure
+
+## Interaction Design
+
+### Navigation
+
+### Consistency and conventions
+
+### Learnability and communication of functionality
+
+### Feedback
+
+### Messages Framework
+
+### Form Validation Messages
+
+### Deletion Confirmation Modals 
+
+### State Changes 
+
+### Error Pages 
+
+### Pre-Loader
+
+## Information Architecture
+
+## User Flow
+
+#### back to [contents](#table-of-contents) 
