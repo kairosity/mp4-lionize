@@ -198,3 +198,23 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 - Create and maintain a user-friendly platform allowing business owners, stakeholders and employees to easily see and understand the services on offer.
 - Ensure that the application is as accessible as possible to include as wide a variety of users as possible.
 - Increase Lionize's client base and profits through use of the website and associated ease of online orders.
+
+# Strategy
+
+## Project Goals
+To create a web application that successfully showcases Lionize's services and offers clients access to a B2B order and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
+
+## Target Users
+As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella. 
+
+## Research
+The user registration / dashboard formula for web applications has been around a good while now. It is a tried and tested structure for client communication and engagement. 
+
+To research the best design and structural mechanisms to use for this project, I visited a number of Saas and online store websites to see how they present their information and how they structure their payment portals.
+
+## Value to the User
+All classes of users benefit from a versatile online ordering and payment system. It streamlines the design process for website orders and it cuts out needless administration for orders that are recurring such as social media management. 
+
+The informational aspects of the website deliver value insofar as they communication information about the services on offer, allowing potential clients to make informed decisions on whether or not they want to work with Lionize. 
+
+The user dashboard access, after registration delivers a more personalized service to clients, but in an efficient digital way in keeping with the fast pace of technological innovation.
