@@ -327,6 +327,14 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 ## 5. Django
 
+- ### [Django Sass](https://medium.com/@issacsurendar/django-sass-3a8b5b52e89b)
+
+    Information on how to set up Sass files to work with Django.
+
+- ### [Automated Tests - Day 6 - Django Bootcamp](https://www.youtube.com/watch?v=5E_xLmQXOZg)
+
+    Great tutorial on how to write Automated tests for Django.
+
 ## 6. Jinja
 
 ## 7. General
@@ -338,6 +346,8 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 # Libraries, extensions and packages
 
+## [Bootstrap v5](https://getbootstrap.com/)
+
 ## [Django Compressor](https://django-compressor.readthedocs.io/en/stable/)
 
 Compresses linked and inline JS or CSS into a single cached file.
@@ -346,3 +356,8 @@ Compresses linked and inline JS or CSS into a single cached file.
 ## [Django Libsass](https://pypi.org/project/django-libsass/)
 
 A django-compressor filter to compile Sass files using libsass.
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>

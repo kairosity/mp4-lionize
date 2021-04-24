@@ -1,6 +1,5 @@
 from django.test import TestCase
 
-
 class TestViews(TestCase):
 
     def test_get_homepage(self):
@@ -19,4 +18,9 @@ class TestViews(TestCase):
 
 
     # def test_get_content_creation_page(self):
+
+    # def test_get_admin_login_page(self):
+    #     response = self.client.get('/admin/')
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'home/index.html')
         
