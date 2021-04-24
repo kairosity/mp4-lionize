@@ -310,10 +310,39 @@ The crux of this application's purpose is as a B2B service provider that allows 
 ## Information Architecture
 
 ## User Flow
+<br>
 
 #### back to [contents](#table-of-contents) 
+<br>
 
-# Libraries / Technology Used
+# Tools and Other Resources Used
 
-- django-sass-processor
-- django-libsass
+## 1. Design
+
+## 2. HTML and CSS
+
+## 3. JavaScript
+
+## 4. Python
+
+## 5. Django
+
+## 6. Jinja
+
+## 7. General
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>
+
+# Libraries, extensions and packages
+
+## [Django Compressor](https://django-compressor.readthedocs.io/en/stable/)
+
+Compresses linked and inline JS or CSS into a single cached file.
+
+
+## [Django Libsass](https://pypi.org/project/django-libsass/)
+
+A django-compressor filter to compile Sass files using libsass.

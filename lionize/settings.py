@@ -155,8 +155,12 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
-STATICFILES_FINDERS = [ 'compressor.finders.CompressorFinder' ]
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ] # This is the default - not needed.
+
+STATICFILES_FINDERS = [ 'django.contrib.staticfiles.finders.FileSystemFinder', #Without this and...
+                        'django.contrib.staticfiles.finders.AppDirectoriesFinder', # This, the admin css styles disappear.
+                        'compressor.finders.CompressorFinder' 
+                        ]
 
 COMPRESS_PRECOMPILERS = ( ('text/x-scss', 'django_libsass.SassCompiler'),)
 
