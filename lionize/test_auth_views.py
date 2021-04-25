@@ -6,22 +6,10 @@ from django.contrib.auth.models import User
 class TestUser(TestCase):
 
     def setUp(self):
-        self.register_url=reverse('account_signup')
-        self.login_url=reverse('account_login')
-        self.user={
-            'email':'testemail@gmail.com',
-            'username':'username',
-            'password':'password',
-            'password2':'password',
-            'name':'fullname'
-        }
-        self.user_short_password={
-            'email':'testemail@gmail.com',
-            'username':'username',
-            'password':'tes',
-            'password2':'tes',
-            'name':'fullname'
-        }
+        self.username = 'testuser'
+        self.email = 'testinguser@gmail.com'
+        self.password = 'comPliCadoP567'
+
 
         return super().setUp()
 
@@ -31,26 +19,36 @@ class RegisterTest(TestUser):
         self.assertEqual(response.status_code,200)
         self.assertTemplateUsed(response,'account/signup.html')
     
-    def test_can_register_user(self):
-        response = self.client.post(self.register_url,self.user, format='text/html')
-        self.assertEqual(response.status_code, 302)
-        
-    def test_cant_register_user_withshortpassword(self):
-        response=self.client.post(self.register_url,self.user_short_password,format='text/html')
-        self.assertEqual(response.status_code,400)
-    
-    # def test_user_exists(self):
-    #     user_count = User.objects.all().count()
-    #     self.assertEqual(user_count, 1)
-    #     self.assertNotEqual(user_count, 0)
-    
-    # def test_login(self):
-    #     # send login data
-    #     response = self.client.post('/accounts/login', self.username, self.password, follow=True)
-    #     # should be logged in now
-    #     self.assertTrue(response.context['user'].is_active)
-
-    # def test_user_password(self):
-    #     self.assertTrue( self.user_a.check_password('laughingGoat123') )
+    def test_signup_form(self):
+        response = self.client.post(reverse('account_signup'), data={
+            'id_username': self.username,
+            'id_email': self.email,
+            'id_email2': self.email,
+            'id_password1': self.password,
+            'id_password2': self.password
+        })
+        self.assertEqual(response.status_code, 200)
 
     
+    def test_is_registered_user(self):
+        self.assertEqual(User.objects.all().count(), 1)
+        self.assertNotEqual(User.objects.all().count(), 0)
+    
+
+
+    
+
+class LoginTest(TestUser):
+    def test_can_access_page(self):
+        response=self.client.get(self.login_url)
+        self.assertEqual(response.status_code,200)
+        self.assertTemplateUsed(response,'account/login.html')
+
+    # def test_login_success(self):
+
+    #     self.client.post(self.register_url, self.user, format='text/html')
+    #     user = User.objects.filter(email=self.user['email']).first()
+    #     user.is_active=True
+    #     user.save()
+    #     response= self.client.post(self.login_url, self.user, format='text/html')
+    #     self.assertEqual(response.status_code,302)
