@@ -34,14 +34,15 @@ Button Styles
     border-radius: 3px;
     font-family: $main-text-font, sans-serif;
     font-size: 1.1rem;
+    border: none;
 }
 
 .button-accent {
     @include button-bg($accent-colour);
 }
 
-.button-blue {
-    @include button-bg(#3498db);
+.button-main {
+    @include button-bg($main-colour);
 }
 
 .button-yellow{
