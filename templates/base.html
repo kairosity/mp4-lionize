@@ -48,21 +48,21 @@
                     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavDropdown">
                         <ul class="navbar-nav d-flex">
                             <li class="nav-item p-2">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item dropdown p-2">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Web Design & Development</a></li>
-                                    <li><a class="dropdown-item" href="#">SEO</a></li>
-                                    <li><a class="dropdown-item" href="#">Social Media Management</a></li>
-                                    <li><a class="dropdown-item" href="#">Content Creation</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'webdesign' %}">Web Design & Development</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'seo' %}">SEO</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'social-media-management' %}">Social Media Management</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'content-creation' %}">Content Creation</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
                             </li>
                             <li class="nav-item  p-2 contact-nav-item">
                                 <a class="nav-link" href="#">Contact Us</a>

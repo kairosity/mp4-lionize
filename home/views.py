@@ -31,3 +31,9 @@ def content_creation(request):
     A view to return the content creation information page.
     '''
     return render(request, 'home/content_creation.html')
+
+def pricing(request):
+    '''
+    A view to return the content creation information page.
+    '''
+    return render(request, 'home/pricing.html')
