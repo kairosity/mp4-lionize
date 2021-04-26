@@ -1,12 +1,52 @@
 @import './scss/bootstrap';
 @import "_customVariables";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
 
 body {
-    .container{
+    nav{
+        font-family: $main-text-font;
+        .container-fluid{
+            a.navbar-brand{
+                color: $accent-colour;
+            }
+            ul.navbar-nav{
+                li{
+                    ul.dropdown-menu{
+                        background-color: $main-colour;
+                        li{
+                            a{
+                                color: $white;
+                                &:hover{
+                                    background-color: $white;
+                                    color: $main-colour;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            ul.nav-register-login-container{
+                margin: 0;
+            }
+        }
+    }
+    .container-fluid{
+        padding: 0;
         .homepage-header {
             height: 500px;
+            background-color: $main-colour;
+            h1.homepage-heading{
+                font-family: $heading-font, sans-serif;
+                font-size: 5rem;
+                font-weight: 300;
+                color: white;
+            }
         }
     }
 }
@@ -20,20 +60,37 @@ body {
 }
 
 @media (min-width: $breakpoint-small-desktop) {
-    h1 {
-        color: blue;
+    body {
+        nav{
+            font-family: $main-text-font;
+            .container-fluid{
+                margin-left: 2rem;
+                a.navbar-brand{
+                }
+                ul.navbar-nav{
+                    margin-left: 2rem;
+                    }
+                }
+                ul.nav-register-login-container{
+                    margin-right: 2rem !important;
+                }
+            }
+        .container-fluid{
+            .homepage-header {
+                height: 500px;
+                h1.homepage-heading{
+                    font-size: 11rem;
+                }
+            }
+        }
     }
 }
 
 @media (min-width: $breakpoint-desktop) {
-    h1{
-        color: aqua
-    };
+   
 }
 
 @media (min-width: $breakpoint-large-desktop) {
-    h1{
-        color: red;
-    }
+  
 }
 
