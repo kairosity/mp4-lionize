@@ -2,11 +2,38 @@
 @import "_customVariables";
 
 
-$primary: red;
 
+body {
+    .container{
+        .homepage-header {
+            height: 500px;
+        }
+    }
+}
 
+@media (min-width: $breakpoint-large-mobile) {
 
-#test{
-    color: purple;
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+}
+
+@media (min-width: $breakpoint-small-desktop) {
+    h1 {
+        color: blue;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    h1{
+        color: aqua
+    };
+}
+
+@media (min-width: $breakpoint-large-desktop) {
+    h1{
+        color: red;
+    }
 }
 

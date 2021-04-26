@@ -7,7 +7,6 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/index.html')
 
-    
     def test_get_webdesign_page(self):
         response = self.client.get('/webdesign')
         self.assertEqual(response.status_code, 200)
@@ -29,4 +28,6 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/social_media_management.html')
 
-        
+
+class TestNavbar(TestCase):
+    
