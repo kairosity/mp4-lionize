@@ -7,14 +7,17 @@
     margin: 0;
 }
 
+/* Homepage Nav & Header */
 body {
     nav{
         font-family: $main-text-font;
         .container-fluid{
             a.navbar-brand{
                 color: $accent-colour;
+                margin-left: 1rem;
             }
             ul.navbar-nav{
+                margin-left: 1rem;
                 li{
                     ul.dropdown-menu{
                         background-color: $main-colour;
@@ -32,7 +35,8 @@ body {
                 }
             }
             ul.nav-register-login-container{
-                margin: 0;
+                margin-left: 1rem;
+                margin-right: 0 !important;
             }
         }
     }
@@ -41,11 +45,23 @@ body {
         .homepage-header {
             height: 500px;
             background-color: $main-colour;
+            justify-content: center;
+            align-items: center;
             h1.homepage-heading{
                 font-family: $heading-font, sans-serif;
                 font-size: 5rem;
                 font-weight: 300;
                 color: white;
+                margin: 2rem;
+            }
+            h2.homepage-subheading{
+                font-family: $main-text-font;
+                color: $white;
+                font-weight: 300;
+                margin: 2rem;
+                span.accent-underline{
+                    border-bottom: $accent-colour 5px solid;
+                }
             }
         }
     }
@@ -72,7 +88,7 @@ body {
                     }
                 }
                 ul.nav-register-login-container{
-                    margin-right: 2rem !important;
+                    margin-left: auto !important;
                 }
             }
         .container-fluid{
