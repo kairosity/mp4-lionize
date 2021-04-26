@@ -23,20 +23,29 @@ body {
                         background-color: $main-colour;
                         li{
                             a{
-                                color: $white;
+                                color: $white !important;
+                                letter-spacing: 1px;
                                 &:hover{
                                     background-color: $white;
-                                    color: $main-colour;
+                                    color: $main-colour !important;
                                 }
                             }
                             
                         }
                     }
+                    a {
+                        color: $white !important;
+                        letter-spacing: 1px;
+                    }
+                    
                 }
             }
             ul.nav-register-login-container{
                 margin-left: 1rem;
                 margin-right: 0 !important;
+                .button-accent > a{
+                    color: $main-colour !important;                     
+                }
             }
         }
     }

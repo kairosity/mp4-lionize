@@ -319,7 +319,11 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 ## 1. Design
 
-## 2. HTML and CSS
+## 2. HTML, CSS & SASS
+
+- ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
+
+    Used for Mixin inspo when designing my buttons.
 
 ## 3. JavaScript
 
@@ -334,6 +338,10 @@ The crux of this application's purpose is as a B2B service provider that allows 
 - ### [Automated Tests - Day 6 - Django Bootcamp](https://www.youtube.com/watch?v=5E_xLmQXOZg)
 
     Great tutorial on how to write Automated tests for Django.
+
+- ### [What is reverse()?](https://stackoverflow.com/questions/11241668/what-is-reverse)
+
+    SO explanation of django 'reverse()'.
 
 ## 6. Jinja
 
