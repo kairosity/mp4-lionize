@@ -327,6 +327,10 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 ## 3. JavaScript
 
+- ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
+
+    - Very succinct and accurate guide to the above.
+
 ## 4. Python
 
 ## 5. Django
