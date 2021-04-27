@@ -4,3 +4,4 @@ __pycache__
 env.py
 env/
 static/CACHE/css
+node_modules/
