@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 # Add auth decorators to all these views so that users must be registered and logged in to see them.
@@ -55,3 +55,18 @@ def content_creation_products(request):
     }
 
     return render(request, 'products/content_creation_products.html', context)
+
+
+
+def product_detail(request, id):
+    '''
+    A view to show the individual project details.
+    '''
+    product = get_object_or_404(Product, pk=id)
+
+    context = {
+        'product': product,
+    }
+
+
+    return render(request, 'products/product_detail.html', context)

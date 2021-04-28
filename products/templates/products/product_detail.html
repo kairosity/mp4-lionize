@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+
+    {% include 'products/side-nav.html' %}
+    
+
+<div class="container-fluid col-12 col-md-8">
+    <header class="details-page-header d-flex flex-column">
+        <div class="container">
+            <h1 class="details-page-heading">{{product.friendly_name}}</h1>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="col-12">
+            <p class="details-page-subheading"> <span class="accent-underline">{{product.description}}</p>
+            <p class="details-page-subheading"> <span class="accent-underline">{{product.price}}</p>
+            <img src="https://www.blogtyrant.com/wp-content/uploads/2017/02/how-to-write-a-good-blog-post.png" alt="">
+        </div>  
+        <div class="col-6">
+            <button class="button button-accent">Order Now</button>
+        </div>
+    </div>
+    
+        
+</div>
+
+</div>
+
+
+
+{% endblock %}

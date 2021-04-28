@@ -14,11 +14,23 @@
             <h1 class="details-page-heading">SEO Products</h1>
             <h2 class="details-page-subheading"> <span class="accent-underline">Here are all our SEO products, excluding subscription services.</span> </h2>
 
-            <div class="col">
-                {{ products }}
-            </div>
         </div>
     </header>
+
+    <div class="row">
+        {% for product in products %}
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.friendly_name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p>€{{ product.price }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
     
         
 </div>
