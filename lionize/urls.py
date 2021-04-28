@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
-    path('hello-webpack/', TemplateView.as_view(template_name='hello_webpack.html'))
+    path('hello-webpack/', TemplateView.as_view(template_name='hello_webpack.html')),
+    path('products/', include('products.urls')),
 ]
