@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('hello-webpack/', TemplateView.as_view(template_name='hello_webpack.html')),
     path('products/', include('products.urls')),
+    path('bag/', include('bag.urls')),
 ]

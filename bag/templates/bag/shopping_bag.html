@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <header class="shopping-bag-header d-flex flex-column">
+            <div class="container">
+                <h1 class="shopping-bag-heading">lionize: Shopping Bag</h1>
+                <h2 class="shopping-bag-subheading">A digitial agency with <span class="accent-underline">fresh</span> ideas to enhance your online presence & brand identity.</h2>
+            </div>
+        </header>
+        <section>
+            <h2>Your Orders</h2>
+            <p>Orders listed here</p>
+
+            {% if bag_items %}
+            <div class="table">
+
+            </div>
+            {% else %}
+            {% endif %}
+        </section>
+    </div>
+    
+{% endblock %}
