@@ -374,5 +374,3 @@ A django-compressor filter to compile Sass files using libsass.
 #### back to [contents](#table-of-contents) 
 <br>
 
-
-

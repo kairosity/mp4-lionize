@@ -63,9 +63,14 @@ def product_detail(request, id):
     A view to show the individual project details.
     '''
     product = get_object_or_404(Product, pk=id)
+    category = product.category
+
+    print(id)
+    print(product.description)
 
     context = {
         'product': product,
+        'category': category,
     }
 
 
