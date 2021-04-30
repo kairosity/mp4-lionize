@@ -58,15 +58,13 @@ def content_creation_products(request):
 
 
 
-def product_detail(request, id):
+def product_detail(request, product_id):
     '''
     A view to show the individual project details.
     '''
-    product = get_object_or_404(Product, pk=id)
+    product = get_object_or_404(Product, pk=product_id)
     category = product.category
 
-    print(id)
-    print(product.description)
 
     context = {
         'product': product,
