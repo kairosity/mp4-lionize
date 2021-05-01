@@ -65,6 +65,8 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     category = product.category
 
+    print(product.id)
+    
 
     context = {
         'product': product,
