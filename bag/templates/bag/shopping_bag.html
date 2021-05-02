@@ -15,7 +15,59 @@
             <p>Orders listed here</p>
 
             {% if bag_items %}
-            <div class="table">
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                {% if item.product.image %}
+                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="">
+                                {% endif %}
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <p class="my-0 small text-muted">{{ item.product.category }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0 small">€{{ item.product.price }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0 small ">{{ item.quantity }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0 small ">€{{ item.product.price }}</p>
+                            </td>
+                                
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6><strong>VAT @23%: €{{ vat|floatformat:2 }}</strong></h6>
+                            <h6><strong>Grand Total: €{{ grand_total }}</strong></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{% url 'products' %}" class="button button-accent">
+                                <span>Keep Shopping</span>
+                            </a>
+                            <a href="#" class="button button-accent">
+                                <span>Secure Checkout</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
                 {{ bag_items }}
                 {{ total }}
             </div>
