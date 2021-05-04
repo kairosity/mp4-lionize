@@ -21,3 +21,5 @@ var style = {
 };
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+console.log("checkout static folder")

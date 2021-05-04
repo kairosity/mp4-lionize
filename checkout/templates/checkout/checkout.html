@@ -2,6 +2,9 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -85,7 +88,7 @@
 
                     <!-- Stripe card element will go here -->
                     <div class="mb-3" id="card-element">
-                        
+
                     </div>
 
                     <!-- Used to display form errors -->
