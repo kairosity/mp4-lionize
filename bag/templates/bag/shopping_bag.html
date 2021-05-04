@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 
@@ -44,7 +45,7 @@
                                 <p class="my-0 small ">{{ item.quantity }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0 small ">€{{ item.product.price }}</p>
+                                <p class="my-0 small ">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </td>
                                 
                         </tr>
@@ -53,7 +54,7 @@
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
-                            <h6><strong>VAT @23%: €{{ vat|floatformat:2 }}</strong></h6>
+                            <h6><strong>VAT @23%: €{{ vat_total|floatformat:2 }}</strong></h6>
                             <h6><strong>Grand Total: €{{ grand_total }}</strong></h6>
                         </td>
                     </tr>
@@ -62,7 +63,7 @@
                             <a href="{% url 'products' %}" class="button button-accent">
                                 <span>Keep Shopping</span>
                             </a>
-                            <a href="#" class="button button-accent">
+                            <a href="{% url 'checkout' %}" class="button button-accent">
                                 <span>Secure Checkout</span>
                             </a>
                         </td>

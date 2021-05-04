@@ -20,12 +20,14 @@ def bag_contents(request):
             'product': product,
         })
 
-    # vat = float(total) * 0.23
-    # grand_total = float(total) + float(vat)
+    vat = float(total) * 0.23
+    grand_total = float(total) + float(vat)
 
     context = {
         'bag_items': bag_items,
         'total': total,
+        'vat_total': vat,
+        'grand_total': grand_total,
         'product_count': product_count,
     }
 

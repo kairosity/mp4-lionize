@@ -9,6 +9,7 @@ Django==3.2
 django-allauth==0.41.0
 django-appconf==1.0.4
 django-compressor==2.4.1
+django-crispy-forms==1.11.2
 django-libsass==0.8
 idna==2.10
 libsass==0.20.1
