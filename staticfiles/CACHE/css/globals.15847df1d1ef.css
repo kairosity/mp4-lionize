@@ -9704,6 +9704,62 @@ textarea.form-control-lg {
 /* Colours */
 /* Font Styles */
 /* Breakpoints */
+/* 
+Button Styles
+(Original code inspo from Olga's Buttons here: https://codepen.io/OlgaFil/pen/JxjbOb) 
+*/
+/* line 32, static/_customVariables.scss */
+.button {
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  border: none; }
+
+/* line 40, static/_customVariables.scss */
+.button-accent {
+  background: #C3FF17; }
+  /* line 23, static/_customVariables.scss */
+  .button-accent:hover {
+    background: #a5de00;
+    transition: all 0.3s ease; }
+  /* line 27, static/_customVariables.scss */
+  .button-accent:active {
+    background: #99cf00; }
+
+/* line 44, static/_customVariables.scss */
+.button-main {
+  background: #148EFF; }
+  /* line 23, static/_customVariables.scss */
+  .button-main:hover {
+    background: #0072db;
+    transition: all 0.3s ease; }
+  /* line 27, static/_customVariables.scss */
+  .button-main:active {
+    background: #006acc; }
+
+/* line 48, static/_customVariables.scss */
+.button-yellow {
+  background: #f1c40f; }
+  /* line 23, static/_customVariables.scss */
+  .button-yellow:hover {
+    background: #bd990b;
+    transition: all 0.3s ease; }
+  /* line 27, static/_customVariables.scss */
+  .button-yellow:active {
+    background: #ae8e0a; }
+
+/* line 52, static/_customVariables.scss */
+.button-red {
+  background: #e74c3c; }
+  /* line 23, static/_customVariables.scss */
+  .button-red:hover {
+    background: #d12b1a;
+    transition: all 0.3s ease; }
+  /* line 27, static/_customVariables.scss */
+  .button-red:active {
+    background: #c42818; }
+
 /* line 5, static/globals.scss */
 * {
   box-sizing: border-box;
@@ -9725,58 +9781,146 @@ body nav {
       background-color: #148EFF; }
       /* line 25, static/globals.scss */
       body nav .container-fluid ul.navbar-nav li ul.dropdown-menu li a, body nav .container-sm ul.navbar-nav li ul.dropdown-menu li a, body nav .container-md ul.navbar-nav li ul.dropdown-menu li a, body nav .container-lg ul.navbar-nav li ul.dropdown-menu li a, body nav .container-xl ul.navbar-nav li ul.dropdown-menu li a, body nav .container-xxl ul.navbar-nav li ul.dropdown-menu li a {
-        color: #FFF; }
-        /* line 27, static/globals.scss */
+        color: #FFF !important;
+        letter-spacing: 1px; }
+        /* line 28, static/globals.scss */
         body nav .container-fluid ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-sm ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-md ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-lg ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-xl ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-xxl ul.navbar-nav li ul.dropdown-menu li a:hover {
           background-color: #FFF;
-          color: #148EFF; }
-  /* line 37, static/globals.scss */
+          color: #148EFF !important; }
+    /* line 36, static/globals.scss */
+    body nav .container-fluid ul.navbar-nav li a, body nav .container-sm ul.navbar-nav li a, body nav .container-md ul.navbar-nav li a, body nav .container-lg ul.navbar-nav li a, body nav .container-xl ul.navbar-nav li a, body nav .container-xxl ul.navbar-nav li a {
+      color: #FFF !important;
+      letter-spacing: 1px; }
+  /* line 43, static/globals.scss */
   body nav .container-fluid ul.nav-register-login-container, body nav .container-sm ul.nav-register-login-container, body nav .container-md ul.nav-register-login-container, body nav .container-lg ul.nav-register-login-container, body nav .container-xl ul.nav-register-login-container, body nav .container-xxl ul.nav-register-login-container {
     margin-left: 1rem;
     margin-right: 0 !important; }
+    /* line 46, static/globals.scss */
+    body nav .container-fluid ul.nav-register-login-container .button-accent > a, body nav .container-sm ul.nav-register-login-container .button-accent > a, body nav .container-md ul.nav-register-login-container .button-accent > a, body nav .container-lg ul.nav-register-login-container .button-accent > a, body nav .container-xl ul.nav-register-login-container .button-accent > a, body nav .container-xxl ul.nav-register-login-container .button-accent > a {
+      color: #148EFF !important; }
 
-/* line 43, static/globals.scss */
+/* line 52, static/globals.scss */
 body .container-fluid, body .container-sm, body .container-md, body .container-lg, body .container-xl, body .container-xxl {
   padding: 0; }
-  /* line 45, static/globals.scss */
+  /* line 54, static/globals.scss */
   body .container-fluid .homepage-header, body .container-sm .homepage-header, body .container-md .homepage-header, body .container-lg .homepage-header, body .container-xl .homepage-header, body .container-xxl .homepage-header {
     height: 500px;
     background-color: #148EFF;
     justify-content: center;
     align-items: center; }
-    /* line 50, static/globals.scss */
+    /* line 59, static/globals.scss */
     body .container-fluid .homepage-header h1.homepage-heading, body .container-sm .homepage-header h1.homepage-heading, body .container-md .homepage-header h1.homepage-heading, body .container-lg .homepage-header h1.homepage-heading, body .container-xl .homepage-header h1.homepage-heading, body .container-xxl .homepage-header h1.homepage-heading, body .container-fluid .homepage-header .homepage-heading.h1, body .container-sm .homepage-header .homepage-heading.h1, body .container-md .homepage-header .homepage-heading.h1, body .container-lg .homepage-header .homepage-heading.h1, body .container-xl .homepage-header .homepage-heading.h1, body .container-xxl .homepage-header .homepage-heading.h1 {
       font-family: "Quicksand", sans-serif;
       font-size: 5rem;
       font-weight: 300;
       color: white;
       margin: 2rem; }
-    /* line 57, static/globals.scss */
+    /* line 66, static/globals.scss */
     body .container-fluid .homepage-header h2.homepage-subheading, body .container-sm .homepage-header h2.homepage-subheading, body .container-md .homepage-header h2.homepage-subheading, body .container-lg .homepage-header h2.homepage-subheading, body .container-xl .homepage-header h2.homepage-subheading, body .container-xxl .homepage-header h2.homepage-subheading, body .container-fluid .homepage-header .homepage-subheading.h2, body .container-sm .homepage-header .homepage-subheading.h2, body .container-md .homepage-header .homepage-subheading.h2, body .container-lg .homepage-header .homepage-subheading.h2, body .container-xl .homepage-header .homepage-subheading.h2, body .container-xxl .homepage-header .homepage-subheading.h2 {
       font-family: "Open Sans";
       color: #FFF;
       font-weight: 300;
       margin: 2rem; }
-      /* line 62, static/globals.scss */
+      /* line 71, static/globals.scss */
       body .container-fluid .homepage-header h2.homepage-subheading span.accent-underline, body .container-sm .homepage-header h2.homepage-subheading span.accent-underline, body .container-md .homepage-header h2.homepage-subheading span.accent-underline, body .container-lg .homepage-header h2.homepage-subheading span.accent-underline, body .container-xl .homepage-header h2.homepage-subheading span.accent-underline, body .container-xxl .homepage-header h2.homepage-subheading span.accent-underline, body .container-fluid .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-sm .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-md .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-lg .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-xl .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-xxl .homepage-header .homepage-subheading.h2 span.accent-underline {
         border-bottom: #C3FF17 5px solid; }
 
+/* line 79, static/globals.scss */
+.side-nav {
+  width: 200px; }
+
+/* line 83, static/globals.scss */
+#id_remember {
+  color: red; }
+
+/* line 88, static/globals.scss */
+input[type=checkbox]:checked {
+  color: red; }
+
+/* Login & Register Pages */
+/* line 94, static/globals.scss */
+.form-container {
+  padding: 3rem;
+  justify-content: center;
+  max-width: 600px;
+  margin-top: 2rem;
+  background-color: #FFF;
+  border-radius: 12px;
+  border: #148EFF 3px solid; }
+  /* line 102, static/globals.scss */
+  .form-container h1.form-heading, .form-container .form-heading.h1 {
+    font-family: "Quicksand";
+    color: #148EFF;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem; }
+  /* line 109, static/globals.scss */
+  .form-container p.form-instruction {
+    font-family: "Open Sans"; }
+  /* line 113, static/globals.scss */
+  .form-container form.login-register-form p {
+    font-family: "Open Sans"; }
+  /* line 119, static/globals.scss */
+  .form-container form.login-register-form button.form-button {
+    padding: 1rem;
+    color: #FFF;
+    margin-top: 1rem; }
+
+/* Stripe Styles */
+/* line 129, static/globals.scss */
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease; }
+
+/* line 142, static/globals.scss */
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df; }
+
+/* line 148, static/globals.scss */
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important; }
+
+/* line 152, static/globals.scss */
+.stripe-style-input::placeholder {
+  color: #aab7c4; }
+
+/* line 156, static/globals.scss */
+.fieldset-label {
+  position: relative;
+  right: .5rem; }
+
+/* line 161, static/globals.scss */
+#payment-form .form-control,
+#card-element {
+  color: #000;
+  border: 1px solid #000; }
+
 @media (min-width: 992px) {
-  /* line 80, static/globals.scss */
+  /* line 177, static/globals.scss */
   body nav {
     font-family: "Open Sans"; }
-    /* line 82, static/globals.scss */
+    /* line 179, static/globals.scss */
     body nav .container-fluid, body nav .container-sm, body nav .container-md, body nav .container-lg, body nav .container-xl, body nav .container-xxl {
       margin-left: 2rem; }
-      /* line 86, static/globals.scss */
+      /* line 183, static/globals.scss */
       body nav .container-fluid ul.navbar-nav, body nav .container-sm ul.navbar-nav, body nav .container-md ul.navbar-nav, body nav .container-lg ul.navbar-nav, body nav .container-xl ul.navbar-nav, body nav .container-xxl ul.navbar-nav {
         margin-left: 2rem; }
-    /* line 90, static/globals.scss */
+    /* line 187, static/globals.scss */
     body nav ul.nav-register-login-container {
       margin-left: auto !important; }
-  /* line 95, static/globals.scss */
+  /* line 192, static/globals.scss */
   body .container-fluid .homepage-header, body .container-sm .homepage-header, body .container-md .homepage-header, body .container-lg .homepage-header, body .container-xl .homepage-header, body .container-xxl .homepage-header {
     height: 500px; }
-    /* line 97, static/globals.scss */
+    /* line 194, static/globals.scss */
     body .container-fluid .homepage-header h1.homepage-heading, body .container-sm .homepage-header h1.homepage-heading, body .container-md .homepage-header h1.homepage-heading, body .container-lg .homepage-header h1.homepage-heading, body .container-xl .homepage-header h1.homepage-heading, body .container-xxl .homepage-header h1.homepage-heading, body .container-fluid .homepage-header .homepage-heading.h1, body .container-sm .homepage-header .homepage-heading.h1, body .container-md .homepage-header .homepage-heading.h1, body .container-lg .homepage-header .homepage-heading.h1, body .container-xl .homepage-header .homepage-heading.h1, body .container-xxl .homepage-header .homepage-heading.h1 {
       font-size: 11rem; } }
