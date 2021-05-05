@@ -28,7 +28,7 @@ class Order(models.Model):
         '''
         Update grand total each time a line item is added, accounting for vat.
         '''
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.vat_total = self.lineitems.aggregate(Sum('lineitem_vat'))['lineitem_vat__sum']
         self.grand_total = self.order_total + self.vat_total
         self.save()
@@ -58,6 +58,7 @@ class OrderLineItem(models.Model):
         '''
         self.lineitem_total = self.product.price * self.quantity
         self.lineitem_vat = float(self.lineitem_total) * float(0.23)
+        self.lineitem_grand_total = float(self.lineitem_total) + float(self.lineitem_vat)
         super().save(*args, **kwargs)
     
     def __str__(self):

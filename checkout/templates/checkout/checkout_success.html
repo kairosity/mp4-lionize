@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <header class="shopping-bag-header d-flex flex-column">
+            <div class="container">
+                <h1 class="shopping-bag-heading">lionize: Thank You</h1>
+                <h2 class="shopping-bag-subheading">A digitial agency with <span class="accent-underline">fresh</span> ideas to enhance your online presence & brand identity.</h2>
+            </div>
+        </header>
+        <section>
+            <h2>Thank You for your Order</h2>
+            <p>Orders listed here</p>
+
+
+    <div class="row">
+        <div class="col-12 col-lg-7">
+
+        </div>
+    </div>
+
+        </section>
+    </div>
+    
+{% endblock %}
