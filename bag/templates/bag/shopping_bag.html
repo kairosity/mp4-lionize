@@ -23,8 +23,10 @@
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
+                            <th scope="col">VAT @23%</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col">Subtotal Incl. VAT</th>
                         </tr>
                     </thead>
                     {% for item in bag_items %}
@@ -42,10 +44,16 @@
                                 <p class="my-0 small">€{{ item.product.price }}</p>
                             </td>
                             <td class="py-3">
+                                <p class="my-0 small">€{{ item.product.price | vat }}</p>
+                            </td>
+                            <td class="py-3">
                                 <p class="my-0 small ">{{ item.quantity }}</p>
                             </td>
                             <td class="py-3">
                                 <p class="my-0 small ">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0 small ">€{{ item.product.price | subtotalinclvat:item.quantity }} </p>
                             </td>
                                 
                         </tr>
