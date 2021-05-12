@@ -1,2 +1,98 @@
 # Testing
 
+# Testing Table Of Contents
+
+* [**User Story Testing**](#user-story-testing)
+  * [1. First Time User Goals Testing](#first-time-user-goals-testing)
+  * [2. Returning User Goals Testing](#returning-user-goals-testing)
+  * [3. Accessibility User Goals Testing](#accessibility-user-goals-testing)
+  * [4. Application Creator User Goals Testing](#application-creator-user-goals-testing)
+* [**Issues and bugs caught during testing**](#issues-and-bugs-caught-during-testing)
+    * [1. Toast Initialization](#toast-initialization)
+* [**Status Code Testing**](#status-code-testing)
+    * [1. 200 Status Code Testing](#200-status-code-testing)
+    * [2. 302 Status Code Testing](#302-status-code-testing)
+    * [3. 403 Status Code Testing](#403-status-code-testing)
+    * [4. 404 Status Code Testing](#404-status-code-testing)
+* [**Functionality Testing**](#functionality-testing)
+  * [**Base Functionality**](#base-functionality)
+    * [1. Navigation](#1-navigation)
+    * [2. Login](#2-login)
+    * [3. Links](#3-links)
+    * [4. Buttons](#4-buttons)
+    * [5. Forms](#5-forms)
+    * [6. Input Validations](#6-input-validations)
+    * [7. Email](#7-email)
+    * [8. Logout](#8-logout)
+  * [**CRUD Functionality**](#crud-functionality)
+    * [Create](#create)
+        * [1. New User Registration](#1-new-user-registration)
+        * [2. Entering the Competition](#2-entering-the-competition)
+    * [Read](#read)
+      
+    * [Update](#update)
+     
+    * [Delete](#delete)
+
+* [**Security Testing**](#security-testing)
+    * [Testing the CSRF Protection](#testing-the-csrf-protection)
+    * [Access Control Testing](#access-control-testing)
+* [**Browser Testing**](#browser-testing)
+    * [Desktop Browser Testing](#desktop-browser-testing)
+    * [Mobile Browser Testing](#mobile-browser-testing)
+* [**Responsivity Testing**](#responsivity-testing)
+* [**Code Validators**](#code-validators)
+    * [1. HTML Validators](#1-html-validators)
+        * [W3C HTML Validator](#w3c-html-validator)
+        * [W3C Link Checker](#w3c-link-checker)
+    * [2. CSS Validators](#2-css-validators)
+        * [W3C CSS Validator](#w3c-css-validator)
+    * [3. JavaScript Validators](#3-javascript-validators)
+        * [JSHint](#jshint)
+    * [4. Python Validators](#4-python-validators)
+        * [PEP8 Online](#pep8-online)
+* [**Performance and Web Development Tools Testing**](#performance-and-web-development-tools-testing)
+
+# User Story Testing
+
+## First Time User Goals Testing
+
+## Returning User Goals Testing
+
+## Accessibility User Goals Testing
+
+## Application Creator User Goals Testing
+
+# Issues and bugs caught during testing
+
+## Toast Initialization
+
+### __Issue:__ When trying to connect Bootstrap Toasts to the Django messages framework, the toasts were not showing. The connection was working as evidenced below, but the call to .show() was not working.
+
+<br>
+
+This image shows that the connection is functional, as the elements are present with the correct number of items in the bag.
+<p align="center">
+  <img src="static/images/issues/invisible-toast2.png">
+</p>
+
+However the toast was not visible.
+<p align="center">
+  <img src="static/images/issues/invisible-toast.png">
+</p>
+
+Inspection of its CSS illustrates that it is the .show() method that is not working. 
+
+<p align="center">
+  <img src="static/images/issues/invisible-toast-3.png">
+</p>
+
+<br>
+
+### __Fix__: Calling the .show() function inside the toast initialization as below, fixed the issue:
+
+
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            var toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl, autohide=false).show()
+            })

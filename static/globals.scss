@@ -6,6 +6,27 @@
     box-sizing: border-box;
     margin: 0;
 }
+/* Messages */
+
+.toast-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    background-color: white;
+    .toast-body{
+        .toast-message{
+            color: #000;
+        }
+    }
+}
+
+.custom-toast{
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
 
 /* Homepage Nav & Header */
 body {
