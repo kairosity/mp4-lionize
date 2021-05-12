@@ -96,3 +96,46 @@ Inspection of its CSS illustrates that it is the .show() method that is not work
             var toastList = toastElList.map(function (toastEl) {
                 return new bootstrap.Toast(toastEl, autohide=false).show()
             })
+
+<br>
+
+## Removing Items from Shopping Bag
+
+### __Issue:__ Clicking to remove an item from the shopping bag was resulting in a 500 Internal Server Error, with no obvious errors in the code or logic. 
+
+The remove from bag view:
+
+<p align="center">
+  <img src="static/images/issues/remove-from-bag-code-1.png">
+</p>
+
+The error in the console:
+<p align="center">
+  <img src="static/images/issues/remove-from-bag-e-1.png">
+</p>
+
+### __Fix:__ By removing the code from the try & except blocks, I was able to get a clearer picture of the reason for the error, which happened to be the lack of a trailing '/':
+
+<p align="center">
+  <img src="static/images/issues/remove-from-bag-e-2.png">
+</p>
+
+<br>
+
+Adding a trailing slash in the javascript to match the urls.py file fixed the issue:
+
+    path('remove/<item_id>/', views.remove_from_bag, name='remove_from_bag'),
+
+
+    $('.remove-item').click(function(e) {
+        console.log("Remove item clicked")
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken };
+
+        $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+    })
