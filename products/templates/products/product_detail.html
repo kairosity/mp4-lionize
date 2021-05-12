@@ -20,8 +20,14 @@
     <div class="row">
         <div class="col-12">
             <p class="details-page-subheading"> <span class="accent-underline">{{product.description}}</p>
-            <p class="details-page-subheading"> <span class="accent-underline">{{product.price}}</p>
+            <p class="details-page-subheading"> <span class="accent-underline">€{{product.price}}</p>
             <img src="{{product.image_url}}" alt="">
+            {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
+            {% endif %}
         </div>  
 
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
