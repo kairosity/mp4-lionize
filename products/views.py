@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower 
 
@@ -21,7 +22,7 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-
+@login_required
 def webdesign(request):
     '''
     A view to show all web design products
@@ -35,6 +36,7 @@ def webdesign(request):
     
     return render(request, 'products/web_design.html', context)
 
+@login_required
 def seo(request):
     '''
     A view to show all content creation products
@@ -48,6 +50,7 @@ def seo(request):
 
     return render(request, 'products/seo.html', context)
 
+@login_required
 def content_creation_products(request):
     '''
     A view to show all content creation products
@@ -62,7 +65,7 @@ def content_creation_products(request):
     return render(request, 'products/content_creation_products.html', context)
 
 
-
+@login_required
 def product_detail(request, product_id):
     '''
     A view to show the individual project details.
@@ -81,9 +84,14 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-
+@login_required
 def add_product(request):
     """ Add a product to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do that!')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -102,11 +110,15 @@ def add_product(request):
 
     return render(request, template, context)
 
-
+@login_required
 def edit_product(request, product_id):
     '''
     Edit a product in the store.
     '''
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do that!')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -130,9 +142,14 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry but you are not authorized to do that!')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, f'Product "{product.name}" deleted!')
