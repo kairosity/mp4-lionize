@@ -315,6 +315,35 @@ The crux of this application's purpose is as a B2B service provider that allows 
 #### back to [contents](#table-of-contents) 
 <br>
 
+# Deployment 
+
+1. I created a new Heroku account & then created a new Heroku application, selection Europe as my region, as below: 
+
+<p align="center">
+  <img src="static/images/deployment/heroku-deployment-1.png">
+</p>
+
+<br>
+
+2. I provisioned a new Postgres database, as below:
+
+<p align="center">
+  <img src="static/images/deployment/heroku-deployment-postgres-db.png">
+</p>
+
+3. I installed dj_database_url & psycopg2. 
+
+4. I ran: ``` pip3 freeze > requirements.txt ```
+
+    <p align="center">
+  <img src="static/images/deployment/deployment-psyco-djdb.png">
+</p>
+
+5. I imported dj_database_url into my project's settings.py file and then added it as the default database instead of sqlite.
+
+6. 
+<br>
+
 # Tools and Other Resources Used
 
 ## 1. Design
