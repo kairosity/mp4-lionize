@@ -9771,90 +9771,93 @@ Button Styles
   position: fixed;
   top: 72px;
   right: 15px;
-  z-index: 9999999; }
+  background-color: white; }
+  /* line 17, static/globals.scss */
+  .toast-container .toast-body .toast-message {
+    color: #000; }
 
-/* line 18, static/globals.scss */
+/* line 23, static/globals.scss */
 .custom-toast {
   overflow: visible; }
 
-/* line 22, static/globals.scss */
+/* line 27, static/globals.scss */
 .toast-capper {
   height: 2px; }
 
 /* Homepage Nav & Header */
-/* line 28, static/globals.scss */
+/* line 33, static/globals.scss */
 body nav {
   font-family: "Open Sans"; }
-  /* line 31, static/globals.scss */
+  /* line 36, static/globals.scss */
   body nav .container-fluid a.navbar-brand, body nav .container-sm a.navbar-brand, body nav .container-md a.navbar-brand, body nav .container-lg a.navbar-brand, body nav .container-xl a.navbar-brand, body nav .container-xxl a.navbar-brand {
     color: #C3FF17;
     margin-left: 1rem; }
-  /* line 35, static/globals.scss */
+  /* line 40, static/globals.scss */
   body nav .container-fluid ul.navbar-nav, body nav .container-sm ul.navbar-nav, body nav .container-md ul.navbar-nav, body nav .container-lg ul.navbar-nav, body nav .container-xl ul.navbar-nav, body nav .container-xxl ul.navbar-nav {
     margin-left: 1rem; }
-    /* line 38, static/globals.scss */
+    /* line 43, static/globals.scss */
     body nav .container-fluid ul.navbar-nav li ul.dropdown-menu, body nav .container-sm ul.navbar-nav li ul.dropdown-menu, body nav .container-md ul.navbar-nav li ul.dropdown-menu, body nav .container-lg ul.navbar-nav li ul.dropdown-menu, body nav .container-xl ul.navbar-nav li ul.dropdown-menu, body nav .container-xxl ul.navbar-nav li ul.dropdown-menu {
       background-color: #148EFF; }
-      /* line 41, static/globals.scss */
+      /* line 46, static/globals.scss */
       body nav .container-fluid ul.navbar-nav li ul.dropdown-menu li a, body nav .container-sm ul.navbar-nav li ul.dropdown-menu li a, body nav .container-md ul.navbar-nav li ul.dropdown-menu li a, body nav .container-lg ul.navbar-nav li ul.dropdown-menu li a, body nav .container-xl ul.navbar-nav li ul.dropdown-menu li a, body nav .container-xxl ul.navbar-nav li ul.dropdown-menu li a {
         color: #FFF !important;
         letter-spacing: 1px; }
-        /* line 44, static/globals.scss */
+        /* line 49, static/globals.scss */
         body nav .container-fluid ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-sm ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-md ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-lg ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-xl ul.navbar-nav li ul.dropdown-menu li a:hover, body nav .container-xxl ul.navbar-nav li ul.dropdown-menu li a:hover {
           background-color: #FFF;
           color: #148EFF !important; }
-    /* line 52, static/globals.scss */
+    /* line 57, static/globals.scss */
     body nav .container-fluid ul.navbar-nav li a, body nav .container-sm ul.navbar-nav li a, body nav .container-md ul.navbar-nav li a, body nav .container-lg ul.navbar-nav li a, body nav .container-xl ul.navbar-nav li a, body nav .container-xxl ul.navbar-nav li a {
       color: #FFF !important;
       letter-spacing: 1px; }
-  /* line 59, static/globals.scss */
+  /* line 64, static/globals.scss */
   body nav .container-fluid ul.nav-register-login-container, body nav .container-sm ul.nav-register-login-container, body nav .container-md ul.nav-register-login-container, body nav .container-lg ul.nav-register-login-container, body nav .container-xl ul.nav-register-login-container, body nav .container-xxl ul.nav-register-login-container {
     margin-left: 1rem;
     margin-right: 0 !important; }
-    /* line 62, static/globals.scss */
+    /* line 67, static/globals.scss */
     body nav .container-fluid ul.nav-register-login-container .button-accent > a, body nav .container-sm ul.nav-register-login-container .button-accent > a, body nav .container-md ul.nav-register-login-container .button-accent > a, body nav .container-lg ul.nav-register-login-container .button-accent > a, body nav .container-xl ul.nav-register-login-container .button-accent > a, body nav .container-xxl ul.nav-register-login-container .button-accent > a {
       color: #148EFF !important; }
 
-/* line 68, static/globals.scss */
+/* line 73, static/globals.scss */
 body .container-fluid, body .container-sm, body .container-md, body .container-lg, body .container-xl, body .container-xxl {
   padding: 0; }
-  /* line 70, static/globals.scss */
+  /* line 75, static/globals.scss */
   body .container-fluid .homepage-header, body .container-sm .homepage-header, body .container-md .homepage-header, body .container-lg .homepage-header, body .container-xl .homepage-header, body .container-xxl .homepage-header {
     height: 500px;
     background-color: #148EFF;
     justify-content: center;
     align-items: center; }
-    /* line 75, static/globals.scss */
+    /* line 80, static/globals.scss */
     body .container-fluid .homepage-header h1.homepage-heading, body .container-sm .homepage-header h1.homepage-heading, body .container-md .homepage-header h1.homepage-heading, body .container-lg .homepage-header h1.homepage-heading, body .container-xl .homepage-header h1.homepage-heading, body .container-xxl .homepage-header h1.homepage-heading, body .container-fluid .homepage-header .homepage-heading.h1, body .container-sm .homepage-header .homepage-heading.h1, body .container-md .homepage-header .homepage-heading.h1, body .container-lg .homepage-header .homepage-heading.h1, body .container-xl .homepage-header .homepage-heading.h1, body .container-xxl .homepage-header .homepage-heading.h1 {
       font-family: "Quicksand", sans-serif;
       font-size: 5rem;
       font-weight: 300;
       color: white;
       margin: 2rem; }
-    /* line 82, static/globals.scss */
+    /* line 87, static/globals.scss */
     body .container-fluid .homepage-header h2.homepage-subheading, body .container-sm .homepage-header h2.homepage-subheading, body .container-md .homepage-header h2.homepage-subheading, body .container-lg .homepage-header h2.homepage-subheading, body .container-xl .homepage-header h2.homepage-subheading, body .container-xxl .homepage-header h2.homepage-subheading, body .container-fluid .homepage-header .homepage-subheading.h2, body .container-sm .homepage-header .homepage-subheading.h2, body .container-md .homepage-header .homepage-subheading.h2, body .container-lg .homepage-header .homepage-subheading.h2, body .container-xl .homepage-header .homepage-subheading.h2, body .container-xxl .homepage-header .homepage-subheading.h2 {
       font-family: "Open Sans";
       color: #FFF;
       font-weight: 300;
       margin: 2rem; }
-      /* line 87, static/globals.scss */
+      /* line 92, static/globals.scss */
       body .container-fluid .homepage-header h2.homepage-subheading span.accent-underline, body .container-sm .homepage-header h2.homepage-subheading span.accent-underline, body .container-md .homepage-header h2.homepage-subheading span.accent-underline, body .container-lg .homepage-header h2.homepage-subheading span.accent-underline, body .container-xl .homepage-header h2.homepage-subheading span.accent-underline, body .container-xxl .homepage-header h2.homepage-subheading span.accent-underline, body .container-fluid .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-sm .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-md .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-lg .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-xl .homepage-header .homepage-subheading.h2 span.accent-underline, body .container-xxl .homepage-header .homepage-subheading.h2 span.accent-underline {
         border-bottom: #C3FF17 5px solid; }
 
-/* line 95, static/globals.scss */
+/* line 100, static/globals.scss */
 .side-nav {
   width: 200px; }
 
-/* line 99, static/globals.scss */
+/* line 104, static/globals.scss */
 #id_remember {
   color: red; }
 
-/* line 104, static/globals.scss */
+/* line 109, static/globals.scss */
 input[type=checkbox]:checked {
   color: red; }
 
 /* Login & Register Pages */
-/* line 110, static/globals.scss */
+/* line 115, static/globals.scss */
 .form-container {
   padding: 3rem;
   justify-content: center;
@@ -9863,41 +9866,128 @@ input[type=checkbox]:checked {
   background-color: #FFF;
   border-radius: 12px;
   border: #148EFF 3px solid; }
-  /* line 118, static/globals.scss */
+  /* line 123, static/globals.scss */
   .form-container h1.form-heading, .form-container .form-heading.h1 {
     font-family: "Quicksand";
     color: #148EFF;
     font-size: 3rem;
     font-weight: 400;
     margin-bottom: 1rem; }
-  /* line 125, static/globals.scss */
+  /* line 130, static/globals.scss */
   .form-container p.form-instruction {
     font-family: "Open Sans"; }
-  /* line 129, static/globals.scss */
+  /* line 134, static/globals.scss */
   .form-container form.login-register-form p {
     font-family: "Open Sans"; }
-  /* line 135, static/globals.scss */
+  /* line 140, static/globals.scss */
   .form-container form.login-register-form button.form-button {
     padding: 1rem;
     color: #FFF;
     margin-top: 1rem; }
 
+/* Shopping Bag */
+/* line 150, static/globals.scss */
+.update-link,
+.remove-item {
+  cursor: pointer; }
+
+/* The Following Code is all from the CI Boutique Ado Tutorial */
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* line 157, static/globals.scss */
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid black;
+  position: absolute;
+  top: -10px;
+  right: 36px; }
+
+/* Convenience classes - colors copied from Bootstrap */
+/* line 169, static/globals.scss */
+.arrow-primary {
+  border-bottom-color: #007bff !important; }
+
+/* line 173, static/globals.scss */
+.arrow-secondary {
+  border-bottom-color: #6c757d !important; }
+
+/* line 177, static/globals.scss */
+.arrow-success {
+  border-bottom-color: #28a745 !important; }
+
+/* line 181, static/globals.scss */
+.arrow-danger {
+  border-bottom-color: #dc3545 !important; }
+
+/* line 185, static/globals.scss */
+.arrow-warning {
+  border-bottom-color: #ffc107 !important; }
+
+/* line 189, static/globals.scss */
+.arrow-info {
+  border-bottom-color: #17a2b8 !important; }
+
+/* line 193, static/globals.scss */
+.arrow-light {
+  border-bottom-color: #f8f9fa !important; }
+
+/* line 197, static/globals.scss */
+.arrow-dark {
+  border-bottom-color: #343a40 !important; }
+
+/* line 201, static/globals.scss */
+.bag-notification-wrapper {
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+/* CI Boutique Ado Tutorial Code Ends Here */
+/* Product Form - Code From CI Boutique Ado Tut */
+/* line 212, static/globals.scss */
+.btn-file {
+  position: relative;
+  overflow: hidden; }
+
+/* line 217, static/globals.scss */
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+/* line 227, static/globals.scss */
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: #dc3545; }
+
+/* line 232, static/globals.scss */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  border-radius: 0 !important; }
+
+/* CI Boutique Ado Tutorial Code Ends Here */
 @media (min-width: 992px) {
-  /* line 154, static/globals.scss */
+  /* line 250, static/globals.scss */
   body nav {
     font-family: "Open Sans"; }
-    /* line 156, static/globals.scss */
+    /* line 252, static/globals.scss */
     body nav .container-fluid, body nav .container-sm, body nav .container-md, body nav .container-lg, body nav .container-xl, body nav .container-xxl {
       margin-left: 2rem; }
-      /* line 160, static/globals.scss */
+      /* line 256, static/globals.scss */
       body nav .container-fluid ul.navbar-nav, body nav .container-sm ul.navbar-nav, body nav .container-md ul.navbar-nav, body nav .container-lg ul.navbar-nav, body nav .container-xl ul.navbar-nav, body nav .container-xxl ul.navbar-nav {
         margin-left: 2rem; }
-    /* line 164, static/globals.scss */
+    /* line 260, static/globals.scss */
     body nav ul.nav-register-login-container {
       margin-left: auto !important; }
-  /* line 169, static/globals.scss */
+  /* line 265, static/globals.scss */
   body .container-fluid .homepage-header, body .container-sm .homepage-header, body .container-md .homepage-header, body .container-lg .homepage-header, body .container-xl .homepage-header, body .container-xxl .homepage-header {
     height: 500px; }
-    /* line 171, static/globals.scss */
+    /* line 267, static/globals.scss */
     body .container-fluid .homepage-header h1.homepage-heading, body .container-sm .homepage-header h1.homepage-heading, body .container-md .homepage-header h1.homepage-heading, body .container-lg .homepage-header h1.homepage-heading, body .container-xl .homepage-header h1.homepage-heading, body .container-xxl .homepage-header h1.homepage-heading, body .container-fluid .homepage-header .homepage-heading.h1, body .container-sm .homepage-header .homepage-heading.h1, body .container-md .homepage-header .homepage-heading.h1, body .container-lg .homepage-header .homepage-heading.h1, body .container-xl .homepage-header .homepage-heading.h1, body .container-xxl .homepage-header .homepage-heading.h1 {
       font-size: 11rem; } }
