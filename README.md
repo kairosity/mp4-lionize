@@ -388,6 +388,37 @@ The crux of this application's purpose is as a B2B service provider that allows 
     <img src="static/images/deployment/enable-auto-deploys.png">
 </p>
 
+## Setting up AWS S3 
+
+1. I set up an AWS account. 
+
+2. In the AWS Management Console I searched for S3
+
+3. In the S3 Management Console I clicked on "Create bucket" to create a new bucket. I named the bucket lionize-ms4 and selected Europe as my region. I also allowed public access, as below:
+
+<p align="center">
+    <img src="static/images/deployment/s3-setup-aws.png">
+</p>
+
+4. Once the new bucket was created, I navigated to the properties tab of the bucket and scrolled down to "Static website hosting", clicked "Edit", and then I selected "Enable" under the "Static website hosting" option. I entered index.html & error.html as default values, as below:
+
+<p align="center">
+    <img src="static/images/deployment/s3-static-website-hosting1.png">
+</p>
+
+<p align="center">
+    <img src="static/images/deployment/s3-static-website-hosting2.png">
+</p>
+
+5. On the bucket's permissions tab, I added a CORS configuration, as below:
+
+<p align="center">
+    <img src="static/images/deployment/s3-cors.png">
+</p>
+
+6. On the bucket's policy tab, I clicked on "policy generator" and created a new policy which I added to my bucket.
+
+7. After saving the bucket policy, I scrolled to the "Access control list (ACL)" tab and I checked the list objects box under the "Everyone (public access)" header.
 
 
 # Tools and Other Resources Used
