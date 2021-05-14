@@ -420,6 +420,66 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 7. After saving the bucket policy, I scrolled to the "Access control list (ACL)" tab and I checked the list objects box under the "Everyone (public access)" header.
 
+## Setting up AWS Identity and Access Management Configuration
+
+1. In the IAM dashboard I navigated to the "User Groups" tab and created a new group. 
+
+2. Under the policies tab, I clicked on the JSON tab and then "Import managed policy"
+
+<p align="center">
+    <img src="static/images/deployment/iam-import-managed-policy.png">
+</p>
+
+3. I selected the S3FullAccess policy and clicked import.
+
+<p align="center">
+    <img src="static/images/deployment/s3-full-access-policy.png">
+</p>
+
+4. I edited the imported JSON code to allow full access to the lionize bucket and its' associated files, using the lionize bucket's arn.
+
+5. I gave the policy a name and description and then created the policy:
+
+<p align="center">
+    <img src="static/images/deployment/s3-policy-created.png">
+</p>
+
+6. I went back to the "User groups" tab and clicked on the "manage-lionize" group. Then I went to the "permissions" tab and clicked the dropdown menu "Add permission" and then "Attach Policies", I checked the policy just created and then clicked to "Add permissions".
+
+<p align="center">
+    <img src="static/images/deployment/iam-policy-attached.png">
+</p>
+
+
+7. I created a user to add to the group with programmatic access.
+
+<p align="center">
+    <img src="static/images/deployment/iam-new-user.png">
+</p>
+
+8. I downloaded the CSV file containing the new user's access key and secret access key in order to add them to Django to authenticate this user.
+
+9. I then installed boto3 & django-storages, freezing them into requirements.txt and then adding 'storages' to the installed apps list in settings.py
+
+10. I also added the following AWS config variables to my settings.py file for use *only* if the USE_AWS var is found in os.environ:
+
+        AWS_STORAGE_BUCKET_NAME = 'lionize-ms4'
+        AWS_S3_REGION_NAME = 'eu-west-1'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+11. I then added the Access Keys as well as the USE_AWS=TRue to the Heroku config vars.
+
+12.
 
 # Tools and Other Resources Used
 
