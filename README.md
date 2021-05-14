@@ -317,6 +317,8 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 # Deployment 
 
+## Application deployment using Heroku
+
 1. I created a new Heroku account & then created a new Heroku application, selection Europe as my region, as below: 
 
 <p align="center">
@@ -331,17 +333,38 @@ The crux of this application's purpose is as a B2B service provider that allows 
   <img src="static/images/deployment/heroku-deployment-postgres-db.png">
 </p>
 
-3. I installed dj_database_url & psycopg2. 
+3. I installed dj_database_url & psycopg2 to enable the connection between Django and Postgres.
 
-4. I ran: ``` pip3 freeze > requirements.txt ```
+4. Then I ran: ``` pip3 freeze > requirements.txt ```
 
     <p align="center">
-  <img src="static/images/deployment/deployment-psyco-djdb.png">
+        <img src="static/images/deployment/deployment-psyco-djdb.png">
+    </p>
+
+5. I imported dj_database_url into my project's settings.py file and then added the POSTGRES database connection as the default database when in production mode alongside the sqlite database, when in development:
+
+<p align="center">
+    <img src="static/images/deployment/deployment-db-connection.png">
 </p>
 
-5. I imported dj_database_url into my project's settings.py file and then added it as the default database instead of sqlite.
+6. I created a superuser using ```python3 manage.py createsuperuser```
 
-6. 
+7. Then I installed gunicorn.
+
+8. I created a Procfile with the following code ```web: gunicorn lionize.wsgi:application``` to tell Heroku to create a web dyno to run gunicorn and serve the application.
+
+9. I temporarily disabled COLLECTSTATIC in the Heroku CLI
+
+<p align="center">
+    <img src="static/images/deployment/disable-collectstatic.png">
+</p>
+
+10. I added the application's Heroku hostname to ALLOWED_HOSTS in settings.py:
+
+<p align="center">
+    <img src="static/images/deployment/deployment-allowed-hosts.png">
+</p>
+
 <br>
 
 # Tools and Other Resources Used
