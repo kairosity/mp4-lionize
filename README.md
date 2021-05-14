@@ -317,9 +317,9 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 # Deployment 
 
-## Application deployment using Heroku
+## Application deployment using Heroku
 
-1. I created a new Heroku account & then created a new Heroku application, selection Europe as my region, as below: 
+1. I created a new Heroku account, then created a new Heroku application selecting Europe as my region, as below: 
 
 <p align="center">
   <img src="static/images/deployment/heroku-deployment-1.png">
@@ -365,7 +365,30 @@ The crux of this application's purpose is as a B2B service provider that allows 
     <img src="static/images/deployment/deployment-allowed-hosts.png">
 </p>
 
-<br>
+
+11. I added a SECRET_KEY config variable in Heroku. 
+
+12. I initialized an heroku git remote as below:
+
+<p align="center">
+    <img src="static/images/deployment/deploy-heroku-remote.png">
+</p>
+
+13. I pushed to Heroku master to deploy using ```git push heroku master```
+
+14. I set up automatic deployments in Heroku by connecting to the Lionize github repo as below:
+
+<p align="center">
+    <img src="static/images/deployment/github-heroku-deploy-1.png">
+</p>
+
+15. I then enabled automatic deploys by selecting the master branch and clicking the button as below:
+
+<p align="center">
+    <img src="static/images/deployment/enable-auto-deploys.png">
+</p>
+
+
 
 # Tools and Other Resources Used
 
