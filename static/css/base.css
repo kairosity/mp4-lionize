@@ -138,7 +138,7 @@ form.login-register-form p{
     font-family: var(--main-text-font);
 }
 a.forgot-password-link{
-
+    margin: 0;
 }
 form button.form-button{
     padding: 1rem;
@@ -260,10 +260,14 @@ form button.form-button{
     }
 }
 
-@media (min-width: var(--breakpoint-desktop) {
-   
+@media (min-width: 1200px) {
+    body {
+        margin: 0;
+    }
 }
 
-@media (min-width: var(--breakpoint-large-desktop) {
-  
+@media (min-width: 1400px) {
+    body {
+        margin: 0;
+    }
 }
