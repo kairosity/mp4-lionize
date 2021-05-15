@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'compressor',
+    # 'compressor',
 
     'home',
     'products',
@@ -178,21 +178,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
-STATICFILES_FINDERS = [ 'django.contrib.staticfiles.finders.FileSystemFinder', #Without this and...
-                        'django.contrib.staticfiles.finders.AppDirectoriesFinder', # This, the admin css styles disappear.
-                        'compressor.finders.CompressorFinder' 
-                        ]
 
-COMPRESS_PRECOMPILERS = ( ('text/x-scss', 'django_libsass.SassCompiler'),)
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATICFILES_FINDERS = [ 'django.contrib.staticfiles.finders.FileSystemFinder', #Without this and...
+#                         'django.contrib.staticfiles.finders.AppDirectoriesFinder', # This, the admin css styles disappear.
+#                         'compressor.finders.CompressorFinder' 
+#                         ]
+
+# COMPRESS_PRECOMPILERS = ( ('text/x-scss', 'django_libsass.SassCompiler'),)
 
 if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'lionize-ms4'

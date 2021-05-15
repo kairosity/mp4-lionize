@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 /*-------------------------- Variables */
 :root {
 
@@ -17,7 +19,9 @@
     --breakpoint-desktop: 1200px;
     --breakpoint-large-desktop: 1400px;
 }
-
+body{
+    background-color: red;
+}
 /* Homepage Nav & Header */
 nav {
     font-family: var(--main-text-font);
