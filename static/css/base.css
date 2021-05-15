@@ -1,0 +1,83 @@
+/*-------------------------- Variables */
+:root {
+
+    /* Colours */
+    --main-colour: #148EFF;
+    --accent-colour: #C3FF17;
+    --white: #FFF;
+
+    /* Font Styles */ 
+    --heading-font: "Quicksand", sans-serif;
+    --main-text-font: "Open Sans", sans-serif;
+
+    /* Breakpoints */
+    --breakpoint-large-mobile: 576px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-small-desktop: 992px;
+    --breakpoint-desktop: 1200px;
+    --breakpoint-large-desktop: 1400px;
+}
+
+/* Homepage Nav & Header */
+nav {
+    font-family: var(--main-text-font);
+}
+nav div.container-fluid{
+    padding: 0;
+}
+a.navbar-brand{
+    color: var(--accent-colour);
+    margin-left: 1rem;
+}
+ul.navbar-nav{
+    margin-left: 1rem;  
+}
+nav ul.navbar-nav li>ul.dropdown-menu {
+    background-color: var(--main-colour);
+}
+ul.dropdown-menu li a {
+    color: var(--white) !important;
+    letter-spacing: 1px;
+}
+ul.dropdown-menu li a:hover {
+    background-color: var(--white);
+    color: var(--main-colour) !important;
+}
+li.nav-item>a.nav-link{
+    color: var(--white) !important;
+    letter-spacing: 1px;
+}
+ul.nav-register-login-container{
+    margin-left: 1rem;
+    margin-right: 0 !important;
+}
+ul.nav-register-login-container li.button-accent{
+    color: var(--main-colour) !important; 
+}
+div.container-fluid{
+    padding: 0;
+}
+.homepage-header {
+    height: 500px;
+    background-color: var(--main-colour);
+    justify-content: center;
+    align-items: center;
+}
+h1.homepage-heading{
+    font-family: var(--heading-font);
+    font-size: 5rem;
+    font-weight: 300;
+    color: white;
+    margin: 2rem;
+}    
+h2.homepage-subheading{
+    font-family: var(--main-text-font);
+    color: var(--white);
+    font-weight: 300;
+    margin: 2rem;
+}
+h2.homepage-subheading span.accent-underline{
+    border-bottom: var(--accent-colour) 5px solid;
+}      
+        
+            
