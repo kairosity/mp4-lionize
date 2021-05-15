@@ -142,4 +142,6 @@ Adding a trailing slash in the javascript to match the urls.py file fixed the is
 
 ## Deployed version of application css not loading.
 
-__Issue:__ 
+__Issue:__ Static files stopped serving locally once I had successfully deployed to Heroku. 
+
+__Fix:__ As part of the CI Django tutorial I had added the code ```DEBUG = 'DEVELOPMENT' in os.environ``` in my settings.py file which effectively stopped Django serving static files locally if the DEVELOPMENT variable was not present in the environment settings. Adding that variable to my env.py file fixed the issue. 

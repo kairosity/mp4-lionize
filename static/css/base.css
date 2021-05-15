@@ -19,9 +19,31 @@
     --breakpoint-desktop: 1200px;
     --breakpoint-large-desktop: 1400px;
 }
-body{
-    background-color: red;
+/* Universal Styles */
+*{
+    box-sizing: border-box;
+    margin: 0;
 }
+
+/* Messages */
+
+.toast-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    background-color: white;
+}
+.toast-message{
+    color: #000;
+}
+.custom-toast{
+    overflow: visible;
+}
+.toast-capper {
+    height: 2px;
+}
+
+
 /* Homepage Nav & Header */
 nav {
     font-family: var(--main-text-font);
@@ -83,5 +105,165 @@ h2.homepage-subheading{
 h2.homepage-subheading span.accent-underline{
     border-bottom: var(--accent-colour) 5px solid;
 }      
-        
-            
+
+
+/* Registered Users Side Nav */
+
+.side-nav{
+    width: 200px;
+}
+
+/* Login & Register Pages */
+
+.form-container{
+    padding: 3rem;
+    justify-content: center;
+    max-width: 600px;
+    margin-top: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    border: var(--main-colour) 3px solid;
+}
+h1.form-heading{
+    font-family: var(--heading-font);
+    color: var(--main-colour);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+p.form-instruction{
+    font-family: var(--main-text-font);
+}
+form.login-register-form p{
+    font-family: var(--main-text-font);
+}
+a.forgot-password-link{
+
+}
+form button.form-button{
+    padding: 1rem;
+    color: var(--white);
+    margin-top: 1rem;
+}
+
+/* Shopping Bag */
+
+.update-link, 
+.remove-item {
+    cursor: pointer;
+}
+
+/* The Following Code is all from the CI Boutique Ado Tutorial */
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* CI Boutique Ado Tutorial Code Ends Here */
+
+
+/* Product Form - Code From CI Boutique Ado Tut */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    border-radius: 0 !important;
+}
+
+/* CI Boutique Ado Tutorial Code Ends Here */
+
+
+@media (min-width: 992px ) {
+    nav{
+        font-family: var(--main-text-font);
+    }
+    nav div.container-fluid{
+        margin-left: 2rem;
+    }
+    nav ul.navbar-nav{
+        margin-left: 2rem;
+    }
+    nav ul.nav-register-login-container{
+        margin-left: auto !important;
+    }
+    .homepage-header {
+        height: 500px;
+    }
+    h1.homepage-heading{
+        font-size: 11rem;
+    }
+}
+
+@media (min-width: var(--breakpoint-desktop) {
+   
+}
+
+@media (min-width: var(--breakpoint-large-desktop) {
+  
+}
