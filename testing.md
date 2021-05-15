@@ -139,3 +139,7 @@ Adding a trailing slash in the javascript to match the urls.py file fixed the is
                 location.reload();
             });
     })
+
+## Deployed version of application css not loading.
+
+__Issue:__ 

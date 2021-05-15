@@ -479,7 +479,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 11. I then added the Access Keys as well as the USE_AWS=TRue to the Heroku config vars.
 
-12.
+12. I committed these changes and pushed to github & thus Heroku (because of automatic deployments) and the build collected all the Static files and placed them in the S3 bucket and Heroku served them successfully. 
 
 # Tools and Other Resources Used
 
