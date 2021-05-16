@@ -481,6 +481,28 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 12. I committed these changes and pushed to github & thus Heroku (because of automatic deployments) and the build collected all the Static files and placed them in the S3 bucket and Heroku served them successfully. 
 
+13. I then created a new folder in my S3 bucket called Media and set permissions to grant publin-read access as below:
+
+<p align="center">
+    <img src="static/images/deployment/s3-media-files-permissions.png">
+</p>
+
+14. I then uploaded all my in-app images into that folder.
+
+## Setting up Stripe for Deployment
+
+1. I added the STRIPE_PUBLIC_KEY & the STRIPE_SECRET_KEY as config variables in Heroku. 
+
+2. I created a new Production Webhook Endpoint in my Stripe Dashboard by clicking on the "Developers" tab and then "Webhooks" and then "Add endpoint". I then added my application's heroku url + checkout/wh/ to "receive all events", as below:
+
+<p align="center">
+    <img src="static/images/deployment/stripe-webhook.png">
+</p>
+
+3. I then added the webhook's signing secret to my Heroku config variables.
+
+
+
 # Tools and Other Resources Used
 
 ## 1. Design
