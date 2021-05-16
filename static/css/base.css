@@ -24,6 +24,26 @@
     box-sizing: border-box;
     margin: 0;
 }
+/* Buttons */
+
+.button {
+    padding:5px 10px;
+    border-radius: 3px;
+    font-family: var(--main-text-font);
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    filter: brightness(85%);
+    
+}
+.button-main{
+    background-color: var(--main-colour);
+}
+.button-accent{
+    background-color: var(--accent-colour);
+}
 
 /* Messages */
 
@@ -207,6 +227,10 @@ form button.form-button{
 
 /* CI Boutique Ado Tutorial Code Ends Here */
 
+/* Product Details Page */
+img.product-image {
+    width: 300px;
+}
 
 /* Product Form - Code From CI Boutique Ado Tut */
 

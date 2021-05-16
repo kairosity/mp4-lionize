@@ -150,11 +150,7 @@ __Fix:__ As part of the CI Django tutorial I had added the code ```DEBUG = 'DEVE
 
 __Issue:__ Static files stopped serving in production once I had successfully solved the above issue. 
 
-__Fix:__ I noticed that the S3 url for serving static files was different to the url I had in my settings. The S3 version included the region, so changing it to:
-
-      ## Deployed version of application css not loading.
-
-__Issue:__ Static files stopped serving locally once I had successfully deployed to Heroku. 
+__Fix:__ I noticed that the S3 url for serving static files was different to the url I had in my settings. The S3 version included the region, so changing it to the variable below worked to fix this issue.
 
       AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3-eu-west-1.amazonaws.com'
 
