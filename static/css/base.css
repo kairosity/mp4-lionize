@@ -36,7 +36,6 @@
 }
 .button:hover{
     filter: brightness(85%);
-    
 }
 .button-main{
     background-color: var(--main-colour);
