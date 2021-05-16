@@ -501,7 +501,13 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 3. I then added the webhook's signing secret to my Heroku config variables.
 
+## Setting up Django Emails for Deployment
 
+1. In the application's associated Gmail account I set up 2-step verification. 
+
+2. Then I generated a new app password and added it to my application's config variables in Heroku alongside a EMAIL_HOST_USER variable that stored the associated email. 
+
+3. Then in settings.py I 
 
 # Tools and Other Resources Used
 
