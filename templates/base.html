@@ -44,7 +44,7 @@
     </head>
     <body class="">
 
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #148EFF;">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid d-flex flex-grow-1">
                     <a class="navbar-brand" href="#">Lionize</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,18 +66,49 @@
                                     <li><a class="dropdown-item" href="{% url 'content-creation' %}">Content Creation</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item p-2">
-                                <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
-                            </li>
+                            {% if request.user.is_authenticated %}
+                                <li class="nav-item dropdown p-2 d-block d-lg-none">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    User Portal
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'profile' %}">Username's Profile</a>
+                                        </li>
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Shopping Bag</a>
+                                        </li>
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Orders</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown p-2 d-block d-lg-none">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Shop Services
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design</a>
+                                        </li>
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" href="{% url 'seo-products' %}">Shop SEO</a>
+                                        </li>
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" href="#">Shop Social Media Management</a>
+                                        </li>
+                                        <li class="nav-item side-nav-item">
+                                            <a class="dropdown-item" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            {% endif %}
                             <li class="nav-item  p-2 contact-nav-item">
                                 <a class="nav-link" href="#">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
                             {% if request.user.is_authenticated %}
-                                <li class="nav-item p-2 ">
-                                    <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
-                                </li>
                                 <li class="nav-item p-2 ">
                                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                 </li>
@@ -117,8 +148,10 @@
         {% block content %}
         {% endblock %}
 
-        <footer class="row">
-            Footer goes here.
+        <footer class="row footer mt-auto py-3">
+            <div class="container">
+            <p class="footer-content-p">Footer goes here.</p> 
+            </div>
         </footer>
 
         {% block postloadjs %}

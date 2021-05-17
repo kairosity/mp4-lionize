@@ -545,6 +545,10 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 ## 7. General
 
+- ### [Temp Mail](https://temp-mail.org/)
+
+    Used to test email functionality for registrations and logins. 
+
 <br>
 
 #### back to [contents](#table-of-contents) 

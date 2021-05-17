@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import 'hover-effects.css';
 
 /*-------------------------- Variables */
 :root {
@@ -66,6 +67,7 @@
 /* Homepage Nav & Header */
 nav {
     font-family: var(--main-text-font);
+    background-color: var(--main-colour);
 }
 nav div.container-fluid{
     padding: 0;
@@ -88,10 +90,17 @@ ul.dropdown-menu li a:hover {
     background-color: var(--white);
     color: var(--main-colour) !important;
 }
+li.side-nav-item{
+    width: 100%;
+}
 li.nav-item>a.nav-link{
     color: var(--white) !important;
     letter-spacing: 1px;
 }
+/* .nav-link:hover{
+    background-color: var(--accent-colour);
+    color: var(--accent-colour);
+} */
 ul.nav-register-login-container{
     margin-left: 1rem;
     margin-right: 0 !important;
@@ -128,8 +137,21 @@ h2.homepage-subheading span.accent-underline{
 
 /* Registered Users Side Nav */
 
-.side-nav{
+.side-nav-container{
+    background-color: var(--main-colour);
     width: 200px;
+    padding-top: 2rem;
+    height: calc(100vh - 200px);
+}
+
+/* Product Categories Pages */
+
+.details-page-heading{
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
+    letter-spacing: 1.4px;
+    font-weight: 400;
 }
 
 /* Login & Register Pages */
@@ -164,6 +186,12 @@ form button.form-button{
     color: var(--white);
     margin-top: 1rem;
 }
+
+/* Product Details Page */
+.product-details-flex-container{
+    display: flex;
+}
+
 
 /* Shopping Bag */
 
@@ -261,6 +289,12 @@ img.product-image {
 
 /* CI Boutique Ado Tutorial Code Ends Here */
 
+/* Footer */
+
+footer.footer{
+    background-color: var(--main-colour);
+    height: 200px;
+}
 
 @media (min-width: 992px ) {
     nav{

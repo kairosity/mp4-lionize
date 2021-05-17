@@ -1,0 +1,28 @@
+{% if request.user.is_authenticated %}
+    <div class="side-nav-container d-none d-lg-block">
+        <ul class="nav side-nav">
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Username's Profile</a>
+            </li>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Shopping Bag</a>
+            </li>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Orders</a>
+            </li>
+            <hr>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design</a>
+            </li>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link " href="{% url 'seo-products' %}">Shop SEO</a>
+            </li>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" href="#">Shop Social Media Management</a>
+            </li>
+            <li class="nav-item side-nav-item hvr-underline-from-left">
+                <a class="nav-link" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
+            </li>
+        </ul>
+    </div>
+{% endif %}
