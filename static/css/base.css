@@ -132,7 +132,40 @@ h2.homepage-subheading{
 }
 h2.homepage-subheading span.accent-underline{
     border-bottom: var(--accent-colour) 5px solid;
-}      
+}
+.services-section{
+    display: flex;
+    justify-content: center;
+}
+.homepage-body-heading{
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 3rem;
+    font-family: var(--heading-font);
+}
+.homepage-body-text{
+    text-align: center;
+    padding-top: 1rem;
+}
+.homepage-cards-container{
+    justify-content: center;
+    padding-top: 3rem;
+}
+.homepage-card{
+    margin: 1rem;
+    border: none;
+}
+.homepage-card-image{
+    height: 250px;
+    object-fit: cover;
+}
+.blue-bg-section{
+    background-color: var(--main-colour);
+    color: var(--white);
+}
+
+
 
 
 /* Registered Users Side Nav */
