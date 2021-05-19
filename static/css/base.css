@@ -8,6 +8,7 @@
     --main-colour: #148EFF;
     --accent-colour: #C3FF17;
     --white: #FFF;
+    --dark-text: #333;
 
     /* Font Styles */ 
     --heading-font: "Quicksand", sans-serif;
@@ -48,6 +49,7 @@
 }
 .button-accent{
     background-color: var(--accent-colour);
+    color: var(--dark-text);
 }
 
 /* Messages */
@@ -191,6 +193,10 @@ h2.homepage-subheading span.accent-underline{
     border: 4px solid var(--main-colour);
     margin-bottom: 2rem;
 }
+.contact-form{
+    padding: 0 26rem;
+}
+
 
 
 

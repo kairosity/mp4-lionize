@@ -7,6 +7,6 @@ class LoginForm(AuthenticationForm):
 
 
 class ContactForm(forms.Form):
-    email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control'}), required=True)
+    subject = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), required=True)
+    message = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control'}), required=True)
