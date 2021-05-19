@@ -99,7 +99,6 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                print(profile.user.email)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -118,7 +117,7 @@ def checkout(request):
 
 
         if not stripe_public_key:
-            messages.warning(request, 'The stripe public key is missing. Is it set in your environment?')
+            messages.warning(request, 'The stripe public key is missing.')
             
         template = 'checkout/checkout.html'
         context = {

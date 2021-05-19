@@ -549,6 +549,10 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
     Used to test email functionality for registrations and logins. 
 
+- ### [Unsplash](https://unsplash.com/)
+
+    Used for the "Who Are We" Bio Photos.
+
 <br>
 
 # Unsplash Images Used

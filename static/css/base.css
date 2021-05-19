@@ -25,21 +25,26 @@
     box-sizing: border-box;
     margin: 0;
 }
+.justify-content-center{
+    justify-content: center;
+}
 /* Buttons */
 
 .button {
-    padding:5px 10px;
+    padding:7px 14px;
     border-radius: 3px;
     font-family: var(--main-text-font);
     font-size: 1.1rem;
     border: none;
     transition: all 0.5s ease;
+    text-decoration: none;
 }
 .button:hover{
     filter: brightness(85%);
 }
 .button-main{
     background-color: var(--main-colour);
+    color: var(--white);
 }
 .button-accent{
     background-color: var(--accent-colour);
@@ -147,6 +152,13 @@ h2.homepage-subheading span.accent-underline{
 .homepage-body-text{
     text-align: center;
     padding-top: 1rem;
+    font-size: 1.2rem;
+}
+.homepage-body-list{
+    padding: 1.1rem;
+}
+.homepage-body-list-item{
+    padding: 0.4rem;
 }
 .homepage-cards-container{
     justify-content: center;
@@ -163,6 +175,21 @@ h2.homepage-subheading span.accent-underline{
 .blue-bg-section{
     background-color: var(--main-colour);
     color: var(--white);
+}
+.button-wrapper{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.register-benefits-button{
+    padding: 1rem 3rem;
+}
+.bio-image{
+    height: 350px;
+}
+.bio-card-body{
+    border: 4px solid var(--main-colour);
+    margin-bottom: 2rem;
 }
 
 
@@ -193,10 +220,11 @@ h2.homepage-subheading span.accent-underline{
     padding: 3rem;
     justify-content: center;
     max-width: 600px;
-    margin-top: 2rem;
+    margin-top: 3rem;
     background-color: var(--white);
     border-radius: 12px;
     border: var(--main-colour) 3px solid;
+    margin-bottom: 3rem;
 }
 h1.form-heading{
     font-family: var(--heading-font);
