@@ -360,8 +360,46 @@ img.product-image {
 
 footer.footer{
     background-color: var(--main-colour);
-    height: 200px;
+    background-position: center center;
+    background-size: cover;
 }
+.footer .links-row{
+    padding-top: 4rem;
+}
+.text-links-container .center-me{
+    align-self: center;
+    padding: 1.2rem;
+}
+.center-me .footer-heading{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white); 
+}
+footer a.nav-link{
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--white);
+}
+footer a.nav-link:hover{
+    color: var(--accent-colour);
+}
+.footer-social-media ul.footbar .nav-item .nav-link{
+    font-size: 1.1rem;
+    
+    padding: 1.2rem;
+}
+.footer-social-media ul.footbar .nav-item .nav-link i{
+    color: var(--accent-colour);
+}
+.footer-social-media ul.footbar .nav-item .nav-link i:hover{
+    color: var(--white);
+}
+.copyright-notice{
+    color: var(--white);
+    font-size: 0.9rem;
+}
+/* footer styles end */
 
 @media (min-width: 992px ) {
     nav{

@@ -43,7 +43,6 @@
         <title>Lionize {% block extra_title %}{% endblock %}</title>
     </head>
     <body class="">
-
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid d-flex flex-grow-1">
                     <a class="navbar-brand" href="#">Lionize</a>
@@ -109,6 +108,27 @@
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
                             {% if request.user.is_authenticated %}
+                                {% if request.path == '/' %}
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    </li>
+                                {% elif request.path == '/webdesign' %}
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    </li>
+                                {% elif request.path == '/seo' %}
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    </li>
+                                {% elif request.path == '/content-creation' %}
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    </li>
+                                {% elif request.path == '/social-media-management' %}
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    </li>
+                                {% endif %}
                                 <li class="nav-item p-2 ">
                                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                 </li>
@@ -147,12 +167,50 @@
 
         {% block content %}
         {% endblock %}
+                <footer class="footer mt-auto py-3 d-flex flex-column align-items-center">
+                    <hr class="footer-hr">
+                    <div class="row links-row">
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10 col-md-6 col-lg-4">
+                        <div class="center-me">
+                            <h5 class="footer-heading">Subsection1</h5>
+                            <Link href="#"><a class="nav-link" >First Link</a></Link>
+                            <Link href="#"><a class="nav-link" >Second Link</a></Link>
+                            <Link href="#"><a class="nav-link">Third Link</a></Link>
+                            <Link href="#"><a class="nav-link">Fourth Link</a></Link>
+                        </div>
+                        </div>
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                        <div class="center-me">
+                            <h5 class="footer-heading">Subsection2</h5>
+                            <Link href="#"><a class="nav-link">Fifth Link</a></Link>
+                            <Link href="#"><a class="nav-link">Sixth Link</a></Link>
+                            <Link href="#"><a class="nav-link">Seventh Link</a></Link>
+                            <Link href="#"><a class="nav-link">Eighth Link</a></Link>
+                        </div>
+                        </div>
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                        <div class="center-me">
+                            <h5 class="footer-heading">Subsection3</h5>
+                            <Link href="#"><a class="nav-link">Ninth Link</a></Link>
+                            <Link href="#"><a class="nav-link">Tenth Link</a></Link>
+                            <Link href="#"><a class="nav-link">Eleventh Link</a></Link>
+                            <Link href="#"><a class="nav-link">Twelfth Link</a></Link>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="footer-social-media row d-flex flex-column">
+                        <div class="social-media-container d-flex flex-column">
+                        <ul class="nav navbar footbar">
+                            <li class="nav-item "><a aria-label='twitter-link' class="nav-link" target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                            <li class="nav-item "><a aria-label='facebook-link' class="nav-link" target="_blank" href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="nav-item "><a aria-label='instagram-link' class="nav-link" target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                            <li class="nav-item "><a aria-label='linkedin-link' class="nav-link" target="_blank" href="http://linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <p class="copyright-notice">&copy; <span id="year">2021</span> Lionize</p>
+                </footer>
 
-        <footer class="row footer mt-auto py-3">
-            <div class="container">
-            <p class="footer-content-p">Footer goes here.</p> 
-            </div>
-        </footer>
 
         {% block postloadjs %}
         <script type="text/javascript">
