@@ -72,13 +72,13 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                         <li class="nav-item side-nav-item">
-                                            <a class="dropdown-item" aria-current="page" href="{% url 'profile' %}">Username's Profile</a>
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Shopping Bag</a>
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Username's Orders</a>
+                                            <a class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Orders</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -103,7 +103,7 @@
                                 </li>
                             {% endif %}
                             <li class="nav-item  p-2 contact-nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
+                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">

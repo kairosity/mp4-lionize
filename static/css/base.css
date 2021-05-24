@@ -29,6 +29,15 @@
 .justify-content-center{
     justify-content: center;
 }
+.text-align-left{
+    text-align: left;
+}
+.text-align-center{
+    text-align: center;
+}
+.accent-underline{
+    border-bottom: var(--accent-colour) 5px solid;
+}
 /* Buttons */
 
 .button {
@@ -53,21 +62,31 @@
 }
 
 /* Messages */
-
+.toast{
+    border: var(--accent-colour) solid 4px;
+    border-radius: 12px;
+}
 .toast-container {
     position: fixed;
     top: 72px;
     right: 15px;
     background-color: white;
+    border-radius: 12px;
+}
+.success-msg-heading{
+    color: var(--main-colour);
+    font-size: 1.2rem;
 }
 .toast-message{
-    color: #000;
+    color: #333;
+    font-size: 1rem;
 }
 .custom-toast{
     overflow: visible;
 }
 .toast-capper {
     height: 2px;
+
 }
 
 
@@ -193,13 +212,22 @@ h2.homepage-subheading span.accent-underline{
     border: 4px solid var(--main-colour);
     margin-bottom: 2rem;
 }
+.contact-us-heading{
+    margin-top: 6rem;
+}
 .contact-form{
     padding: 0 26rem;
 }
-
-
-
-
+.social-media-process-container{
+    margin-top: 3rem;
+}
+ul.social-media-process-list{
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+ul.social-media-process-list > li{
+    list-style-type: none;
+}
 
 /* Registered Users Side Nav */
 
@@ -211,14 +239,88 @@ h2.homepage-subheading span.accent-underline{
 }
 
 /* Product Categories Pages */
-
+.web-design-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .details-page-heading{
+    font-family: var(--heading-font);
     text-align: center;
     font-size: 3rem;
-    padding: 2rem;
+    padding: 3rem;
     letter-spacing: 1.4px;
     font-weight: 400;
 }
+.details-page-subheading{
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.details-page-intro-image{
+    max-width: 600px;
+    height: auto;
+    align-self: center;
+}
+.all-industries{
+    border: var(--main-colour) 3px solid;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.industry-images-container{
+    display: flex;
+    justify-content: center;
+}
+.examples-subheading{
+    margin-bottom: 2rem;
+}
+img.industry-image{
+    width: 300px;
+    height: auto;
+    padding: 2rem;
+}
+img.web-design-example{
+    max-width: 500px;
+    height: auto;
+    padding: 2rem;
+}
+.details-page-text{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.web-des-category{
+    background-color: var(--main-colour);
+    color: var(--white);
+    padding: 2rem;
+    border: var(--white) 5px solid;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+.tech-container{
+    background-color: var(--accent-colour);
+    color: var(--dark-text);
+    padding: 3.3rem;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+.featured-subheading{
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+}
+.examples-subheading{
+    font-size: 2rem;
+}
+.seo-heading{
+    margin-top: 2rem;
+}
+.seo-text{
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+}
+
 
 /* Login & Register Pages */
 

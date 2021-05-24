@@ -5,15 +5,35 @@
 
 <div class="container-fluid">
     <header class="details-page-header d-flex flex-column">
-        <div class="container">
+        <div class="container web-design-container">
             <h1 class="details-page-heading">Content Creation</h1>
-            <h2 class="details-page-subheading"> <span class="accent-underline">fresh</span> </h2>
+            <img class="details-page-intro-image" src="/media/cc7.png" alt="">
+            <div class="all-industries">
+                <h2 class="details-page-subheading">We provide content creation for <span class="accent-underline">all</span> industries.</h2>
+                <div class="row industry-images-container">
+                    <img class="industry-image" src="/media/industry1.jpg" alt="">
+                    <img class="industry-image" src="/media/industry2.jpg" alt="">
+                    <img class="industry-image" src="/media/industry3.jpg" alt="">
+                    <img class="industry-image" src="/media/industry4.jpg" alt="">
+                </div>
+            </div>
         </div>
     </header>
+    <section>
+        <div class="container web-design-container">
+            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> and then we will schedule in a free consultation to talk to you about your content creation requirements.</h3>
+            <br>
+            <h4 class="col col-12 details-page-text ">Whatever your needs, we offer a comprehensive range of solutions that we can custom design to your exact requirements. Here are 
+                just some of the content creation services we offer.
+            </h4>
+            <div class="web-design-categories-container row">
+                <h4 class="web-des-category col col-12 col-md-6 col-lg-3">Blog Posts</h4>
+                <h4 class="web-des-category col col-12 col-md-6 col-lg-3">Copywriting</h4>
+                <h4 class="web-des-category col col-12 col-md-6 col-lg-3">Newsletters</h4>
+                <h4 class="web-des-category col col-12 col-md-6 col-lg-3">Editing</h4> 
+            </div>
+        </div>
+    </section>
     
-        
 </div>
-
-
-
 {% endblock %}

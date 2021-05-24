@@ -8,12 +8,13 @@
 {% block content %}
 <div class="flex-container product-details-flex-container hello">
 
-    {% include 'includes/side-nav.html' %}
+{% include 'includes/side-nav.html' %}
+
 <div class="overlay"></div>
     <div class="container-fluid">
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
-                <h1 class="shopping-bag-heading">lionize: Checkout</h1>
+                <h1 class="shopping-bag-heading">{{request.user.first_name}}'s User Portal</h1>
                 <h2 class="shopping-bag-subheading">A digitial agency with <span class="accent-underline">fresh</span> ideas to enhance your online presence & brand identity.</h2>
             </div>
         </header>

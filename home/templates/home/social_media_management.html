@@ -5,15 +5,61 @@
 
 <div class="container-fluid">
     <header class="details-page-header d-flex flex-column">
-        <div class="container">
+        <div class="container web-design-container">
             <h1 class="details-page-heading">Social Media Management</h1>
-            <h2 class="details-page-subheading"> <span class="accent-underline">fresh</span> </h2>
+            <img class="details-page-intro-image" src="/media/sm3.png" alt="">
+            <div class="all-industries">
+                <h2 class="details-page-subheading">We provide professional social media management for <span class="accent-underline">all</span> industries.</h2>
+                <div class="row industry-images-container">
+                    <img class="industry-image" src="/media/industry1.jpg" alt="">
+                    <img class="industry-image" src="/media/industry2.jpg" alt="">
+                    <img class="industry-image" src="/media/industry3.jpg" alt="">
+                    <img class="industry-image" src="/media/industry4.jpg" alt="">
+                </div>
+            </div>
         </div>
     </header>
+    <section>
+        <div class="container web-design-container">
+            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> and then we will schedule in a free consultation to talk to you about your social media requirements.</h3>
+            <br>
+            <p class="col col-12 details-page-text ">Whatever your needs, we offer a comprehensive range of social media management solutions. Our social media services are based on a monthly subscription, 
+                which you can cancel at any time and there are no hidden fees. 
+                <br>
+                <br>
+                We offer 3 main packages, but we can also custom tailor a solution specifically for your business.
+            </p>
+            <div class="web-design-categories-container row">
+                <h4 class="web-des-category col col-12 col-md-4 ">Starter</h4>
+                <h4 class="web-des-category col col-12 col-md-4 ">Growth</h4>
+                <h4 class="web-des-category col col-12 col-md-4 ">SuperCharged</h4>
+            </div>
+            <p class="col col-12 details-page-text">The details of these packages and their prices can be viewed once you register your free account with us!</p>
+        </div>
+    </section>
+    <section>
+        <div class="tech-container">
+            <h2 class="details-page-subheading featured-subheading">Social Media Expertise</h2>
+            <h3 class="details-page-text text-align-left">We are social media experts, we specialise in Twitter, Instagram, Facebook & LinkedIn, but can add other platforms 
+                on a custom plan. We are always up-to-date with the latest social media trends, so you can rest assured that your social media presence will be current.
+            </h3>
+        </div>
+    </section>
+    <section>
+        <div class="container social-media-process-container">
+            <h2 class="details-page-subheading examples-subheading">What is the process?</h2>
+            <ul class="social-media-process-list">
+                <li class="details-page-text">1. You register a free account with us.</li>
+                <li class="details-page-text">2. We have a chat about your requirements, your specific business tone and how you'd like your online presence shaped.</li>
+                <li class="details-page-text">3. You decide on which subcription service you would like to proceed with and you sign up via our secure web portal.</li>
+                <li class="details-page-text">4. We create your first month's posts and we send you drafts to approve.</li>
+                <li class="details-page-text">5. You approve the posts or we make changes, once the posts are approved with schedule them for automatic posting.</li>
+                <li class="details-page-text">6. You sit back and watch your social media presence grow beautifully.</li>
+            </ul>
+        </div>
+    </section>
     
-        
 </div>
-
 
 
 {% endblock %}

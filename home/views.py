@@ -32,7 +32,7 @@ def index(request):
                     )
                 return HttpResponse('Invalid header found.')
             return redirect('home')
-    print(request.path)
+            
     return render(request, 'home/index.html', {'form': form})
 
 def webdesign(request):
