@@ -551,6 +551,14 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 - ### [How to Include Django Templates from another App](https://python.web.id/posts/detail/django-how-to-include-templates-from-another-app/)
 
+- ### [Django crispy forms - Set label text for multiple fields](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields)
+
+    Used to customise profile form labels.
+
+- ### [Getting the request origin in a Django request](https://stackoverflow.com/questions/21168981/getting-the-request-origin-in-a-django-request)
+
+    Used to work out how to reference the referring page, for back buttons.
+
 ## 6. Jinja
 
 ## 7. General

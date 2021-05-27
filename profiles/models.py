@@ -19,7 +19,11 @@ class UserProfile(models.Model):
     default_town_or_city = models.CharField(max_length=40, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
-    default_country = CountryField(blank_label='Country', null=True, blank=True) 
+    default_country = CountryField(blank_label='Country', null=True, blank=True)
+    instagram_handle = models.CharField(max_length=40, null=True, blank=True)
+    linkedin_handle = models.CharField(max_length=40, null=True, blank=True)
+    twitter_handle = models.CharField(max_length=40, null=True, blank=True)
+    facebook_handle = models.CharField(max_length=40, null=True, blank=True)
 
     def __str__(self):
         return self.user.username

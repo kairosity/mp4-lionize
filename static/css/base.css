@@ -9,6 +9,7 @@
     --accent-colour: #C3FF17;
     --white: #FFF;
     --dark-text: #333;
+    --muted-text: #736F73;
 
     /* Font Styles */ 
     --heading-font: "Quicksand", sans-serif;
@@ -345,7 +346,6 @@ img.web-design-example{
     margin-top: 2rem;
 }
 
-
 /* Login & Register Pages */
 
 .form-container{
@@ -408,7 +408,20 @@ img.product-details-page-img{
     justify-content: center;
 }
 
+/* Profile Page */
 
+.profile-page-btn{
+    margin-top: 1.5rem;
+}
+form.profile-page-form label{
+    margin: 0.6rem 0.4rem 0;
+    color: var(--muted-text);
+    font-size: 0.7rem;
+}
+small.form-heading{
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
 /* Shopping Bag */
 
 .update-link, 

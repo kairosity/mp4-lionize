@@ -25,17 +25,34 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    orders = profile.orders.all()
-
     template = 'profiles/profile.html'
 
     context = {
         'form': form,
-        'orders': orders,
         'on_profile_page': True,
     }
 
     return render(request, template, context)
+
+
+@login_required
+def order_history_user_portal(request):
+    '''
+    Display the user's order history.
+    '''
+
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    orders = profile.orders.all()
+
+    template = 'profiles/orders.html'
+
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, template, context)
+
 
 @login_required
 def order_history(request, order_number):
