@@ -3,49 +3,22 @@
 
 {% block content %}
 
-<div class="flex-container product-details-flex-container hello">
+<div class="flex-container product-details-flex-container">
 
     {% include 'includes/side-nav.html' %}
 
-<div class="row">
-    
     <div class="container-fluid col-12 col-md-8">
-    <header class="details-page-header d-flex flex-column">
-        <div class="container">
-            <h1 class="details-page-heading">Content Creation Products</h1>
-            <h2 class="details-page-subheading"> <span class="accent-underline">Here are all our content creation products, excluding subscription services.</span> </h2>
-        </div>
-    </header>
-
-    <div class="row">
-    {% for product in products %}
-            <div class="col-sm-6">
-                <div class="card">
-                    {% if item.product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="...">
-                    {% else %}
-                        <img class="img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.friendly_name }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                        <p>€{{ product.price }}</p>
-                        {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                            </small>
-                        {% endif %}
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">More Details</a>
-                    </div>
-                </div>
+        <header class="details-page-header d-flex flex-column">
+            <div class="container">
+                <h1 class="details-page-heading">Content Creation Products</h1>
+                <h2 class="details-page-subheading"> Quality content is what divides a mediocre digital marketing strategy from a <span class="accent-underline">great one!</span> 
+                <br>Have a look at some of our fantastic content creation services below.</h2>
             </div>
-    {% endfor %}
-</div>
-</div>
-</div>
-</div>
+        </header>
 
+        {% include 'includes/product-cards.html' %}
+        
+    </div>
 
-
+</div>
 {% endblock %}

@@ -94,7 +94,7 @@
                                             <a class="dropdown-item" href="{% url 'seo-products' %}">Shop SEO</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a class="dropdown-item" href="#">Shop Social Media Management</a>
+                                            <a class="dropdown-item" href="{% url 'social_media_management' %}">Shop Social Media Management</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
                                             <a class="dropdown-item" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
@@ -103,7 +103,7 @@
                                 </li>
                             {% endif %}
                             <li class="nav-item  p-2 contact-nav-item">
-                                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                                <a class="nav-link" href="{% url 'home' %}#contact-us">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
@@ -167,7 +167,7 @@
 
         {% block content %}
         {% endblock %}
-                <footer class="footer mt-auto py-3 d-flex flex-column align-items-center">
+                <footer class="footer py-3 d-flex flex-column align-items-center">
                     <hr class="footer-hr">
                     <div class="row links-row">
                         <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10 col-md-6 col-lg-4">

@@ -1,0 +1,25 @@
+<div class="row">
+    {% for product in products %}
+            <div class="col-sm-4 mt-5">
+                <div class="card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="...">
+                    {% else %}
+                        <img class="card-img-top img-fluid product-card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column product-card-body">
+                        <h5 class="card-title">{{ product.friendly_name }}</h5>
+                        <p class="card-text">{{ product.description|truncatechars:108 }}</p>
+                        <p>€{{ product.price }}</p>
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">More Details</a>
+                        {% if request.user.is_superuser %}
+                            <small class="ml-3 admin-edit-delete-btns">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    </div>

@@ -4,9 +4,9 @@ from categories.models import Category
 class Subscription(models.Model):
 
     plans = (
-		('BASIC', 'Monthly Basic (€450/Mo)'),
-		('STANDARD', 'Monthly Standard (€950/Mo)'),
-		('PREMIUM', 'Monthly Premium (€1500/Mo)'),
+		('STARTER', 'Monthly Basic (€450/Mo)'),
+		('GROWTH', 'Monthly Standard (€950/Mo)'),
+		('SUPERCHARGED', 'Monthly Premium (€1500/Mo)'),
 	)
     category = models.ForeignKey('categories.Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)

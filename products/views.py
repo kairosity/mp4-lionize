@@ -66,6 +66,21 @@ def content_creation_products(request):
 
 
 @login_required
+def social_media_management(request):
+    '''
+    A view to show all social media management products
+    '''
+
+    products = Product.objects.filter(category__name='social-media-management')
+
+    context = {
+        'products': products,
+    }
+
+    return render(request, 'products/social_media_management.html', context)
+
+
+@login_required
 def product_detail(request, product_id):
     '''
     A view to show the individual project details.
@@ -73,12 +88,12 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     category = product.category
 
-    print(product.id)
-    
+    referring_page = request.META['HTTP_REFERER']
 
     context = {
         'product': product,
         'category': category,
+        'referring_page': referring_page,
     }
 
 

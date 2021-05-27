@@ -533,6 +533,10 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 ## 5. Django
 
+- ### [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+
+    I referenced this about every 10 minutes while building this project.
+
 - ### [Django Sass](https://medium.com/@issacsurendar/django-sass-3a8b5b52e89b)
 
     Information on how to set up Sass files to work with Django.
@@ -543,7 +547,9 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 - ### [What is reverse()?](https://stackoverflow.com/questions/11241668/what-is-reverse)
 
-    SO explanation of django 'reverse()'.
+    Stack Overflow explanation of django 'reverse()'
+
+- ### [How to Include Django Templates from another App](https://python.web.id/posts/detail/django-how-to-include-templates-from-another-app/)
 
 ## 6. Jinja
 
@@ -575,7 +581,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
 
 - Photo by <a href="https://unsplash.com/@israelandrxde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Israel Andrade</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
 
 #### back to [contents](#table-of-contents) 
 <br>

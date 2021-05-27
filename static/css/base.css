@@ -3,9 +3,9 @@
 
 /*-------------------------- Variables */
 :root {
-
+    /* #148EFF */
     /* Colours */
-    --main-colour: #148EFF;
+    --main-colour: #0E0396;
     --accent-colour: #C3FF17;
     --white: #FFF;
     --dark-text: #333;
@@ -59,6 +59,12 @@
 .button-accent{
     background-color: var(--accent-colour);
     color: var(--dark-text);
+}
+.button-back{
+
+}
+.backlink{
+    margin-top: 1.5rem;
 }
 
 /* Messages */
@@ -233,9 +239,11 @@ ul.social-media-process-list > li{
 
 .side-nav-container{
     background-color: var(--main-colour);
-    width: 200px;
     padding-top: 2rem;
-    height: calc(100vh - 200px);
+    margin-bottom: -2rem;
+    width: 250px;
+    min-height: calc(100vh - 200px);
+    flex-shrink: inherit;
 }
 
 /* Product Categories Pages */
@@ -251,6 +259,18 @@ ul.social-media-process-list > li{
     padding: 3rem;
     letter-spacing: 1.4px;
     font-weight: 400;
+    flex-basis: 100%;
+    width: 100%;
+}
+.details-page-info{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.edit-del-product-details-btns{
+    flex-basis: 100%;
+    text-align: right;
+    margin-right: 5rem;
 }
 .details-page-subheading{
     text-align: center;
@@ -289,6 +309,10 @@ img.web-design-example{
     font-size: 1.3rem;
     letter-spacing: 1px;
     font-weight: 300;
+    overflow-wrap: break-word;
+    flex-grow: 2;
+    margin: 0 auto;
+    width: 70%;
 }
 .web-des-category{
     background-color: var(--main-colour);
@@ -359,6 +383,29 @@ form button.form-button{
 /* Product Details Page */
 .product-details-flex-container{
     display: flex;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+.product-card-img{
+    height: 200px;
+    object-fit: cover;
+}
+.product-card-body{
+    text-align: center;
+}
+.admin-edit-delete-btns{
+    margin-top: 1rem;
+    align-self: flex-end;
+}
+.product-details-flexbox{
+    display: flex;
+}
+img.product-details-page-img{
+    max-width: 500px;
+    min-width: 300px;
+}
+.form-container-product-details{
+    justify-content: center;
 }
 
 
@@ -423,10 +470,6 @@ form button.form-button{
 
 /* CI Boutique Ado Tutorial Code Ends Here */
 
-/* Product Details Page */
-img.product-image {
-    width: 300px;
-}
 
 /* Product Form - Code From CI Boutique Ado Tut */
 
