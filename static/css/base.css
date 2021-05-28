@@ -253,7 +253,8 @@ ul.social-media-process-list > li{
     flex-direction: column;
     justify-content: center;
 }
-.details-page-heading{
+.details-page-heading,
+.profile-page-heading{
     font-family: var(--heading-font);
     text-align: center;
     font-size: 3rem;
@@ -273,7 +274,8 @@ ul.social-media-process-list > li{
     text-align: right;
     margin-right: 5rem;
 }
-.details-page-subheading{
+.details-page-subheading,
+.profile-page-subheading{
     text-align: center;
     font-size: 1.6rem;
     letter-spacing: 1px;
@@ -407,11 +409,22 @@ img.product-details-page-img{
 .form-container-product-details{
     justify-content: center;
 }
+.details-page-features-heading{
+    text-align: left;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+}
 
 /* Profile Page */
 
 .profile-page-btn{
     margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 form.profile-page-form label{
     margin: 0.6rem 0.4rem 0;

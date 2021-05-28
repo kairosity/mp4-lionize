@@ -315,6 +315,17 @@ The crux of this application's purpose is as a B2B service provider that allows 
 #### back to [contents](#table-of-contents) 
 <br>
 
+# Future Features To Implement and Issues Remaining
+
+## Adding Features to Products
+
+The addition of specific features to the products works perfectly as long as the administrator adding the products formats them correctly with commas after each new feature. There is potential here for errors, and one way around this would be to incorporate a tag block using JavaScript. 
+
+## Adding Subscription Services for Social Media Management
+
+There is the potential to add monthly subscription services and connect them to the Stripe subscription payment system.
+This would streamline the social media management services in particular and allow for better customer retention. 
+
 # Deployment 
 
 ## Application deployment using Heroku

@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="flex-container product-details-flex-container hello">
+<div class="flex-container product-details-flex-container">
 
 {% include 'includes/side-nav.html' %}
 
@@ -14,13 +14,12 @@
     <div class="container-fluid">
         <header class=" d-flex flex-column">
             <div class="container">
-                <h1 class="">{{request.user.first_name}}'s Order History</h1>
-                <h2 class="">Here is your order history.</h2>
+                <h1 class="profile-page-heading mt-4 mb-3">{{request.user.first_name}}'s Order History</h1>
             </div>
         </header>
         <section>
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 offset-md-3">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
                             <thead>
@@ -60,6 +59,7 @@
             </div>
         </section>  
         </div>
+    </div>  
     
 {% endblock %}
 

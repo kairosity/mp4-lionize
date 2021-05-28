@@ -16,17 +16,16 @@
         
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
-                <h1 class="">{{request.user.first_name}}'s Profile</h1>
-                <h2 class="">Here are your profile details, please update anything that needs changing.</h2>
+                <h1 class="profile-page-heading">{{request.user.first_name}}'s Profile</h1>
+                <h2 class="profile-page-subheading">Here are your profile details, please keep this form updated.</h2>
             </div>
         </header>
         <section>
-            <div class="row">
-                <div class="col-10 offset-1 col-lg-6">
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-6">
         
                     <form action="{% url 'profile' %}" method="POST" class="mt-3 profile-page-form" id="profile-update-form">
                         {% csrf_token %}
-                        <!-- {{ form|crispy }} -->
                         <small>Billing Details</small>
                         <div class="form-row row">
                             <div class="form-row row">
@@ -60,22 +59,29 @@
                         <br>
                         <small class="form-heading">Social Media Details</small>
                         <div class="form-row row">
-                            <div class="form-group col-6">
-                                {{ form.instagram_handle| as_crispy_field }}
+                            <div class="form-row row">
+                                <div class="form-group col-6">
+                                    {{ form.instagram_handle| as_crispy_field }}
+                                </div>
+                                <div class="form-group col-6">
+                                    {{ form.twitter_handle| as_crispy_field }}
+                                </div>
                             </div>
-                            <div class="form-group col-6">
-                                {{ form.twitter_handle| as_crispy_field }}
+                            <div class="form-row row">
+                                <div class="form-group col-6">
+                                    {{ form.linkedin_handle| as_crispy_field }}
+                                </div>
+                                <div class="form-group col-6">
+                                    {{ form.facebook_handle| as_crispy_field }}
+                                </div>
+                                <div class="form-group">
+                                    <button class="button-accent button profile-page-btn col-12">Update Information</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row row">
-                            <div class="form-group col-6">
-                                {{ form.linkedin_handle| as_crispy_field }}
-                            </div>
-                            <div class="form-group col-6">
-                                {{ form.facebook_handle| as_crispy_field }}
-                            </div>
+                        <div class="row form-row">
+                            
                         </div>
-                        <button class="button-accent button profile-page-btn">Update Information</button>
                     </form>
                 </div>
             </div>

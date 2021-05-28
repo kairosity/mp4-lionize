@@ -87,6 +87,11 @@ def product_detail(request, product_id):
     '''
     product = get_object_or_404(Product, pk=product_id)
     category = product.category
+    
+    if product.features:
+        features = product.features.split(",")
+    else:
+        features = None
 
     referring_page = request.META['HTTP_REFERER']
 
@@ -94,6 +99,7 @@ def product_detail(request, product_id):
         'product': product,
         'category': category,
         'referring_page': referring_page,
+        'features' : features,
     }
 
 
@@ -132,7 +138,7 @@ def edit_product(request, product_id):
     '''
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do that!')
+        messages.error(request, 'Sorry but you are not authorized to edit Lionize products!')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)

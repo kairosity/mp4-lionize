@@ -33,6 +33,15 @@
             {% endif %}
             <div class="d-flex flex-column">
                 <p class="details-page-text"> {{product.description}}</p>
+
+                {% if features %}
+                    <h3 class="details-page-features-heading">Features include:</h3>
+                    <ul class="details-page-text">
+                        {% for feature in features %}
+                            <li>{{ feature|title }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 <p class="details-page-text text-align-center"> €{{product.price}}</p>
             </div>
             {% if request.user.is_superuser %}
