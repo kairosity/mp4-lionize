@@ -11,20 +11,17 @@
     <div class="container-fluid">
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
-                <h1 class="shopping-bag-heading">lionize: Shopping Bag</h1>
-                <h2 class="shopping-bag-subheading">A digitial agency with <span class="accent-underline">fresh</span> ideas to enhance your online presence & brand identity.</h2>
+                <h1 class="profile-page-heading">{{request.user.first_name}}'s Shopping Bag</h1>
             </div>
         </header>
         <section>
-            <h2>Your Orders</h2>
-            <p>Orders listed here</p>
-
             {% if bag_items %}
-            <div class="table-responsive rounded">
+            <div class="row">
+            <div class="table-responsive rounded col col-10 offset-1">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col">Product Info</th>
+                            <th class="text-align-right" scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">VAT @23%</th>
@@ -47,10 +44,10 @@
                                 <p class="my-0 small text-muted">{{ item.product.category.friendly_name }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0 small">€{{ item.product.price }}</p>
+                                <p class="my-0 small">€{{ item.product.price|floatformat:2 }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0 small">€{{ item.product.price | vat }}</p>
+                                <p class="my-0 small">€{{ item.product.price | vat|floatformat:2 }}</p>
                             </td>
                             <td class="py-3">
                                 <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
@@ -78,25 +75,25 @@
                                                     data-size="{{ item.size }}"><small>Remove</small></a>
                             </td>
                             <td class="py-3">
-                                <p class="my-0 small ">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                <p class="my-0 small ">€{{item.product.price | calc_subtotal:item.quantity}}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0 small ">€{{ item.product.price | subtotalinclvat:item.quantity }} </p>
+                                <p class="my-0 small ">€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}} </p>
                             </td>
                                 
                         </tr>
                     {% endfor %}
 
                     <tr>
-                        <td colspan="5" class="pt-5 text-right">
+                        <td colspan="6" class="pt-5 text-align-right">
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                             <h6><strong>VAT @23%: €{{ vat_total|floatformat:2 }}</strong></h6>
-                            <h6><strong>Grand Total: €{{ grand_total }}</strong></h6>
+                            <h6><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h6>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5" class="text-right">
-                            <a href="{% url 'products' %}" class="button button-accent">
+                        <td colspan="6" class="text-align-right">
+                            <a href="{% url 'products' %}" class="button button-main me-2">
                                 <span>Keep Shopping</span>
                             </a>
                             <a href="{% url 'checkout' %}" class="button button-accent">
@@ -105,12 +102,11 @@
                         </td>
                     </tr>
                 </table>
-                {{ bag_items }}
-                {{ total }}
             </div>
             {% else %}
             <p>Your shopping bag is empty.</p>
             {% endif %}
+        </div>
         </section>
     </div>
 </div>

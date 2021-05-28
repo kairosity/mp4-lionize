@@ -6,7 +6,11 @@
     /* #148EFF */
     /* Colours */
     --main-colour: #0E0396;
+    --lighter-main: #1640FF;
     --accent-colour: #C3FF17;
+    --accent-darker: #5F7C2D;
+    --cancel-colour: #B33D3D;
+    --lighter-cancel: #EE4D4D;
     --white: #FFF;
     --dark-text: #333;
     --muted-text: #736F73;
@@ -33,6 +37,9 @@
 .text-align-left{
     text-align: left;
 }
+.text-align-right{
+    text-align: right;
+}
 .text-align-center{
     text-align: center;
 }
@@ -50,19 +57,34 @@
     transition: all 0.5s ease;
     text-decoration: none;
 }
-.button:hover{
-    filter: brightness(85%);
-}
 .button-main{
     background-color: var(--main-colour);
+    color: var(--white);
+}
+.button-main:hover{
+    background-color: var(--lighter-main);
     color: var(--white);
 }
 .button-accent{
     background-color: var(--accent-colour);
     color: var(--dark-text);
 }
-.button-back{
-
+.button-accent:hover{
+    background-color: var(--accent-darker);
+    color: var(--white);
+}
+.button-form{
+    background-color: var(--accent-colour);
+    color: var(--dark-text);
+    font-size: 0.9rem;
+}
+.button-cancel{
+    background-color: var(--cancel-colour);
+    color:var(--white);
+}
+.button-cancel:hover{
+    background-color: var(--lighter-cancel);
+    color: var(--white);
 }
 .backlink{
     margin-top: 1.5rem;
@@ -526,6 +548,20 @@ small.form-heading{
 }
 
 /* CI Boutique Ado Tutorial Code Ends Here */
+
+/* Admin Pages */
+/* Edit Product Form Page */
+
+.admin-page-heading{
+    font-family: var(--heading-font);
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    letter-spacing: 1.4px;
+    font-weight: 400;
+    flex-basis: 100%;
+    width: 100%;
+}
 
 /* Footer */
 

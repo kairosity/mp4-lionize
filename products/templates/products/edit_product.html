@@ -11,30 +11,58 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">{{product.category|title}} Product Management</h2>
+                <h2 class="admin-page-heading mb-4">{{product.category|title}} Product Management</h2>
                 <h5 class="text-muted">Edit "{{product.friendly_name|title}}"</h5>
                 <hr>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                    <div class="form-row row mb-2">
+                        <div class="form-group col-12 mb-0">
+                            {{ form.category | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row row mb-2">
+                        <div class="form-group col-md-6">
+                            {{ form.name | as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ form.friendly_name | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row row mb-2">
+                        <div class="form-group col-12 mb-0">
+                            {{ form.description | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row row mb-2">
+                        <div class="form-group col-12 mb-0">
+                            {{ form.features | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row row mb-2">
+                        <div class="form-group col-12 mb-0">
+                            {{ form.price | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="form-row row">
+                        <div class="form-group col-md-3">
+                            {{ form.image }}
+                        </div>
+                        <div class="form-group col-md-9">
+                            {{ form.image_url | as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mb-5">
+                        <a class="button button-cancel me-1" href="{% url 'products' %}">Cancel</a>
+                        <button class="button button-main ms-1" type="submit">Update Product</button>
                     </div>
                 </form>
             </div>            
