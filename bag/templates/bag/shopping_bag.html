@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="flex-container product-details-flex-container hello">
+<div class="flex-container product-details-flex-container">
 
     {% include 'includes/side-nav.html' %}
 
@@ -104,7 +104,10 @@
                 </table>
             </div>
             {% else %}
-            <p>Your shopping bag is empty.</p>
+            <p class="profile-page-subheading">Your shopping bag is empty.</p>
+            <div class="image-container">
+                <img class="img-fluid empty-shopping-bag" src="{{ MEDIA_URL }}empty-bag.jpg" alt="empty shopping bag">
+            </div>
             {% endif %}
         </div>
         </section>

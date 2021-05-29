@@ -3,12 +3,12 @@
 
 /*-------------------------- Variables */
 :root {
-    /* #148EFF */
+    /* #148EFF #C3FF17 */
     /* Colours */
-    --main-colour: #0E0396;
-    --lighter-main: #1640FF;
-    --accent-colour: #C3FF17;
-    --accent-darker: #5F7C2D;
+    --main-colour: #10AAF7;
+    --lighter-main: #91E3FD;
+    --accent-colour: #F3C311;
+    --accent-lighter: #FDE691;
     --cancel-colour: #B33D3D;
     --lighter-cancel: #EE4D4D;
     --white: #FFF;
@@ -70,8 +70,7 @@
     color: var(--dark-text);
 }
 .button-accent:hover{
-    background-color: var(--accent-darker);
-    color: var(--white);
+    background-color: var(--accent-lighter);
 }
 .button-form{
     background-color: var(--accent-colour);
@@ -88,6 +87,10 @@
 }
 .backlink{
     margin-top: 1.5rem;
+}
+a.button:hover{
+    text-decoration: none;
+    color: var(--dark-text);
 }
 
 /* Messages */
@@ -268,6 +271,16 @@ ul.social-media-process-list > li{
     min-height: calc(100vh - 200px);
     flex-shrink: inherit;
 }
+.white-hr{
+    background-color: var(--white);
+    height: 5px !important;
+}
+p.side-nav-heading{
+    color: white;
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
 
 /* Product Categories Pages */
 .web-design-container{
@@ -442,6 +455,10 @@ img.product-details-page-img{
     margin-bottom: 0.9rem;
 }
 
+.card-text{
+    min-height: 72px;
+}
+
 /* Profile Page */
 
 .profile-page-btn{
@@ -463,6 +480,16 @@ small.form-heading{
 .remove-item {
     cursor: pointer;
 }
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+img.empty-shopping-bag{
+    max-width: 300px;
+    object-fit: cover;
+    margin-top: 1rem;
+}
+
 
 /* The Following Code is all from the CI Boutique Ado Tutorial */
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -572,6 +599,8 @@ footer.footer{
 }
 .footer .links-row{
     padding-top: 4rem;
+    width: 70%;
+    justify-content: center;
 }
 .text-links-container .center-me{
     align-self: center;

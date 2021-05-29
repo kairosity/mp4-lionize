@@ -570,6 +570,10 @@ This would streamline the social media management services in particular and all
 
     Used to work out how to reference the referring page, for back buttons.
 
+- ### [Advanced Form Rendering with Django Crispy Forms](https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html)
+
+    Used to customise the layout and content of all forms on the application.
+
 ## 6. Jinja
 
 ## 7. General
@@ -601,6 +605,8 @@ This would streamline the social media management services in particular and all
 
 - Photo by <a href="https://unsplash.com/@israelandrxde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Israel Andrade</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+- Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/empty-bag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 #### back to [contents](#table-of-contents) 
 <br>

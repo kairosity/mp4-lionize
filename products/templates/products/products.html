@@ -3,21 +3,21 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <header class="details-page-header d-flex flex-column">
-        <div class="container">
-            <h1 class="details-page-heading">All Digital Products</h1>
-            <h2 class="details-page-subheading"> <span class="accent-underline">Here are all our digital products, excluding subscription services.</span> </h2>
+<div class="flex-container product-details-flex-container">
 
-            <div class="col">
-                {{ products }}
+    {% include 'includes/side-nav.html' %}
+
+    <div class="container-fluid col-12 col-md-8">
+        <header class="details-page-header d-flex flex-column">
+            <div class="container">
+                <h1 class="details-page-heading">All Products</h1>
+                <h2 class="details-page-subheading"> Here are all our digital products and services.</h2>
             </div>
-        </div>
-    </header>
-    
+        </header>
+
+        {% include 'includes/product-cards.html' %}
         
+    </div>
+
 </div>
-
-
-
 {% endblock %}

@@ -11,7 +11,7 @@
                         <h5 class="card-title">{{ product.friendly_name }}</h5>
                         <p class="card-text">{{ product.description|truncatechars:108 }}</p>
                         <p>€{{ product.price }}</p>
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">More Details</a>
+                        <a href="{% url 'product_detail' product.id %}" class="button button-main">More Details</a>
                         {% if request.user.is_superuser %}
                             <small class="ml-3 admin-edit-delete-btns">
                                 <a href="{% url 'edit_product' product.id %}">Edit</a> | 

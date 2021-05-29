@@ -172,31 +172,43 @@
                     <div class="row links-row">
                         <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10 col-md-6 col-lg-4">
                         <div class="center-me">
-                            <h5 class="footer-heading">Subsection1</h5>
-                            <Link href="#"><a class="nav-link" >First Link</a></Link>
-                            <Link href="#"><a class="nav-link" >Second Link</a></Link>
-                            <Link href="#"><a class="nav-link">Third Link</a></Link>
-                            <Link href="#"><a class="nav-link">Fourth Link</a></Link>
+                            <h5 class="footer-heading">Services</h5>
+                            <a href="{% url 'webdesign' %}" class="nav-link" >Web Design</a>
+                            <a href="{% url 'seo' %}" class="nav-link" >SEO</a>
+                            <a href="{% url 'social-media-management' %}" class="nav-link">Social Media Management</a>
+                            <a href="{% url 'content-creation' %}" class="nav-link">Content Creation</a>
                         </div>
+                        </div>
+                        {% if not request.user.is_authenticated %}
+                            <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                                <div class="center-me">
+                                    <h5 class="footer-heading">Join Us!</h5>
+                                    <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
+                                    <a href="{% url 'account_login' %}" class="nav-link">Login</a> 
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if request.user.is_authenticated %}
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                            <div class="center-me">
+                                <h5 class="footer-heading">User Portal</h5>
+                                <a href="{% url 'profile' %}" class="nav-link">Your Profile</a>
+                                <a href="{% url 'view_shopping_bag' %}" class="nav-link">Your Shopping Bag</a>
+                                <a href="{% url 'user_orders' %}" class="nav-link">Your Orders</a>
+                            </div>
                         </div>
                         <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
-                        <div class="center-me">
-                            <h5 class="footer-heading">Subsection2</h5>
-                            <Link href="#"><a class="nav-link">Fifth Link</a></Link>
-                            <Link href="#"><a class="nav-link">Sixth Link</a></Link>
-                            <Link href="#"><a class="nav-link">Seventh Link</a></Link>
-                            <Link href="#"><a class="nav-link">Eighth Link</a></Link>
+                            <div class="center-me">
+                                <h5 class="footer-heading">Shop</h5>
+                                <a href="{% url 'products' %}" class="nav-link">Shop All Products</a>
+                                <a href="{% url 'view_shopping_bag' %}" class="nav-link">Shop Web Design</a>
+                                <a href="{% url 'user_orders' %}" class="nav-link">Shop SEO</a>
+                                <a href="{% url 'view_shopping_bag' %}" class="nav-link">Shop Social Media Management</a>
+                                <a href="{% url 'content-creation-products' %}" class="nav-link">Shop Content Creation</a>
+                            </div>
                         </div>
-                        </div>
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
-                        <div class="center-me">
-                            <h5 class="footer-heading">Subsection3</h5>
-                            <Link href="#"><a class="nav-link">Ninth Link</a></Link>
-                            <Link href="#"><a class="nav-link">Tenth Link</a></Link>
-                            <Link href="#"><a class="nav-link">Eleventh Link</a></Link>
-                            <Link href="#"><a class="nav-link">Twelfth Link</a></Link>
-                        </div>
-                        </div>
+                        {% endif %}
                     </div>
                     <div class="footer-social-media row d-flex flex-column">
                         <div class="social-media-container d-flex flex-column">
