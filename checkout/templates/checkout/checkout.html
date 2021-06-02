@@ -68,7 +68,7 @@
 
                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}
-                            <fieldset class="px-3 mb-5">
+                            <fieldset class="px-3 mb-5 checkout-border">
                                 <legend class="fieldset-label small text-black px-2 w-auto">Details:</legend>
                                 {{ order_form.full_name | as_crispy_field }}
                                 {{ order_form.email | as_crispy_field }}
@@ -79,12 +79,12 @@
                                 {{ order_form.county | as_crispy_field }}
                                 {{ order_form.postcode | as_crispy_field }}
                                 {{ order_form.country | as_crispy_field }}
-                                <div class="form-check form-check-inline mr-0">
+                                <div class="form-check form-check-inline mr-0 mt-4">
                                     <label for="id-save-info">Save this information to my profile</label>
                                     <input class="form-check-input" type="checkbox" id='id-save-info' name='save-info'>
                                 </div>
                             </fieldset>
-                            <fieldset class="px-3 mb-5">
+                            <fieldset class="px-3 mb-5 checkout-border">
                                 <legend class="fieldset-label small text-black px-2 w-auto">Payment:</legend>
                                 <!-- Stripe card element -->
                                 <div class="mb-3" id="card-element"></div>
@@ -96,7 +96,7 @@
                             <div class="submit-button text-right mt-5 mb-2">
                                 <a href="{% url 'view_shopping_bag' %}" class="button button-accent">Adjust Bag</a>
                                 <button id="submit-button" class="button button-accent">Complete Order</button>
-                                <p class="small danger-text my-0">Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></p>
+                                <p class="small danger-text my-0 mb-5">Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></p>
                             </div>
                         </form>
                     </div>

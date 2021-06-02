@@ -92,6 +92,10 @@ a.button:hover{
     text-decoration: none;
     color: var(--dark-text);
 }
+button.increment-qty,
+button.decrement-qty{
+    border-radius: 12px;
+}
 
 /* Messages */
 .toast{
@@ -306,8 +310,9 @@ p.side-nav-heading{
 }
 .edit-del-product-details-btns{
     flex-basis: 100%;
-    text-align: right;
+    text-align: center;
     margin-right: 5rem;
+    padding-bottom: 2rem;
 }
 .details-page-subheading,
 .profile-page-subheading{
@@ -454,7 +459,9 @@ img.product-details-page-img{
     margin-top: 2rem;
     margin-bottom: 0.9rem;
 }
-
+.product-details-text-container{
+    flex-basis: 100%;
+}
 .card-text{
     min-height: 72px;
 }

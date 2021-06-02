@@ -54,7 +54,7 @@
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <button class="decrement-qty button button-accent rounded-0"
+                                            <button class="decrement-qty button button-accent"
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                     <span class=""><i class="fas fa-minus fa-sm"></i></span>
                                             </button>
@@ -63,7 +63,7 @@
                                             value="{{ item.quantity }}" min="1" max="20" data-item_id="{{ item.item_id }}" 
                                             id="id_qty_{{ item.item_id }}">
             
-                                            <button class="increment-qty button button-accent rounded-0"
+                                            <button class="increment-qty button button-accent"
                                                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                     <span class=""><i class="fas fa-plus fa-sm"></i></span>
                                             </button>

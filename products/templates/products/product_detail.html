@@ -21,7 +21,13 @@
 
     <section class="d-flex flex-column">
         <div class="d-flex details-page-info">
-            <h1 class="details-page-heading">{{product.friendly_name}}</h1>
+            <h1 class="details-page-heading pb-0">{{product.friendly_name}}</h1>
+            {% if request.user.is_superuser %}
+                <small class="ml-3 edit-del-product-details-btns">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
+            {% endif %}
             {% if product.image %}
                 <a class="align-self-center" href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid product-image product-details-page-img" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -31,7 +37,7 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}No-image-available.png" alt="{{ product.name }}">
                 </a>
             {% endif %}
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column product-details-text-container">
                 <p class="details-page-text"> {{product.description}}</p>
 
                 {% if features %}
@@ -44,12 +50,6 @@
                 {% endif %}
                 <p class="details-page-text text-align-center"> €{{product.price}}</p>
             </div>
-            {% if request.user.is_superuser %}
-                <small class="ml-3 edit-del-product-details-btns">
-                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                </small>
-            {% endif %}
         </div>
     </section>
 
@@ -62,7 +62,7 @@
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group">
                             <div class="input-group">
-                                <button class="decrement-qty button button-accent rounded-0"
+                                <button class="decrement-qty button button-accent "
                                         data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                         <span class="icon"><i class="fas fa-minus"></i></span>
                                 </button>
@@ -71,7 +71,7 @@
                                 value="1" min="1" max="20" data-item_id="{{ product.id }}" 
                                 id="id_qty_{{ product.id }}">
 
-                                <button class="increment-qty button button-accent rounded-0"
+                                <button class="increment-qty button button-accent"
                                         data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                                         <span class="icon"><i class="fas fa-plus"></i></span>
                                 </button>

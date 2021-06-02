@@ -1,3 +1,27 @@
+:root {
+    /* Colours */
+    --main-colour: #10AAF7;
+    --lighter-main: #91E3FD;
+    --accent-colour: #F3C311;
+    --accent-lighter: #FDE691;
+    --cancel-colour: #B33D3D;
+    --lighter-cancel: #EE4D4D;
+    --white: #FFF;
+    --dark-text: #333;
+    --muted-text: #736F73;
+
+    /* Font Styles */ 
+    --heading-font: "Quicksand", sans-serif;
+    --main-text-font: "Open Sans", sans-serif;
+
+    /* Breakpoints */
+    --breakpoint-large-mobile: 576px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-small-desktop: 992px;
+    --breakpoint-desktop: 1200px;
+    --breakpoint-large-desktop: 1400px;
+}
+
 /* Stripe Styles */
 
 .StripeElement,
@@ -6,7 +30,7 @@
     height: 40px;
     padding: 10px 12px;
     border: 1px solid transparent;
-    border-radius: 0px;
+    border-radius: 8px;
     background-color: white;
     box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 150ms ease;
@@ -35,7 +59,12 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 1px solid #000;
+}
+
+fieldset.checkout-border{
+    border: var(--main-colour) 2px solid;
+    border-radius: 12px;
+    padding: 1rem;
 }
 
 select, 
@@ -56,7 +85,7 @@ select option[value=""]{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 162, 184, .85);
+    background: var(--main-colour);
     z-index: 9999;
 }
 
