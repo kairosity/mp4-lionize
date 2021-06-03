@@ -534,6 +534,12 @@ This would streamline the social media management services in particular and all
 
     Used to select colours.
 
+- ### [Responsive Data Tables](https://css-tricks.com/responsive-data-tables/)
+
+    Used to make the shopping bag responsive.
+
+- ### [A Complete Guide To Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 ## 3. JavaScript
 
 - ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)

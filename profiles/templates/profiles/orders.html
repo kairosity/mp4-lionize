@@ -19,7 +19,7 @@
         </header>
         <section>
             <div class="row">
-                <div class="col-12 col-lg-6 offset-md-3">
+                <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
                             <thead>
@@ -32,7 +32,7 @@
                             </thead>
                             <tbody>
                                 {% for order in orders %}
-                                    <tr>
+                                    <tr class="order-table-row">
                                         <td>
                                             <a href="{% url 'order_history' order.order_number %}"
                                             title="{{ order.order_number }}">

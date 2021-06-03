@@ -656,12 +656,18 @@ footer a.nav-link:hover{
     .footer .links-row{
         width: 90%;
     }
+    .bag-table{
+        margin-right: 2rem;
+    }
 }
 
 /* Media Queries - Bootstrap md */
 @media (min-width: 768px ) {
     .details-page-intro-image{
         max-width: 600px;
+    }
+    .bag-table{
+        margin-right: 4rem;
     }
     .form-container{
         border-radius: 12px;
@@ -798,5 +804,32 @@ only screen and (max-width: 1200px)  {
         font-size: 0.9rem;
         margin-top: 0.6rem;
         width: 200px;
+    }
+
+    /* Orders Page */
+    .order-table-row{
+        text-align: right;
+    }
+    /* Labels */
+	.order-table-row > td:nth-of-type(1):before { 
+        content: "Order Number:";
+        text-align: left;
+        margin-top: 10px;
+    }
+	.order-table-row > td:nth-of-type(2):before { 
+        content: "Date:";
+        text-align: left;
+        margin-top: 10px;
+    }
+	.order-table-row > td:nth-of-type(3):before { 
+        content: "Product:";
+        text-align: left;
+        margin-top: 10px;
+    }
+	.order-table-row > td:nth-of-type(4):before { 
+        content: "Order Total:";
+        text-align: left;
+        color: var(--main-colour);
+        margin-top: 10px;
     }
 }
