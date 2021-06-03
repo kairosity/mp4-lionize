@@ -303,7 +303,10 @@ p.side-nav-heading{
     font-family: var(--heading-font);
     text-align: center;
     font-size: 2rem;
-    padding: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     letter-spacing: 1.4px;
     font-weight: 400;
     flex-basis: 100%;
@@ -317,7 +320,7 @@ p.side-nav-heading{
 .edit-del-product-details-btns{
     flex-basis: 100%;
     text-align: center;
-    margin-right: 5rem;
+    /* margin-right: 5rem; */
     padding-bottom: 2rem;
 }
 .details-page-subheading,
@@ -426,6 +429,10 @@ form button.form-button{
     margin-top: 1rem;
 }
 
+/* Product Category Shop Page */
+.product-card-col{
+    margin-top: 2rem;
+}
 /* Product Details Page */
 .product-details-flex-container{
     display: flex;
@@ -468,6 +475,11 @@ img.product-details-page-img{
 }
 .card-text{
     min-height: 72px;
+}
+.product-details-price{
+    font-weight: 500;
+    color: var(--main-colour);
+    margin-top: 1.5rem;
 }
 
 /* Profile Page */
@@ -812,24 +824,28 @@ only screen and (max-width: 1200px)  {
     }
     /* Labels */
 	.order-table-row > td:nth-of-type(1):before { 
-        content: "Order Number:";
+        content: "Order Reference:";
         text-align: left;
         margin-top: 10px;
+        font-weight: 500;
     }
 	.order-table-row > td:nth-of-type(2):before { 
         content: "Date:";
         text-align: left;
         margin-top: 10px;
+        font-weight: 500;
     }
 	.order-table-row > td:nth-of-type(3):before { 
         content: "Product:";
         text-align: left;
         margin-top: 10px;
+        font-weight: 500;
     }
 	.order-table-row > td:nth-of-type(4):before { 
         content: "Order Total:";
         text-align: left;
         color: var(--main-colour);
         margin-top: 10px;
+        font-weight: 500;
     }
 }

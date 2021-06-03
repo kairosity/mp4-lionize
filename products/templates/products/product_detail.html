@@ -48,7 +48,7 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <p class="details-page-text text-align-center"> €{{product.price}}</p>
+                <p class="details-page-text text-align-center product-details-price"> €{{product.price}}</p>
             </div>
         </div>
     </section>
@@ -58,7 +58,7 @@
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
                 <!-- <div class="form-row"> -->
-                    <div class="col-3 col-md-2 offset-md-5">
+                    <div class="col-5 offset-3 col-md-2 offset-md-5">
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group">
                             <div class="input-group">
