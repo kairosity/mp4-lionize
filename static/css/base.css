@@ -14,6 +14,7 @@
     --white: #FFF;
     --dark-text: #333;
     --muted-text: #736F73;
+    --lightest-grey: rgb(243, 243, 243);
 
     /* Font Styles */ 
     --heading-font: "Quicksand", sans-serif;
@@ -50,7 +51,6 @@
 
 .button {
     padding:7px 14px;
-    border-radius: 3px;
     font-family: var(--main-text-font);
     font-size: 1.1rem;
     border: none;
@@ -60,6 +60,7 @@
 .button-main{
     background-color: var(--main-colour);
     color: var(--white);
+    border-radius: 5px;
 }
 .button-main:hover{
     background-color: var(--lighter-main);
@@ -68,6 +69,7 @@
 .button-accent{
     background-color: var(--accent-colour);
     color: var(--dark-text);
+    border-radius: 5px;
 }
 .button-accent:hover{
     background-color: var(--accent-lighter);
@@ -95,6 +97,9 @@ a.button:hover{
 button.increment-qty,
 button.decrement-qty{
     border-radius: 12px;
+}
+.input-group input.special-input-group-button{
+    border-radius: 6px !important;
 }
 
 /* Messages */
@@ -232,6 +237,7 @@ h2.homepage-subheading span.accent-underline{
 .blue-bg-section{
     background-color: var(--main-colour);
     color: var(--white);
+    padding-bottom: 3rem;
 }
 .button-wrapper{
     margin-bottom: 2rem;
@@ -252,7 +258,7 @@ h2.homepage-subheading span.accent-underline{
     margin-top: 6rem;
 }
 .contact-form{
-    padding: 0 26rem;
+    padding: 0 2rem;
 }
 .social-media-process-container{
     margin-top: 3rem;
@@ -296,7 +302,7 @@ p.side-nav-heading{
 .profile-page-heading{
     font-family: var(--heading-font);
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 3rem;
     letter-spacing: 1.4px;
     font-weight: 400;
@@ -317,12 +323,12 @@ p.side-nav-heading{
 .details-page-subheading,
 .profile-page-subheading{
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     letter-spacing: 1px;
     font-weight: 300;
+    margin: 0 10px;
 }
 .details-page-intro-image{
-    max-width: 600px;
     height: auto;
     align-self: center;
 }
@@ -355,7 +361,7 @@ img.web-design-example{
     overflow-wrap: break-word;
     flex-grow: 2;
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
 }
 .web-des-category{
     background-color: var(--main-colour);
@@ -396,8 +402,6 @@ img.web-design-example{
     max-width: 600px;
     margin-top: 3rem;
     background-color: var(--white);
-    border-radius: 12px;
-    border: var(--main-colour) 3px solid;
     margin-bottom: 3rem;
 }
 h1.form-heading{
@@ -606,11 +610,10 @@ footer.footer{
 }
 .footer .links-row{
     padding-top: 4rem;
-    width: 70%;
+    width: 55%;
     justify-content: center;
 }
 .text-links-container .center-me{
-    align-self: center;
     padding: 1.2rem;
 }
 .center-me .footer-heading{
@@ -644,6 +647,32 @@ footer a.nav-link:hover{
 }
 /* footer styles end */
 
+/* Media Queries - Bootstrap sm */
+@media (min-width: 576px ) {
+    .details-page-heading,
+    .profile-page-heading{
+        font-size: 3rem;
+    }
+    .footer .links-row{
+        width: 90%;
+    }
+}
+
+/* Media Queries - Bootstrap md */
+@media (min-width: 768px ) {
+    .details-page-intro-image{
+        max-width: 600px;
+    }
+    .form-container{
+        border-radius: 12px;
+        border: var(--main-colour) 3px solid;
+    }
+    .footer .links-row{
+        width: 80%;
+    }
+}
+
+/* Media Queries - Bootstrap lg */
 @media (min-width: 992px ) {
     nav{
         font-family: var(--main-text-font);
@@ -663,16 +692,111 @@ footer a.nav-link:hover{
     h1.homepage-heading{
         font-size: 11rem;
     }
+    .details-page-text{
+        width: 70%;
+    }
+    .footer .links-row{
+        width: 70%;
+    }
 }
-
+/* Media Queries - Bootstrap xl */
 @media (min-width: 1200px) {
     body {
         margin: 0;
     }
+    .footer .links-row{
+        width: 50%;
+    }
+}
+/* Media Queries - Bootstrap xxl */
+@media (min-width: 1400px) {
+    .footer .links-row{
+        width: 40%;
+    }
+    
 }
 
-@media (min-width: 1400px) {
-    body {
-        margin: 0;
+/* Transforming the Shopping Bag Table To be responsive on mobile.
+Initial boilerplate code for this taken from:  https://css-tricks.com/responsive-data-tables/ */
+@media 
+only screen and (max-width: 1200px)  {
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+        border: var(--lightest-grey) 1px solid; 
+    }
+    tr.bag-product-row:after{
+        display: inline-block;
+        border-bottom: var(--main-colour) 2px solid;
+        content: "";
+        width: 100%;
+    }
+	td { 
+		border: none;
+		position: relative;
+		padding: 0.6rem;
+        margin-bottom: 0.7rem;
+	}
+	td:before { 
+		position: absolute;
+		top: -9px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+        font-size: 1.1rem;
+        font-weight: 300;
+	}
+
+    .update-form{
+        width: 55%;
+    }
+    img.bag-img{
+        min-width: 200px;
+    }
+	.bag-product-row{
+        padding-top: 1rem;
+    }
+    /* Labels */
+	.bag-product-row > td:nth-of-type(1):before { 
+        content: "Product Info";
+        color: var(--main-colour);
+    }
+	.bag-product-row > td:nth-of-type(2):before { 
+        content: "";
+    }
+	.bag-product-row > td:nth-of-type(3):before { 
+        content: "Price";
+        color: var(--main-colour); 
+    }
+	.bag-product-row > td:nth-of-type(4):before { 
+        content: "VAT @23%";
+        color: var(--main-colour);
+    }
+	.bag-product-row > td:nth-of-type(5):before { 
+        content: "Quantity";
+        color: var(--main-colour); 
+    }
+	.bag-product-row > td:nth-of-type(6):before { 
+        content: "Subtotal Incl. VAT";
+        color: var(--main-colour);
+        font-weight: 500;
+    }
+    .final-totals-row,
+    .bag-buttons-row{
+        border: none;
+    }
+    .bag-button{
+        font-size: 0.9rem;
+        margin-top: 0.6rem;
+        width: 200px;
     }
 }

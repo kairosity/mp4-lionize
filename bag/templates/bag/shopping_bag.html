@@ -16,8 +16,8 @@
         </header>
         <section>
             {% if bag_items %}
-            <div class="row">
-            <div class="table-responsive rounded col col-10 offset-1">
+            <div class="row justify-content-center">
+            <div class="table-responsive rounded col col-10 offset-1 col-md-6 offset-md-3">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
@@ -26,31 +26,31 @@
                             <th scope="col">Price</th>
                             <th scope="col">VAT @23%</th>
                             <th scope="col">Quantity</th>
-                            <th scope="col">Subtotal</th>
+                            <!-- <th scope="col">Subtotal</th> -->
                             <th scope="col">Subtotal Incl. VAT</th>
                         </tr>
                     </thead>
                     {% for item in bag_items %}
-                        <tr>
-                            <td class="p-3 w-25">
+                        <tr class="bag-product-row">
+                            <td class="p-3 w-25 bag-td">
                                 {% if item.product.image %}
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="">
+                                    <img class="img-fluid rounded bag-img" src="{{ item.product.image.url }}" alt="">
                                 {% else %}
                                     <img class="img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
                                 {% endif %}
                             </td>
-                            <td class="py-3">
+                            <td class="py-3 bag-td">
                                 <p class="my-0"><strong>{{ item.product.friendly_name }}</strong></p>
-                                <p class="my-0 small text-muted">{{ item.product.category.friendly_name }}</p>
+                                <p class="my-0 text-muted">{{ item.product.category.friendly_name }}</p>
                             </td>
-                            <td class="py-3">
-                                <p class="my-0 small">€{{ item.product.price|floatformat:2 }}</p>
+                            <td class="py-3 bag-td">
+                                <p class="my-0">€{{ item.product.price|floatformat:2 }}</p>
                             </td>
-                            <td class="py-3">
-                                <p class="my-0 small">€{{ item.product.price | vat|floatformat:2 }}</p>
+                            <td class="py-3 bag-td">
+                                <p class="my-0">€{{ item.product.price | vat|floatformat:2 }}</p>
                             </td>
-                            <td class="py-3">
-                                <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                            <td class="py-3 bag-td">
+                                <form class="update-form inc-dec-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group">
@@ -74,31 +74,31 @@
                                 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
                                                     data-size="{{ item.size }}"><small>Remove</small></a>
                             </td>
-                            <td class="py-3">
+                            <!-- <td class="py-3">
                                 <p class="my-0 small ">€{{item.product.price | calc_subtotal:item.quantity}}</p>
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0 small ">€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}} </p>
+                            </td> -->
+                            <td class="py-3 bag-td">
+                                <p class="my-0 ">€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}} </p>
                             </td>
                                 
                         </tr>
                     {% endfor %}
 
-                    <tr>
+                    <tr class="final-totals-row">
                         <td colspan="6" class="pt-5 text-align-right">
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                             <h6><strong>VAT @23%: €{{ vat_total|floatformat:2 }}</strong></h6>
                             <h6><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h6>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="bag-buttons-row">
                         <td colspan="6" class="text-align-right">
-                            <a href="{% url 'products' %}" class="button button-main me-2">
-                                <span>Keep Shopping</span>
-                            </a>
-                            <a href="{% url 'checkout' %}" class="button button-accent">
-                                <span>Secure Checkout</span>
-                            </a>
+                            <button href="{% url 'products' %}" class="button button-main bag-button">
+                                Keep Shopping
+                            </button>
+                            <button href="{% url 'checkout' %}" class="button button-accent bag-button">
+                                Secure Checkout
+                            </button>
                         </td>
                     </tr>
                 </table>

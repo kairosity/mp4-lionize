@@ -170,7 +170,7 @@
                 <footer class="footer py-3 d-flex flex-column align-items-center">
                     <hr class="footer-hr">
                     <div class="row links-row">
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10 col-md-6 col-lg-4">
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
                         <div class="center-me">
                             <h5 class="footer-heading">Services</h5>
                             <a href="{% url 'webdesign' %}" class="nav-link" >Web Design</a>
@@ -180,7 +180,7 @@
                         </div>
                         </div>
                         {% if not request.user.is_authenticated %}
-                            <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                            <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4 ">
                                 <div class="center-me">
                                     <h5 class="footer-heading">Join Us!</h5>
                                     <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
@@ -190,7 +190,7 @@
                         {% endif %}
 
                         {% if request.user.is_authenticated %}
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
                             <div class="center-me">
                                 <h5 class="footer-heading">User Portal</h5>
                                 <a href="{% url 'profile' %}" class="nav-link">Your Profile</a>
@@ -198,7 +198,7 @@
                                 <a href="{% url 'user_orders' %}" class="nav-link">Your Orders</a>
                             </div>
                         </div>
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-sm-10  col-md-6 col-lg-4">
+                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
                             <div class="center-me">
                                 <h5 class="footer-heading">Shop</h5>
                                 <a href="{% url 'products' %}" class="nav-link">Shop All Products</a>
