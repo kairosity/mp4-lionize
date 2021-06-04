@@ -129,8 +129,6 @@ button.decrement-qty{
     height: 2px;
 
 }
-
-
 /* Homepage Nav & Header */
 nav {
     font-family: var(--main-text-font);
@@ -272,7 +270,6 @@ ul.social-media-process-list > li{
 }
 
 /* Registered Users Side Nav */
-
 .side-nav-container{
     background-color: var(--main-colour);
     padding-top: 2rem;
@@ -612,9 +609,35 @@ img.empty-shopping-bag{
     flex-basis: 100%;
     width: 100%;
 }
+/* Logout */
 
+.more-space{
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    padding: 5rem;
+}
+/* Order Success Page */
+.order-listing-title{
+    color: var(--main-colour);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.order-reference{
+    font-size: 0.7rem;
+}
+.order-grand-total-title{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.grand-total{
+    font-weight: 600;
+    text-decoration: underline;
+}
+.order-success-border{
+    border: var(--main-colour) 2px solid;
+    border-radius: 5px;
+}
 /* Footer */
-
 footer.footer{
     background-color: var(--main-colour);
     background-position: center center;
