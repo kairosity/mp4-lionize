@@ -108,26 +108,20 @@
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
                             {% if request.user.is_authenticated %}
-                                {% if request.path == '/' %}
-                                    <li class="nav-item p-2 ">
+                                {% if request.path == '/' or request.path == '/webdesign' or request.path == '/seo' or request.path ==  '/content-creation' or request.path == '/social-media-management' %}
+                                    <li class="nav-item p-2 d-none d-lg-block">
                                         <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
                                     </li>
-                                {% elif request.path == '/webdesign' %}
-                                    <li class="nav-item p-2 ">
-                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                    <li class="nav-item p-2 d-none d-lg-block">
+                                        <a class="nav-link" href="{% url 'products' %}">Shop</a>
                                     </li>
-                                {% elif request.path == '/seo' %}
-                                    <li class="nav-item p-2 ">
-                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
-                                    </li>
-                                {% elif request.path == '/content-creation' %}
-                                    <li class="nav-item p-2 ">
-                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
-                                    </li>
-                                {% elif request.path == '/social-media-management' %}
-                                    <li class="nav-item p-2 ">
-                                        <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
-                                    </li>
+                                {% elif 'checkout' in request.path or 'logout' in request.path or 'order_history' in request.path or 'add' in request.path or 'edit' in request.path %}
+                                <li class="nav-item p-2 d-none d-lg-block">
+                                    <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
+                                </li>
+                                <li class="nav-item p-2 d-none d-lg-block">
+                                    <a class="nav-link" href="{% url 'products' %}">Shop</a>
+                                </li>
                                 {% endif %}
                                 <li class="nav-item p-2 ">
                                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

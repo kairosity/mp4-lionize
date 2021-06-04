@@ -96,9 +96,11 @@
                             <button href="{% url 'products' %}" class="button button-main bag-button">
                                 Keep Shopping
                             </button>
-                            <button href="{% url 'checkout' %}" class="button button-accent bag-button">
-                                Secure Checkout
-                            </button>
+                            <a href="{% url 'checkout' %}">
+                                <button  class="button button-accent bag-button">
+                                    Secure Checkout
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 </table>
