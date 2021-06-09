@@ -55,6 +55,7 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+            # Converts python bag object into a json string to store on the order model.
             order.original_bag = json.dumps(bag)
             order.save()
             for item_id, item_data in bag.items():
@@ -85,7 +86,7 @@ def checkout(request):
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment.")
             return redirect(reverse('products'))
-        
+
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
@@ -95,7 +96,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -127,7 +128,6 @@ def checkout(request):
         }
 
         return render(request, template, context)
-
 
 
 def checkout_success(request, order_number):

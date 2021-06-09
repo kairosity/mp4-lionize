@@ -154,3 +154,6 @@ __Fix:__ I noticed that the S3 url for serving static files was different to the
 
       AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3-eu-west-1.amazonaws.com'
 
+
+## Persisting the shopping bag when users log out. 
+

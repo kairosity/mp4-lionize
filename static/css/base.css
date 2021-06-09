@@ -18,6 +18,7 @@
 
     /* Font Styles */ 
     --heading-font: "Quicksand", sans-serif;
+    --subheading-font: "Open Sans", sans-serif;
     --main-text-font: "Open Sans", sans-serif;
 
     /* Breakpoints */
@@ -46,6 +47,9 @@
 }
 .accent-underline{
     border-bottom: var(--accent-colour) 5px solid;
+}
+a{
+    color: var(--main-colour);
 }
 /* Buttons */
 
@@ -322,6 +326,7 @@ p.side-nav-heading{
 }
 .details-page-subheading,
 .profile-page-subheading{
+    font-family: var(--subheading-font);
     text-align: center;
     font-size: 1.3rem;
     letter-spacing: 1px;
@@ -355,9 +360,10 @@ img.web-design-example{
     padding: 2rem;
 }
 .details-page-text{
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    font-weight: 300;
+    font-family: var(--main-text-font);
+    font-size: 1.2rem;
+    letter-spacing: 1.1px;
+    font-weight: 200;
     overflow-wrap: break-word;
     flex-grow: 2;
     margin: 0 auto;
@@ -419,6 +425,9 @@ form.login-register-form p{
 }
 a.forgot-password-link{
     margin: 0;
+}
+form.custom-crispy .form-group{
+    margin-top: 0.7rem;
 }
 form button.form-button{
     padding: 1rem;
@@ -637,6 +646,22 @@ img.empty-shopping-bag{
     border: var(--main-colour) 2px solid;
     border-radius: 5px;
 }
+
+/* Other account Incidental Pages */
+/* Verify Email Address Page */
+h1.small-heading{
+    font-family: var(--heading-font);
+    color: var(--main-colour);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+p.small-instruction{
+    font-family: var(--main-text-font);
+}
+p.password-reset-instruction{
+    margin-top: 1rem;
+}
 /* Footer */
 footer.footer{
     background-color: var(--main-colour);
@@ -707,6 +732,11 @@ footer a.nav-link:hover{
     .form-container{
         border-radius: 12px;
         border: var(--main-colour) 3px solid;
+    }
+    /* Other account Incidental Pages */
+    /* Verify Email Address Page */
+    h1.small-heading{
+        font-size: 3rem;
     }
     .footer .links-row{
         width: 80%;

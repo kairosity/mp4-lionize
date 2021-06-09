@@ -26,7 +26,6 @@ This project is an application and company website for a digital marketing busin
     - [*Core Theme*](#core-theme)
     - [*Feature Ideas Table*](#feature-ideas-table)
     - [*List of Final Features*](#list-of-final-features)
-    - [*Content Requirements*](#content-requirements)
   * [Structure](#structure)
       - [*Interaction Design*](#interaction-design)
         - [*Navigation*](#navigation)
@@ -58,11 +57,6 @@ This project is an application and company website for a digital marketing busin
       - [*Design Mockups*](#design-mockups)
 - [2. Database Architecture](#database-architecture)
     - [Schema](#schema)
-        - [Users Collection](#users-collection)
-        - [Photos Collection](#photos-collection)
-        - [Files Collection](#files-collection)
-        - [Chunks Collection](#chunks-collection)
-    - [Non-Relational Design](#non-relational-design)
 - [3. Features](#features)
 - [4. Responsivity](#responsivity)
     - [Mobile Devices](#mobile-devices-materialize-sm-breakpoint)
@@ -116,96 +110,122 @@ This project is an application and company website for a digital marketing busin
 This application is targeted at Sole Traders, SMEs and larger businesses who are looking to outsource aspects of their digital marketing strategy. The services on offer include website creation, SEO services, social media management and content creation.
 
 ## First Time User Stories
-
 ## *As a first time user I want to be able to...*
 
 1. Easily understand the purpose of the web application.
 2. Quickly and easily understand how to navigate and access information on the website.
-3. Quickly and easily see what services and products are on offer.
+3. Quickly and easily have an idea of what kinds of products are offered.
 4. View further details of each of the services on offer, on specific pages dedicated to that service, so as to decide if I want to avail of any of them.
 5. View a website that is visually and creatively appealing and physically easy to look at.
 6. Notice the login/register options and easily navigate to those pages.
 7. Understand the purpose of user registration and the benefits thereof.
+8. Easily register a free account using my email.
+9. Receive an email confirmation of my registration.
 
 ## Returning User Stories
 ## *As a returning user I want to be able to...*
 
-### Registration, Login & User Dashboard
-1. Easily register a free account using my email.
-2. Receive an email confirmation of my registration.
-3. Login to my user account, using my email and password.
-4. View my personalized user dashboard. 
-5. Edit my account information: change my password, username & other details.
-6. Recover my password if I forget it.
-7. Delete my account.
-8. Receive email confirmation of my account deletion, outlining the data to be deleted, including all order information.
+### Registration, Login, Logout, Update & Delete Data
 
-### Pricing
-1. View a transparent pricing structure for services and digital products.
-2. Use quote calculators to determine a reliable estimate for more detailed custom services.
+1. Login to my user account, using my email and password.
+2. Be redirected to the User Portal and easily view the various custom user pages.
+3. Edit my account information: change my password, username & other details.
+4. Recover my password if I forget it.
+5. Delete my account.
+6. Be prompted to confirm my request to delete my account.
+7. Receive email confirmation of my account deletion, outlining the data to be deleted, including all order information.
+8. Logout of my account.
 
 ### Information Gathering
-1. Gather more in depth information about the services and products on offer.
-2. Easily contact Lionize to ask for specific information about the services and products on offer.
 
-### Orders: One off payment
-1. Easily and quickly see how to order a service or product that I'm interested in.
-2. Order the product/service online and pay via a payment portal on the application.
-3. Receive confirmation of my order via email.
-4. See that confirmation and order reflected on my user dashboard.
+1. Quickly navigate to the products / services information pages from anywhere on the website.
+2. Gather more in depth information about the services and products on offer.
+3. Easily contact Lionize to ask for specific information about the services and products on offer.
+4. View a transparent pricing structure for all products.
 
-### Orders: Subscriptions
-1. Subscribe to a service and set up a monthly recurring payment via a secure payment portal.
-2. Alter my subscription (downgrade or upgrade).
-3. Cancel my subscription.
-4. Easily view information about my subscription billing.
+### User Portal
 
-### Orders: Communication
-1. Email Lionize about specific details regarding the service(s) they are providing to me.
-2. View wireframes, designs and other files Lionize have created as part of the service they are providing me.
+1. View / add / updated my profile details easily on a page specifically for that purpose.
+2. Navigate to my shopping bag quickly from the user portal side bar.
+3. Easily view all my past orders, and all their attendent details.
 
+### Shopping
+
+1. Browse all products.
+2. Easily view the prices & specific details of each product by clicking into a product details page.
+3. Browse products by category.
+4. Filter products by keyword using a search form.
+5. Add products to my shopping bag and have this visually confirmed for me.
+6. Easily view all the items in my shopping bag.
+7. Update the items in my shopping bag, by adding more or less of an item.
+8. Remove any item from my shopping bag. 
+9. Make changes to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.
+10. Email Lionize with a custom quotation request for a specific product that I do not see on the site.
+
+### Purchasing
+
+1. Purchase the products I have added to my shopping bag.
+2. Use my credit card to pay for my items.
+3. Be confident in the knowledge that my payment is being handled securely.
+4. View the VAT added to both the individual products and the total cost before paying.
+5. See confirmation of my order after completing the checkout process.
+6. Have the VAT reflected on the order confirmation.
+7. Navigate to my order history page and easily see a list of past orders processed with all associated information clearly outlined.
+8. Have my personal details such as name, email, phone number & address saved to my profile and automatically populate the checkout form.
 
 ## Persona Based User Stories
 
 ### Tom Lynch - Hipster Coffee Shop Owner
 ### *As a sole trading small business owner I want to be able to...*
+
 1. Order a professional looking website for my small business.
 2. See some examples of Lionize's web design work prior to ordering.
 3. Easily understand all the various web design options available to me.
-4. Create a custom estimate/quote that reflects my requirements, so as to get a solid idea of pricing.
-5. Easily communicate with Lionize about my requirements, my order and my billing.
+4. Easily communicate with Lionize about my requirements, my order and my billing.
 
 ### Annalise Maior - Real Estate Marketing Manager
 ### *As a regional marketing manager of a large corporation I want to be able to...*
+
 1. Delegate the social media management of our Irish branch to specialists.
 2. Improve all social media KPIs and see a measurable return on investment.
 
 ### Rosemary Geoghan - Plumbing Co. CEO
 ### *As the CEO of a plumbing company seeking to future-proof how we communicate with clients, I want to be able to...*
+
 1. Get a custom quotation for integrating a client portal into our current website.
 2. Get the project up and running and then delegate the project management to our marketing dept.
 
 ### David Murphy - Entrepreneurial Make-up Artist
 ### *As a createive professional whose brand is focused around my personality, I want to be able to...*
+
 1. Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.
 2. Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.
-3. Easily set up an online recurring payment for the social media management services so that I don't need to worry about it every month.
+3. Easily pay for content creation products as I need them. 
 
 ## Accessibility User Stories
+
 - __*As a user who is colourblind*__, I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.
 - __*As a keyboard user*__, I want to be able to navigate the application using the keyboard.
 - __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
 
+## Admin User Stories
+### *As an application admin user I want to be able to...*
+
+- Add a new product to the shop.
+- Edit an existing product.
+- Delete a product from the shop. 
+- See a list of registered users.
+
 ## Application Creator User Stories
 ### *As the application creator and Lionize business stakeholder I want to be able to...*
+
 - Create and maintain a user-friendly platform allowing business owners, stakeholders and employees to easily see and understand the services on offer.
 - Ensure that the application is as accessible as possible to include as wide a variety of users as possible.
-- Accept online one-off and recurring payments from users.
+- Accept online payments from users.
 - Increase Lionize's client base and profits through use of the website and associated ease of online orders.
 
 #### back to [contents](#table-of-contents) 
 <br>
-
 
 # Strategy
 
@@ -242,6 +262,11 @@ The crux of this application's purpose is as a B2B service provider that allows 
 . | __*GUEST USER FUNCTIONALITY & FEATURES*__ 
 1.| Browse the website easily and view separate pages for each service offered.  | 10 | 10 | 20
 2.| Contact Lionize with questions. | 9 | 10 | 19
+. | __*APP NAVIGATION FUNCTIONALITY & FEATURES*__
+1.|  There is a main navbar with links to the homepage, the service details pages & the contact form for unregistered users. |10|10|20
+2.| The main navbar changes to include links to the Shop & the User Portal for logged in users. |9|8|17
+3.| When a user has navigated to any of the user portal or shop pages, there is a second side navigation on desktop with all the attendent links. | 8 | 8 |16
+4.| On mobile the above links are nested within the hamburger navigation. 
 . | __*USER REGISTRATION FUNCTIONALITY & FEATURES*__ 
 1.| Register as a new user  | 10 | 10 | 20
 2.| Register using an email address | 7 | 10 | 17
@@ -251,69 +276,299 @@ The crux of this application's purpose is as a B2B service provider that allows 
 6.| Receive an email confirmation of registration. |3 | 5 | 8
 . | __*USER LOGIN / LOGOUT FUNCTIONALITY & FEATURES*__ 
 1.| Users can login with email and password |10 | 10 | 20
-2.| When a user logs in, they are brought to their user dashboard |7 | 10 | 17
+2.| When a user logs in, they are brought to a user portal |7 | 10 | 17
 3.| A session is started and the user's login status is remembered as they use the application |9 | 9 | 18
 4.| When a user is logged in they can view their account information.  |10 | 9 | 19
-5.| A user has to be logged in, in order to acccess their dashboard. |10 | 9 | 19
+5.| A user has to be logged in, in order to acccess their user portal. |10 | 9 | 19
 6.| A user can logout to end their session. |10 | 10 | 20
-. | __*USER DASHBOARD FUNCTIONALITY & FEATURES*__ 
-1.| The user dashboard is divided into service sections. |6 | 10 | 16
-2.| Individual service sections on the user dahsboard include custom quote calculators. |6 | 6 | 12
-3.| Users can order digital products directly from their dashboards. |6 | 6 | 12
-4.| Users can send in web design consultation requests directly from their dashboards. |4 | 5 | 9
-5.| Users can view their orders and payments in a billing section on their dashboards. |8 | 8 | 16
-6.| The status of any orders is communicated to users via their dashboards.  |5 | 5 | 10
-7.| When a user creates a custom quote, the consultation form is pre-filled with the quote details. |3 | 3 | 6
-8.| A user can view & update their account information directly from their dashboard. |6 | 6 | 12
-9.| Lionize can upload designs, contracts and other files so that they are accessible to users from their dashboards. |2 | 3 | 5
-. | __*ORDER & PAYMENT PORTAL FUNCTIONALITY & FEATURES*__ 
-1.| When an initial order consultation with Lionize has been completed and a price is agreed upon for a custom service, the user can view a link to pay the service deposit. |8 | 9 | 17
-2.| Clicking the "PAY" link next to the deposit amount in the account section of the user dashboard, will bring the user to a Stripe payment portal where they can complete the payment. |9 | 9 | 18
-3.| Once paid, users will receive email confirmation of payment. |8 | 8 | 16
-4.| When an initial order consultation with Lionize has been completed, users can subscribe to social media management services via a link on their user dashboard. They are brought to a Stripe payment portal and can sign up for a monthly recurring payment.  |8 | 9 | 17
-5.| Users receive an email confirmation each time the subscription payment occurs. |7 | 8 | 15
+. | __*USER PORTAL FUNCTIONALITY & FEATURES*__ 
+1.| The user portal consists of any information personal to that specific user. |6 | 10 | 16
+2.| Users can view a form of their profile / billing information and they can edit the same. |6 | 6 | 12
+3.| Users can view their current shopping bag. |8 | 8 | 16
+4.| Users can view a list of all their past orders. |5 | 8 | 13
+5.| Users can click into view the details of any of these past orders. |5 | 7 | 12
+6.| When a user logs out their shopping bag information is saved to their user profile and remembered when they log back in. | 4 | 2 | 6
+7.| Lionize can upload designs, contracts and other files so that they are accessible to users from their dashboards. |2 | 3 | 5
+8.| Users can add widgets of their social media accounts to their user portal to view their accounts while inside the application. | 2 | 3 | 5
+. | __*SHOP FUNCTIONALITY & FEATURES*__ 
+1.| Users can order digital products directly from the user portal / shop area. |6 | 6 | 12
+2.| The shop is divided into 4 categories of products: Web Design, SEO, Social Media Management & Content Creation. |4 | 5 | 9
+3.| Users can filter the products on the "All Products" shop page by searching for a particular keyword.  |6 | 6 | 12
+4.| Users can view an overview of all the products in a specific category on that categories. |9 | 8 | 17
+5.| Users can click in to see details of the products they are interested in. |7 | 8 | 15
+6.| Users can see the VAT amount added to each product. |6|7|13
+7.| Users can add products they want into a shopping bag. |10|10|20
+8.| Users can navigate to a shopping bag page and easily see all the products they have added. |10|10|20
+9.| Users can update & remove items from their shopping bag. |9|9|18
+10.| Users get immediate feedback in the form of messages on screen when they alter their shopping bag in any way. |8|8|16
+11.| The VAT added to the products is visible for each individual product & the total amount of VAT on the shopping bag page. |7|7|14
+12.| Users can pay securing using a credit card. |10|10|20
+13.| If a user has saved their profile / billing information, the checkout page form is auto-populated with this info. |8|8|16
+14.| When a user successfully purchases a product, a confirmation email is sent to their email. |8|8|16
+15.| If a user enters incorrect card information they are informed of this immediately via an error message. |8|6|14
+. | __*ADMIN FUNCTIONALITY & FEATURES*__ 
+1.| Admin can add, edit & delete products on the backend of the application. |9 | 10 | 19
+2.| Admin can add, edit & delete products on the frontend of the application. |6 | 9 | 15
+3.| There is an admin dashboard page where they can add new products & view a list of users. |4 | 4 | 8
+4.| Admin can mark a product as "on sale". |4 | 4 | 8
+5.| Admin can mark a product as "new". |4 | 4 | 8
 . | __*OTHER FUNCTIONALITY & FEATURES*__ 
 1.| Users can upload / select palettes & typography they like for their web design projects. |2 | 2 | 4
+2.| Users can create a mood board from images they upload to help Lionize with the design process. |2|1|3
+3.| When "new" products are added by admin, the application automatically adds them to a promotional banner that sits across the top of the "All Products" page in the shop. |3|6|9
 
 <br>
 
  ## List of Final Features 
- *(for a MVP)*
+ *(for an MVP)*
 
- #### back to [contents](#table-of-contents) 
+ The features I decided to create an MVP version of this application with are the following:
+
+1. Guest users should be able to easily browse the website and view general information on the kinds of services/products on offer. 
+2. They should be able to use a fully functioning contact form to contact Lionize with any questions. 
+3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal & shop sections of the site. 
+4. Users are able to register easily using an email address and separate username, and they must confirm their password when registering.
+5. Once registered they should receive an email confirmation link to ensure they are supplying a genuine email address and then they should receive an email confirmation of successful registration.
+6. Users should be able to login and logout.
+7. When a user starts a session they login status and shopping bag should be remembered as they use the application.
+8. Once logged in a user should be able to view the user portal pages which include: their profile/billing details, their current shopping bag and a list of their past orders. 
+9. When logged in users also have access to the Shop.
+10. Users MUST be logged in to access the user portal pages and the shop. 
+11. Users can shop directly from the user portal / shop area of the application.
+12. Users can view categories of products to shop using a side navigation bar.
+13. Users can perform a keyword search against the product names, descriptions & features. 
+14. When shopping users can view the lists of all products (whether in the all products section of divided by category) and they can click into view the specific product details and to add it to their shopping bag if they want. 
+15. Users can see the VAT amount on individual products in their shopping bag as well as the total VAT being charged.
+16. Users get instant confirmation of any changes to their shopping bag via a modal message on the page.
+17. Users can alter their shopping bag directly from this modal or they can close the modal.
+18. Users can navigate to a checkout page when they are ready to pay securely using a credit card.
+19. The user's billing details will be auto-populated in the checkout form if they have previously saved them. 
+20. When a user successfully purchases a product they are sent a confirmation email with all the details. 
+21. If any errors occur during the checkout process the user is informed of the error.
+22. Admins can add, edit or delete products on the front & backend of the application.
+23. Admins can view a list of all users on the front-end of the application.
+24. Admins can mark products as "on sale" or "new".
+25. "New" products are automatically promoted on a banner that sits over the "All Products" page.
+
+These are the features I determined necessary for the first iteration of this application, with scope to increasing them down the road.
+
+
+ #### back to [contents](#table-of-contents)
  <br>
 
 # Structure
+
+The structure is somewhat non-linear as the navigation is flexible and depedent on whether a user is registered and logged in or not. Navigation and user flow also differs for admin vs. regular users.  I was aware of the importance of maintaining a level of simplicity as because of its' multi-layered structure I wanted all the pages to be evident and easily accessible for users. I was careful to ensure that both the information architecture and design was intuitive and as simplified as possible. To this end I was careful to include amble feedback in the form of toast messages as well as confirmation modals of any deletion possible. 
 
 ## Interaction Design
 
 ### Navigation
 
+Navigation is straightforward: for unregistered users there is a top navigation bar on desktops and a hamburger dropdown on mobile & tablets. The navigation for unregistered users directs them to register & then login to their account.
+
+Once logged in, the user is brought to the user portal / shop pages, where a side nav bar is added to the top navigation.
+
+The back button is never relied on, but it is used for the user's convenience on occasion when they have navigated to the product details page for instance. The user can just use the sidebar, but the back button is more directly connected to where they may want to go.
+
+When on the "All Products" page, users can perform a keyword search against the product name, description and features. I also chose to give the different categories of products their own separate pages and views (rather than using Q Objects as with the keyword search) to ensure the best possible SEO performance.
+
 ### Consistency and conventions
+
+All content, navigation, typography and information hierarchy are consistent and predictable in nature. The user shopping experience does not deviate from what most users will be used to from their online shopping experience to date. The checkout process likewise follows a predictable formula. 
+
+- All of the most important content is visible on the page and should a user need to scroll this is made amply evident to them. 
+- The application's aethetics are consistent throughout the site and rely on the same small set of colours and fonts. 
+- Spacing is used to create a clean aethestic and the application never feels crowded or claustrophobic. 
+- All fonts used a clean and elegant sans-serif. 
+- Icons (such as the search magnifying glass and the airplane send email icon ) are used to enhance metaphorical thinking. 
+- Images are used to the same effect as above. Each product has an associated illustration that reflects the content of the product itself to futher reassure the user. 
+- All forms rely on labels and / or placeholders to guarantee the user knows what they are doing at all times. 
+- The formula of long product list ---> product detail page is used because users will be familiar and happy with this structure. 
+
 
 ### Learnability and communication of functionality
 
+- Because of all of the above consistent and convention attributes, learnability is very high and quick for this application.
+- There is very little about it that the user will not be expecting or anticipating. 
+- On all pages that require the user to *do* something clearly explain what they are expected to do.
+
+The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance something's or someone's fame and standing in the world. This is followed by a further explanation of the business's raison d'etre. Scrolling down further elucidates what is on offer by succinctly grouping and summarizing the four different categories of products. Each of these product / services introductions can be clicked on to view more details. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products they are then told explicitly why they should register and ideally the homepage user flows ends here, with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch.
+
+
 ### Feedback
+
+- Most actions a user can do on the application are followed by various forms of immediate feedback. 
+- Clicking the logout button brings the user to a logout confirmation page and then when they confirm their logout intent, they see a toast message telling them they have successfully signed out.
+- Registration is confirmed via email.
+- Logging in brings the user directly to their user portal as well as delivering a login confirmation message via toast that communicates both the action and reassures them of its accuracy with the inclusion of their username in the message content itself.
+- Adding anything to the shopping bag pops up a small toast modal that confirms the addition.
+- On the shopping bag page, if a user chooses to remove an item from their bag, this is also confirmed via a toast message.
+- When the order is being processed after checkout, a page loading icon informs the user that something is happening.
+- When the order is processed the user is brought to the order success page and also sees an order success toast. A confirmation email is also sent to them.
+- If a user emails Lionize using the contact form, they also see a message telling them that the email was successfully sent.
+
 
 ### Messages Framework
 
+- The user is given feedback in the form of Bootstrap's toast messages after all major actions.
+- This reassures them that they have done what they wanted to do.
+
 ### Form Validation Messages
 
-### Deletion Confirmation Modals 
+- The register, login and checkout forms include form validation that immediately communicates a message back to the user if they either fail to complete a required field or complete a field incorrectly.
+- If the user attempts to log in with incorrect details the message delivered is above the form and in red to communicate the error clearly.
+
+### Deletion Confirmation Modals
+
+- If a user chooses to delete their account completely or if an admin goes to delete a product, they are prompted to confirm these deletions by a modal.
+
 
 ### State Changes 
 
+- All buttons have hover styles applied to reassure the user of their action.
+- All links and interactions have visible state changes to ensure the user knows their action is working properly.
+
 ### Error Pages 
+
+There are a number of specific error pages that cover the gamut of common errors a user might encounter. The pages are all clear as to what the error was and why it was thrown.
 
 ### Pre-Loader
 
-## Information Architecture
+## Information Architecture & User Flow
 
-## User Flow
+This application is mostly non-linear in its narrative form. Both first time and logged in users are able to browse the application at their leisure and any linearity is limited to the intended encouragement for first time users to register. This can be simply illustrated by:
+
+        Information ---> Registration
+
+That is the intended user flow for unregistered users, but it is not reflected in the structure, they are free to navigate within the site parameters available to them.
+
+For registered users, this flexibility is enhanced further, they are able to browse, navigate the user portal and there is only lineaity of flow when it comes to actually purchasing a product or products. Then the flow is:
+
+            Shopping Bag ---> Checkout ---> Payment ---> Order Confirmation
+
+And then they are free to browse the application again.
+
 <br>
 
 #### back to [contents](#table-of-contents) 
 <br>
+
+# Skeleton 
+
+## Progressive Disclosure
+
+As touched upon in the Structure section the homepage utilizes progressive disclosure to slowly unveil what the application is about, what kind of services/products are for sale and what is expected of the user. The information is delivered piecemeal at first and expanded only *if* the user is interested enough to click on the "Learn More" buttons.
+
+## Metaphorical Thinking
+
+Icons and illustrations are used throughout the application to enhance and reinforce the messages behind the actions required. 
+
+## Establishing Value Through Design
+
+Value is established by ensuring consistency in design and typography, the colour scheme and design elements are consistence throughout and thus the user knows to trust the quality of what is on offer. Space is also used to create a feeling of freedom and clarity, which I think is very important when it comes to ecommerce. Nothing is more off-putting than a crammed online shop.
+
+## Reassuring Conventions
+
+As aforementioned in design and structure and feedback, I've kept everything about the application predictable and conventional. The level of user trust needs to be exceptionally high for any application that is seeking to sell something and take user payment information. 
+
+## Contextually Organised Content
+
+I've also been careful to organise the content and information in contextually appropriate ways. On the homepage for example, all the information pertaining to the categories of products are grouped under a "Services" navigation dropdown menu, rather than displayed separately. Within the user portal the user portal pages are clearly separated from the Shop pages by a line divider on desktop and they are under a separate heading on mobile.
+
+## Wireframes
+
+The best way to view all the wireframes, user flows, mockups, colour palette & typography for this application is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41)
+
+Alternatively here are the individual wireframes:
+
+1. [Mobile Wireframes]()
+2. [Tablet Wireframes]()
+3. [Desktop Wireframes]()
+
+If you do opt to view them this way, please click download as the GitHub viewer can expand the smaller files to an uncomfortably large zoom ratio.
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>
+
+# Surface
+
+## Design Considerations
+
+My aim was keep the design as simple, clear and open as possible. I think light tones have a more transparent and trustworthy quality for e-commerce and as the business is service / digital based, I thought a light blue tone worked perfectly with yellow as the main colours. Space and clarity were the two driving factors behind the design I opted for and I think they achieve those perception aims well.
+
+## Colour Palette
+
+<p align="center">
+  <img src="static/images/colour-palette/lionize-colour-palette.png">
+</p>
+
+## Typography
+
+I played it really safe with the typography, I thought Quicksilver worked well for the headings and everything else is a permutation of Open Sans. My intent was to use typography to deliver the message of consistency and safety. Perhaps a little dull, but I think that's ok for ecommerce.
+
+<p align="center">
+  <img src="static/images/typography/lionize-typography.png">
+</p>
+
+## Design Mockups
+
+I haven't done extensive mockups, rather I have chosen a selection of important pages and limited my mockups to them. 
+As the colour theme and typography vary so little and the application as a whole is so consistent, I felt that limited mockups would suffice.
+
+Again, the best way to view these is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41)
+
+Alternatively here are the individual mockups:
+
+1. [Mobile Mockups]()
+2. [Tablet Mockups]()
+3. [Desktop Mockups]()
+
+Again, please remember to click download as the GitHub viewer can expand the smaller files to an uncomfortably large zoom ratio.
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>
+
+# Database Architecture
+
+## Schema
+
+A relational database was used to structure this project. For development SQLite was used and Postgres was used for the deployed project. 
+
+The following models were integrated:
+
+### Account
+
+The allauth Django Account app includes the following models:
+
+- EmailAddress
+- EmailConfirmation
+- EmailConfirmationHMAC
+
+I did not create these models so I will not expand on them here, their purpose is to act as the basis for the user object 
+
+### Products
+
+### Profiles
+
+### Categories
+
+### Shopping Bag
+
+### Checkout
+
+
+
+    - [Non-Relational Design](#non-relational-design)
+- [3. Features](#features)
+- [4. Responsivity](#responsivity)
+    - [Mobile Devices](#mobile-devices-materialize-sm-breakpoint)
+    - [Tablet Devices](#tablet-devices-materialize-m-breakpoint)
+    - [Desktop Devices](#desktop-devices-materialize-l-breakpoint)
+    - [Wide Desktop Devices](#wide-desktop-devices-materialize-xl-breakpoint)
 
 # Future Features To Implement and Issues Remaining
 
