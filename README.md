@@ -540,30 +540,216 @@ A relational database was used to structure this project. For development SQLite
 
 The following models were integrated:
 
-### Account
+### __Account__
 
-The allauth Django Account app includes the following models:
+The allauth Django Account app includes a number of models however as I did not create these, I will not expand on them here, their purpose is to act as the basis for user authentication.
 
-- EmailAddress
-- EmailConfirmation
-- EmailConfirmationHMAC
+### __Category Model__
 
-I did not create these models so I will not expand on them here, their purpose is to act as the basis for the user object 
+I intentionally created a Category model separate from the Product model for allowing an easier expansion of product types / services offered down the line. My thinking is that were I to eventually add subscription services, the Category model can be added as a Foreign Key, and not duplicated.
 
-### Products
+<br>
 
-### Profiles
-
-### Categories
-
-### Shopping Bag
-
-### Checkout
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| name | string | The product category's "unfriendly" name. |
+| friendly_name | string | The product category's human readable name.|
 
 
+<br>
 
-    - [Non-Relational Design](#non-relational-design)
-- [3. Features](#features)
+### __Product Model__
+
+The product model stores the product specific data and is mainly used for product display purposes on the site, but is connected to both the Category & the Order Line Item models.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| category | foreign key | The product's category. A foreign key identifying which of the 4 categories this product belongs in. |
+| name | string | The product's "unfriendly" name. Keyword searchable to users. |
+| friendly_name | string | The product's human readable name. Keyword searchable to users. |
+| description | string | The product's description. Keyword searchable to users. |
+| features | string | A list of the product's key features. Keyword searchable to users. |
+| price | decimal | The product's price as a decimal number with two decimal places. |
+| image_url | string | The product's url. |
+| image | string | An image associated with the product. Stored as a varchar file path. |
+
+<br>
+
+### __Order Model__
+
+The order model stores the specific order details and is connected to the order line item model and the user profile.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| order_number | string | A unique order number created by a method on this model using UUID. |
+| user_profile | foreign key | A many to one foreign key relationship with a user profile. A user may have many orders. |
+| full_name | string | The user's full name. |
+| email | string | The user's email address. |
+| phone_number | string |  The user's phone number. |
+| country | string | The user's country, selected from a dropdown menu. |
+| postcode | string | The user's postcode. |
+| town_or_city | string | The user's town or city. |
+| street_address1 | string | The first line of the user's address. |
+| street_address2 | string | The second line of the user's address. |
+| county | string | The user's county. |
+| date | date object | The date the order was placed. |
+| order_total | decimal | The total price of the order ex. VAT to 2 decimal places. |
+| vat_total | decimal | The total VAT attached to the order to 2 decimal places. |
+| grand_total | decimal | The total price of the order incl. VAT to 2 decimal places. |
+| original_bag | string | The user's shopping bag stringified. |
+| stripe_pid | string | The user's stripe pid (payment intent id). |
+
+
+<br>
+
+### __Order Line Item Model__
+
+The order line item model stores the specific details of each unique item in an order, if the order contains multiple items of the same product it stores those as 1 line item but increases the quantity. It is connected to the Order and Product models.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| order | foreign key | A many to one relationship with the order itself. One order can have many line items. |
+| product | foreign key | A many to one foreign key relationship with a product. A product may be ordered many times. |
+| quantity | integer | The number of this product ordered for this order. |
+| lineitem_total | decimal | The total price ex. VAT for this item to 2 decimal places.  |
+| lineitem_vat | decimal | The total VAT for this item to 2 decimal places.  |
+| lineitem_grand_total | decimal | The total price incl. VAT for this item to 2 decimal places.  |
+
+<br>
+
+### __Profile Model__
+
+The Profile model stores additional user data for information and billing that is not saved by the allauth User model. It is connected on a one to one basis to said User model as well one a one to many basis with the Order model.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| user | foreign key | A one to one relationship between the profile model and the allauth User model |
+| default_phone_number | string | The user's phone number. |
+| default_street_address1 | string | The first line of the user's address. |
+| default_street_address2 | string | The second line of the user's address. |
+| default_town_or_city | string | The user's town or city. |
+| default_postcode | string | The user's postcode. |
+| default_county | string | The user's county. |
+| default_country | string | The user's country, selected from a dropdown menu. |
+| instagram_handle | string | The user's Instagram username. |
+| linkedin_handle | string | The user's LinkedIn username. |
+| twitter_handle | string | The user's Twitter username. |
+| facebook_handle | string | The user's Facebook username. |
+
+<br>
+
+## Entity Relationship Diagram
+<br>
+
+
+
+[Click here to view my ERD on Figma.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=39%3A2) I have also added it below, but the Figma link is zoomable.
+
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>
+
+# Features 
+
+## 1. Home
+
+The landing page's aim is to deliver a strong and positive first impression to the user and to clearly explain the application's purpose and how it works. It also guides the user towards registering.
+
+<details>
+<summary><b>click for features</b></summary>
+
+### Guest User
+
+- Introduces the concept of the website by starting with a strong title and clean elegant design. 
+- A business synopsis is featured directly under the main heading. 
+- Login & Register buttons are clearly visible both on the top navbar (desktop) and as the user scrolls down in the "Benefits of Registration section."
+- Links to each of the services / product categories are present early on in the user's homepage scrolling. 
+- Information about the main stakeholders in the company is also outlined on the homepage to increase trust in the business and to put human faces on the company.
+- At the bottom of the page is a contact form to communicate with the business.
+
+### Registered & Logged in User
+
+- The only main differences are that the "Login" & "Register" buttons disappear from the navbar and the "Benefits of Registration" changes into a "Thank you for Registering" section with pertinent information and a link to set up the client's free consultation.
+- Clicking the link will pre-fill the contact form to email about a consultation. 
+
+</details>
+
+<br>
+
+## 2. Contact 
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 3. Services Information Pages 
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 4. Register
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 5. Login
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 6. User Portal: Profile
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 7. User Portal: Shopping Bag
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 8. User Portal: Order History
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 9. Shop
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 10. Payment Portal
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
 - [4. Responsivity](#responsivity)
     - [Mobile Devices](#mobile-devices-materialize-sm-breakpoint)
     - [Tablet Devices](#tablet-devices-materialize-m-breakpoint)

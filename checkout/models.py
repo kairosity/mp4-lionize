@@ -66,7 +66,7 @@ class OrderLineItem(models.Model):
 
     def save(self, *args, **kwargs):
         '''
-        Override the original save method to set the lineitem total and update the order total.
+        Override the original save method to set the lineitem total and update the vat & order totals.
         '''
         self.lineitem_total = self.product.price * self.quantity
         self.lineitem_vat = float(self.lineitem_total) * float(0.23)
