@@ -5,6 +5,8 @@ from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
 from profiles.models import UserProfile
+from products.models import Product, Category
+from django.db.models import Q
 
 import os
 # Create your views here.
@@ -65,3 +67,33 @@ def pricing(request):
     A view to return the content creation information page.
     '''
     return render(request, 'home/pricing.html')
+
+def admin_dash_products(request):
+    '''
+    A view to return the admin products dashboard. Only available & visible to logged in admin users.
+    '''
+    products = Product.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You did enter a search term.")
+                return redirect(reverse('admin-dash-products'))
+            
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(friendly_name__icontains=query) | Q(features__icontains=query)
+            products = products.filter(queries)
+
+    context = {
+        'products': products,
+        'search_term': query,
+    }
+
+    return render(request, 'home/admin_dash_products.html', context)
+
+def admin_dash_users(request):
+    '''
+    A view to return the admin users dashboard. Only available & visible to logged in admin users.
+    '''
+    return render(request, 'home/admin_dash_users.html')

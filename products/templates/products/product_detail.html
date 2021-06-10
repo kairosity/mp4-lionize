@@ -8,7 +8,6 @@
 
     {% include 'includes/side-nav.html' %}
 
-
 <div class="row flex-grow-1">
 
 <div class="col col-12">
@@ -48,7 +47,8 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <p class="details-page-text text-align-center product-details-price"> €{{product.price}}</p>
+                <p class="details-page-text text-align-center product-details-price-subtotal"> €{{product.price}} + €{{vat|floatformat:2}} VAT @23%</p>
+                <p class="details-page-text text-align-center product-details-price"> TOTAL: €{{total_incl_vat|floatformat:2}}</p>
             </div>
         </div>
     </section>

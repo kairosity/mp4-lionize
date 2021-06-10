@@ -1036,6 +1036,10 @@ This would streamline the social media management services in particular and all
 
 ## 1. Design
 
+- ### [Font Awesome](https://fontawesome.com/)
+
+    Used for all the application's icons.
+
 ## 2. HTML, CSS & SASS
 
 - ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
@@ -1052,11 +1056,19 @@ This would streamline the social media management services in particular and all
 
 - ### [A Complete Guide To Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
+- ### [HTML data-* Attribute](https://www.w3schools.com/tags/att_data-.asp)
+
+    Help with understanding how to use the data* attribute.
+
 ## 3. JavaScript
 
 - ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
 
-    - Very succinct and accurate guide to the above.
+    - Very succinct and accurate guide to the above. Didn't end up using it though.
+
+- ### [How can I get the values of data attributes in JavaScript code?](https://stackoverflow.com/questions/33760520/how-can-i-get-the-values-of-data-attributes-in-javascript-code)
+
+    - Used to help with transferring variables from Django to JavaScript.
 
 ## 4. Python
 
@@ -1091,6 +1103,10 @@ This would streamline the social media management services in particular and all
 - ### [Advanced Form Rendering with Django Crispy Forms](https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html)
 
     Used to customise the layout and content of all forms on the application.
+
+- ### [BooleanField Django Models](https://www.geeksforgeeks.org/booleanfield-django-models/)
+
+    Used to understand more about the BooleanField
 
 ## 6. Jinja
 
@@ -1133,14 +1149,7 @@ This would streamline the social media management services in particular and all
 
 ## [Bootstrap v5](https://getbootstrap.com/)
 
-## [Django Compressor](https://django-compressor.readthedocs.io/en/stable/)
-
-Compresses linked and inline JS or CSS into a single cached file.
-
-
-## [Django Libsass](https://pypi.org/project/django-libsass/)
-
-A django-compressor filter to compile Sass files using libsass.
+## [Hover.css](https://github.com/IanLunn/Hover)
 
 <br>
 

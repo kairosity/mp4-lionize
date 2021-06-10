@@ -33,5 +33,17 @@
             </li>
         </ul>
         <hr class="white-hr">
+        {% if request.user.is_superuser %}
+            <p class="side-nav-heading">Admin Dashboard</p>
+            <ul class="nav side-nav">
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'admin-dash-products' %}">Products</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'admin-dash-users' %}">Users</a>
+                </li>
+            </ul>
+            <hr class="white-hr">
+        {% endif %}
     </div>
 {% endif %}

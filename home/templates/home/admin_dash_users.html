@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="flex-container product-details-flex-container">
+
+    {% include 'includes/side-nav.html' %}
+
+    <div class="container-fluid col-12 col-md-8">
+        <header class="details-page-header d-flex flex-column">
+            <div class="container">
+                <h1 class="details-page-heading">All Products</h1>
+                <h2 class="details-page-subheading mb-4">Here are all our digital products and services. If you'd like to search by 
+                    keyword, please use the search bar below, otherwise use the sidebar to navigate by category.
+                </h2>
+            </div>
+        </header>
+
+        <section class="container-fluid col-12 col-md-8">
+            <div class="details-page-header d-flex flex-column">
+                <div class="container">
+                    <form method="GET" action="{% url 'products' %}">
+                        <div class="input-group 1-100">
+                            <input class="form-control" type="text" name="q" placeholder="Search for Product">
+                            <div class="input-group-append">
+                                <button class="button button-accent" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        {% include 'includes/product-cards.html' %}
+        
+    </div>
+
+</div>
+{% endblock %}

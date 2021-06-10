@@ -99,6 +99,8 @@ def product_detail(request, product_id):
     '''
     product = get_object_or_404(Product, pk=product_id)
     category = product.category
+    vat = float((product.price * 23)) * .01
+    total_incl_vat = float(product.price) + vat
     
     if product.features:
         features = product.features.split(",")
@@ -109,6 +111,8 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'vat': vat,
+        'total_incl_vat': total_incl_vat,
         'category': category,
         'referring_page': referring_page,
         'features' : features,
