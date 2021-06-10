@@ -53,7 +53,7 @@
                     <h3 class="homepage-body-heading">Welcome {{ request.user.first_name }}!</h3>
                     {% if request.user.userprofile.consultation %}
                         <p class="homepage-body-text">
-                            You have already availed of your free consulation, but please do <a class="yellow-link" href="{% url 'home' %}#contact-us">contact us</a> below if you would like to arrange another consultation at the reduced
+                            You have already availed of your free consultation, but please do <a class="yellow-link" href="{% url 'home' %}#contact-us">contact us</a> below if you would like to arrange another consultation at the reduced
                             price of €120.
                         </p>
                     {% else %}

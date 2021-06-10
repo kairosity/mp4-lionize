@@ -324,27 +324,33 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
  The features I decided to create an MVP version of this application with are the following:
 
+### Information Gathering & General Browsing
 1. Guest users should be able to easily browse the website and view general information on the kinds of services/products on offer. 
 2. They should be able to use a fully functioning contact form to contact Lionize with any questions. 
-3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal & shop sections of the site. 
+3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal & shop sections of the site.
+### Registration, Login & Logout
 4. Users are able to register easily using an email address and separate username, and they must confirm their password when registering.
 5. Once registered they should receive an email confirmation link to ensure they are supplying a genuine email address and then they should receive an email confirmation of successful registration.
 6. Users should be able to login and logout.
-7. When a user starts a session they login status and shopping bag should be remembered as they use the application.
-8. Once logged in a user should be able to view the user portal pages which include: their profile/billing details, their current shopping bag and a list of their past orders. 
+7. When a user starts a session their login status and shopping bag should be remembered as they use the application.
+8. Once logged in a user should be able to view the user portal pages which include: their profile/billing details, their current shopping bag and a list of their past orders.
 9. When logged in users also have access to the Shop.
 10. Users MUST be logged in to access the user portal pages and the shop. 
-11. Users can shop directly from the user portal / shop area of the application.
-12. Users can view categories of products to shop using a side navigation bar.
-13. Users can perform a keyword search against the product names, descriptions & features. 
+### Searching & Filtering
+11. Users can view categories of products to shop using a side navigation bar.
+12. Users can perform a keyword search against the product names, descriptions & features.
+### Shopping
+13. Users can shop directly from the user portal / shop area of the application.
 14. When shopping users can view the lists of all products (whether in the all products section of divided by category) and they can click into view the specific product details and to add it to their shopping bag if they want. 
 15. Users can see the VAT amount on individual products in their shopping bag as well as the total VAT being charged.
 16. Users get instant confirmation of any changes to their shopping bag via a modal message on the page.
-17. Users can alter their shopping bag directly from this modal or they can close the modal.
+17. Users are able to close the modal.
+### Payment
 18. Users can navigate to a checkout page when they are ready to pay securely using a credit card.
-19. The user's billing details will be auto-populated in the checkout form if they have previously saved them. 
-20. When a user successfully purchases a product they are sent a confirmation email with all the details. 
+19. The user's billing details will be auto-populated in the checkout form if they have previously saved them.
+20. When a user successfully purchases a product they are sent a confirmation email with all the details.
 21. If any errors occur during the checkout process the user is informed of the error.
+### Admin Functionality
 22. Admins can add, edit or delete products on the front & backend of the application.
 23. Admins can view a list of all users on the front-end of the application.
 24. Admins can mark products as "on sale" or "new".
@@ -663,17 +669,42 @@ The landing page's aim is to deliver a strong and positive first impression to t
 
 ### Guest User
 
-- Introduces the concept of the website by starting with a strong title and clean elegant design. 
-- A business synopsis is featured directly under the main heading. 
-- Login & Register buttons are clearly visible both on the top navbar (desktop) and as the user scrolls down in the "Benefits of Registration section."
+- Introduces the concept of the website by starting with a strong title and clean elegant design.
+- A business synopsis is featured directly under the main heading.
+<br>
+
+<p align="center">
+  <img src="static/images/features/landing-page.png">
+</p>
+<br>
+
+- Login & Register buttons are clearly visible both on the top navbar (desktop) and as the user scrolls down they arrive at
+- The "Benefits of Registration" section which encourages them to register.
+
+<p align="center">
+  <img src="static/images/features/features-benefits-registration-homepage.png">
+</p>
+
 - Links to each of the services / product categories are present early on in the user's homepage scrolling. 
 - Information about the main stakeholders in the company is also outlined on the homepage to increase trust in the business and to put human faces on the company.
 - At the bottom of the page is a contact form to communicate with the business.
 
 ### Registered & Logged in User
 
-- The only main differences are that the "Login" & "Register" buttons disappear from the navbar and the "Benefits of Registration" changes into a "Thank you for Registering" section with pertinent information and a link to set up the client's free consultation.
-- Clicking the link will pre-fill the contact form to email about a consultation. 
+- The "Login" & "Register" buttons disappear from the navbar and the "Benefits of Registration" changes into a "Thank you for Registering" section with pertinent information and a link to set up the client's free consultation.
+
+<p align="center">
+  <img src="static/images/features/features-homepage-consultation-msg.png">
+</p>
+
+- Clicking the link will pre-fill the contact form to email about a consultation.
+
+- If the user has already availed of the free consultation they will see a different message telling them that, and giving them 
+the option of paying for another consultation. 
+
+<p align="center">
+  <img src="static/images/features/already-availed-consultation.png">
+</p>
 
 </details>
 

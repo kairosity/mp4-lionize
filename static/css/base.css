@@ -514,6 +514,7 @@ small.form-heading{
 .update-link, 
 .remove-item {
     cursor: pointer;
+    text-decoration: none;
 }
 .image-container{
     display: flex;
