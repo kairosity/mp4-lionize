@@ -23,6 +23,7 @@ class UserProfile(models.Model):
     linkedin_handle = models.CharField(max_length=40, null=True, blank=True)
     twitter_handle = models.CharField(max_length=40, null=True, blank=True)
     facebook_handle = models.CharField(max_length=40, null=True, blank=True)
+    consultation = models.BooleanField()
 
     def __str__(self):
         return self.user.username

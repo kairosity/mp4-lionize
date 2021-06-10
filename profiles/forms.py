@@ -4,7 +4,7 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user',)
+        exclude = ('user','consultation')
         labels = {
             'default_phone_number': 'Phone Number:',
             'default_postcode': 'Postal Code:',

@@ -155,5 +155,13 @@ __Fix:__ I noticed that the S3 url for serving static files was different to the
       AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3-eu-west-1.amazonaws.com'
 
 
-## Persisting the shopping bag when users log out. 
+## Passing Data from the Homepage to an external JavaScript File.
 
+__Issue:__ In order to prefill the contact form for users who have not yet availed of their free consultation, I needed a way to pass the various pieces of user data from Django to JavaScript, as request.user.etc... did not work in an external script file.
+
+__Fix:__ I used the data*- attribute on hidden input fields and gave the fields ids with which to reference them in the JavaScript file. In this way I was able to collect all the user data and manipulate the contact form with JavaScript as below:
+
+
+        <input id="user-email" type="hidden" data-user-email="{{ request.user.email }}">
+        <input id="user-first-name" type="hidden" data-user-first-name="{{ request.user.first_name }}">
+        <input id="user-last-name" type="hidden" data-user-last-name="{{ request.user.last_name }}">

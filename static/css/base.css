@@ -51,6 +51,12 @@
 a{
     color: var(--main-colour);
 }
+a.yellow-link{
+    color: var(--accent-colour);
+}
+a.yellow-link:hover{
+    color: var(--accent-lighter);
+}
 /* Buttons */
 
 .button {

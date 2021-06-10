@@ -635,6 +635,7 @@ The Profile model stores additional user data for information and billing that i
 | linkedin_handle | string | The user's LinkedIn username. |
 | twitter_handle | string | The user's Twitter username. |
 | facebook_handle | string | The user's Facebook username. |
+| consultation | boolean | Whether not not the user has availed of their free consultation. |
 
 <br>
 
@@ -680,9 +681,48 @@ The landing page's aim is to deliver a strong and positive first impression to t
 
 ## 2. Contact 
 
+The contact form is available for both unregistered and registered users. It allows users to contact Lionize with any and all
+questions they might have and it is essential to creating trust in the business.
+
 <details>
 <summary><b>click for features</b></summary>
 
+### Guest User
+
+- Works as a simple contact form, guest users fill in their details and send an email. 
+- They receive feedback in the form of a toast message when the email sends successfully.
+
+### Registered & Logged in User
+
+- When a user is logged in, the "email" value of the form is prefilled for them to save them time and energy.
+- When a user is logged in and has not yet availed of their free consultation and clicks on the "Schedule Consultation" button, the form is auto-populated with the following data:
+1. The user's email.
+2. The subject: "Schedule free business consultation for first_name last_name." (Where the user's first and last names are auto-populated)
+3. The message: 
+
+        Dear Lionize,
+        I would like to take this opportunity to schedule in my complimentary business consultation.
+        The best date & time for me would be ...... [Please edit HERE to suit your schedule].
+            
+        In advance of our meeting here is my current business website: [Please enter website here if you have one, otherwise delete this line.]
+            
+        Here are my social media handles:
+        Instagram: @karinainstagram
+        Twitter: @karinatwitter
+        Facebook: @karinafacebook
+        LinkedIn: @karinalinkedin
+            
+        My phone number is: 32746283746832 should you need to contact me.
+
+        Thank You,
+        Karina
+
+All the specifics are auto-populated from data the user enters or left blank if the user has not entered that information.
+
+
+<p align="center">
+  <img src="static/images/features/features-contact-consultation.png">
+</p>
 
 </details>
 

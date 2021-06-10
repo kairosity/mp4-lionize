@@ -47,25 +47,60 @@
                 </div>
             </div>
         </section>
-        <section class="row blue-bg-section justify-content-center">
-            <div class="registration-benefits-container col-10 col-lg-6">
-                <h3 class="homepage-body-heading">Benefits of Registration</h3>
-                <p class="homepage-body-text">
-                    Register with us, provide some basic details and we will arrange a free consulation to 
-                    discuss what we can do to supercharge your business's digital presence.
-                </p>
-                <ol class="homepage-body-list">
-                    <li class="homepage-body-list-item">Access to all our services and products pricing information.</li>
-                    <li class="homepage-body-list-item">Access to your personal user portal.</li>
-                    <li class="homepage-body-list-item">All registered users can avail of a free services consultation to chat through your business needs.</li>
-                    <li class="homepage-body-list-item">All your orders are saved in one place for easy reference.</li>
-                    <li class="homepage-body-list-item">Shop & pay securely for products and services directly from your user portal.</li>
-                </ol>
-                <div class="button-wrapper">
-                    <a href="{% url 'account_signup' %}" class="button button-accent register-benefits-button">Register</a>
-                </div>
-            </div>  
-        </section>
+        {% if request.user.is_authenticated %}
+            <section class="row blue-bg-section justify-content-center">
+                <div class="registration-benefits-container col-10 col-lg-6">
+                    <h3 class="homepage-body-heading">Welcome {{ request.user.first_name }}!</h3>
+                    {% if request.user.userprofile.consultation %}
+                        <p class="homepage-body-text">
+                            You have already availed of your free consulation, but please do <a class="yellow-link" href="{% url 'home' %}#contact-us">contact us</a> below if you would like to arrange another consultation at the reduced
+                            price of €120.
+                        </p>
+                    {% else %}
+                        <p class="homepage-body-text">
+                            Why not take the opportunity to schedule your free business consultation with us? 
+                        </p>
+                        <input id="user-email" type="hidden" data-user-email="{{ request.user.email }}">
+                        <input id="user-first-name" type="hidden" data-user-first-name="{{ request.user.first_name }}">
+                        <input id="user-last-name" type="hidden" data-user-last-name="{{ request.user.last_name }}">
+                        <input id="user-phone" type="hidden" data-user-phone="{{ request.user.userprofile.default_phone_number }}">
+                        <input id="user-instagram" type="hidden" data-user-instagram="{{ request.user.userprofile.instagram_handle }}">
+                        <input id="user-twitter" type="hidden" data-user-twitter="{{ request.user.userprofile.twitter_handle }}">
+                        <input id="user-facebook" type="hidden" data-user-facebook="{{ request.user.userprofile.facebook_handle }}">
+                        <input id="user-linkedin" type="hidden" data-user-linkedin="{{ request.user.userprofile.linkedin_handle }}">
+
+                        <p class="homepage-body-text">We will discuss your business needs in more depth and see how we can work together for your benefit.
+                            Clicking the link below will pre-fill an email to us, but please feel free to edit it however you see fit. Thank You.
+                        </p>
+                        <!-- Clicking here should prefill the contact form with consultation related info -->
+                        <div class="button-wrapper">
+                            <a id="schedule-consultation" href="{% url 'home' %}#contact-us" class="button button-accent register-benefits-button">Schedule Consulation</a>
+                        </div>
+                    {% endif %}
+                    
+                </div>  
+            </section>
+        {% else %}
+            <section class="row blue-bg-section justify-content-center">
+                <div class="registration-benefits-container col-10 col-lg-6">
+                    <h3 class="homepage-body-heading">Benefits of Registration</h3>
+                    <p class="homepage-body-text">
+                        Register with us, provide some basic details and we will arrange a free consulation to 
+                        discuss what we can do to supercharge your business's digital presence.
+                    </p>
+                    <ol class="homepage-body-list">
+                        <li class="homepage-body-list-item">Access to all our services and products pricing information.</li>
+                        <li class="homepage-body-list-item">Access to your personal user portal.</li>
+                        <li class="homepage-body-list-item">All registered users can avail of a free services consultation to chat through your business needs.</li>
+                        <li class="homepage-body-list-item">All your orders are saved in one place for easy reference.</li>
+                        <li class="homepage-body-list-item">Shop & pay securely for products and services directly from your user portal.</li>
+                    </ol>
+                    <div class="button-wrapper">
+                        <a href="{% url 'account_signup' %}" class="button button-accent register-benefits-button">Register</a>
+                    </div>
+                </div>  
+            </section>
+        {% endif %}
         <section class="row">
             <h3 class="homepage-body-heading">Who Are We?</h3>
             <p class="homepage-body-text">Here will be a longer sort of description about who we are and the company's mission statement etc...</p>
@@ -110,4 +145,9 @@
         </section>
     </div>
     
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

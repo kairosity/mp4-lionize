@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, reverse
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
+from profiles.models import UserProfile
 
 import os
 # Create your views here.
@@ -31,7 +32,8 @@ def index(request):
                     )
                 return HttpResponse('Invalid header found.')
             return redirect('home')
-            
+    
+        
     return render(request, 'home/index.html', {'form': form})
 
 def webdesign(request):
