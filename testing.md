@@ -165,3 +165,25 @@ __Fix:__ I used the data*- attribute on hidden input fields and gave the fields 
         <input id="user-email" type="hidden" data-user-email="{{ request.user.email }}">
         <input id="user-first-name" type="hidden" data-user-first-name="{{ request.user.first_name }}">
         <input id="user-last-name" type="hidden" data-user-last-name="{{ request.user.last_name }}">
+
+## Product "Review" Model Errors
+
+__Issue:__ When creating my product "Review" model the following errors were thrown. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/issues/error-userprofile.png">
+</p>
+
+<br>
+
+__Fix:__ I had referenced the UserProfile as below and I had omitted the "profiles" reference in the field definition. Changing this:
+
+      user = models.ForeignKey('UserProfile', on_delete=models.CASCADE, related_name='review_user')
+
+To this:
+
+      user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='review_user')
+
+Fixed the issue.
