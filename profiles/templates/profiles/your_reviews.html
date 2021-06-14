@@ -37,7 +37,7 @@ Divde into Reviewed & Review
                                         <p><strong>Order #:</strong> {{order.order_number|truncatechars:12}} | <strong>Order Date:</strong> {{order.date}}</p>
                                         <p></p>
                                         <p><strong>Category:</strong> {{item.product.category.friendly_name}}  |<strong> Product: </strong> {{item.product.friendly_name}}</p>
-                                        <a class="button button-accent" href="">Review Product</a>
+                                        <a class="button button-accent" href="{% url 'product_detail' item.product.id %}">Review Product</a>
                                     </div>
                                 {% endif %}
                             {% endfor %}

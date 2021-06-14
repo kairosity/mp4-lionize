@@ -87,11 +87,85 @@
                 <!-- </div> -->
             </form>
         <!-- </div> -->
-
     </div>
-    </div> 
+<!-- Review Section -->
+    <div class="row d-flex flex-column">
+        <div class="accordion" id="reviewAccordion">
+
+            <!-- Only show this option to users who are logged in and who: 1. have purchased this -->
+                {% if user_purchased_product %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ADD A REVIEW
+                        </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#reviewAccordion">
+                        <div class="accordion-body">
+                            <form class="review-form" method="POST" action="{% url 'product_detail' product.id %}">
+                                {% csrf_token %}
+                                <h2>Review of {{product.friendly_name}} by {{request.user}}</h2>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review_title | as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review_stars | as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review | as_crispy_field }}
+                                    </div>
+                                </div>
+                                
+                                    <input class="button button-accent" type="submit" value="Submit">
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                {% endif %}
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                SEE REVIEWS
+                </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#reviewAccordion">
+                <div class="accordion-body">
+                    {% for review in reviews %}
+                        <small>{{review.date_reviewed}}</small>
+                        {% if review.review_stars == 'option1' %}
+                            <p><i class="fas fa-star"></i></p>
+                        {% elif review.review_stars == 'option2' %}
+                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        {% elif review.review_stars == 'option3' %}
+                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        {% elif review.review_stars == 'option4' %}
+                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        {% elif review.review_stars == 'option5' %}
+                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        {% endif %}
+                        <h3>{{review.review_title}}</h3>
+                        <p>{{review.review}}</p>
+                        <p>Reviewed by: {{review.user}}</p>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
         
+    </div>
+
+    </div> 
+    </div>
+    
+
 </div>
+
+
 <!-- Flex Container End -->
 </div> 
 

@@ -21,9 +21,13 @@ class Product(models.Model):
         return self.friendly_name
 
 class Review(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='product_reviewed')
-    user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='review_user')
+
+    CHOICES = (
+        ('option1', '1 Star'), ('option2', '2 Stars'), ('option3', '3 Stars'), ('option4', '4 Stars'), ('option5', '5 Stars')
+    )
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='product_reviews')
+    user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='user_reviews')
     review_title = models.CharField(max_length=120, null=True, blank=True)
     review = models.TextField(max_length=500, null=True, blank=True)
-    review_stars = models.IntegerField(validators=[MaxValueValidator(5), MinValueValidator(1)], null=False, blank=False)
+    review_stars = models.CharField(max_length=70, choices = CHOICES, default = 'option5')
     date_reviewed = models.DateField(auto_now=True)
