@@ -1,6 +1,7 @@
 from django.db import models
 from categories.models import Category
 from profiles.models import UserProfile
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Product(models.Model):
@@ -18,3 +19,11 @@ class Product(models.Model):
     
     def get_friendly_name(self):
         return self.friendly_name
+
+class Review(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='product_reviewed')
+    user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='review_user')
+    review_title = models.CharField(max_length=120, null=True, blank=True)
+    review = models.TextField(max_length=500, null=True, blank=True)
+    review_stars = models.IntegerField(validators=[MaxValueValidator(5), MinValueValidator(1)], null=False, blank=False)
+    date_reviewed = models.DateField(auto_now=True)
