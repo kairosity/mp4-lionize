@@ -1,0 +1,95 @@
+<!-- Cycle through each order the user has made and paid for and allow them to leave 1 review per product.
+
+- List the products for review here. 
+
+Divde into Reviewed & Review
+
+-->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profile/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="flex-container product-details-flex-container">
+
+{% include 'includes/side-nav.html' %}
+
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <header class=" d-flex flex-column">
+            <div class="container">
+                <h1 class="profile-page-heading mt-4 mb-3">{{request.user.first_name}}'s Reviews</h1>
+            </div>
+        </header>
+        <section>
+            <div class="row">
+                <section class="reviews-available-section">
+                    <div class="col-12 col-md-8 col-lg-5">
+                        {% for order in orders %}
+                            {% for item in order.lineitems.all %}
+                                {% if not item.reviewed %}
+                                    <p><strong>Order #:</strong> {{order.order_number|truncatechars:6}}</p>
+                                    <p><strong>Order Date:</strong> {{order.date}}</p>
+                                    <p><strong>Product:</strong>{{item.product}}</p>
+                                    <a class="button button-accent" href="">Review Product</a>
+                                {% endif %}
+                            {% endfor %}
+
+                        {% endfor %}
+                    </div>
+                </section>
+                <section class="reviews-written-section">
+                    <div class="col-12 col-md-8 col-lg-5"></div>
+                </section>
+                <div class="col-12 col-md-8 col-lg-5">
+                    <div class="order-history table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr class="order-table-row">
+                                        <td>
+                                            <a href="{% url 'order_history' order.order_number %}"
+                                            title="{{ order.order_number }}">
+                                                {{ order.order_number|truncatechars:6 }}
+                                            </a>
+                                        </td>
+                                        <td>{{ order.date }}</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                {% for item in order.lineitems.all %}
+                                                    <li class="small">
+                                                        {{ item.product.name }} x{{ item.quantity }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>€{{ order.grand_total }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        </div>
+    </div>  
+    
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script> 
+{% endblock %}

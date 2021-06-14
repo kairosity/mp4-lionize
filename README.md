@@ -1108,6 +1108,14 @@ This would streamline the social media management services in particular and all
 
     Used to understand more about the BooleanField
 
+- ### [How to limit the maximum value of a numeric field in a Django model?](https://stackoverflow.com/questions/849142/how-to-limit-the-maximum-value-of-a-numeric-field-in-a-django-model)
+
+    Used to write the Review Model
+
+- ### [IntegerField - Django Models](https://www.geeksforgeeks.org/integerfield-django-models/#field-options)
+
+    Used to write the Review Model
+
 ## 6. Jinja
 
 ## 7. General

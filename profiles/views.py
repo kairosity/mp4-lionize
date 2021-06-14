@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
+from checkout.models import Review
 from .forms import UserProfileForm
 
 from checkout.models import Order
@@ -70,3 +71,20 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+@login_required
+def your_reviews(request):
+
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    orders = profile.orders.all()
+
+    template = 'profiles/your_reviews.html'
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, template, context)
+
+
+
