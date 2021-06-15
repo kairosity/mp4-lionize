@@ -22,77 +22,53 @@ Divde into Reviewed & Review
     <div class="container-fluid">
         <header class=" d-flex flex-column">
             <div class="container">
-                <h1 class="profile-page-heading mt-4 mb-3">{{request.user.first_name}}'s Reviews</h1>
+                <h1 class="profile-page-heading mt-4 mb-3">Product Reviews</h1>
             </div>
         </header>
-        <section>
-            <div class="row">
-                <section class="reviews-available-section">
-                    <div class="col-12 col-md-8 col-lg-5">
-                        <h2>Products To Review</h2>
+    
+                <section class="reviews row">
+                    <div class="col-12 col-md-6 review-padding">
+                        <h2 class="details-page-subheading">Products To Review</h2>
                         {% for order in orders %}
                             {% for item in order.lineitems.all %}
                                 {% if not item.reviewed %}
-                                    <div class="review-border container">
-                                        <p><strong>Order #:</strong> {{order.order_number|truncatechars:12}} | <strong>Order Date:</strong> {{order.date}}</p>
+                                    <div class="review-border container orders-to-review">
+                                        <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
+                                        <small><strong>Order Date:</strong> {{order.date}}</small>
                                         <p></p>
-                                        <p><strong>Category:</strong> {{item.product.category.friendly_name}}  |<strong> Product: </strong> {{item.product.friendly_name}}</p>
-                                        <a class="button button-accent" href="{% url 'product_detail' item.product.id %}">Review Product</a>
+                                        <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
+                                        <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
+                                        <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}">Review</a>
                                     </div>
                                 {% endif %}
                             {% endfor %}
 
                         {% endfor %}
                     </div>
-                </section>
-                <section class="reviews-written-section">
-                    <div class="col-12 col-md-8 col-lg-5"></div>
-                </section>
-                <div class="col-12 col-md-8 col-lg-5">
-                    <div class="order-history table-responsive">
-                        <table class="table table-sm table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
-                                    <th>Order Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for order in orders %}
-                                    <tr class="order-table-row">
-                                        <td>
-                                            <a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                                {{ order.order_number|truncatechars:6 }}
-                                            </a>
-                                        </td>
-                                        <td>{{ order.date }}</td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
-                                                    <li class="small">
-                                                        {{ item.product.name }} x{{ item.quantity }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td>€{{ order.grand_total }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                    <div class="col-12 col-md-6 review-padding">
+                        <h2 class="details-page-subheading">Your Reviews</h2>
+                        {% for review in reviews %}
+                            <div class=" container review-border">
+                                {% if review.review_stars == 'option1' %}
+                                    <p><i class="fas fa-star review-star"></i></p>
+                                {% elif review.review_stars == 'option2' %}
+                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
+                                {% elif review.review_stars == 'option3' %}
+                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                {% elif review.review_stars == 'option4' %}
+                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                {% elif review.review_stars == 'option5' %}
+                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                {% endif %}
+                                <h4><strong>Product:</strong> {{review.product.friendly_name}}</h4>
+                                <p><strong>Review Title:</strong> {{review.review_title}}</p>
+                                <p><strong>Review:</strong> {{review.review}}</p>
+                                <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+                            </div>
+                        {% endfor %}
                     </div>
-                </div>
-            </div>
-        </section>  
+                </section>
         </div>
-    </div>  
-    
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script> 
+        </div>
+        
 {% endblock %}

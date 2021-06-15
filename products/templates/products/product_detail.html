@@ -119,8 +119,7 @@
                                     <div class="col mt-3 mb-2">
                                         {{ form.review | as_crispy_field }}
                                     </div>
-                                </div>
-                                
+                                </div> 
                                     <input class="button button-accent" type="submit" value="Submit">
                             </form>
                         </div>
@@ -145,7 +144,7 @@
                         {% elif review.review_stars == 'option3' %}
                             <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                         {% elif review.review_stars == 'option4' %}
-                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            <p><i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                         {% elif review.review_stars == 'option5' %}
                             <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                         {% endif %}

@@ -142,12 +142,15 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 2. Gather more in depth information about the services and products on offer.
 3. Easily contact Lionize to ask for specific information about the services and products on offer.
 4. View a transparent pricing structure for all products.
+5. View the reviews of other users on products/services I am interested in.
 
 ### User Portal
 
 1. View / add / updated my profile details easily on a page specifically for that purpose.
 2. Navigate to my shopping bag quickly from the user portal side bar.
 3. Easily view all my past orders, and all their attendent details.
+4. View a list of ordered products I have yet to review. 
+5. View a list of my reviews.
 
 ### Shopping
 
@@ -213,7 +216,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 
 - Add a new product to the shop.
 - Edit an existing product.
-- Delete a product from the shop. 
+- Delete a product from the shop.
 - See a list of registered users.
 
 ## Application Creator User Stories
@@ -290,29 +293,32 @@ The crux of this application's purpose is as a B2B service provider that allows 
 6.| When a user logs out their shopping bag information is saved to their user profile and remembered when they log back in. | 4 | 2 | 6
 7.| Lionize can upload designs, contracts and other files so that they are accessible to users from their dashboards. |2 | 3 | 5
 8.| Users can add widgets of their social media accounts to their user portal to view their accounts while inside the application. | 2 | 3 | 5
+9.| Users can view a list of products they have previously ordered and that can be reviewed. | 6 | 6 | 12
+10.| Users can view a list of their reviews. | 5 | 7 | 12
 . | __*SHOP FUNCTIONALITY & FEATURES*__ 
 1.| Users can order digital products directly from the user portal / shop area. |6 | 6 | 12
 2.| The shop is divided into 4 categories of products: Web Design, SEO, Social Media Management & Content Creation. |4 | 5 | 9
 3.| Users can filter the products on the "All Products" shop page by searching for a particular keyword.  |6 | 6 | 12
 4.| Users can view an overview of all the products in a specific category on that categories. |9 | 8 | 17
-5.| Users can click in to see details of the products they are interested in. |7 | 8 | 15
-6.| Users can see the VAT amount added to each product. |6|7|13
-7.| Users can add products they want into a shopping bag. |10|10|20
-8.| Users can navigate to a shopping bag page and easily see all the products they have added. |10|10|20
-9.| Users can update & remove items from their shopping bag. |9|9|18
-10.| Users get immediate feedback in the form of messages on screen when they alter their shopping bag in any way. |8|8|16
-11.| The VAT added to the products is visible for each individual product & the total amount of VAT on the shopping bag page. |7|7|14
-12.| Users can pay securing using a credit card. |10|10|20
-13.| If a user has saved their profile / billing information, the checkout page form is auto-populated with this info. |8|8|16
-14.| When a user successfully purchases a product, a confirmation email is sent to their email. |8|8|16
-15.| If a user enters incorrect card information they are informed of this immediately via an error message. |8|6|14
-. | __*ADMIN FUNCTIONALITY & FEATURES*__ 
+5.| Users can view reviews on products. |6 | 7 | 13
+6.| Users can click in to see details of the products they are interested in. |7 | 8 | 15
+7.| Users can see the VAT amount added to each product. |6|7|13
+8.| Users can add products they want into a shopping bag. |10|10|20
+9.| Users can navigate to a shopping bag page and easily see all the products they have added. |10|10|20
+10.| Users can update & remove items from their shopping bag. |9|9|18
+11.| Users get immediate feedback in the form of messages on screen when they alter their shopping bag in any way. |8|8|16
+12.| The VAT added to the products is visible for each individual product & the total amount of VAT on the shopping bag page. |7|7|14
+13.| Users can pay securing using a credit card. |10|10|20
+14.| If a user has saved their profile / billing information, the checkout page form is auto-populated with this info. |8|8|16
+15.| When a user successfully purchases a product, a confirmation email is sent to their email. |8|8|16
+16.| If a user enters incorrect card information they are informed of this immediately via an error message. |8|6|14
+. | __*ADMIN FUNCTIONALITY & FEATURES*__
 1.| Admin can add, edit & delete products on the backend of the application. |9 | 10 | 19
 2.| Admin can add, edit & delete products on the frontend of the application. |6 | 9 | 15
 3.| There is an admin dashboard page where they can add new products & view a list of users. |4 | 4 | 8
 4.| Admin can mark a product as "on sale". |4 | 4 | 8
 5.| Admin can mark a product as "new". |4 | 4 | 8
-. | __*OTHER FUNCTIONALITY & FEATURES*__ 
+. | __*OTHER FUNCTIONALITY & FEATURES*__
 1.| Users can upload / select palettes & typography they like for their web design projects. |2 | 2 | 4
 2.| Users can create a mood board from images they upload to help Lionize with the design process. |2|1|3
 3.| When "new" products are added by admin, the application automatically adds them to a promotional banner that sits across the top of the "All Products" page in the shop. |3|6|9
@@ -328,6 +334,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 1. Guest users should be able to easily browse the website and view general information on the kinds of services/products on offer. 
 2. They should be able to use a fully functioning contact form to contact Lionize with any questions. 
 3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal & shop sections of the site.
+4. Logged in users should be able to read the reviews of other users on products they are interested in.
 ### Registration, Login & Logout
 4. Users are able to register easily using an email address and separate username, and they must confirm their password when registering.
 5. Once registered they should receive an email confirmation link to ensure they are supplying a genuine email address and then they should receive an email confirmation of successful registration.
@@ -335,7 +342,13 @@ The crux of this application's purpose is as a B2B service provider that allows 
 7. When a user starts a session their login status and shopping bag should be remembered as they use the application.
 8. Once logged in a user should be able to view the user portal pages which include: their profile/billing details, their current shopping bag and a list of their past orders.
 9. When logged in users also have access to the Shop.
-10. Users MUST be logged in to access the user portal pages and the shop. 
+10. Users MUST be logged in to access the user portal pages and the shop.
+### User Portal
+1. Users can view & change their profile information for use with billing and other app functionality.
+2. Users can click in to see their shopping bag.
+3. Users can view a list of their past orders.
+4. Users can view a list of items availble for them to review.
+5. Users can view a list of their reviews.
 ### Searching & Filtering
 11. Users can view categories of products to shop using a side navigation bar.
 12. Users can perform a keyword search against the product names, descriptions & features.
@@ -495,7 +508,7 @@ If you do opt to view them this way, please click download as the GitHub viewer 
 
 <br>
 
-#### back to [contents](#table-of-contents) 
+#### back to [contents](#table-of-contents)
 <br>
 
 # Surface
@@ -581,6 +594,21 @@ The product model stores the product specific data and is mainly used for produc
 
 <br>
 
+### __Review Model__
+
+The review model stores the product reviews by users who have purchased them.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| product | foreign key | The product under review. |
+| user | foreign key | The user doing the reviewing. |
+| review_title | string | The title of the review. |
+| review | string | The review itself. |
+| review_stars | string | The review rating from 1-5. |
+| date_reviewed | date | The date the review took place. |
+
+<br>
+
 ### __Order Model__
 
 The order model stores the specific order details and is connected to the order line item model and the user profile.
@@ -620,6 +648,7 @@ The order line item model stores the specific details of each unique item in an 
 | lineitem_total | decimal | The total price ex. VAT for this item to 2 decimal places.  |
 | lineitem_vat | decimal | The total VAT for this item to 2 decimal places.  |
 | lineitem_grand_total | decimal | The total price incl. VAT for this item to 2 decimal places.  |
+| reviewed | boolean | Whether or not the order line item has been reviewed by the user who purchased it.  |
 
 <br>
 

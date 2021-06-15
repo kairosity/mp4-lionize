@@ -537,9 +537,22 @@ img.empty-shopping-bag{
 /* Review Page */
 
 .review-border{
-    border: 2px solid var(--lighter-main);
     padding: 1rem;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.review-padding{
+    padding: 1rem 5rem;
+}
+.orders-to-review{
+    text-align: center;
+}
+.review-product-button{
+    font-size: 0.9rem;
+}
+
+i.fa-star{
+    color: var(--accent-colour);
 }
 /* The Following Code is all from the CI Boutique Ado Tutorial */
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */

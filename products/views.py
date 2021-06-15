@@ -161,7 +161,6 @@ def product_detail(request, product_id):
             'form': form,
         }
 
-
         return render(request, 'products/product_detail.html', context)
 
 
