@@ -501,6 +501,31 @@ img.product-details-page-img{
     color: var(--main-colour);
     margin-top: 0.3rem;
 }
+button.accordion-button{
+    margin: 0 auto;
+    font-size: 0.9rem;
+    font-family: var(--subheading-font);
+    font-weight: 400;
+}
+#reviewAccordion{
+    margin-top: 2rem;
+}
+label[for="id_review_title"],
+label[for="id_review_stars_0"],
+label[for="id_review"]{
+    margin-bottom: 0.5rem;    
+}
+.input-container{
+    justify-content: flex-end;
+}
+
+.review-block:not(:last-child):after{
+    content: "";
+    display: block;
+    border-bottom: var(--lighter-main) 2px dotted;
+    margin-bottom: 0.6rem;
+}
+
 
 /* Profile Page */
 
