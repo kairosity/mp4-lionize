@@ -187,32 +187,3 @@ To this:
       user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='review_user')
 
 Fixed the issue.
-
-
-class ReviewForm(forms.ModelForm):
-
-    class Meta:
-        model = Review
-        fields = ['review_title', 'review', 'review_stars']
-        labels = {
-            'review_title': 'Give your review a title:',
-            'review': 'Write your review here:',
-            'review_stars': 'From 1 to 5 (1 being a bad rating and 5 being the best) How would you rate this product?',
-        }
-
-        CHOICES = [('option1', '1 Star'), ('option2', '2 Stars'), ('option3', '3 Stars'), ('option4', '4 Stars'), ('option5', '5 Stars')]
-
-        review_stars = forms.ChoiceField(
-            choices=(
-            ('option_one', "Option one is this and that be sure to include why it's great"), 
-            ('option_two', "Option two can is something else and selecting it will deselect option one")
-            ), 
-            widget=forms.RadioSelect(),
-            initial = 'option5',
-        )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        for field_name, field in self.fields.items():
-                field.widget.attrs['class'] = 'review-form-field'

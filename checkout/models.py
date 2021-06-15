@@ -63,6 +63,7 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
     lineitem_vat = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
     lineitem_grand_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    reviewed = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         '''

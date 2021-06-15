@@ -93,7 +93,7 @@
         <div class="accordion" id="reviewAccordion">
 
             <!-- Only show this option to users who are logged in and who: 1. have purchased this -->
-                {% if user_purchased_product %}
+                {% if user_purchased_product_and_can_review %}
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

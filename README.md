@@ -1116,6 +1116,14 @@ This would streamline the social media management services in particular and all
 
     Used to write the Review Model
 
+- ### [Which model fields can be used with a radio widget(via a modelform)?](https://stackoverflow.com/questions/15658400/which-model-fields-can-be-used-with-a-radio-widgetvia-a-modelform)
+
+    Used to write the "Add Review" Form
+
+- ### [How to specify Select and RadioSelect in a ModelForm?](https://stackoverflow.com/questions/30199471/how-to-specify-select-and-radioselect-in-a-modelform/30200800)
+
+    Used to write the "Add Review" Form
+
 ## 6. Jinja
 
 ## 7. General

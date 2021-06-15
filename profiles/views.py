@@ -77,6 +77,8 @@ def your_reviews(request):
 
     profile = get_object_or_404(UserProfile, user=request.user)
 
+    # Need to filter orders down to only orders by that user 
+
     orders = profile.orders.all()
 
     template = 'profiles/your_reviews.html'

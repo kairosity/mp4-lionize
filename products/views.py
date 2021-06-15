@@ -99,27 +99,25 @@ def product_detail(request, product_id):
     A view to show the individual project details.
     '''
 
-    user_purchased_project = False 
+    user_purchased_project_and_can_review = False 
     profile = get_object_or_404(UserProfile, user=request.user)
     users_orders = profile.orders.all()
     featured_product_id = product_id
-
-    # To determine if the logged in user should be allowed to leave a review
-    for order in users_orders:
-        line_items = order.lineitems.all()
-        for item in line_items:
-            if item.product.id == featured_product_id:
-                user_purchased_project = True
-
     product = get_object_or_404(Product, pk=product_id)
     category = product.category
     reviews = product.product_reviews.all()
     vat = float((product.price * 23)) * .01
     total_incl_vat = float(product.price) + vat
 
-    for review in reviews:
-        print(review.review_stars)
+    # To determine if the logged in user should be allowed to leave a review
+    for order in users_orders:
+        line_items = order.lineitems.all()
+        for item in line_items:
+            if item.product.id == featured_product_id:
+                if item.reviewed == False:
+                    user_purchased_project_and_can_review = True
 
+    # Save form review details on Submit
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -127,6 +125,16 @@ def product_detail(request, product_id):
             review.user = profile
             review.product = product
             review.save()
+
+            # Switch the "reviewed" field from False to True on the order line item
+            for order in users_orders:
+                line_items = order.lineitems.all()
+                for item in line_items:
+                    if item.product.id == featured_product_id:
+                        item.reviewed = True
+                        item.save()
+                        break
+
             messages.success(request, 'Your review was added successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -148,7 +156,7 @@ def product_detail(request, product_id):
             'category': category,
             'referring_page': referring_page,
             'features' : features,
-            'user_purchased_product': user_purchased_project,
+            'user_purchased_product_and_can_review': user_purchased_project_and_can_review,
             'reviews': reviews,
             'form': form,
         }
