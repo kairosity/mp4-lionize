@@ -1089,6 +1089,10 @@ This would streamline the social media management services in particular and all
 
     Help with understanding how to use the data* attribute.
 
+- ### [Combining CSS Pseudo-elements, “:after” the “:last-child”](https://stackoverflow.com/questions/2351623/combining-css-pseudo-elements-after-the-last-child)
+
+    Used to help style the "SEE REVIEWS" section of the product details page.
+
 ## 3. JavaScript
 
 - ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)

@@ -1,10 +1,11 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
-from profiles.models import UserProfile
+from django.contrib.auth import get_user_model
+from profiles.models import UserProfile, Message
 from products.models import Product, Category
 from django.db.models import Q
 
@@ -19,13 +20,23 @@ def index(request):
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        if request.user.is_authenticated:
+            user = get_object_or_404(UserProfile, user=request.user)
         if form.is_valid():
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             try:
                 send_mail(subject, message, email, [os.getenv('DEFAULT_FROM_EMAIL')])
-                messages.success(request, (
+                
+                if request.user.is_authenticated:
+                    messages.success(request, (
+                        "Your email was delivered. Thank you. Lionize will get back to you within 36 hours. Please note that a copy of this email is saved in our database. In accordance with GDPR legislation, should you wish for us to delete this message, please let us know.")
+                    )
+                    new_message = Message(user=user, subject=subject, message=message)
+                    new_message.save()
+                else:
+                    messages.success(request, (
                         "Your email was delivered. Thank you. Lionize will get back to you within 36 hours.")
                     )
             except BadHeaderError:
@@ -96,4 +107,12 @@ def admin_dash_users(request):
     '''
     A view to return the admin users dashboard. Only available & visible to logged in admin users.
     '''
-    return render(request, 'home/admin_dash_users.html')
+    user_profiles = UserProfile.objects.all()
+    user_messages = Message.objects.all()
+
+    context = {
+        'user_profiles': user_profiles,
+        'user_messages': user_messages,
+    }
+
+    return render(request, 'home/admin_dash_users.html', context)

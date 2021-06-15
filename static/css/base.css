@@ -674,6 +674,19 @@ i.fa-star{
     text-align: center;
     margin: 1.2rem 0;
 }
+.message-list-container:before{
+    content: "";
+    display: block;
+    border-bottom:  var(--accent-colour) dotted 2px;
+    margin-bottom: 0.6rem;
+}
+.divider:after{
+    content: "";
+    display: block;
+    border-bottom:  var(--main-colour) dotted 2px;
+    margin-bottom: 0.6rem;
+    margin-top: 0.6rem;
+}
 
 /* Edit Product Form Page */
 .admin-page-heading{

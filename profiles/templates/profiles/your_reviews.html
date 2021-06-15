@@ -63,8 +63,8 @@ Divde into Reviewed & Review
                                 {% elif review.review_stars == 'option5' %}
                                     <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                                 {% endif %}
-                                <h4><strong>Product:</strong> {{review.product.friendly_name}}</h4>
-                                <p><strong>Review Title:</strong> {{review.review_title}}</p>
+                                <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
+                                <p><strong>Review Title:</strong>  {{review.review_title}}</p>
                                 <p><strong>Review:</strong> {{review.review}}</p>
                                 <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
                             </div>

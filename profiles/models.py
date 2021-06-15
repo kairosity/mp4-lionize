@@ -38,3 +38,13 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     #Existing users - just save the profile
     instance.userprofile.save()
+
+class Message(models.Model):
+    '''
+    A Messages model for keeping track of user communication with Lionize.
+    '''
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_messages')
+    subject = models.CharField(max_length=120, null=True, blank=True)
+    message = models.TextField(max_length=500, null=True, blank=True)
+    date = models.DateField(auto_now=True)
+    resolved = models.BooleanField(default=False)
