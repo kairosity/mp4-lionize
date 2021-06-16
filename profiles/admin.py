@@ -4,6 +4,8 @@ from .models import UserProfile, Message
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
+        'default_first_name',
+        'default_last_name',
         'default_phone_number',
         'default_street_address1',
         'default_street_address2',

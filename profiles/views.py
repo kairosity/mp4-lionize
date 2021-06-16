@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 
 from .models import UserProfile
 from products.models import Review
@@ -20,6 +21,13 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
+            # Save the first & last name from the profile to the Django user auth form.
+            User = get_user_model()
+            user_to_update = get_object_or_404(User, username=request.user)
+            user_to_update.first_name = form.cleaned_data['default_first_name']
+            user_to_update.last_name = form.cleaned_data['default_last_name']
+            user_to_update.save()
+            
             messages.success(request, 'Profile updated successfully!')
         else:
             messages.error(request, 'Update failed. Please ensure the form is valid.')

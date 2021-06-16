@@ -12,6 +12,8 @@ class UserProfile(models.Model):
     A user profile model for maintaining default delivery information and order history. 
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_first_name = models.CharField(max_length=40, null=True, blank=True)
+    default_last_name = models.CharField(max_length=60, null=True, blank=True)
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
@@ -23,7 +25,7 @@ class UserProfile(models.Model):
     linkedin_handle = models.CharField(max_length=40, null=True, blank=True)
     twitter_handle = models.CharField(max_length=40, null=True, blank=True)
     facebook_handle = models.CharField(max_length=40, null=True, blank=True)
-    consultation = models.BooleanField()
+    consultation = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

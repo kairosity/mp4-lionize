@@ -16,7 +16,11 @@
         
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
-                <h1 class="profile-page-heading">{{request.user.first_name}}'s Profile</h1>
+                {% if request.user.userprofile.default_first_name %}
+                    <h1 class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Profile</h1>
+                {% else %}
+                    <h1 class="profile-page-heading">{{request.user.username}}'s Profile</h1>
+                {% endif %}
                 <h2 class="profile-page-subheading">Here are your profile details, please keep this form updated.</h2>
             </div>
         </header>
@@ -26,7 +30,21 @@
         
                     <form action="{% url 'profile' %}" method="POST" class="mt-3 profile-page-form" id="profile-update-form">
                         {% csrf_token %}
-                        <small>Billing Details</small>
+                        <small>Personal Details</small>
+                        <div class="form-row row">
+                            <div class="form-row row">
+                                <div class="form-group col-12 mb-0">
+                                    {{ form.default_first_name | as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="form-row row">
+                                <div class="form-group col-12 mb-0">
+                                    {{ form.default_last_name | as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <small class="form-heading">Billing Details</small>
                         <div class="form-row row">
                             <div class="form-row row">
                                 <div class="form-group col-12 mb-0">

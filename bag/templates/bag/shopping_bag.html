@@ -11,7 +11,11 @@
     <div class="container-fluid">
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
-                <h1 class="profile-page-heading">{{request.user.first_name}}'s Shopping Bag</h1>
+                {% if request.user.userprofile.default_first_name %}
+                    <h1 class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Shopping Bag</h1>
+                {% else %}
+                    <h1 class="profile-page-heading">{{request.user.username}}'s Shopping Bag</h1>
+                {% endif %}
             </div>
         </header>
         <section>

@@ -169,7 +169,7 @@ def add_product(request):
     """ Add a product to the store """
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do that!')
+        messages.error(request, 'Sorry, but you are not authorized to add new products! If you have an admin account, please login.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -197,7 +197,7 @@ def edit_product(request, product_id):
     '''
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to edit Lionize products!')
+        messages.error(request, 'Sorry, but you are not authorized to edit Lionize products! If you have an admin account, please login.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -227,7 +227,7 @@ def delete_product(request, product_id):
     """ Delete a product from the store """
 
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry but you are not authorized to do that!')
+        messages.error(request, 'Sorry, but you are not authorized to delete Lionize products! If you have an admin account, please login.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)

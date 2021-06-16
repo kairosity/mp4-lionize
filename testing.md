@@ -187,3 +187,18 @@ To this:
       user = models.ForeignKey('profiles.UserProfile', on_delete=models.CASCADE, related_name='review_user')
 
 Fixed the issue.
+
+## First & Last Name Disconnect Issue
+
+__Issue:__ I needed a way to allow users to add/edit their first & last names on their profile page and have this reflected and updated on the Django auth user model as well as the UserProfile Model. This was important as the checkout page form specifically asks for the first & last names and it gets them from calling the ```get_full_name()``` method on the Django auth User object. 
+
+<br>
+
+__Fix:__ I intially tried to combine two forms on the User Portal's Profile Page, but that was overly complicated. Eventually I added code to the POST method on the User Profile form. So that when the users update their first & last names on the User Profile Model, the POST method automatically updates the User auth model as well:
+
+            User = get_user_model()
+            user_to_update = get_object_or_404(User, username=request.user)
+            user_to_update.first_name = form.cleaned_data['default_first_name']
+            user_to_update.last_name = form.cleaned_data['default_last_name']
+            user_to_update.save()
+

@@ -14,7 +14,11 @@
     <div class="container-fluid">
         <header class=" d-flex flex-column">
             <div class="container">
-                <h1 class="profile-page-heading mt-4 mb-3">{{request.user.first_name}}'s Order History</h1>
+                {% if request.user.userprofile.default_first_name %}
+                    <h1 class="profile-page-heading mt-4 mb-3">{{request.user.userprofile.default_first_name}}'s Order History</h1>
+                {% else %}
+                    <h1 class="profile-page-heading mt-4 mb-3">{{request.user.username}}'s Order History</h1>
+                {% endif %}
             </div>
         </header>
         <section>

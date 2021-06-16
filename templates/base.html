@@ -107,25 +107,21 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
+                            {% if request.user.is_superuser %}
+                                <li class="nav-item p-2 d-none d-lg-block">
+                                    <a class="nav-link" href="{% url 'admin-dash-products' %}">Admin Portal</a>
+                                </li>
+                            {% endif %}
                             {% if request.user.is_authenticated %}
-                                {% if request.path == '/' or request.path == '/webdesign' or request.path == '/seo' or request.path ==  '/content-creation' or request.path == '/social-media-management' %}
                                     <li class="nav-item p-2 d-none d-lg-block">
                                         <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
                                     </li>
                                     <li class="nav-item p-2 d-none d-lg-block">
                                         <a class="nav-link" href="{% url 'products' %}">Shop</a>
                                     </li>
-                                {% elif 'checkout' in request.path or 'logout' in request.path or 'order_history' in request.path or 'add' in request.path or 'edit' in request.path %}
-                                <li class="nav-item p-2 d-none d-lg-block">
-                                    <a class="nav-link" href="{% url 'profile' %}">User Portal</a>
-                                </li>
-                                <li class="nav-item p-2 d-none d-lg-block">
-                                    <a class="nav-link" href="{% url 'products' %}">Shop</a>
-                                </li>
-                                {% endif %}
-                                <li class="nav-item p-2 ">
-                                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                                </li>
+                                    <li class="nav-item p-2 ">
+                                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                                    </li>
                             {% else %}
                                 <li class="nav-item p-2 ">
                                     <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
