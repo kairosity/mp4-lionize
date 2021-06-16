@@ -1,21 +1,25 @@
 {% if request.user.is_authenticated %}
     <div class="side-nav-container d-none d-lg-block">
-        <hr class="white-hr">
-        <p class="side-nav-heading">User Portal</p>
-        <ul class="nav side-nav">
-            <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
-            </li>
-            <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
-            </li>
-            <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
-            </li>
-            <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
-            </li>
-        </ul>
+        {% if request.path == '/user-portal/profile' or request.path == '/bag' or request.path == '/user-portal/orders' or request.path ==  '/user-portal/reviews' %}
+            <hr class="white-hr">
+            <p class="side-nav-heading">User Portal</p>
+            <ul class="nav side-nav">
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a class="nav-link" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
+                </li>
+            </ul>
+            <hr class="white-hr">
+        {% endif %}
+        {% if request.path == '/products/' or request.path == '/products/web-design-products/' or request.path == '/products/seo-products/' or request.path ==  '/products/social-media-management' or request.path ==  '/products/content-creation-products/' %}
         <hr class="white-hr">
         <p class="side-nav-heading">Shop</p>
         <ul class="nav side-nav">
@@ -36,17 +40,21 @@
             </li>
         </ul>
         <hr class="white-hr">
+        {% endif %}
         {% if request.user.is_superuser %}
-            <p class="side-nav-heading">Admin Dashboard</p>
-            <ul class="nav side-nav">
-                <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'admin-dash-products' %}">Products</a>
-                </li>
-                <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'admin-dash-users' %}">Users</a>
-                </li>
-            </ul>
-            <hr class="white-hr">
+            {% if request.path == '/admin-dash-products' or request.path == '/admin-dash-users' %}
+                <hr class="white-hr">
+                <p class="side-nav-heading">Admin Dashboard</p>
+                <ul class="nav side-nav">
+                    <li class="nav-item side-nav-item hvr-underline-from-left">
+                        <a class="nav-link" aria-current="page" href="{% url 'admin-dash-products' %}">Products</a>
+                    </li>
+                    <li class="nav-item side-nav-item hvr-underline-from-left">
+                        <a class="nav-link" aria-current="page" href="{% url 'admin-dash-users' %}">Users</a>
+                    </li>
+                </ul>
+                <hr class="white-hr">
+            {% endif %}
         {% endif %}
     </div>
 {% endif %}

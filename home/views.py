@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from profiles.models import UserProfile, Message
 from products.models import Product, Category
@@ -73,16 +74,16 @@ def content_creation(request):
     '''
     return render(request, 'home/content_creation.html')
 
-def pricing(request):
-    '''
-    A view to return the content creation information page.
-    '''
-    return render(request, 'home/pricing.html')
-
+@login_required
 def admin_dash_products(request):
     '''
     A view to return the admin products dashboard. Only available & visible to logged in admin users.
     '''
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
+        return redirect(reverse('home'))
+
     products = Product.objects.all()
     query = None
 
@@ -103,10 +104,16 @@ def admin_dash_products(request):
 
     return render(request, 'home/admin_dash_products.html', context)
 
+@login_required
 def admin_dash_users(request):
     '''
     A view to return the admin users dashboard. Only available & visible to logged in admin users.
     '''
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
+        return redirect(reverse('home'))
+
     user_profiles = UserProfile.objects.all()
     user_messages = Message.objects.all()
     query = None
