@@ -202,3 +202,6 @@ __Fix:__ I intially tried to combine two forms on the User Portal's Profile Page
             user_to_update.last_name = form.cleaned_data['default_last_name']
             user_to_update.save()
 
+
+
+ {% if request.path == '/products/' or request.path == '/products/web-design-products/' or request.path == '/products/seo-products/' or request.path ==  '/products/social-media-management' or request.path ==  '/products/content-creation-products/' %}

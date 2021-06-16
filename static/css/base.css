@@ -114,7 +114,15 @@ button.decrement-qty{
 .button-tiny{
     font-size: 0.8rem;
 }
+/* Navigation */
 
+.active-page{
+    color: var(--accent-colour);
+    border-bottom: var(--accent-colour) solid 5px;
+}
+.active-page-side-nav{
+    background-color: var(--accent-colour);
+}
 /* Messages */
 .toast{
     border: var(--accent-colour) solid 4px;

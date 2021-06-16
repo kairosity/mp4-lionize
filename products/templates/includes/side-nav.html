@@ -1,56 +1,75 @@
 {% if request.user.is_authenticated %}
     <div class="side-nav-container d-none d-lg-block">
-        {% if request.path == '/user-portal/profile' or request.path == '/bag' or request.path == '/user-portal/orders' or request.path ==  '/user-portal/reviews' %}
+        {% if request.path == '/user-portal/profile' or request.path == '/bag/' or request.path == '/user-portal/orders' or request.path ==  '/user-portal/reviews' or 'checkout' in request.path %}
             <hr class="white-hr">
             <p class="side-nav-heading">User Portal</p>
             <ul class="nav side-nav">
                 <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
+                    <a id="profile-page-link" class="nav-link" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
                 </li>
                 <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
+                    <a id="bag-link" class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
                 </li>
                 <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
+                    <a id="orders-link" class="nav-link" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
                 </li>
                 <li class="nav-item side-nav-item hvr-underline-from-left">
-                    <a class="nav-link" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
+                    <a id="reviews-link" class="nav-link" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
                 </li>
             </ul>
             <hr class="white-hr">
         {% endif %}
-        {% if request.path == '/products/' or request.path == '/products/web-design-products/' or request.path == '/products/seo-products/' or request.path ==  '/products/social-media-management' or request.path ==  '/products/content-creation-products/' %}
+        {% if 'order_history' in request.path %}
+            <hr class="white-hr">
+            <p class="side-nav-heading">User Portal</p>
+            <ul class="nav side-nav">
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a id="profile-page-link" class="nav-link" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a id="bag-link" class="nav-link" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a id="orders-link" class="nav-link" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
+                </li>
+                <li class="nav-item side-nav-item hvr-underline-from-left">
+                    <a id="reviews-link" class="nav-link" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
+                </li>
+            </ul>
+            <hr class="white-hr">
+        {% endif %}
+        {% if 'products' in request.path %}
         <hr class="white-hr">
         <p class="side-nav-heading">Shop</p>
         <ul class="nav side-nav">
             <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a href="{% url 'products' %}" class="nav-link">Shop All Products</a>
+                <a id="shop-all-products-link" href="{% url 'products' %}" class="nav-link">Shop All Products</a>
             </li>
             <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design</a>
+                <a id='shop-webdesign-link' class="nav-link" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design</a>
             </li>
             <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link " href="{% url 'seo-products' %}">Shop SEO</a>
+                <a id="shop-seo-link" class="nav-link" href="{% url 'seo-products' %}">Shop SEO</a>
             </li>
             <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" href="{% url 'social_media_management' %}">Shop Social Media Management</a>
+                <a id="shop-smm-link" class="nav-link" href="{% url 'social_media_management' %}">Shop Social Media Management</a>
             </li>
             <li class="nav-item side-nav-item hvr-underline-from-left">
-                <a class="nav-link" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
+                <a id="shop-content-creation-link" class="nav-link" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
             </li>
         </ul>
         <hr class="white-hr">
         {% endif %}
         {% if request.user.is_superuser %}
-            {% if request.path == '/admin-dash-products' or request.path == '/admin-dash-users' %}
+            {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' %}
                 <hr class="white-hr">
                 <p class="side-nav-heading">Admin Dashboard</p>
                 <ul class="nav side-nav">
                     <li class="nav-item side-nav-item hvr-underline-from-left">
-                        <a class="nav-link" aria-current="page" href="{% url 'admin-dash-products' %}">Products</a>
+                        <a id="admin-products-link" class="nav-link" aria-current="page" href="{% url 'admin-dash-products' %}">Products</a>
                     </li>
                     <li class="nav-item side-nav-item hvr-underline-from-left">
-                        <a class="nav-link" aria-current="page" href="{% url 'admin-dash-users' %}">Users</a>
+                        <a id="admin-users-link" class="nav-link" aria-current="page" href="{% url 'admin-dash-users' %}">Users</a>
                     </li>
                 </ul>
                 <hr class="white-hr">

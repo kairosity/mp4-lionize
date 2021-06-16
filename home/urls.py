@@ -8,6 +8,6 @@ urlpatterns = [
     path('seo', views.seo, name='seo'),
     path('social-media-management', views.social_media_management, name='social-media-management'),
     path('content-creation', views.content_creation, name='content-creation'),
-    path('admin-dash-products', views.admin_dash_products, name='admin-dash-products'),
-    path('admin-dash-users', views.admin_dash_users, name='admin-dash-users'),
+    path('admin-product-dashboard', views.admin_dash_products, name='admin-dash-products'),
+    path('admin-user-dashboard', views.admin_dash_users, name='admin-dash-users'),
 ]

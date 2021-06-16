@@ -23,3 +23,4 @@ scheduleConsultationBtn.addEventListener('click', function(){
     \nHere are my social media handles:\nInstagram: ${userInstagram}\nTwitter: ${userTwitter}\nFacebook: ${userFacebook}\nLinkedIn: ${userLinkedIn}
     \nMy phone number is: ${userPhone} should you need to contact me.\n\nThank You,\n${userFirstName}`
 })
+
