@@ -29,6 +29,11 @@
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </button>
+                                <a class="button button-accent" href="{% url 'admin-dash-users'%}">
+                                    <span class="icon">
+                                        <i class="fas fa-undo-alt"></i>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </form>
@@ -43,7 +48,7 @@
                         <div class="card m-4">
                             <div class="card-body d-flex flex-column flex-md-row justify-content-center m-2">
                                 <div class="user-details card-details m-2 p-3">
-                                    <h5>User Details:</h5>
+                                    <h5 class="divider">User Details:</h5>
                                     <p class="card-title"><strong>Username: </strong>{{user.user.username}}</p>
                                     {% if user.user.first_name %}
                                         <p><strong>Name: </strong>{{user.user.first_name}} {{user.user.last_name}}</strong></p>
@@ -52,7 +57,11 @@
                                         <p class=""><strong>Phone:</strong>  {{user.default_phone_number}}</p>
                                     {% endif %}
                                     <p class=""><strong>Email:</strong>  {{user.user.email}}</p>
-                                    <p class="divider text-muted"><strong>Free Consultation Done?</strong>  {{user.consultation}}</p>
+                                    {% if user.consultation %}
+                                        <p class=" text-muted"><strong>Free Consultation Done?</strong>  Yes</p>
+                                    {% else %}
+                                        <p class=" text-muted"><strong>Free Consultation Done?</strong>  No</p>
+                                    {% endif %}
                                 </div>
                                 <div class="message-details m-2 p-3">
                                 <h5>Messages:</h5>

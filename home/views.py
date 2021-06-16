@@ -109,10 +109,22 @@ def admin_dash_users(request):
     '''
     user_profiles = UserProfile.objects.all()
     user_messages = Message.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You did enter a search term.")
+                return redirect(reverse('admin-dash-users'))
+            
+            queries = Q(user__username__icontains=query) | Q(user__first_name__icontains=query) | Q(user__last_name__icontains=query) | Q(user__email__icontains=query)
+            user_profiles = user_profiles.filter(queries)
 
     context = {
         'user_profiles': user_profiles,
         'user_messages': user_messages,
+        'search_term': query,
     }
 
     return render(request, 'home/admin_dash_users.html', context)

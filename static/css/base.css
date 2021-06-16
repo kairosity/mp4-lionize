@@ -687,6 +687,9 @@ i.fa-star{
     margin-bottom: 0.6rem;
     margin-top: 0.6rem;
 }
+.user-details{
+    min-width: 250px;
+}
 
 /* Edit Product Form Page */
 .admin-page-heading{
