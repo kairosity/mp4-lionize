@@ -99,6 +99,10 @@ a.yellow-link:hover{
 }
 .backlink{
     margin-top: 1.5rem;
+    padding-left: 1.2rem;
+}
+.backlink > a.button-back:hover{
+    color: var(--accent-colour);
 }
 a.button:hover{
     text-decoration: none;
@@ -703,6 +707,10 @@ i.fa-star{
 }
 .user-details{
     min-width: 250px;
+}
+.admin-card-body{
+    height: 350px;
+    justify-content: space-evenly;
 }
 
 /* Edit Product Form Page */

@@ -91,7 +91,7 @@ $(function(){
         if (splitPath[1] == 'profile'){
             profilePageLink.classList.add('active-page-side-nav');
             profilePageLinkMob.classList.add('active-page-side-nav');
-        } else if (splitPath[1] == 'orders'){
+        } else if (splitPath[1] == 'orders' || splitPath[1] == 'order_history'){
             ordersLink.classList.add('active-page-side-nav');
             ordersLinkMob.classList.add('active-page-side-nav');
         } else if (splitPath[0] == 'bag'){
