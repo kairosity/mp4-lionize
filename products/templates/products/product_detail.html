@@ -13,8 +13,26 @@
 <div class="col col-12">
     <div class="backlink">
         <a class="button button-back" href="{{ referring_page }}">
-            <i class="fas fa-arrow-left"></i> 
-            Back to all {{ product.category.friendly_name }} products
+            <i class="fas fa-arrow-left"></i>
+            {% if referring_page_path0 == 'admin-product-dashboard' %}
+                Back to the Admin Dashboard
+            {% elif referring_page_path1 == 'web-design-products' %}
+                Back to Web Design Products
+            {% elif referring_page_path1 == 'seo-products' %}
+                Back to SEO Products
+            {% elif referring_page_path1 == 'social-media-management' %}
+                Back to Social Media Management Products
+            {% elif referring_page_path1 == 'content-creation-products' %}
+                Back to Content Creation Products
+            {% elif referring_page_path1 == 'reviews' %}
+                Back to Reviews
+            {% elif referring_page_path1 == 'edit' %}
+                Back to Edit {{product.friendly_name}}
+            {% elif referring_page_path1 == 'add' %}
+                Back to Add another product
+            {% else %}
+                Back
+            {% endif %}
         </a>
     </div>
 

@@ -148,6 +148,14 @@ def product_detail(request, product_id):
             features = None
 
         referring_page = request.META['HTTP_REFERER']
+        referring_page_path = referring_page.split('/')[3:]
+        
+        if len(referring_page_path) > 1:
+            print("greater than 1")
+            referring_page_path1 = referring_page_path[1]
+        else:
+            referring_page_path1 = None
+        print(referring_page_path1)
 
         context = {
             'product': product,
@@ -155,6 +163,8 @@ def product_detail(request, product_id):
             'total_incl_vat': total_incl_vat,
             'category': category,
             'referring_page': referring_page,
+            'referring_page_path0': referring_page_path[0],
+            'referring_page_path1': referring_page_path1,
             'features' : features,
             'user_purchased_product_and_can_review': user_purchased_project_and_can_review,
             'reviews': reviews,

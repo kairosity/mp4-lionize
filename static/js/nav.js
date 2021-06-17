@@ -101,7 +101,7 @@ $(function(){
             reviewsLink.classList.add('active-page-side-nav');
             reviewsLinkMob.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0] == 'products'){
+    } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit'){
         shopLink.classList.add('active-page');
         shopLinkMob.classList.add('active-page');
 
@@ -121,10 +121,10 @@ $(function(){
             shopContentCreationLink.classList.add('active-page-side-nav');
             shopContentCreationLinkMob.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0] == 'admin-product-dashboard' || splitPath[0] == 'admin-user-dashboard'){
+    } else if (splitPath[0] == 'admin-product-dashboard' || splitPath[0] == 'admin-user-dashboard' || splitPath[1] == 'add' || splitPath[1] == 'edit'){
         adminLink.classList.add('active-page');
         adminLinkMob.classList.add('active-page');
-        if (splitPath[0] == 'admin-product-dashboard'){
+        if (splitPath[0] == 'admin-product-dashboard' || splitPath[1] == 'add' || splitPath[1] == 'edit'){
             adminProductsLink.classList.add('active-page-side-nav');
             adminProductsLinkMob.classList.add('active-page-side-nav')
         } else if (splitPath[0] == 'admin-user-dashboard'){

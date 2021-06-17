@@ -38,7 +38,7 @@
             </ul>
             <hr class="white-hr">
         {% endif %}
-        {% if 'products' in request.path %}
+        {% if 'products' in request.path and 'add' not in request.path and 'edit' not in request.path %}
         <hr class="white-hr">
         <p class="side-nav-heading">Shop</p>
         <ul class="nav side-nav">
@@ -61,7 +61,7 @@
         <hr class="white-hr">
         {% endif %}
         {% if request.user.is_superuser %}
-            {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' %}
+            {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' or request.path == '/products/add/' or 'edit' in request.path %}
                 <hr class="white-hr">
                 <p class="side-nav-heading">Admin Dashboard</p>
                 <ul class="nav side-nav">

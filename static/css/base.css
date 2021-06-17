@@ -123,6 +123,9 @@ button.decrement-qty{
 .active-page-side-nav{
     background-color: var(--accent-colour);
 }
+a.navbar-brand>i{
+    font-size: 1.7rem;
+}
 /* Messages */
 .toast{
     border: var(--accent-colour) solid 4px;
@@ -681,6 +684,9 @@ i.fa-star{
 .add-product-section{
     text-align: center;
     margin: 1.2rem 0;
+}
+.add-product-button{
+    padding: 1rem 3rem;
 }
 .message-list-container:before{
     content: "";

@@ -1169,6 +1169,14 @@ This would streamline the social media management services in particular and all
 
     Used for the "Who Are We" Bio Photos.
 
+- ### [Favicon Generator](https://www.favicon-generator.org/)
+
+    Used to generate the favicon.
+
+- ### [How can I get a favicon to show up in my django app?](https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app)
+
+    Stack overflow article used to incorporate favicon into application.
+
 <br>
 
 # Unsplash Images Used

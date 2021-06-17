@@ -12,6 +12,11 @@
         {% endblock %}
 
         {% block extra_meta %}
+            <!-- Favicon Links -->
+            <link rel="shortcut icon" type="image/png" href="{% static 'favicon/favicon.ico' %}">
+            <link rel="alternate icon" href="{% static 'favicon/favicon.svg' %}">
+
+
         {% endblock %}
 
     
@@ -23,6 +28,8 @@
         {% endblock %}
 
         {% block extra_css %}
+
+
         {% endblock %}
 
         {% block corejs %}
@@ -46,24 +53,24 @@
     <body class="">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid d-flex flex-grow-1">
-                    <a class="navbar-brand" href="#">Lionize</a>
+                    <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-globe"></i></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavDropdown">
                         <ul class="navbar-nav d-flex navbar-one">
                             <li class="nav-item p-2">
-                                <a id="home-link" class="nav-link active" aria-current="page" href="{% url 'home' %}">Home1</a>
+                                <a id="home-link" class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item dropdown p-2">
                                 <a id="services-link" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services1
+                                Services
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a id="webdesign-info-link" class="dropdown-item" href="{% url 'webdesign' %}">Web Design & Development1</a></li>
-                                    <li><a id="seo-info-link" class="dropdown-item" href="{% url 'seo' %}">SEO1</a></li>
-                                    <li><a id="smm-info-link" class="dropdown-item" href="{% url 'social-media-management' %}">Social Media Management1</a></li>
-                                    <li><a id="content-creation-info-link" class="dropdown-item" href="{% url 'content-creation' %}">Content Creation1</a></li>
+                                    <li><a id="webdesign-info-link" class="dropdown-item" href="{% url 'webdesign' %}">Web Design & Development</a></li>
+                                    <li><a id="seo-info-link" class="dropdown-item" href="{% url 'seo' %}">SEO</a></li>
+                                    <li><a id="smm-info-link" class="dropdown-item" href="{% url 'social-media-management' %}">Social Media Management</a></li>
+                                    <li><a id="content-creation-info-link" class="dropdown-item" href="{% url 'content-creation' %}">Content Creation</a></li>
                                 </ul>
                             </li>
                             {% if request.user.is_authenticated %}
@@ -73,16 +80,16 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                         <li class="nav-item side-nav-item">
-                                            <a id="profile-page-link-mob" class="dropdown-item" aria-current="page" href="{% url 'profile' %}">Your Profile1</a>
+                                            <a id="profile-page-link-mob" class="dropdown-item" aria-current="page" href="{% url 'profile' %}">Your Profile</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="bag-link-mob" class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag1</a>
+                                            <a id="bag-link-mob" class="dropdown-item" aria-current="page" href="{% url 'view_shopping_bag' %}">Your Shopping Bag</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="orders-link-mob" class="dropdown-item" aria-current="page" href="{% url 'user_orders' %}">Your Orders1</a>
+                                            <a id="orders-link-mob" class="dropdown-item" aria-current="page" href="{% url 'user_orders' %}">Your Orders</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="reviews-link-mob" class="dropdown-item" aria-current="page" href="{% url 'reviews' %}">Your Reviews1</a>
+                                            <a id="reviews-link-mob" class="dropdown-item" aria-current="page" href="{% url 'reviews' %}">Your Reviews</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -92,26 +99,26 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
                                         <li class="nav-item side-nav-item">
-                                            <a id="shop-all-products-link-mob" class="dropdown-item" aria-current="page" href="{% url 'products' %}">Shop All Products1</a>
+                                            <a id="shop-all-products-link-mob" class="dropdown-item" aria-current="page" href="{% url 'products' %}">Shop All Products</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="shop-webdesign-link-mob" class="dropdown-item" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design1</a>
+                                            <a id="shop-webdesign-link-mob" class="dropdown-item" aria-current="page" href="{% url 'web-design-products' %}">Shop Web Design</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="shop-seo-link-mob" class="dropdown-item" href="{% url 'seo-products' %}">Shop SEO1</a>
+                                            <a id="shop-seo-link-mob" class="dropdown-item" href="{% url 'seo-products' %}">Shop SEO</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="shop-smm-link-mob" class="dropdown-item" href="{% url 'social_media_management' %}">Shop Social Media Management1</a>
+                                            <a id="shop-smm-link-mob" class="dropdown-item" href="{% url 'social_media_management' %}">Shop Social Media Management</a>
                                         </li>
                                         <li class="nav-item side-nav-item">
-                                            <a id="shop-content-creation-link-mob" class="dropdown-item" href="{% url 'content-creation-products' %}">Shop Content Creation1</a>
+                                            <a id="shop-content-creation-link-mob" class="dropdown-item" href="{% url 'content-creation-products' %}">Shop Content Creation</a>
                                         </li>
                                     </ul>
                                 </li>
                                 {% if request.user.is_superuser %}
                                     <li class="nav-item dropdown p-2 d-block d-lg-none">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Admin Portal 1
+                                        Admin Portal
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
                                             <li class="nav-item side-nav-item">
@@ -125,24 +132,24 @@
                                 {% endif %}
                             {% endif %}
                             <li class="nav-item  p-2 contact-nav-item">
-                                <a id="contact-link" class="nav-link" href="{% url 'home' %}#contact-us">Contact Us2</a>
+                                <a id="contact-link" class="nav-link" href="{% url 'home' %}#contact-us">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav nav-register-login-container flex-nowrap d-flex ">
                             {% if request.user.is_superuser %}
                                 <li class="nav-item p-2 d-none d-lg-block">
-                                    <a id="admin-link" class="nav-link" href="{% url 'admin-dash-products' %}">Admin Portal2</a>
+                                    <a id="admin-link" class="nav-link" href="{% url 'admin-dash-products' %}">Admin Portal</a>
                                 </li>
                             {% endif %}
                             {% if request.user.is_authenticated %}
                                     <li class="nav-item p-2 d-none d-lg-block ">
-                                        <a id="user-portal-link" class="nav-link" href="{% url 'profile' %}">User Portal2</a>
+                                        <a id="user-portal-link" class="nav-link" href="{% url 'profile' %}">User Portal</a>
                                     </li>
                                     <li class="nav-item p-2 d-none d-lg-block">
-                                        <a id="shop-link" class="nav-link" href="{% url 'products' %}">Shop2</a>
+                                        <a id="shop-link" class="nav-link" href="{% url 'products' %}">Shop</a>
                                     </li>
                                     <li class="nav-item p-2 ">
-                                        <a id="logout-link" class="nav-link" href="{% url 'account_logout' %}">Logout2</a>
+                                        <a id="logout-link" class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                                     </li>
                             {% else %}
                                 <li class="nav-item p-2 ">
