@@ -11,7 +11,7 @@ deleteProductModal.addEventListener('show.bs.modal', function (event) {
     var modalBody = deleteProductModal.querySelector('.modal-body')
     var deletionHref = deleteProductModal.querySelector('.product-delete-button')
 
-    modalTitle.textContent = `DELETION CONFIRMATION FOR: "${productName}"`
+    modalTitle.textContent = `DELETION CONFIRMATION`
     modalBody.textContent = `Are you certain you want to delete the product "${productName}"? This is an irreversible action.`
     deletionHref.setAttribute('href', `/products/delete/${productId}/`)
 

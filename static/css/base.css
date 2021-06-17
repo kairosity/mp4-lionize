@@ -712,6 +712,9 @@ i.fa-star{
     height: 350px;
     justify-content: space-evenly;
 }
+.deletion-modal-text{
+    font-size: 1.1rem;
+}
 
 /* Edit Product Form Page */
 .admin-page-heading{
