@@ -1103,6 +1103,10 @@ This would streamline the social media management services in particular and all
 
     - Used to help with transferring variables from Django to JavaScript.
 
+- ### [Bootstrap v5 modal show issue](https://stackoverflow.com/questions/67440523/bootstrap-v5-modal-show-issue)
+
+    Used to fix a bug whereby Bootstrap modals were not working.
+
 ## 4. Python
 
 ## 5. Django

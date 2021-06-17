@@ -203,5 +203,15 @@ __Fix:__ I intially tried to combine two forms on the User Portal's Profile Page
             user_to_update.save()
 
 
+## Error in Console When Attempting to Fire Bootstrap Modal
 
- {% if request.path == '/products/' or request.path == '/products/web-design-products/' or request.path == '/products/seo-products/' or request.path ==  '/products/social-media-management' or request.path ==  '/products/content-creation-products/' %}
+__Issue:__ When attempting to integrate a Bootstrap modal, it refused to fire and the following error showed in the Console:
+
+<p align="center">
+  <img src="static/images/issues/modal-error.png">
+</p>
+
+<br>
+
+__Fix:__ I found [this Stack Overflow Post](https://stackoverflow.com/questions/67440523/bootstrap-v5-modal-show-issue) describing the error exactly and it directed me to place the bootrap.bundle.min.js link just before the closing body tag, instead of in the head of the page. Doing so fixed the issue.
+
