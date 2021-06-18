@@ -121,13 +121,13 @@ $(function(){
             shopContentCreationLink.classList.add('active-page-side-nav');
             shopContentCreationLinkMob.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0] == 'admin-product-dashboard' || splitPath[0] == 'admin-user-dashboard' || splitPath[1] == 'add' || splitPath[1] == 'edit'){
+    } else if (splitPath[0].includes('admin-product-dashboard') || splitPath[0].includes('admin-user-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit') {
         adminLink.classList.add('active-page');
         adminLinkMob.classList.add('active-page');
-        if (splitPath[0] == 'admin-product-dashboard' || splitPath[1] == 'add' || splitPath[1] == 'edit'){
+        if (splitPath[0].includes('admin-product-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit'){
             adminProductsLink.classList.add('active-page-side-nav');
             adminProductsLinkMob.classList.add('active-page-side-nav')
-        } else if (splitPath[0] == 'admin-user-dashboard'){
+        } else if (splitPath[0].includes('admin-user-dashboard')){
             adminUsersLink.classList.add('active-page-side-nav');
             adminUsersLinkMob.classList.add('active-page-side-nav')
         }

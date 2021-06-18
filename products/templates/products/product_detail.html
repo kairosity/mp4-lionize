@@ -41,8 +41,7 @@
             <h1 class="details-page-heading pb-0">{{product.friendly_name}}</h1>
             {% if request.user.is_superuser %}
                 <small class="ml-3 edit-del-product-details-btns">
-                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                    <a class="text-danger" href="/admin-product-dashboard?q={{product.name}}">Delete</a>
+                    <a class="text-danger" href="/admin-product-dashboard?q={{product.name}}">Edit / Delete in Admin</a>
                 </small>
             {% endif %}
             {% if product.image %}

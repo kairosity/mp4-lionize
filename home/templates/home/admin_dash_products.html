@@ -12,7 +12,7 @@
             <div class="container">
                 <h1 class="details-page-heading">Admin Product Control Dashboard</h1>
                 <h2 class="details-page-subheading mb-4">Here are all of Lionize's products, you can add a new product, or edit and delete existing products
-                    directly from this page. You may also edit & delete products via the normal shopping pages.
+                    directly from this page. You can also use the buttons below to filter the product listing by category. 
                 </h2>
             </div>
         </header>
@@ -43,9 +43,20 @@
                         </div>
                     </div>
                     
+                    
                 </div>
             </div>
         </section>
+        <div class="row mt-4">
+            <div class="col-12 d-flex justify-content-center">
+                <a href="{% url 'admin-dash-products'%}" class="button button-accent m-1"><i class="fas fa-infinity"></i> All Products</a>
+                <a href="{% url 'admin-dash-products'%}?category=web-design" class="button button-accent m-1"><i class="fas fa-object-group"></i> Web Design</a>
+                <a href="{% url 'admin-dash-products'%}?category=seo" class="button button-accent m-1"><i class="fab fa-searchengin"></i> SEO</a>
+                <a href="{% url 'admin-dash-products'%}?category=social-media-management" class="button button-accent m-1"><i class="fas fa-thumbs-up"></i> Social Media Management</a>
+                <a href="{% url 'admin-dash-products'%}?category=content-creation" class="button button-accent m-1"><i class="fas fa-file-alt"></i> Content Creation</a>
+                
+            </div>
+        </div>
 
         <div class="row">
             {% for product in products %}

@@ -86,8 +86,14 @@ def admin_dash_products(request):
 
     products = Product.objects.all()
     query = None
+    category = None
 
     if request.GET:
+
+        if 'category' in request.GET:
+            category = request.GET['category']
+            products = products.filter(category__name=category)
+            
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:

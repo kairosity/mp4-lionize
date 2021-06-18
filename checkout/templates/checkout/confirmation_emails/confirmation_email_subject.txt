@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+Lionize Confirmation for Order Number {{ order.order_number }}
