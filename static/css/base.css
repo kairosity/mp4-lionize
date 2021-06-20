@@ -134,6 +134,7 @@ a.navbar-brand>i{
 .toast{
     border: var(--accent-colour) solid 4px;
     border-radius: 12px;
+    width: 310px;
 }
 .toast-container {
     position: fixed;
@@ -141,6 +142,7 @@ a.navbar-brand>i{
     right: 15px;
     background-color: white;
     border-radius: 12px;
+    z-index: 99999;
 }
 .success-msg-heading{
     color: var(--main-colour);
@@ -641,7 +643,7 @@ i.fa-star{
 }
 
 .bag-notification-wrapper {
-    height: 100px;
+    height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
 }

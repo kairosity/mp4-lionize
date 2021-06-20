@@ -9,6 +9,20 @@ def view_shopping_bag(request):
     '''
     return render(request, 'bag/shopping_bag.html')
 
+def view_cart(request):
+    '''
+    View a summary of your shopping bag as a toast.
+    '''
+
+    bag = request.session.get('bag', {})
+
+    
+    messages.success(request, f'Here is your current shopping cart:')
+    
+    request.session['bag'] = bag
+
+    return redirect(request.META['HTTP_REFERER'])
+
 def add_to_bag(request, item_id):
     '''
     Add a quantity of a specific product to the shopping bag.
@@ -21,10 +35,10 @@ def add_to_bag(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(request, f'Updated "{product.name}" order quantity to {bag[item_id]}')
+        messages.success(request, f'Success! Updated "{product.friendly_name}" order quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag')
+        messages.success(request, f'Success! Added {product.friendly_name} to your bag')
     
     request.session['bag'] = bag
     
@@ -41,10 +55,10 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated "{product.name}" order quantity to {bag[item_id]}')
+        messages.success(request, f'Updated "{product.friendly_name}" order quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+        messages.success(request, f'Removed {product.friendly_name} from your bag')
     
     request.session['bag'] = bag
     
@@ -59,7 +73,7 @@ def remove_from_bag(request, item_id):
         bag = request.session.get('bag', {})
 
         bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+        messages.success(request, f'Removed {product.friendly_name} from your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)

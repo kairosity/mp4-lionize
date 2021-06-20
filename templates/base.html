@@ -148,6 +148,9 @@
                                         <a id="shop-link" class="nav-link hvr-underline-from-left" href="{% url 'products' %}">Shop</a>
                                     </li>
                                     <li class="nav-item p-2 ">
+                                        <a id="cart-link" class="nav-link hvr-underline-from-left" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> <small>{{ product_count }}</small></a>
+                                    </li>
+                                    <li class="nav-item p-2 ">
                                         <a id="logout-link" class="nav-link hvr-underline-from-left" href="{% url 'account_logout' %}">Logout</a>
                                     </li>
                             {% else %}

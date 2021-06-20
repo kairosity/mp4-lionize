@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Product(models.Model):
     category = models.ForeignKey('categories.Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    friendly_name = models.CharField(max_length=254)
     description = models.TextField()
     features = models.TextField(max_length=1200, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
