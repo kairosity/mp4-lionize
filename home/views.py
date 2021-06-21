@@ -1,4 +1,5 @@
 from django.core.mail import send_mail, BadHeaderError
+from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import ContactForm
@@ -88,7 +89,7 @@ def admin_dash_products(request):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
-        return HttpResponseForbidden()
+        raise PermissionDenied()
 
     products = Product.objects.all()
     query = None
@@ -124,7 +125,7 @@ def admin_dash_users(request):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
-        return HttpResponseForbidden()
+        raise PermissionDenied()
 
     user_profiles = UserProfile.objects.all()
     user_messages = Message.objects.all()

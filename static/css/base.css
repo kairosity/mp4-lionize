@@ -872,6 +872,10 @@ footer a.nav-link:hover{
         top: 2px;
         right: 255px;
     }
+    .form-container{
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
 }
 
 /* Media Queries - Bootstrap md */
@@ -885,6 +889,8 @@ footer a.nav-link:hover{
     .form-container{
         border-radius: 12px;
         border: var(--main-colour) 3px solid;
+        padding: 2rem;
+        margin-top: 2rem;
     }
     /* Other account Incidental Pages */
     /* Verify Email Address Page */
@@ -927,6 +933,10 @@ footer a.nav-link:hover{
     }
     .details-page-text{
         width: 70%;
+    }
+    .form-container{
+        padding: 3rem;
+        margin-top: 3rem;
     }
     .footer .links-row{
         width: 70%;
