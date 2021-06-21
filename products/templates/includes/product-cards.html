@@ -3,9 +3,9 @@
             <div class="col-12 col-sm-6 col-xl-4 product-card-col">
                 <div class="card">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="...">
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="{{ product.friendly_name}}">
                     {% else %}
-                        <img class="card-img-top img-fluid product-card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
+                        <img class="card-img-top img-fluid product-card-img" src="{{ MEDIA_URL }}no-image.png" alt="no image">
                     {% endif %}
                     <div class="card-body d-flex flex-column product-card-body">
                         <h5 class="card-title">{{ product.friendly_name }}</h5>
