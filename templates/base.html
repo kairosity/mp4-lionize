@@ -61,7 +61,7 @@
                         <ul class="text-center list-inline list-unstyled mb-0 d-lg-none">
                             <li class="nav-item dropdown show">
                                 <a href="#" id="dropdown-mob-cart" class="navbar-brand nav-link dropdown-toggle m-0 p-0 me-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i><small>{{ product_count }}</small></a>
-                                <ul id="cart-ul" class="dropdown-menu show" aria-labelledby="dropdown-mob-cart">
+                                <ul id="cart-ul" class="dropdown-menu" aria-labelledby="dropdown-mob-cart">
                                     <div class="cart-body">
                                         <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
                                         <div class="row">
@@ -70,7 +70,6 @@
                                                 <hr class="mt-1 mb-3">
                                             </div>
                                         </div>
-                                        {% if grand_total %}
                                             <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
                                             <div class="bag-notification-wrapper">
                                                 {% for item in bag_items %}
@@ -140,7 +139,6 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                        {% endif %}
                                     </div>
                                 </ul>
                             </li>
@@ -246,8 +244,12 @@
                                             <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
                                             <div class="row">
                                                 <div class="col">
-                                                    <p class="toast-message">Here is your current shopping cart:</p>
-                                                    <hr class="mt-1 mb-3">
+                                                    {% if grand_total %}
+                                                        <p class="toast-message">Here is your current shopping cart:</p>
+                                                        <hr class="mt-1 mb-3">
+                                                    {% else %}
+                                                        <p class="toast-message">Your shopping cart is empty.</p>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                             {% if grand_total %}

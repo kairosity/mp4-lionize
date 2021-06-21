@@ -155,6 +155,11 @@ ul.dropdown-menu-cart{
     background-color: var(--main-colour);
     height: 0;
 }
+#cart-ul{
+    height: 0;
+    background-color: var(--main-colour);
+    border: none;
+}
 /* Messages */
 .toast{
     border: var(--accent-colour) solid 4px;

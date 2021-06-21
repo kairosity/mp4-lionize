@@ -5,9 +5,9 @@
 <div class="container-fluid">
     <header class="details-page-header d-flex flex-column">
         <div class="container web-design-container">
-            <h1 class="details-page-heading mt-4 mb-4">Ooops! 500 Error.</h1>
-            <img class="details-page-intro-image img-fluid" src="{{ MEDIA_URL }}500.jpg" alt="server wires in a mess">
-            <h2 class="details-page-subheading mt-5 mb-5">Apologies but there was an internal server error. This is <span class="accent-underline">our</span> issue, not yours. Please try again. </h2>
+            <h1 class="details-page-heading mt-4 mb-4">Ooops Bad Request! 400 Error.</h1>
+            <img class="details-page-intro-image img-fluid" src="{{ MEDIA_URL }}400.jpg" alt="photo of an apple with bugs on it">
+            <h2 class="details-page-subheading mt-5 mb-5">Unfortunately, your request was dodgy in some way. Maybe use the button below to go back to our homepage and then try again?</h2>
             <a href="{% url 'home' %}" class="button button-accent back-button-error"><i class="fas fa-long-arrow-alt-left"></i> Back to Safety!</a>
         </div>
     </header>

@@ -101,6 +101,12 @@ $(function(){
             reviewsLink.classList.add('active-page-side-nav');
             reviewsLinkMob.classList.add('active-page-side-nav');
         }
+    } else if (splitPath[0] == 'checkout' && splitPath[1] == 'checkout_success'){
+        userPortalLink.classList.add('active-page');
+        userPortalLinkMob.classList.add('active-page');
+        ordersLink.classList.add('active-page-side-nav');
+        ordersLinkMob.classList.add('active-page-side-nav');
+
     } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit'){
         shopLink.classList.add('active-page');
         shopLinkMob.classList.add('active-page');

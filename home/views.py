@@ -17,7 +17,7 @@ def error_page(request):
     '''
     A view to test the error pages.
     '''
-    return render(request, '404.html')
+    return render(request, '403.html')
 
 def index(request):
     '''

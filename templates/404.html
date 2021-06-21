@@ -2,21 +2,14 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container-fluid">
     <header class="details-page-header d-flex flex-column">
         <div class="container web-design-container">
             <h1 class="details-page-heading mt-4 mb-4">Ooops! 404 Error.</h1>
             <img class="details-page-intro-image img-fluid" src="{{ MEDIA_URL }}404.jpg" alt="ice-cream and cone splatted on the ground">
             <h2 class="details-page-subheading mt-5 mb-5">Unfortunately, the page you are looking for <span class="accent-underline">cannot</span> be found. Please try again</h2>
-            <a href="{{ request.META.HTTP_REFERER }}" class="button button-accent back-button-error"><i class="fas fa-long-arrow-alt-left"></i> Back to Safety!</a>
+            <a href="{% url 'home' %}" class="button button-accent back-button-error"><i class="fas fa-long-arrow-alt-left"></i> Back to Safety!</a>
         </div>
     </header>
-    <section>
-        <div class="container web-design-container">
-        </div>
-    </section>
 </div>
-
-
 {% endblock %}
