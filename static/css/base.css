@@ -593,6 +593,14 @@ img.empty-shopping-bag{
     margin-top: 1rem;
 }
 
+.keep-shopping-button{
+    padding: 0.53rem;
+    margin-right: 4px;
+}
+.secure-checkout-button{
+    margin-top: 0.8rem;
+}
+
 /* Review Page */
 
 .review-border{
@@ -1009,7 +1017,6 @@ only screen and (max-width: 1200px)  {
     .bag-button{
         font-size: 0.9rem;
         margin-top: 0.6rem;
-        width: 200px;
     }
 
     /* Orders Page */

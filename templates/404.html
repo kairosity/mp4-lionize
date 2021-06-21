@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <header class="details-page-header d-flex flex-column">
+        <div class="container web-design-container">
+            <h1 class="details-page-heading">Ooops! 404 Error.</h1>
+            <img class="details-page-intro-image img-fluid" src="{{ MEDIA_URL }}404.jpg" alt="">
+            <div class="all-industries">
+                <h2 class="details-page-subheading">Unfortunately, the page you are looking for <span class="accent-underline">cannot</span> be found. Please try again</h2>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container web-design-container">
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

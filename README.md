@@ -1197,6 +1197,7 @@ This would streamline the social media management services in particular and all
 
 - Photo by <a href="https://unsplash.com/@guipetri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Guilherme Petri</a> on <a href="https://unsplash.com/s/photos/salon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+- Photo by <a href="https://unsplash.com/@rojekilian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sarah Kilian</a> on <a href="https://unsplash.com/s/photos/mistake?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 - Photo by <a href="https://unsplash.com/@israelandrxde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Israel Andrade</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
