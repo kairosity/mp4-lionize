@@ -16,12 +16,16 @@ def view_cart(request):
 
     bag = request.session.get('bag', {})
 
-    
-    messages.success(request, f'Here is your current shopping cart:')
+    if len(bag) > 0:
+        messages.success(request, f'Here is your current shopping cart:')
+    else:
+        messages.success(request, f'Your shopping cart is empty.')
     
     request.session['bag'] = bag
 
-    return redirect(request.META['HTTP_REFERER'])
+    template = request.META['HTTP_REFERER']
+
+    return redirect(template)
 
 def add_to_bag(request, item_id):
     '''

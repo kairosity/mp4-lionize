@@ -1,4 +1,5 @@
 {% load static %}
+{% load bag_tools %}
 
 
 <!doctype html>
@@ -56,6 +57,95 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
+                    {% if grand_total %}
+                        <ul class="text-center list-inline list-unstyled mb-0 d-lg-none">
+                            <li class="nav-item dropdown show">
+                                <a href="#" id="dropdown-mob-cart" class="navbar-brand nav-link dropdown-toggle m-0 p-0 me-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i><small>{{ product_count }}</small></a>
+                                <ul id="cart-ul" class="dropdown-menu show" aria-labelledby="dropdown-mob-cart">
+                                    <div class="cart-body">
+                                        <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="toast-message">Here is your current shopping cart:</p>
+                                                <hr class="mt-1 mb-3">
+                                            </div>
+                                        </div>
+                                        {% if grand_total %}
+                                            <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
+                                            <div class="bag-notification-wrapper">
+                                                {% for item in bag_items %}
+                                                    <div class="row">
+                                                        <div class="col-3 my-1">
+                                                            {% if item.product.image %}
+                                                                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                            {% else %}
+                                                                <img class="img-fluid w-100" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <p class="my-0 cart-dropdown-text"><strong>{{ item.product.friendly_name }}</strong></p>
+                                                            <p class="my-0 small text-muted cart-dropdown-text">Qty: {{ item.quantity }}</p>
+                                                        </div>
+                                                        <div class="col-9 offset-3">
+                                                            
+                                                            {% if item.quantity == 1 %}
+                                                                <p class="my-0 cart-dropdown-text">Price: €{{ item.product.price }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Vat @23%: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Total incl. VAT:<strong> €{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                            {% elif item.quantity == 2 %}
+                                                                <p class="my-0 cart-dropdown-text">Price per item: €{{ item.product.price }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Vat @23% per item: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Total incl VAT for both items:<strong>€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                            {% else %}
+                                                                <p class="my-0 cart-dropdown-text">Price per item: €{{ item.product.price }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Vat @23% per item: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                <p class="my-0 cart-dropdown-text">Total incl VAT for all items:<strong>€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="row">
+                                                <div class="col col-12">
+                                                    <strong><p class="mt-1 cart-dropdown-text">
+                                                        Subtotal: 
+                                                        <span >€{{ total|floatformat:2 }}</span>
+                                                    </p></strong>
+                                                </div>
+                                                <div class="col col-12">
+                                                    <strong><p class="cart-dropdown-text">
+                                                        VAT @23%: 
+                                                        <span >€{{ vat_total|floatformat:2 }}</span>
+                                                    </p></strong>
+                                                </div>
+                                                <div class="col col-12">
+                                                    <strong><p class="cart-dropdown-text">
+                                                        Grand Total incl. VAT: 
+                                                        <span >€{{ grand_total|floatformat:2 }}</span>
+                                                    </p></strong>
+                                                </div>
+                                                <div class="col col-12">
+                                                    <a href="{% url 'checkout' %}" class="button button-main button-tiny">
+                                                        <span>Checkout</span>
+                                                        <span class="icon">
+                                                            <i class="fab fa-cc-stripe"></i>
+                                                        </span>
+                                                    </a>
+                                                    <a href="{% url 'view_shopping_bag' %}" class="button button-main button-tiny m-2">
+                                                        <span >Edit Bag</span>
+                                                        <span class="icon">
+                                                            <i class="fas fa-shopping-bag"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    {% endif %}
                     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavDropdown">
                         <ul class="navbar-nav d-flex navbar-one">
                             <li class="nav-item p-2">
@@ -150,6 +240,93 @@
                                     <li class="nav-item p-2 ">
                                         <a id="cart-link" class="nav-link hvr-underline-from-left" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> <small>{{ product_count }}</small></a>
                                     </li>
+                                    <li class="nav-item dropdown p-2 d-none d-lg-block cart-dropdown">
+                                        <a id="cart-link" class="nav-link dropdown-toggle hvr-underline-from-left" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-shopping-cart"></i> <small>{{ product_count }}</small>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <div class="cart-body">
+                                            <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="toast-message">Here is your current shopping cart:</p>
+                                                    <hr class="mt-1 mb-3">
+                                                </div>
+                                            </div>
+                                            {% if grand_total %}
+                                                <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
+                                                <div class="bag-notification-wrapper">
+                                                    {% for item in bag_items %}
+                                                        <div class="row">
+                                                            <div class="col-3 my-1">
+                                                                {% if item.product.image %}
+                                                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                                {% else %}
+                                                                    <img class="img-fluid w-100" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
+                                                                {% endif %}
+                                                            </div>
+                                                            <div class="col-9">
+                                                                <p class="my-0 cart-dropdown-text"><strong>{{ item.product.friendly_name }}</strong></p>
+                                                                <p class="my-0 small text-muted cart-dropdown-text">Qty: {{ item.quantity }}</p>
+                                                            </div>
+                                                            <div class="col-9 offset-3">
+                                                                
+                                                                {% if item.quantity == 1 %}
+                                                                    <p class="my-0 cart-dropdown-text">Price: €{{ item.product.price }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Vat @23%: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Total incl. VAT:<strong> €{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                                {% elif item.quantity == 2 %}
+                                                                    <p class="my-0 cart-dropdown-text">Price per item: €{{ item.product.price }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Vat @23% per item: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Total incl VAT for both items:<strong>€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                                {% else %}
+                                                                    <p class="my-0 cart-dropdown-text">Price per item: €{{ item.product.price }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Vat @23% per item: €{{ item.product.price | vat|floatformat:2 }}</p>
+                                                                    <p class="my-0 cart-dropdown-text">Total incl VAT for all items:<strong>€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}}</strong></p>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col col-12">
+                                                        <strong><p class="mt-1 cart-dropdown-text">
+                                                            Subtotal: 
+                                                            <span >€{{ total|floatformat:2 }}</span>
+                                                        </p></strong>
+                                                    </div>
+                                                    <div class="col col-12">
+                                                        <strong><p class="cart-dropdown-text">
+                                                            VAT @23%: 
+                                                            <span >€{{ vat_total|floatformat:2 }}</span>
+                                                        </p></strong>
+                                                    </div>
+                                                    <div class="col col-12">
+                                                        <strong><p class="cart-dropdown-text">
+                                                            Grand Total incl. VAT: 
+                                                            <span >€{{ grand_total|floatformat:2 }}</span>
+                                                        </p></strong>
+                                                    </div>
+                                                    <div class="col col-12">
+                                                        <a href="{% url 'checkout' %}" class="button button-main">
+                                                            <span>Checkout</span>
+                                                            <span class="icon">
+                                                                <i class="fab fa-cc-stripe"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a href="{% url 'view_shopping_bag' %}" class="button button-main m-2">
+                                                            <span >Edit Bag</span>
+                                                            <span class="icon">
+                                                                <i class="fas fa-shopping-bag"></i>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        </ul>
+                                    </li>
                                     <li class="nav-item p-2 ">
                                         <a id="logout-link" class="nav-link hvr-underline-from-left" href="{% url 'account_logout' %}">Logout</a>
                                     </li>
@@ -166,8 +343,6 @@
                 </div>
             </nav>
         
-
-
         {% if messages %}
             <section class="toast-container">
                 {% for message in messages %}

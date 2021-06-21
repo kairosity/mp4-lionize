@@ -56,8 +56,8 @@ $(function(){
 
     let logoutLink = document.querySelector('#logout-link');
 
-
-    console.log(splitPath)
+    let cartLink = document.querySelector('#cart-link');
+    let successToastTitle = document.querySelector('#success-toast-title');
     
     let currentActiveElements = document.getElementsByClassName('active-page');
     let currentActiveSideNavElements = document.getElementsByClassName('active-page-side-nav');
@@ -68,7 +68,7 @@ $(function(){
     for (let i=0; i<currentActiveSideNavElements.length; i++){
         currentActiveSideNavElements[i].classList.remove('active-page-side-nav');
     }
-    console.log(splitPath[1])
+    
     if (splitPath == ""){
         homeLink.classList.add('active-page');
     } else if (splitPath == "#contact-us"){
@@ -136,5 +136,15 @@ $(function(){
     } else if (splitPath[1] == 'logout'){
         logoutLink.classList.add('active-page');
     }
+
+    cartLink.addEventListener('click', function(){
+        console.log('clicked')
+        successToastTitle.textContent = 'Shopping Cart:'
+    })
+
+    $("#dropdown-mob-cart").click(function(){
+        console.log("Clicked the cart")
+        $("#cart-ul").toggleClass("show");
+    });
 
 });
