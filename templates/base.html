@@ -364,10 +364,10 @@
         {% endblock %}
                 <footer class="footer py-3 d-flex flex-column align-items-center">
                     <hr class="footer-hr">
-                    <div class="row links-row">
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
+                    <div class="row links-row p-0">
+                        <div class="text-links-container links1-container d-flex flex-column  col col-10 col-sm-3 p-0">
                         <div class="center-me">
-                            <h5 class="footer-heading">Services</h5>
+                            <h5 class="footer-heading">Info</h5>
                             <a href="{% url 'webdesign' %}" class="nav-link" >Web Design</a>
                             <a href="{% url 'seo' %}" class="nav-link" >SEO</a>
                             <a href="{% url 'social-media-management' %}" class="nav-link">Social Media Management</a>
@@ -375,7 +375,7 @@
                         </div>
                         </div>
                         {% if not request.user.is_authenticated %}
-                            <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4 ">
+                            <div class="text-links-container links1-container d-flex flex-column  col col-10 col-sm-3 p-0">
                                 <div class="center-me">
                                     <h5 class="footer-heading">Join Us!</h5>
                                     <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
@@ -385,24 +385,34 @@
                         {% endif %}
 
                         {% if request.user.is_authenticated %}
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
+                        <div class="text-links-container links1-container d-flex flex-column  col col-10 col-sm-3 p-0">
                             <div class="center-me">
                                 <h5 class="footer-heading">User Portal</h5>
                                 <a href="{% url 'profile' %}" class="nav-link">Your Profile</a>
                                 <a href="{% url 'view_shopping_bag' %}" class="nav-link">Your Shopping Bag</a>
                                 <a href="{% url 'user_orders' %}" class="nav-link">Your Orders</a>
+                                <a href="{% url 'reviews' %}" class="nav-link">Your Reviews</a>
                             </div>
                         </div>
-                        <div class="text-links-container links1-container d-flex flex-column justify-content-center col col-10 col-sm-4">
+                        <div class="text-links-container links1-container d-flex flex-column col col-10 col-sm-3 p-0">
                             <div class="center-me">
                                 <h5 class="footer-heading">Shop</h5>
-                                <a href="{% url 'products' %}" class="nav-link">Shop All Products</a>
-                                <a href="{% url 'view_shopping_bag' %}" class="nav-link">Shop Web Design</a>
-                                <a href="{% url 'user_orders' %}" class="nav-link">Shop SEO</a>
-                                <a href="{% url 'view_shopping_bag' %}" class="nav-link">Shop Social Media Management</a>
-                                <a href="{% url 'content-creation-products' %}" class="nav-link">Shop Content Creation</a>
+                                <a href="{% url 'products' %}" class="nav-link">All Products</a>
+                                <a href="{% url 'web-design-products' %}" class="nav-link">Web Design</a>
+                                <a href="{% url 'seo-products' %}" class="nav-link">SEO</a>
+                                <a href="{% url 'social_media_management' %}" class="nav-link">Social Media Management</a>
+                                <a href="{% url 'content-creation-products' %}" class="nav-link">Content Creation</a>
                             </div>
                         </div>
+                        {% if request.user.is_superuser %}
+                        <div class="text-links-container links1-container d-flex flex-column  col col-10 col-sm-3 p-0">
+                            <div class="center-me">
+                                <h5 class="footer-heading">Admin Portal</h5>
+                                <a href="{% url 'admin-dash-products' %}" class="nav-link">Product Dashboard</a>
+                                <a href="{% url 'admin-dash-users' %}" class="nav-link">User Dashboard</a>
+                            </div>
+                        </div>
+                        {% endif %}
                         {% endif %}
                     </div>
                     <div class="footer-social-media row d-flex flex-column">
