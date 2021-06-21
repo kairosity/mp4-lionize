@@ -13,6 +13,12 @@ from django.db.models import Q
 import os
 # Create your views here.
 
+def error_page(request):
+    '''
+    A view to test the error pages.
+    '''
+    return render(request, '404.html')
+
 def index(request):
     '''
     A view to return the main homepage.

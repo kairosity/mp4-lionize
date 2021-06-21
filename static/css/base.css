@@ -118,6 +118,14 @@ button.decrement-qty{
 .button-tiny{
     font-size: 0.8rem;
 }
+.back-button-error{
+    width: 200px;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
 /* Navigation */
 
 .active-page{
@@ -142,7 +150,7 @@ a.navbar-brand>i{
 p.cart-dropdown-text{
     font-size: 0.9rem;
 }
-ul.dropdown-menu{
+ul.dropdown-menu-cart{
     border: none;
     background-color: var(--main-colour);
     height: 0;
