@@ -19,13 +19,27 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
+
+        all_items = []
+        for item in order.lineitems.all():
+            all_items.append(item.product.friendly_name)
+
+        newline = '\n - '
+
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
-        body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        body = f"Hello {order.full_name}, \
+            \n\nThank you for trusting Lionize with your digital presence!\n \
+            \nYour order was processed successfully!\
+            \n\nYou ordered the following products:\n - { newline.join(item for item in all_items) }.\
+            \n\nSubtotal: €{order.order_total}\
+            \nVAT Total @23%: €{order.vat_total}\
+            \nGrand Total: €{order.grand_total}\
+            \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
+            \nJust login & navigate to your User Portal.\n\
+            \nThank you again from all of us at Lionize!"
         
         send_mail(
             subject,
