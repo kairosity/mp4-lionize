@@ -1109,6 +1109,10 @@ This would streamline the social media management services in particular and all
 
 ## 4. Python
 
+- ### [f-strings formatter including for-loop or if conditions](https://stackoverflow.com/questions/59956496/f-strings-formatter-including-for-loop-or-if-conditions)
+
+    Used to write a custom confirmation order email.
+
 ## 5. Django
 
 - ### [Django Documentation](https://docs.djangoproject.com/en/3.2/)
@@ -1160,6 +1164,10 @@ This would streamline the social media management services in particular and all
 - ### [How to specify Select and RadioSelect in a ModelForm?](https://stackoverflow.com/questions/30199471/how-to-specify-select-and-radioselect-in-a-modelform/30200800)
 
     Used to write the "Add Review" Form
+
+- ### [Remove example.com as the default SITE in django](https://github.com/maxking/docker-mailman/issues/12)
+
+    Used when I accidentally deleted my Site from the Django admin.
 
 ## 6. Jinja
 

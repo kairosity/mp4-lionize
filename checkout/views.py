@@ -172,7 +172,7 @@ def checkout_success(request, order_number):
     try:
         send_mail(
             f'Lionize Order Confirmation: #{order_number}', 
-            f"Dear {order.full_name}, \
+            f"Hello {order.full_name}, \
             \n\nThank you for trusting Lionize with your digital presence!\n \
             \nYour order was processed successfully!\
             \n\nYou ordered the following products:\n - { newline.join(item for item in all_items) }.\
@@ -187,7 +187,8 @@ def checkout_success(request, order_number):
 
     except BadHeaderError:
         messages.error(request, (
-                "I'm afraid there was an issue sending your message, please try again.")
+                "I'm afraid there was an issue sending your order confirmation email,\
+                please email us using our contact form to confirm that your order was processed successfully!")
             )
         return HttpResponse('Invalid header found.')
     
