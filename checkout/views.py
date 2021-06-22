@@ -162,39 +162,9 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed!\
         Your order number is {order_number}. A confirmation\
             email will be sent to {order.email}.')
-
-    all_items = []
-    for item in order.lineitems.all():
-        all_items.append(item.product.friendly_name)
-
-    newline = '\n - '
-    
-    try:
-        send_mail(
-            f'Lionize Order Confirmation: #{order_number}', 
-            f"Hello {order.full_name}, \
-            \n\nThank you for trusting Lionize with your digital presence!\n \
-            \nYour order was processed successfully!\
-            \n\nYou ordered the following products:\n - { newline.join(item for item in all_items) }.\
-            \n\nSubtotal: €{order.order_total}\
-            \nVAT Total @23%: €{order.vat_total}\
-            \nGrand Total: €{order.grand_total}\
-            \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
-            \nJust login & navigate to your User Portal.\n\
-            \nThank you again from all of us at Lionize!", 
-            os.getenv('DEFAULT_FROM_EMAIL'),
-            [order.email])
-
-    except BadHeaderError:
-        messages.error(request, (
-                "I'm afraid there was an issue sending your order confirmation email,\
-                please email us using our contact form to confirm that your order was processed successfully!")
-            )
-        return HttpResponse('Invalid header found.')
     
     if 'bag' in request.session:
         del request.session['bag']
-
     
     template = 'checkout/checkout_success.html'
     context = {

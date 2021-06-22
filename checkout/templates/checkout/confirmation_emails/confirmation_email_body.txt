@@ -18,5 +18,6 @@ Grand Total: €{{order.grand_total}}
 A more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site.
 Just login & navigate to your User Portal.
 
-Thank you again from all of us at Lionize!"
-
+Thank you again,
+Sincerely,
+Lionize
