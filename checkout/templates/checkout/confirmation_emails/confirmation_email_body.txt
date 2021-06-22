@@ -5,11 +5,7 @@ Thank you for trusting Lionize with your digital presence.
 Your order was processed successfully!
 
 You ordered the following products:
-<ul>
-        {% for item in order.lineitems.all() %}
-            <li>{{item.product.friendly_name}}</li>
-        {% endfor %}
-</ul>
+
 
 Subtotal: €{{order.order_total}}
 VAT Total @23%: €{{order.vat_total}}
