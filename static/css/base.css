@@ -189,6 +189,18 @@ ul.dropdown-menu-cart{
     height: 2px;
 
 }
+.successful-toast{
+    border: var(--lighter-main) solid 3px;
+}
+.informational-toast{
+    border: #07da63 solid 3px;
+}
+.erroneous-toast{
+    border: var(--lighter-cancel) solid 3px;
+}
+.warning-toast{
+    border: var(--accent-colour) solid 3px;
+}
 /* Homepage Nav & Header */
 nav {
     font-family: var(--main-text-font);
@@ -636,7 +648,7 @@ i.fa-star{
 }
 /* The Following Code is all from the CI Boutique Ado Tutorial */
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
+/* .arrow-up {
     width: 0; 
     height: 0; 
     border-left: 4px solid transparent;
@@ -648,23 +660,23 @@ i.fa-star{
 }
 
 /* Convenience classes - colors copied from Bootstrap */
-.arrow-primary {
+/* .arrow-primary {
     border-bottom-color: #007bff !important;
-}
+} */
 
-.arrow-secondary {
+/* .arrow-secondary {
     border-bottom-color: #6c757d !important;
-}
+} */
 
-.arrow-success {
+/* .arrow-success {
     border-bottom-color: #28a745 !important;
-}
+} */
 
-.arrow-danger {
+/* .arrow-danger {
     border-bottom-color: #dc3545 !important;
-}
+} */
 
-.arrow-warning {
+/* .arrow-warning {
     border-bottom-color: #ffc107 !important;
 }
 
@@ -678,7 +690,7 @@ i.fa-star{
 
 .arrow-dark {
     border-bottom-color: #343a40 !important;
-}
+} */
 
 .bag-notification-wrapper {
     height: 200px;

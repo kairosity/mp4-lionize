@@ -215,3 +215,30 @@ __Issue:__ When attempting to integrate a Bootstrap modal, it refused to fire an
 
 __Fix:__ I found [this Stack Overflow Post](https://stackoverflow.com/questions/67440523/bootstrap-v5-modal-show-issue) describing the error exactly and it directed me to place the bootrap.bundle.min.js link just before the closing body tag, instead of in the head of the page. Doing so fixed the issue.
 
+
+## Changing Site Domain & Name
+
+__Issue:__ To change my site domain from example.com to lionize.com & likewise name from example.com to Lionize, I deleted the example.com site and replaced it with a new one for lionize.com, which immediately created the following error anytime I navigated anywhere relating to the database:
+
+<p align="center">
+  <img src="static/images/issues/site-error.png">
+</p>
+
+<br>
+
+__Fix:__ First I tried to re-add example.com using the django shell by doing:
+
+      manage.py shell
+      from django.contrib.sites.models import Site
+      site = Site.objects.create(domain='example.com', name='example.com')
+      site.save()
+
+This had no effect and when I tried to add the same site again, I got a uniqueness Integrity error, so it DID add it successfully, but it still wasn't working. <br>
+
+Then I found [this issue report](https://github.com/maxking/docker-mailman/issues/12) on github that referred to the SITE_ID variable in the Django settings file. Changing that from 1 to (I assumed 2), worked and I regained access to the admin page.
+
+Then of course I had the issue of local vs. deployed version of the site, as I realised the dangers of just deleting the site in the database, I didn't want to risk repeating that for the deployed version of the application. Instead I added a conditional SITE_ID setting, and then edited (instead of deleting) the domain & name for the deployed version, so its SITE_ID remained 1. The conditional code in settings uses the DATABASE_URL variable, as that was already present:
+
+<p align="center">
+  <img src="static/images/issues/site-id-fix.png">
+</p>

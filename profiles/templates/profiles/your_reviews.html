@@ -23,8 +23,9 @@ Divde into Reviewed & Review
         <header class=" d-flex flex-column">
             <div class="container">
                 <h1 class="profile-page-heading mt-4 mb-3">Product Reviews</h1>
-                <p class="details-page-text mb-5">When you've purchase any of our products, you can review that product. Below are the products you have purchased and can
-                    therefore review and once you do so, your reviews will also appear below.
+                <p class="details-page-text mb-5">When you order any of our products, you are entitled to review that product.
+                    On the left hand side of this page, you will see a list of products you can review. On the right, you will see a list 
+                    of any reviews you have written.
                 </p>
             </div>
         </header>
@@ -32,43 +33,54 @@ Divde into Reviewed & Review
                 <section class="reviews row">
                     <div class="col-12 col-md-6 review-padding">
                         <h2 class="details-page-subheading">Products To Review</h2>
-                        {% for order in orders %}
-                            {% for item in order.lineitems.all %}
-                                {% if not item.reviewed %}
-                                    <div class="review-border container orders-to-review">
-                                        <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
-                                        <small><strong>Order Date:</strong> {{order.date}}</small>
-                                        <p></p>
-                                        <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
-                                        <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
-                                        <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}">Review</a>
-                                    </div>
-                                {% endif %}
+                        {% if orders %}
+                            {% for order in orders %}
+                                {% for item in order.lineitems.all %}
+                                    {% if not item.reviewed %}
+                                        <div class="review-border container orders-to-review">
+                                            <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
+                                            <small><strong>Order Date:</strong> {{order.date}}</small>
+                                            <p></p>
+                                            <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
+                                            <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
+                                            <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}">Review</a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             {% endfor %}
-
-                        {% endfor %}
+                        {% else %}
+                            <div class="review-border container orders-to-review text-align-center">
+                                <p>You have not ordered any products yet.</p>
+                            </div>  
+                        {% endif %}
                     </div>
                     <div class="col-12 col-md-6 review-padding">
                         <h2 class="details-page-subheading">Your Reviews</h2>
-                        {% for review in reviews %}
+                        {% if reviews %}
+                            {% for review in reviews %}
+                                <div class=" container review-border">
+                                    {% if review.review_stars == 'option1' %}
+                                        <p><i class="fas fa-star review-star"></i></p>
+                                    {% elif review.review_stars == 'option2' %}
+                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
+                                    {% elif review.review_stars == 'option3' %}
+                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                    {% elif review.review_stars == 'option4' %}
+                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                    {% elif review.review_stars == 'option5' %}
+                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                    {% endif %}
+                                    <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
+                                    <p><strong>Review Title:</strong>  {{review.review_title}}</p>
+                                    <p><strong>Review:</strong> {{review.review}}</p>
+                                    <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+                                </div>
+                            {% endfor %}
+                        {% else %}
                             <div class=" container review-border">
-                                {% if review.review_stars == 'option1' %}
-                                    <p><i class="fas fa-star review-star"></i></p>
-                                {% elif review.review_stars == 'option2' %}
-                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
-                                {% elif review.review_stars == 'option3' %}
-                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                {% elif review.review_stars == 'option4' %}
-                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                {% elif review.review_stars == 'option5' %}
-                                    <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                {% endif %}
-                                <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
-                                <p><strong>Review Title:</strong>  {{review.review_title}}</p>
-                                <p><strong>Review:</strong> {{review.review}}</p>
-                                <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+                                <p class="text-align-center">You have not written any reviews yet.</p>
                             </div>
-                        {% endfor %}
+                        {% endif %}
                     </div>
                 </section>
         </div>

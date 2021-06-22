@@ -109,7 +109,10 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 1
+if 'DATABASE_URL' in os.environ:
+    SITE_ID = 1
+else:
+    SITE_ID = 2
 
 
 
