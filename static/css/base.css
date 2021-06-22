@@ -317,6 +317,10 @@ h2.homepage-subheading span.accent-underline{
 .register-benefits-button{
     padding: 1rem 3rem;
 }
+.whoarewe-text{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
 .bio-image{
     height: 350px;
 }
@@ -779,12 +783,6 @@ i.fa-star{
     flex-basis: 100%;
     width: 100%;
 }
-/* Logout */
-.more-space{
-    margin-top: 7rem;
-    margin-bottom: 7rem;
-    padding: 5rem;
-}
 /* Order Success Page */
 .order-listing-title{
     color: var(--main-colour);
@@ -888,6 +886,12 @@ footer a.nav-link:hover{
         padding: 1.5rem;
         margin-top: 1.5rem;
     }
+     /* Logout */
+    .more-space{
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+        padding: 5rem;
+    }
 }
 
 /* Media Queries - Bootstrap md */
@@ -903,6 +907,16 @@ footer a.nav-link:hover{
         border: var(--main-colour) 3px solid;
         padding: 2rem;
         margin-top: 2rem;
+    }
+    .whoarewe-text{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+     /* Logout */
+    .more-space{
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+        padding: 5rem;
     }
     /* Other account Incidental Pages */
     /* Verify Email Address Page */
@@ -946,9 +960,19 @@ footer a.nav-link:hover{
     .details-page-text{
         width: 70%;
     }
+    .whoarewe-text{
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
     .form-container{
         padding: 3rem;
         margin-top: 3rem;
+    }
+    /* Logout */
+    .more-space{
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+        padding: 5rem;
     }
     .footer .links-row{
         width: 70%;
@@ -958,6 +982,10 @@ footer a.nav-link:hover{
 @media (min-width: 1200px) {
     body {
         margin: 0;
+    }
+    .whoarewe-text{
+        padding-left: 15rem;
+        padding-right: 15rem;
     }
     .footer .links-row{
         width: 50%;

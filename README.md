@@ -125,23 +125,20 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 ## Returning User Stories
 ## *As a returning user I want to be able to...*
 
-### Registration, Login, Logout, Update & Delete Data
+### Registration, Login, Logout, & Update Data
 
 1. Login to my user account, using my email and password.
 2. Be redirected to the User Portal and easily view the various custom user pages.
 3. Edit my account information: change my password, username & other details.
 4. Recover my password if I forget it.
-5. Delete my account.
-6. Be prompted to confirm my request to delete my account.
-7. Receive email confirmation of my account deletion, outlining the data to be deleted, including all order information.
-8. Logout of my account.
+5. Logout of my account.
 
 ### Information Gathering
 
 1. Quickly navigate to the products / services information pages from anywhere on the website.
 2. Gather more in depth information about the services and products on offer.
 3. Easily contact Lionize to ask for specific information about the services and products on offer.
-4. View a transparent pricing structure for all products.
+4. Easily find the prices of all products.
 5. View the reviews of other users on products/services I am interested in.
 
 ### User Portal
@@ -149,8 +146,8 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 1. View / add / updated my profile details easily on a page specifically for that purpose.
 2. Navigate to my shopping bag quickly from the user portal side bar.
 3. Easily view all my past orders, and all their attendent details.
-4. View a list of ordered products I have yet to review. 
-5. View a list of my reviews.
+4. View a list of my ordered and purchased products that I can review.
+5. View a list of all the reviews I have written.
 
 ### Shopping
 
@@ -161,9 +158,9 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 5. Add products to my shopping bag and have this visually confirmed for me.
 6. Easily view all the items in my shopping bag.
 7. Update the items in my shopping bag, by adding more or less of an item.
-8. Remove any item from my shopping bag. 
+8. Remove any item from my shopping bag.
 9. Make changes to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.
-10. Email Lionize with a custom quotation request for a specific product that I do not see on the site.
+10. Email Lionize with a custom quotation request for a specific product/service I have in mind that I cannot find in the shop.
 
 ### Purchasing
 
@@ -171,10 +168,12 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 2. Use my credit card to pay for my items.
 3. Be confident in the knowledge that my payment is being handled securely.
 4. View the VAT added to both the individual products and the total cost before paying.
-5. See confirmation of my order after completing the checkout process.
-6. Have the VAT reflected on the order confirmation.
-7. Navigate to my order history page and easily see a list of past orders processed with all associated information clearly outlined.
-8. Have my personal details such as name, email, phone number & address saved to my profile and automatically populate the checkout form.
+5. Have my personal details such as name, email, phone number & address saved to my profile and automatically populate the checkout form.
+6. See confirmation of my order after completing the checkout process.
+7. Receive an email confirming my order after completing the checkout process.
+8. Have the VAT reflected on the order confirmation.
+9. Navigate to my order history page and easily see a list of past orders processed with all associated information clearly outlined.
+
 
 ## Persona Based User Stories
 
@@ -195,15 +194,15 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 ### Rosemary Geoghan - Plumbing Co. CEO
 ### *As the CEO of a plumbing company seeking to future-proof how we communicate with clients, I want to be able to...*
 
-1. Get a custom quotation for integrating a client portal into our current website.
-2. Get the project up and running and then delegate the project management to our marketing dept.
+1. Order a new ecommerce site, with an easy-to-use CMS.
+2. Get the project up and running and then delegate the project management & website administration to our marketing dept.
 
 ### David Murphy - Entrepreneurial Make-up Artist
 ### *As a createive professional whose brand is focused around my personality, I want to be able to...*
 
 1. Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.
 2. Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.
-3. Easily pay for content creation products as I need them. 
+3. Easily pay for content creation products as I need them.
 
 ## Accessibility User Stories
 
@@ -217,7 +216,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 - Add a new product to the shop.
 - Edit an existing product.
 - Delete a product from the shop.
-- See a list of registered users.
+- See a list of registered users and any emails they have sent to Lionize.
 
 ## Application Creator User Stories
 ### *As the application creator and Lionize business stakeholder I want to be able to...*
@@ -239,16 +238,15 @@ To create a web application that successfully showcases Lionize's services and o
 As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella.
 
 ## Research
-The user registration / dashboard formula for web applications has been around a good while now. It is a tried and tested structure for client communication and engagement.
 
 To research the best design and structural mechanisms to use for this project, I visited a number of Saas and online store websites to see how they present their information and how they structure their payment portals.
 
 ## Value to the User
-All classes of users benefit from a versatile online ordering and payment system. It streamlines the design process for website orders and it cuts out needless administration for orders that are recurring, such as social media management. 
+All classes of users benefit from a simple online ordering and payment system.
 
-The informational aspects of the website deliver value insofar as they communicate information about the services on offer, allowing potential clients to make informed decisions on whether or not they want to work with Lionize. 
+The informational aspects of the website deliver value insofar as they succinctly communicate information about the services/products on offer, allowing potential clients to make informed purchasing decisions.
 
-The user dashboard access, after registration delivers a more personalized service to clients, but in an efficient digital way in keeping with the fast pace of technological innovation.
+The user portal access gained after registration delivers a more personalized, efficient user experience that is in sync with the fast pace of technological innovation.
 
 #### back to [contents](#table-of-contents) 
 <br>
@@ -262,27 +260,27 @@ The crux of this application's purpose is as a B2B service provider that allows 
 
  #|Opportunity/Potential Feature | Importance | Viability | Score
 ---|------------ | -------------|--------------|------------------
-. | __*GUEST USER FUNCTIONALITY & FEATURES*__ 
+. | __*GUEST USER FUNCTIONALITY & FEATURES*__
 1.| Browse the website easily and view separate pages for each service offered.  | 10 | 10 | 20
 2.| Contact Lionize with questions. | 9 | 10 | 19
 . | __*APP NAVIGATION FUNCTIONALITY & FEATURES*__
 1.|  There is a main navbar with links to the homepage, the service details pages & the contact form for unregistered users. |10|10|20
-2.| The main navbar changes to include links to the Shop & the User Portal for logged in users. |9|8|17
-3.| When a user has navigated to any of the user portal or shop pages, there is a second side navigation on desktop with all the attendent links. | 8 | 8 |16
-4.| On mobile the above links are nested within the hamburger navigation. 
+2.| The main navbar changes to include links to the Shop & the User Portal for logged in users and a link to the Admin Portal for admin users. |9|8|17
+3.| When a user has navigated to any of the user portal, shop pages, or admin portal, there is a second side navigation on desktop with all the attendent links. | 8 | 8 |16
+4.| On mobile the above links are nested within the hamburger navigation. |7|8|15
+5.| On mobile, there is a cart icon at the same level as the hamburger navigation, allowing quick access to a dropdown summary of the shopping cart contents. |8|6|14
 . | __*USER REGISTRATION FUNCTIONALITY & FEATURES*__ 
 1.| Register as a new user  | 10 | 10 | 20
 2.| Register using an email address | 7 | 10 | 17
 3.| Confirm password when registering | 7 | 7 | 14
 4.| Register a username as separate from login email | 3 | 9 | 12
 5.| Receive an email link to confirm the user is supplying a genuine email address |3 | 5 | 8
-6.| Receive an email confirmation of registration. |3 | 5 | 8
 . | __*USER LOGIN / LOGOUT FUNCTIONALITY & FEATURES*__ 
 1.| Users can login with email and password |10 | 10 | 20
 2.| When a user logs in, they are brought to a user portal |7 | 10 | 17
 3.| A session is started and the user's login status is remembered as they use the application |9 | 9 | 18
-4.| When a user is logged in they can view their account information.  |10 | 9 | 19
-5.| A user has to be logged in, in order to acccess their user portal. |10 | 9 | 19
+4.| When a user is logged in they can view their profile information, order history and reviews.  |10 | 9 | 19
+5.| A user has to be logged in, in order to acccess their user portal, order history and reviews. |10 | 9 | 19
 6.| A user can logout to end their session. |10 | 10 | 20
 . | __*USER PORTAL FUNCTIONALITY & FEATURES*__ 
 1.| The user portal consists of any information personal to that specific user. |6 | 10 | 16
@@ -290,7 +288,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 3.| Users can view their current shopping bag. |8 | 8 | 16
 4.| Users can view a list of all their past orders. |5 | 8 | 13
 5.| Users can click into view the details of any of these past orders. |5 | 7 | 12
-6.| When a user logs out their shopping bag information is saved to their user profile and remembered when they log back in. | 4 | 2 | 6
+6.| When a user logs out, their shopping bag information is saved to their user profile and remembered when they log back in. | 4 | 2 | 6
 7.| Lionize can upload designs, contracts and other files so that they are accessible to users from their dashboards. |2 | 3 | 5
 8.| Users can add widgets of their social media accounts to their user portal to view their accounts while inside the application. | 2 | 3 | 5
 9.| Users can view a list of products they have previously ordered and that can be reviewed. | 6 | 6 | 12
@@ -318,6 +316,9 @@ The crux of this application's purpose is as a B2B service provider that allows 
 3.| There is an admin dashboard page where they can add new products & view a list of users. |4 | 4 | 8
 4.| Admin can mark a product as "on sale". |4 | 4 | 8
 5.| Admin can mark a product as "new". |4 | 4 | 8
+6.| On the admin user dashboard page, admins can view a full list of users as well as some user details & any emails a particular user has sent Lionize. |5 | 5 |10
+7.| Admins can filter the list of users using a keyword search. |5|5|10
+8.| On the admin product dashboard page, admins can filter products by clicking on a category button or by keyword search. | 6|6|12
 . | __*OTHER FUNCTIONALITY & FEATURES*__
 1.| Users can upload / select palettes & typography they like for their web design projects. |2 | 2 | 4
 2.| Users can create a mood board from images they upload to help Lionize with the design process. |2|1|3
@@ -333,7 +334,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 ### Information Gathering & General Browsing
 1. Guest users should be able to easily browse the website and view general information on the kinds of services/products on offer. 
 2. They should be able to use a fully functioning contact form to contact Lionize with any questions. 
-3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal & shop sections of the site.
+3. The navigation should be slightly different with more options for logged in users, including a second side nav for the user portal, shop & admin sections of the site.
 4. Logged in users should be able to read the reviews of other users on products they are interested in.
 ### Registration, Login & Logout
 4. Users are able to register easily using an email address and separate username, and they must confirm their password when registering.
@@ -350,24 +351,24 @@ The crux of this application's purpose is as a B2B service provider that allows 
 4. Users can view a list of items availble for them to review.
 5. Users can view a list of their reviews.
 ### Searching & Filtering
-11. Users can view categories of products to shop using a side navigation bar.
-12. Users can perform a keyword search against the product names, descriptions & features.
+1. Users can view categories of products to shop using a side navigation bar.
+2. Users can perform a keyword search against the product names, descriptions & features.
+3. Admin users can filter users by keyword search & can filter products using category buttons or keyword search.
 ### Shopping
-13. Users can shop directly from the user portal / shop area of the application.
-14. When shopping users can view the lists of all products (whether in the all products section of divided by category) and they can click into view the specific product details and to add it to their shopping bag if they want. 
-15. Users can see the VAT amount on individual products in their shopping bag as well as the total VAT being charged.
-16. Users get instant confirmation of any changes to their shopping bag via a modal message on the page.
-17. Users are able to close the modal.
+1. Users can shop directly from the user portal / shop area of the application.
+2. When shopping, users can view the lists of all products (whether in the all products section of divided by category) and they can click into view the specific product details and to add it to their shopping bag if they want. 
+3. Users can see the VAT amount on individual products in their shopping bag as well as the total VAT being charged.
+4. Users get instant confirmation of any changes to their shopping bag via a modal message on the page.
+5. Users are able to close the modal.
 ### Payment
-18. Users can navigate to a checkout page when they are ready to pay securely using a credit card.
-19. The user's billing details will be auto-populated in the checkout form if they have previously saved them.
-20. When a user successfully purchases a product they are sent a confirmation email with all the details.
-21. If any errors occur during the checkout process the user is informed of the error.
+1. Users can navigate to a checkout page when they are ready to pay securely using a credit card.
+2. The user's billing details will be auto-populated in the checkout form if they have previously saved them.
+3. When a user successfully purchases a product they are sent a confirmation email with all the details.
+4. If any errors occur during the checkout process the user is informed of the error.
 ### Admin Functionality
-22. Admins can add, edit or delete products on the front & backend of the application.
-23. Admins can view a list of all users on the front-end of the application.
-24. Admins can mark products as "on sale" or "new".
-25. "New" products are automatically promoted on a banner that sits over the "All Products" page.
+1. Admins can add, edit or delete products on the front & backend of the application.
+2. Admins can view a list of all users on the front-end of the application.
+3. Admins have access to two dashboards: one for products, one for users & they can filter the results of both.
 
 These are the features I determined necessary for the first iteration of this application, with scope to increasing them down the road.
 
@@ -377,7 +378,7 @@ These are the features I determined necessary for the first iteration of this ap
 
 # Structure
 
-The structure is somewhat non-linear as the navigation is flexible and depedent on whether a user is registered and logged in or not. Navigation and user flow also differs for admin vs. regular users.  I was aware of the importance of maintaining a level of simplicity as because of its' multi-layered structure I wanted all the pages to be evident and easily accessible for users. I was careful to ensure that both the information architecture and design was intuitive and as simplified as possible. To this end I was careful to include amble feedback in the form of toast messages as well as confirmation modals of any deletion possible. 
+The structure is somewhat non-linear as the navigation is flexible and depedent on whether a user is registered and logged in or not. Navigation and user flow also differs for admin vs. regular users.  I was aware of the importance of maintaining a level of simplicity as because of its' multi-layered structure I wanted all the pages to be evident and easily accessible for users. I was careful to ensure that both the information architecture and design was intuitive and as simplified as possible. To this end I was careful to include ample feedback in the form of toast messages, well designed error pages and confirmation modals for admin product deletion. 
 
 ## Interaction Design
 
@@ -387,36 +388,45 @@ Navigation is straightforward: for unregistered users there is a top navigation 
 
 Once logged in, the user is brought to the user portal / shop pages, where a side nav bar is added to the top navigation.
 
-The back button is never relied on, but it is used for the user's convenience on occasion when they have navigated to the product details page for instance. The user can just use the sidebar, but the back button is more directly connected to where they may want to go.
+The back button is never relied on, but it is used to enhance and simplify the user experience. For example when a user has navigated to the product details page they *could* just use the sidebar to get back to products, but the back button is more directly and obviously connected to where they may want to go.
+
+<p align="center">
+  <img src="static/images/ux/back-btn-eg.png">
+</p>
 
 When on the "All Products" page, users can perform a keyword search against the product name, description and features. I also chose to give the different categories of products their own separate pages and views (rather than using Q Objects as with the keyword search) to ensure the best possible SEO performance.
+
+Navigation is also further enhanced and clarified by use of proper active page highlighting. I custom coded this aspect of navigation to make it perfectly logically consistent on both navigation bars (top & side). For example, if a user is viewing their order history, they are in the User Portal and they are on the order history page, therefore both of these navigation items will be highlighted:
+
+<p align="center">
+  <img src="static/images/ux/nav-highlighting.png">
+</p>
 
 ### Consistency and conventions
 
 All content, navigation, typography and information hierarchy are consistent and predictable in nature. The user shopping experience does not deviate from what most users will be used to from their online shopping experience to date. The checkout process likewise follows a predictable formula. 
 
-- All of the most important content is visible on the page and should a user need to scroll this is made amply evident to them. 
-- The application's aethetics are consistent throughout the site and rely on the same small set of colours and fonts. 
-- Spacing is used to create a clean aethestic and the application never feels crowded or claustrophobic. 
-- All fonts used a clean and elegant sans-serif. 
-- Icons (such as the search magnifying glass and the airplane send email icon ) are used to enhance metaphorical thinking. 
-- Images are used to the same effect as above. Each product has an associated illustration that reflects the content of the product itself to futher reassure the user. 
-- All forms rely on labels and / or placeholders to guarantee the user knows what they are doing at all times. 
-- The formula of long product list ---> product detail page is used because users will be familiar and happy with this structure. 
-
+- All of the most important content is visible on the page and should a user need to scroll this is made amply evident to them.
+- The application's aesthetics are consistent throughout the site and rely on the same small set of colours and fonts.
+- Spacing is used to create a clean aethestic and the application never feels crowded or claustrophobic.
+- All fonts used a clean and elegant sans-serif.
+- Icons (such as the search magnifying glass and the airplane send email icon etc..) are used to enhance metaphorical thinking.
+- Images are used to the same effect as above. Each product has an associated illustration that reflects the content of the product itself to futher reassure the user.
+- All forms rely on labels and / or placeholders to guarantee the user knows what they are doing at all times.
+- The formula of long product list ---> product detail page is used because users will be familiar and happy with this structure.
+- The navigation organisation mirrors that of large ecommerce sites so that the user will also have prior knowledge of that formula.
 
 ### Learnability and communication of functionality
 
 - Because of all of the above consistent and convention attributes, learnability is very high and quick for this application.
-- There is very little about it that the user will not be expecting or anticipating. 
-- On all pages that require the user to *do* something clearly explain what they are expected to do.
+- There is very little about it that the user will not be expecting or anticipating.
+- On all pages that require the user to *do* something, what they are expected to do, is clearly and succinctly explained.
 
-The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance something's or someone's fame and standing in the world. This is followed by a further explanation of the business's raison d'etre. Scrolling down further elucidates what is on offer by succinctly grouping and summarizing the four different categories of products. Each of these product / services introductions can be clicked on to view more details. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products they are then told explicitly why they should register and ideally the homepage user flows ends here, with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch.
-
+The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance something's or someone's fame and standing in the world. This is followed by a further explanation of the business's raison d'etre. Scrolling down further elucidates what is on offer by grouping and summarizing the four different categories of products. Each of these product / services introductions can be clicked on to view more details. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products they are then told explicitly why they should register and ideally the homepage user flows ends here, with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch to ask any questions.
 
 ### Feedback
 
-- Most actions a user can do on the application are followed by various forms of immediate feedback. 
+- Most actions a user can do on the application are followed by various forms of immediate feedback.
 - Clicking the logout button brings the user to a logout confirmation page and then when they confirm their logout intent, they see a toast message telling them they have successfully signed out.
 - Registration is confirmed via email.
 - Logging in brings the user directly to their user portal as well as delivering a login confirmation message via toast that communicates both the action and reassures them of its accuracy with the inclusion of their username in the message content itself.
@@ -424,13 +434,22 @@ The name of the application itself communicates the essence of what the business
 - On the shopping bag page, if a user chooses to remove an item from their bag, this is also confirmed via a toast message.
 - When the order is being processed after checkout, a page loading icon informs the user that something is happening.
 - When the order is processed the user is brought to the order success page and also sees an order success toast. A confirmation email is also sent to them.
-- If a user emails Lionize using the contact form, they also see a message telling them that the email was successfully sent.
+- When the user adds a review, a toast message pops up thanking them for doing so.
 
+<p align="center">
+  <img src="static/images/ux/review-toast.png">
+</p>
+
+- If a user emails Lionize using the contact form, they also see a message telling them that the email was successfully sent, alongside some important GDPR related information.
+
+<p align="center">
+  <img src="static/images/ux/email-toast.png">
+</p>
 
 ### Messages Framework
 
-- The user is given feedback in the form of Bootstrap's toast messages after all major actions.
-- This reassures them that they have done what they wanted to do.
+- As abovementioned users are given feedback in the form of Bootstrap's toast messages after all major actions.
+- This informs them of the success (or failure) of their actions.
 
 ### Form Validation Messages
 
@@ -439,19 +458,20 @@ The name of the application itself communicates the essence of what the business
 
 ### Deletion Confirmation Modals
 
-- If a user chooses to delete their account completely or if an admin goes to delete a product, they are prompted to confirm these deletions by a modal.
+If an admin user chooses to delete a product, they are asked to confirm this deletion via a pop-up modal. This adds an extra level of protection against accidental deletion.
 
-
-### State Changes 
+### State Changes
 
 - All buttons have hover styles applied to reassure the user of their action.
 - All links and interactions have visible state changes to ensure the user knows their action is working properly.
 
-### Error Pages 
+### Error Pages
 
 There are a number of specific error pages that cover the gamut of common errors a user might encounter. The pages are all clear as to what the error was and why it was thrown.
 
 ### Pre-Loader
+
+<br>
 
 ## Information Architecture & User Flow
 
@@ -465,7 +485,7 @@ For registered users, this flexibility is enhanced further, they are able to bro
 
             Shopping Bag ---> Checkout ---> Payment ---> Order Confirmation
 
-And then they are free to browse the application again.
+And then they are free to browse the application again it whatever manner they see fit.
 
 <br>
 
@@ -480,7 +500,7 @@ As touched upon in the Structure section the homepage utilizes progressive discl
 
 ## Metaphorical Thinking
 
-Icons and illustrations are used throughout the application to enhance and reinforce the messages behind the actions required. 
+Icons and illustrations are used throughout the application to enhance and reinforce the messages behind the actions required.
 
 ## Establishing Value Through Design
 
@@ -488,7 +508,7 @@ Value is established by ensuring consistency in design and typography, the colou
 
 ## Reassuring Conventions
 
-As aforementioned in design and structure and feedback, I've kept everything about the application predictable and conventional. The level of user trust needs to be exceptionally high for any application that is seeking to sell something and take user payment information. 
+As aforementioned in design and structure and feedback, I've kept everything about the application predictable and conventional. The level of user trust needs to be exceptionally high for any application that is seeking to sell something and take user payment information.
 
 ## Contextually Organised Content
 
@@ -555,9 +575,13 @@ Again, please remember to click download as the GitHub viewer can expand the sma
 
 ## Schema
 
-A relational database was used to structure this project. For development SQLite was used and Postgres was used for the deployed project. 
+A relational database was used to structure this project. Relational databases are perfect for ecommerce platforms where the relationships are easy to define ahead of use and they are unlikely to change.
 
-The following models were integrated:
+For development SQLite was used and Postgres was used for the deployed project. The relationships in the database are kept as simplified as possible to maintain good structural integrity and transparency. Wherever possible, constraints were defined to maintain data integrity. I tried to minimize redundancy as much as possible, the only obvious outlier being that I duplicated the first_name & last_name variables of the Django auth model in the profile model, but that was in order to enhance user experience, so I decided it was a valid concession.
+
+As you will see below the relationships mapped have an *almost* linear archictecture, whereby the Django __allauth model__ leads into the __UserProfile__ model with a One-to-one relationship. This model represents users who can create __Orders__ which can have various __OrderLineItems__ each of which has an associated __Product__ which belongs to a specific __Category__. Futhermore, those __Products__ can also be __Review__(ed) by __UserProfiles__ who can also email Lionize __Messages__.
+
+These relationships and the details of their associated models have been further outlined below:
 
 ### __Account__
 
@@ -565,7 +589,7 @@ The allauth Django Account app includes a number of models however as I did not 
 
 ### __Category Model__
 
-I intentionally created a Category model separate from the Product model for allowing an easier expansion of product types / services offered down the line. My thinking is that were I to eventually add subscription services, the Category model can be added as a Foreign Key, and not duplicated.
+I intentionally created a Category model separate from the Product model for allowing an easier future expansion of product types / services offered. My thinking is that were I to eventually add subscription services, the Category model can be added as a Foreign Key, and not duplicated.
 
 <br>
 
@@ -659,6 +683,8 @@ The Profile model stores additional user data for information and billing that i
 | Name | Data Type | Purpose |
 | ---- | ----- | --------------- |
 | user | foreign key | A one to one relationship between the profile model and the allauth User model |
+| default_first_name | string | The user's first name. |
+| default_last_name | string | The user's last name. |
 | default_phone_number | string | The user's phone number. |
 | default_street_address1 | string | The first line of the user's address. |
 | default_street_address2 | string | The second line of the user's address. |
@@ -674,13 +700,30 @@ The Profile model stores additional user data for information and billing that i
 
 <br>
 
+### __Message Model__
+
+The Message model stores all emails send by registered users via the contact form on the application, in order that admin might have a decent record of any questions or issues that arise and have those issues directly connected to the user that raised them.
+
+| Name | Data Type | Purpose |
+| ---- | ----- | --------------- |
+| user | foreign key | A one to one relationship between the messages model and the UserProfile model |
+| subject | string | The email subject. |
+| message | string | The email message. |
+| date | date object | The date the email was sent. |
+| resolved | boolean | A boolean to keep track of whether the question was answered or issue resolved. |
+
+
 ## Entity Relationship Diagram
 <br>
 
 
-
 [Click here to view my ERD on Figma.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=39%3A2) I have also added it below, but the Figma link is zoomable.
 
+<br>
+
+<p align="center">
+  <img src="static/images/erd/lionize-erd.png">
+</p>
 
 <br>
 
@@ -696,6 +739,8 @@ The landing page's aim is to deliver a strong and positive first impression to t
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
+
 ### Guest User
 
 - Introduces the concept of the website by starting with a strong title and clean elegant design.
@@ -703,24 +748,48 @@ The landing page's aim is to deliver a strong and positive first impression to t
 <br>
 
 <p align="center">
-  <img src="static/images/features/landing-page.png">
+  <img src="static/images/features/landing-page-1.png">
 </p>
+
 <br>
 
 - Login & Register buttons are clearly visible both on the top navbar (desktop) and as the user scrolls down they arrive at
 - The "Benefits of Registration" section which encourages them to register.
 
+<br>
+
 <p align="center">
   <img src="static/images/features/features-benefits-registration-homepage.png">
 </p>
 
+<br>
+
 - Links to each of the services / product categories are present early on in the user's homepage scrolling. 
 - Information about the main stakeholders in the company is also outlined on the homepage to increase trust in the business and to put human faces on the company.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/bio-homepage.png">
+</p>
+
+<br>
+
 - At the bottom of the page is a contact form to communicate with the business.
 
-### Registered & Logged in User
+<br>
+
+<p align="center">
+  <img src="static/images/features/contact.png">
+</p>
+
+<br>
+
+### Registered & Logged in Users
 
 - The "Login" & "Register" buttons disappear from the navbar and the "Benefits of Registration" changes into a "Thank you for Registering" section with pertinent information and a link to set up the client's free consultation.
+
+<br>
 
 <p align="center">
   <img src="static/images/features/features-homepage-consultation-msg.png">
@@ -735,11 +804,15 @@ the option of paying for another consultation.
   <img src="static/images/features/already-availed-consultation.png">
 </p>
 
+- I didn't really see the need to alter the homepage by removing this message for admin users, as by dint of them being admin, improving their user experience in
+terms of the logic of the application's messages is not high up on the priority list. Essentially, administrators will understand that they don't need to book
+a free consultation, so I see no reason to alter that aspect of the homepage to cater specifically for them.
+
 </details>
 
 <br>
 
-## 2. Contact 
+## 2. Contact
 
 The contact form is available for both unregistered and registered users. It allows users to contact Lionize with any and all
 questions they might have and it is essential to creating trust in the business.
@@ -749,12 +822,21 @@ questions they might have and it is essential to creating trust in the business.
 
 ### Guest User
 
-- Works as a simple contact form, guest users fill in their details and send an email. 
+- Works as a simple contact form, guest users fill in their details and send an email.
 - They receive feedback in the form of a toast message when the email sends successfully.
 
 ### Registered & Logged in User
 
 - When a user is logged in, the "email" value of the form is prefilled for them to save them time and energy.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/pre-filled-email-1.png">
+</p>
+
+<br>
+
 - When a user is logged in and has not yet availed of their free consultation and clicks on the "Schedule Consultation" button, the form is auto-populated with the following data:
 1. The user's email.
 2. The subject: "Schedule free business consultation for first_name last_name." (Where the user's first and last names are auto-populated)
@@ -779,14 +861,160 @@ questions they might have and it is essential to creating trust in the business.
 
 All the specifics are auto-populated from data the user enters or left blank if the user has not entered that information.
 
+<br>
 
 <p align="center">
   <img src="static/images/features/features-contact-consultation.png">
 </p>
 
+<br>
+
+- The contact form's functioning is connected to the Messages model, so that when a registered and logged in user sends an email,
+it is stored in the database and connected to their UserProfile, in order to help Admin manage accounts effectively.
+
+- In line with GDPR legislation, the message a logged in user receives upon sending an email informs them of this:
+
+<br>
+
+<p align="center">
+  <img src="static/images/ux/email-toast.png">
+</p>
+
+<br>
+
 </details>
 
-## 3. Services Information Pages 
+## 3. Services Information Pages
+
+These pages are identical for unregistered and logged in users alike. Their purpose is to act as informational general introductions to the kinds of products on offer, without outlining those products specifically and without listing prices.
+
+<details>
+<summary><b>click for features</b></summary>
+
+They are meant to guide the unregistered users towards wanting to learn more and thus registering for free. They all reiterate that Lionize offers products for *all* industries. One of the barriers to user engagement is when user's (specifically SMEs) think they are "too small" to avail of certain digital products.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/info-pages-1.png">
+</p>
+
+<br>
+
+The web-design page presents a few small thumbnails of previous work, this is not meant to be a comprehensive portfolio although it could certainly be expanded into such. Primarily these examples are just intended as another piece of encouragement towards registration.
+
+Alongside the repeated "register with us" call to action that is on each of these information pages. Every page summarises the vague product types available using colourful bullet points. They also emphasise the company's expertise and high level of technical proficiency. These pages are a key mechanism in the strategy of progressive disclosure intended to expertly guide users towards "using".
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/info-pages-2.png">
+</p>
+
+<br>
+
+</details>
+
+## 4. Navigation
+
+Navigation has been divided into a main navbar and a side navbar for logged in users. This division's purpose is dual:
+Firstly to simplify the contextual ordering of the different pages and secondly to create a sort of user portal / dashboard *feel* to the application. There is also footer navigation.
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+### Guest Users
+
+For guest users the navigation is limited to the main navbar and the footer navigation.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/navbar-guest.png">
+</p>
+
+<br>
+
+As you can see above, the login link is highlighted to look like a button, to differentiate it from register, and to emphasize the relevance of logging in.
+
+On mobile devices the top navbar is accessible via the Hamburger icon.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/tab-nav-guest.png">
+</p>
+
+<br>
+
+Great care as been taken to ensure that the active page navigation links are highlighted correctly to ensure great user experience. This has not been applied to the footer however, just the top & side navigation bars, as users don't tend to use footer navigation to reference what page they are currently on.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/footer-guest.png">
+</p>
+
+<br>
+
+### Logged in Users
+
+- The side nav kicks in to play for logged in users, creating that desired dashboard / application effect. 
+- The pertinent active navbar and side-nav links are underlined programatically using JavaScript.
+- You can also see the addition of the shopping cart navigation icon, which displays the current number of items in the cart.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/side-nav-loggedinuser.png">
+</p>
+
+<br>
+
+- The shopping cart navigation dropdown includes a number of pricing & product details as you can see below.
+- This provides excellent user experience and an easy reference point for users browsing and shopping.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/cart-nav.png">
+</p>
+
+<br>
+
+- As you can see below, this functionality is mirrored and slightly altered in the mobile version of the navigation. 
+- The side nav links become dropdown options on mobile:
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/mob-nav.png">
+</p>
+
+<br>
+
+- The cart dropdown is identical, although it shrinks a bit to fit on smaller mobiles such as the iphone5 & old SEs.
+- Also, its position on mobile is on the same level as the hamburger icon, rather than alongside the rest of the links. 
+- This was to ensure that it was super accessible to users as they shop.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/mob-nav-cart.png">
+</p>
+
+<br>
+
+
+
+
+
+
+
+</details>
+
+## 5. Register
 
 <details>
 <summary><b>click for features</b></summary>
@@ -794,7 +1022,7 @@ All the specifics are auto-populated from data the user enters or left blank if 
 
 </details>
 
-## 4. Register
+## 6. Login
 
 <details>
 <summary><b>click for features</b></summary>
@@ -802,15 +1030,7 @@ All the specifics are auto-populated from data the user enters or left blank if 
 
 </details>
 
-## 5. Login
-
-<details>
-<summary><b>click for features</b></summary>
-
-
-</details>
-
-## 6. User Portal: Profile
+## 7. User Portal: Profile
 
 <details>
 <summary><b>click for features</b></summary>
@@ -834,7 +1054,15 @@ All the specifics are auto-populated from data the user enters or left blank if 
 
 </details>
 
-## 9. Shop
+## 9. User Portal: Reviews
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 10. Shop
 
 <details>
 <summary><b>click for features</b></summary>
@@ -860,12 +1088,16 @@ All the specifics are auto-populated from data the user enters or left blank if 
 
 ## Adding Features to Products
 
-The addition of specific features to the products works perfectly as long as the administrator adding the products formats them correctly with commas after each new feature. There is potential here for errors, and one way around this would be to incorporate a tag block using JavaScript. 
+The addition of specific features to the products works perfectly as long as the administrator adding the products formats them correctly with commas after each new feature. There is potential here for errors, and one way around this would be to incorporate a tag block using JavaScript.
 
 ## Adding Subscription Services for Social Media Management
 
 There is the potential to add monthly subscription services and connect them to the Stripe subscription payment system.
 This would streamline the social media management services in particular and allow for better customer retention. 
+
+## Filtering Messages by "Date" or "Resolved"
+
+I would enable admin users to filter the messages component of the user data by date sent or by whether or not the subject of the message had been resolved. This would add some nice functionality for administrators on the front end.
 
 # Deployment 
 

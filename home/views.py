@@ -39,7 +39,9 @@ def index(request):
                 
                 if request.user.is_authenticated:
                     messages.success(request, (
-                        "Your email was delivered. Thank you. Lionize will get back to you within 36 hours. Please note that a copy of this email is saved in our database. In accordance with GDPR legislation, should you wish for us to delete this message, please let us know.")
+                        "Your email was delivered. Thank you. Lionize will get back to you within 36 hours.\
+                        Please note that a copy of this email is saved in our database. In accordance with GDPR\
+                        legislation, should you wish for us to delete this message, please let us know.")
                     )
                     new_message = Message(user=user, subject=subject, message=message)
                     new_message.save()
