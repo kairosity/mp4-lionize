@@ -126,6 +126,12 @@ button.decrement-qty{
     margin-bottom: 2rem;
     cursor: pointer;
 }
+.xtra-pad{
+    padding: 0.57rem;
+}
+.extra-pad-i{
+    padding: 0.3rem;
+}
 /* Navigation */
 
 .active-page{
@@ -964,10 +970,10 @@ footer a.nav-link:hover{
         padding-left: 8rem;
         padding-right: 8rem;
     }
-    .form-container{
+    /* .form-container{
         padding: 3rem;
         margin-top: 3rem;
-    }
+    } */
     /* Logout */
     .more-space{
         margin-top: 7rem;

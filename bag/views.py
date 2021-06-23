@@ -45,8 +45,8 @@ def add_to_bag(request, item_id):
         messages.success(request, f'Success! Added {product.friendly_name} to your bag')
     
     request.session['bag'] = bag
-    
-    return redirect(redirect_url)
+
+    return redirect(request.META['HTTP_REFERER'])
 
 def adjust_bag(request, item_id):
     '''

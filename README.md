@@ -487,6 +487,9 @@ For registered users, this flexibility is enhanced further, they are able to bro
 
 And then they are free to browse the application again it whatever manner they see fit.
 
+The biggest departure from accepted convention in terms of ecommerce, is not allowing guest users to view the shop without registering. This was done intentionally and is a valid marketing strategy for larger priced products. The idea is to cultivate 
+engagement through a lack of detailed information, forcing users to register by piquing their interest.
+
 <br>
 
 #### back to [contents](#table-of-contents) 
@@ -764,7 +767,7 @@ The landing page's aim is to deliver a strong and positive first impression to t
 
 <br>
 
-- Links to each of the services / product categories are present early on in the user's homepage scrolling. 
+- Links to each of the services / product categories are present early on in the user's homepage scrolling.
 - Information about the main stakeholders in the company is also outlined on the homepage to increase trust in the business and to put human faces on the company.
 
 <br>
@@ -983,7 +986,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 <br>
 
-- As you can see below, this functionality is mirrored and slightly altered in the mobile version of the navigation. 
+- This functionality is mirrored and slightly altered in the mobile version of the navigation. 
 - The side nav links become dropdown options on mobile:
 
 <br>
@@ -994,8 +997,8 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 <br>
 
-- The cart dropdown is identical, although it shrinks a bit to fit on smaller mobiles such as the iphone5 & old SEs.
-- Also, its position on mobile is on the same level as the hamburger icon, rather than alongside the rest of the links. 
+- The cart dropdown is almost identical on mobile, although it shrinks a bit to fit on smaller mobiles such as the iphone5 & old SEs.
+- Also, it sits next to the hamburger icon on mobile, rather than alongside the rest of the links.
 - This was to ensure that it was super accessible to users as they shop.
 
 <br>
@@ -1006,39 +1009,364 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 <br>
 
+### Back Button Navigation
 
+- Back buttons are used to enhance user experience, but they are an addition to, not a replacement for, the regular ever-present side & top navbars. 
+- For example if a user clicks into view the product details a category section of the Shop, they are offered a "Back to SEO Products" back button link, which highlights when hovered over.
 
+<br>
 
+<p align="center">
+  <img src="static/images/features/back-button-desktop.png">
+</p>
 
+<br>
+
+- They could just as easily click the "Shop SEO" on desktop, however on mobile devices, the back button adds additional ease of use, as the "Shop SEO" Link is only accessible via the Hamburger drop-down menu.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/back-button-mob.png">
+</p>
+
+<br>
+
+- The custom Error pages also use back buttons to quickly lead users back to the safety of the homepage:
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/404-back.png">
+</p>
+
+<br>
 
 
 </details>
 
 ## 5. Register
 
+The guest user is guided towards this registration page, which acts as the gateway to most of the application's more
+advanced functionality, including the shop. The registration form in intentionally simple, so as not to put users off at 
+the final hurdle. More detailed user information is collected later using the User Profile page.
+
 <details>
 <summary><b>click for features</b></summary>
+
+
+- The register form asks for the user's email twice (to avoid typos), their username once and their password twice.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/register.png">
+</p>
+
+<br>
+
+- Once they click to register, they are brought to a screen telling them to confirm their registration via a link that has been emailed to them. This is to avoid users signing up with fake email addresses.
+<br>
+
+<p align="center">
+  <img src="static/images/features/verify-email-address.png">
+</p>
+
+<br>
+
+- The email they are sent is simple and to the point:
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/email-confirmation.png">
+</p>
+
+<br>
+
+- When they click to confirm, they are redirected to login to their new account, and a toast message confirms that registration was successful.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/registration-success-toast.png">
+</p>
+
+<br>
 
 
 </details>
 
 ## 6. Login
 
+The login page asks for the username __*or*__ email and the user's password.
+
 <details>
 <summary><b>click for features</b></summary>
 
+
+- Giving the user the option to login using either email or username is super useful, and adds to a positive User Experience.
+- While also keeping the login form as simple as possible.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/login.png">
+</p>
+
+<br>
+
+- Once a user logs in, they are told it was successful by a small toast message in the upper right hand corner.
+- They are automatically redirected to the User Portal: Profile page, so that they might update their user information.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/login-toast.png">
+</p>
+
+<br>
 
 </details>
 
 ## 7. User Portal: Profile
 
+When a user logs in they are automatically redirected to their Profile page in the User Portal section of the navigation.
+This form page takes in further user data to enhance their experience of using the application.
+
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- When the user saves their first and last names via the profile page, that data is used to personalise their experience of the website. Pages refer to them by their first name, and the full name is populated in the Checkout area of the Shop.
+
+- Likewise the billing details are used to auto-populate the checkout form in the Shop.
+
+- The Social media details & phone number are used to auto-populate the contact form, if a user clicks on the "Schedule Consultation" button on the homepage when logged in.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/profile.png">
+</p>
+
+<br>
+
+</details>
+
+## 8. User Portal: Shopping Bag
+
+Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its changing data is connected to the user's use of the application, and therefore grouping it with orders specifically felt more logically consistent to me.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- The shopping bag page shows a snapshot of the user's shopping bag / cart at a moment in time.
+- The data in the shopping bag persists for as long as the session persists.
+- The data does not survive logout and future functionality could include a feature that allows the user to save their shopping bag and return to it another time.
+
+- There are three ways a user can access their shopping bag information.
+
+### 1. The Shopping Bag Page
+
+- Navigating to the shopping bag page. This is the most detailed of the three, and allows the user to edit or remove items from the bag.
+
+- It displays: the product illustration, the product name & category, the price ex. VAT, the VAT added, the quantity of that item in their bag, and the total price of each item incl. VAT.
+
+- At the page bottom it displays the subtotal, vat total & grand total amounts, as well as buttons for "Keep Shopping" and "Secure Checkout".
+
+- The page is both detailed and simple with all the required functionality. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/shopping-bag.png">
+</p>
+
+<br>
+
+### 2. User prompted Toast Pop-Ups
+
+- The second way a user has access to their shopping bag information is when they edit the bag in any way, for example adding an item to it from the Shop, or updating an item quantity from the shopping bag page itself.
+
+- A detailed toast Success message pops up informing the user of the bag alteration.
+- The action does not redirect away from the page the user is currently on, as that would be discommoding to the user.
+- Instead they are given the information and allowed to continue browsing or shopping.
+- Should they want to look at a more detailed snapshot of their bag, or update any of the items, they can opt to click on the toast's "Edit Bag" button.
+- Or they can choose close the toast using they X button.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/shopping-bag-toast.png">
+</p>
+
+<br>
+
+### 3. Shopping Cart Dropdown
+
+- The final way a user can access their shopping bag is by clicking the handy cart icon on the navbar (desktop) or next to the hamburger icon (mobile).
+
+- This opens a dropdown with the exact same information and functionality as the toast, but it is not dependent on user action.
+- User's can reference it at any time.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/shopping-bag-dropdown.png">
+</p>
+
+<br>
+
+
+The shopping bag/cart... (I have used both of these intentionally - not to confuse, but I believe "bag" can be used when it refers to the user's immediate experience and "cart" when it refers to referencing it via the navbar.) ... is readily accessible to the user and there is no deterrant to an enjoyable and informed shopping experience.
+
+</details>
+
+## 9. User Portal: Order History
+
+When a user orders of the products on sale, a record of that order is stored in the database and the User Portal "Orders" page displays these records for the user to access their order data.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- The order history information listed includes: the first 5 characters of the order number, the date of the order, the items in the order & the quantity of them ordered and the order total including VAT.
+
+- The orders are listed with the most recent orders at the top.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/order-history.png">
+</p>
+
+<br>
+
+- Clicking on any of the order numbers brings the user to that order summary page, which is a copy of the checkout success page they would have seen upon ordering the product.
+- They are also shown a toast alert informing them that this summary is a copy of a past order confirmation.
+- This page goes into more detail, listing all of the associated order details including the client billing details and price breakdowns.
+- This page also makes use of the extra navigation ease afforded by an obvious back button.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/order-summary.png">
+</p>
+
+<br>
+
+
+</details>
+
+## 10. User Portal: Reviews
+
+When a user orders and purchases a product, they are automatically entitled to review that product. The application connects the review objects to both the product and the user. There is also an association with individual order-line-items via a boolean field of "reviewed" attached to them, and it is the user's act of writing a review that turns this field's value from False to True.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- When a user orders a product, that product line item will be listed (oldest to newest - to encourage swift reviewing) on the left hand side of the user's "Review" page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/reviews.png">
+</p>
+
+<br>
+
+- There is an obvious "Review" button under the order details that brings the user to the specific product details page and automatically scrolls down to the review portion of that page.
+- The review option is also accessible to a user, when they are browsing the product details pages, but only *if* that user has ordered that specific product and has yet to review it.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/review-form.png">
+</p>
+
+<br>
+
+- When the user submits a review, they see a toast message telling them their review was submitted successfully and the option to review that product disappears.
+- Instead the user can now view her review on the product page, as can any logged in users.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/review-on-product-page.png">
+</p>
+
+<br>
+
+- The review is also now visible on right hand side of the user's review page, in their user portal.
+- These reviews are listed most recent first.
+- When an order has been reviewed, it is not longer listed on the left hand side of the User Portal's Review page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/reviews-page.png">
+</p>
+
+<br>
+
+
+</details>
+
+## 11. Shop: All Products Page
+
+This page is the first shop page the user comes to, when they click on the "Shop" link. It displays a listing of all the digital products on offer. 
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- All Lionize's products are listed here on pleasingly aligned Bootstrap cards.
+- The Product Names are displayed under an illustration representing that product. 
+- Followed by a truncated description and the price ex. VAT.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/allproducts-page.png">
+</p>
+
+<br>
+
+- Users can also filter the all products page, by keyword searching in the search bar at the top of the page.
+- This uses Django's Q objects to search for the given keyword in the product names (friendly & otherwise), features and descriptions.
+- It is to help users find what they want, if they have a very narrow search term, however it is not infallible in terms of searching for a particular category. Searching for "SEO" for example, will not necessarily return all products under the SEO category umbrella.
+- That is what the Shop's side navigation is for.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/allproducts-search.png">
+</p>
+
+<br>
+
+</details>
+
+## 12. Shop: Product Category Page
+
 <details>
 <summary><b>click for features</b></summary>
 
 
 </details>
 
-## 7. User Portal: Shopping Bag
+## 13. Shop: Product Details Page
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1046,7 +1374,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 </details>
 
-## 8. User Portal: Order History
+## 14. Payment Portal
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1054,7 +1382,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 </details>
 
-## 9. User Portal: Reviews
+## 15. Footer
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1062,7 +1390,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 </details>
 
-## 10. Shop
+## 16. Logout
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1070,7 +1398,31 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 </details>
 
-## 10. Payment Portal
+## 17. Admin: Backend Functionality via Django
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 18. Admin: Frontend Product Dashboard
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 19. Admin: Frontend User Dashboard
+
+<details>
+<summary><b>click for features</b></summary>
+
+
+</details>
+
+## 20. Admin: User Messages
 
 <details>
 <summary><b>click for features</b></summary>

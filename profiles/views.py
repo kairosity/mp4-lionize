@@ -52,7 +52,7 @@ def order_history_user_portal(request):
 
     profile = get_object_or_404(UserProfile, user=request.user)
 
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-date')
 
     template = 'profiles/orders.html'
 
@@ -88,7 +88,7 @@ def your_reviews(request):
 
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
-    reviews = Review.objects.filter(user=profile)
+    reviews = Review.objects.filter(user=profile).order_by('-date_reviewed')
 
     template = 'profiles/your_reviews.html'
     context = {

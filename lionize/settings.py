@@ -123,7 +123,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 5
 ACCOUNT_USERNAME_REQUIRED = True
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/user-portal/profile'
 
 WSGI_APPLICATION = 'lionize.wsgi.application'
 
@@ -236,7 +236,7 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #Log emails to the console for development
-    DEFAULT_FROM_EMAIL = 'lionize@gmail.com'
+    DEFAULT_FROM_EMAIL = 'lionizemarketingltd@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True 
