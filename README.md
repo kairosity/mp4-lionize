@@ -1993,7 +1993,10 @@ The admin dashboard is only available for admin users and it allows them to view
 This application was developed to be fully responsive and accessible on all devices.
 
 
-## Homepage
+## 1. Homepage
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile Devices
 
@@ -2165,7 +2168,13 @@ This application was developed to be fully responsive and accessible on all devi
 
 <br>
 
-## Informational Pages
+</details>
+<br>
+
+## 2. Information Pages
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2283,7 +2292,13 @@ This application was developed to be fully responsive and accessible on all devi
 
 <br>
 
-## Navigation
+</details>
+<br>
+
+## 3. Navigation
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2387,8 +2402,13 @@ This application was developed to be fully responsive and accessible on all devi
 
 <br>
 
+</details>
+<br>
 
-## Register, Login & Logout Pages
+## 4. Register, Login & Logout Pages
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 These pages are very similar in their layouts and so will be looked at jointly.
 
@@ -2478,12 +2498,17 @@ These pages are very similar in their layouts and so will be looked at jointly.
   <img src="static/images/responsivity/login-reg-logout/desk-log-2.png">
 </p>
 
+<br>sfd
+
+</details>
 <br>
 
+## 5. Profile 
 
-## Profile 
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
-### Mobile
+### Mobile
 
 - The user portal profile page sits centered on mobile, with one field per row.
 
@@ -2548,7 +2573,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Shopping Bag 
+</details>
+<br>
+
+## 6. Shopping Bag 
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2650,7 +2681,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Order History 
+</details>
+<br>
+
+## 7. Order History 
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2766,7 +2803,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Reviews
+</details>
+<br>
+
+## 8. Reviews
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2851,7 +2894,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Shop: Product Listing Pages
+</details>
+<br>
+
+## 9. Shop: Product Listing Pages
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2938,7 +2987,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Shop: Product Details Page
+</details>
+<br>
+
+## 10. Shop: Product Details Page
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
@@ -2998,9 +3053,17 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-## Checkout
+</details>
+<br>
+
+## 11. Checkout
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
+
+- As the checkout table is so small, it is able to fit on vertical mobile quite nicely without forcing the user to scroll horizontally.
 
 <br>
 
@@ -3009,6 +3072,8 @@ These pages are very similar in their layouts and so will be looked at jointly.
 </p>
 
 <br>
+
+- It also works on mobile in landscape orientation.
 
 <br>
 
@@ -3020,50 +3085,390 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 ### Tablet 
 
+- It looks even better on vertically positioned tablets, as more of the form can be viewed comfotably.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/checkout/tab-vert-check-1.png">
+</p>
+
+<br>
+
+- On tablets in a landscape orientation the side navigation bar is visible.
+- The order summary switches positions and now sits to the right of the payment form, as opposed to on top of it.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/checkout/tab-land-check-1.png">
+</p>
+
+<br>
+
 ### Desktop
 
-### Wide Desktop
+- On desktop the layout is the same as with landscape tablet, but there is more space.
 
-## Footer
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/checkout/desk-check-1.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 12. Footer
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
+- On vertical mobile, the footer sections are stacked on top of each other, one per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/footer/footer-vert-mob.png">
+</p>
+
+<br>
+
+- On landscape mobile, they sit next to each other, all four on the same row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/footer/footer-land-mob.png">
+</p>
+
+<br>
+
+
 ### Tablet 
+
+- The layouts are the same on tablets regardless of whether it is vertically or horizontally orientated. All four footer sections sit next to each other on the same row with the social media icon links below them.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/footer/tab-vert-footer-1.png">
+</p>
+
+<br>
 
 ### Desktop
 
+- On small desktops the layout is the same, although proportionally the footer takes up more of the page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/footer/desk-footer-1.png">
+</p>
+
+<br>
+
 ### Wide Desktop
 
-## Messages
+- On wide desktops the ratio changes and now the footer takes up proportionally less space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/footer/wide-desk-footer-1.png">
+</p>
+
+<br>
+
+</details>
+<br>
+
+## 13. Messages
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
+- On vertical mobile, the small simple messages sit in the upper right hand corner, but take up most of the width of the screen.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/mob-vert-msg-1.png">
+</p>
+
+<br>
+
+- The larger messages that incorporate the shopping cart take up most of the screen space, but can be closed easily.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/mob-vert-msg-2.png">
+</p>
+
+<br>
+
+- These appear slightly more difficult to read on landscape mobile screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/mob-land-msg-1.png">
+</p>
+
+<br>
+
 ### Tablet 
+
+- The small messages only take up a fraction of the space on vertical and landscape tablet screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/tab-vert-msg-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/tab-land-msg-1.png">
+</p>
+
+<br>
+
+- The larger messages are also fully visible on tablet.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/tab-vert-msg-2.png">
+</p>
+
+<br>
 
 ### Desktop
 
-### Wide Desktop
+- The same is true of desktops, the larger messages are positioned in the top right hand corner of the screen.
 
-## Admin: Product Dashboard
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/messages/desk-msg-1.png">
+</p>
+
+<br>
+
+</details>
+<br>
+
+## 14. Admin: Product Dashboard
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
+- The admin products dashboard category buttons are positioned via flexbox and so automatically rearrange themselves depending on the amount of space available to them.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/mob-vert-adminpro-1.png">
+</p>
+
+<br>
+
+- The product cards take up a full row and on most phones fit about one per screen.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/mob-vert-adminpro-2.png">
+</p>
+
+<br>
+
+- On landscape mobile views, the product cards sit two per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/mob-land-adminpro-1.png">
+</p>
+
+<br>
+
 ### Tablet 
+
+- There is much more space on vertical tablet views and the search bar, category buttons and product cards are all visible on the same screen.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/tab-vert-adminpro-1.png">
+</p>
+
+<br>
+
+- The products sit two per row on vertical tablets.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/tab-vert-adminpro-2.png">
+</p>
+
+<br>
+
+- On landscape tablet views, the side navigation bar is visible, there is proportionately less room and so the action buttons rearrange themselves in an upside down triangle formation.
+- Product cards sit three per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/tab-land-adminpro-1.png">
+</p>
+
+<br>
+
 
 ### Desktop
 
+- The category buttons have more room on desktop and are almost able to sit next to each other on a single row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/desk-adminpro-1.png">
+</p>
+
+<br>
+
+- The product card buttons line up on the same row on desktop as there is more space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/desk-adminpro-2.png">
+</p>
+
+<br>
+
 ### Wide Desktop
 
-## Admin: User Dashboard
+- On larger desktop screens the category selection buttons all sit on a single row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/wide-desk-adminpro-1.png">
+</p>
+
+<br>
+
+- The product cards sit four per row on wider screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-products/wide-desk-adminpro-2.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 15. Admin: User Dashboard
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
 
 ### Mobile
 
+- All the elements on the admin user dashboard page, sit vertically on top of each other on mobile.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/mob-vert-adminuser-1.png">
+</p>
+
+<br>
+
+- The layout is the same on mobiles with a horizontal orientation, however there is more room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/mob-land-adminuser-1.png">
+</p>
+
+<br>
+
+
 ### Tablet 
+
+- On vertical tablets, there are larger margins, but again the layout does not change.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/tab-vert-adminuser-1.png">
+</p>
+
+<br>
+
+- On landscape tablets the side navigation becomes visible and the "user details" and "messages" sections sit next to each other instead of vertically stacked.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/tab-land-adminuser-1.png">
+</p>
+
+<br>
+
 
 ### Desktop
 
+- On smaller desktop screens this layout does not change, however there is more breathing room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/desk-adminuser-1.png">
+</p>
+
+<br>
+
+
 ### Wide Desktop
 
+- On wide desktops, there is plenty of room for the full messages to be displayed and the messages take up a much larger percentage of the screen width than the user details.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-users/wide-desk-adminuser-1.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
 
 
 # Future Features To Implement and Issues Remaining
