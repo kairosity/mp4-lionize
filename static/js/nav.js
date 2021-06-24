@@ -10,7 +10,7 @@ should be highlighted but the path is 'search'.
 $(function(){
 
     let path = window.location.href;
-    console.log(path)
+    
     let splitPath = path.split('/').slice(3);
     
     let homeLink = document.querySelector('#home-link');
@@ -144,12 +144,10 @@ $(function(){
     }
 
     cartLink.addEventListener('click', function(){
-        console.log('clicked')
         successToastTitle.textContent = 'Shopping Cart:'
     })
 
     $("#dropdown-mob-cart").click(function(){
-        console.log("Clicked the cart")
         $("#cart-ul").toggleClass("show");
     });
 

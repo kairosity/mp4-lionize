@@ -33,6 +33,7 @@ Divde into Reviewed & Review
                 <section class="reviews row">
                     <div class="col-12 col-md-6 review-padding">
                         <h2 class="details-page-subheading">Products To Review</h2>
+                        <div class="no-orders-to-review review-border container text-align-center"></div>
                         {% if orders %}
                             {% for order in orders %}
                                 {% for item in order.lineitems.all %}
@@ -86,4 +87,9 @@ Divde into Reviewed & Review
         </div>
         </div>
         
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}

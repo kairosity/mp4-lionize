@@ -81,7 +81,7 @@ However the toast was not visible.
   <img src="static/images/issues/invisible-toast.png">
 </p>
 
-Inspection of its CSS illustrates that it is the .show() method that is not working. 
+Inspection of its CSS illustrates that it is the .show() method that is not working.
 
 <p align="center">
   <img src="static/images/issues/invisible-toast-3.png">
@@ -101,7 +101,7 @@ Inspection of its CSS illustrates that it is the .show() method that is not work
 
 ## Removing Items from Shopping Bag
 
-### __Issue:__ Clicking to remove an item from the shopping bag was resulting in a 500 Internal Server Error, with no obvious errors in the code or logic. 
+### __Issue:__ Clicking to remove an item from the shopping bag was resulting in a 500 Internal Server Error, with no obvious errors in the code or logic.
 
 The remove from bag view:
 
@@ -140,7 +140,7 @@ Adding a trailing slash in the javascript to match the urls.py file fixed the is
             });
     })
 
-## Development version of application css not loading.
+## Development version of application css not loading.
 
 __Issue:__ Static files stopped serving locally once I had successfully deployed to Heroku. 
 
@@ -243,31 +243,36 @@ Then of course I had the issue of local vs. deployed version of the site, as I r
   <img src="static/images/issues/site-id-fix.png">
 </p>
 
-all_items = []
-    for item in order.lineitems.all():
-        all_items.append(item.product.friendly_name)
 
-    newline = '\n - '
-    
-    try:
-        send_mail(
-            f'Lionize Order Confirmation: #{order_number}', 
-            f"Hello {order.full_name}, \
-            \n\nThank you for trusting Lionize with your digital presence!\n \
-            \nYour order was processed successfully!\
-            \n\nYou ordered the following products:\n - { newline.join(item for item in all_items) }.\
-            \n\nSubtotal: €{order.order_total}\
-            \nVAT Total @23%: €{order.vat_total}\
-            \nGrand Total: €{order.grand_total}\
-            \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
-            \nJust login & navigate to your User Portal.\n\
-            \nThank you again from all of us at Lionize!", 
-            os.getenv('DEFAULT_FROM_EMAIL'),
-            [order.email])
+## Communicating effectively with the user on the Reviews Page
 
-    except BadHeaderError:
-        messages.error(request, (
-                "I'm afraid there was an issue sending your order confirmation email,\
-                please email us using our contact form to confirm that your order was processed successfully!")
-            )
-        return HttpResponse('Invalid header found.')
+__Issue:__ If the user has no current products to review, it was important to me, not to just leave the left hand column on the review page blank. If the user has yet to purchase any products the message renders as "You have not ordered any products yet." This was easily achieved in the template as the "else" clause to ```{% if orders %}```, however it was more complicated to template a message to a user who *had* orders attached to their profile, but who had already reviewed all the orders. If you look at the code below you can see why:
+
+      {% if orders %}
+        {% for order in orders %}
+            {% for item in order.lineitems.all %}
+                {% if not item.reviewed %}
+                    <div class="review-border container orders-to-review">
+                        <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
+                        <small><strong>Order Date:</strong> {{order.date}}</small>
+                        <p></p>
+                        <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
+                        <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
+                        <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}#add-review">Review</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% else %}
+        <div class="review-border container orders-to-review text-align-center">
+            <p>You have not ordered any products yet.</p>
+        </div>  
+    {% endif %}
+
+There is no possibility of an "else" clause against "if not item.reviewed" because it looks at all the orders in the order collection. 
+
+__Fix:__ To add a conditional message I therefore decided that I would use JavaScript to check whether the class "orders-to-review" was present in the document, as that would only be present *if* there were orders to review and if not I programmed the following to write to the page:
+
+      if (!ordersPresent){
+    ordersNotPresent.innerHTML = `<p>You have no orders to review.</p>`
+    }

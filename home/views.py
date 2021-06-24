@@ -106,11 +106,14 @@ def admin_dash_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You did enter a search term.")
+                messages.error(request, "You did not enter a search term.")
                 return redirect(reverse('admin-dash-products'))
             
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(friendly_name__icontains=query) | Q(features__icontains=query)
             products = products.filter(queries)
+
+            if not products:
+                messages.warning(request, "There were no results for your search term.")
 
     context = {
         'products': products,
@@ -137,11 +140,14 @@ def admin_dash_users(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You did enter a search term.")
+                messages.error(request, "You did not enter a search term.")
                 return redirect(reverse('admin-dash-users'))
             
             queries = Q(user__username__icontains=query) | Q(user__first_name__icontains=query) | Q(user__last_name__icontains=query) | Q(user__email__icontains=query)
             user_profiles = user_profiles.filter(queries)
+
+            if not user_profiles:
+                messages.warning(request, "No users were returned for that search term.")
 
     context = {
         'user_profiles': user_profiles,

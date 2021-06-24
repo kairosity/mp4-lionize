@@ -166,6 +166,9 @@ ul.dropdown-menu-cart{
     background-color: var(--main-colour);
     border: none;
 }
+.navbar-toggler{
+    margin-right: 0.6rem;
+}
 /* Messages */
 .toast{
     border: var(--accent-colour) solid 4px;
@@ -255,7 +258,7 @@ div.container-fluid{
     padding: 0;
 }
 .homepage-header {
-    height: 500px;
+    height: 520px;
     background-color: var(--main-colour);
     justify-content: center;
     align-items: center;

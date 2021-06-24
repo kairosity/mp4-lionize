@@ -887,12 +887,16 @@ it is stored in the database and connected to their UserProfile, in order to hel
 
 </details>
 
+<br>
+
 ## 3. Services Information Pages
 
 These pages are identical for unregistered and logged in users alike. Their purpose is to act as informational general introductions to the kinds of products on offer, without outlining those products specifically and without listing prices.
 
 <details>
 <summary><b>click for features</b></summary>
+
+<br>
 
 They are meant to guide the unregistered users towards wanting to learn more and thus registering for free. They all reiterate that Lionize offers products for *all* industries. One of the barriers to user engagement is when user's (specifically SMEs) think they are "too small" to avail of certain digital products.
 
@@ -918,6 +922,8 @@ Alongside the repeated "register with us" call to action that is on each of thes
 
 </details>
 
+<br>
+
 ## 4. Navigation
 
 Navigation has been divided into a main navbar and a side navbar for logged in users. This division's purpose is dual:
@@ -926,6 +932,7 @@ Firstly to simplify the contextual ordering of the different pages and secondly 
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
 
 ### Guest Users
 
@@ -986,7 +993,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 <br>
 
-- This functionality is mirrored and slightly altered in the mobile version of the navigation. 
+- This functionality is mirrored and slightly altered in the mobile version of the navigation.
 - The side nav links become dropdown options on mobile:
 
 <br>
@@ -1000,6 +1007,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 - The cart dropdown is almost identical on mobile, although it shrinks a bit to fit on smaller mobiles such as the iphone5 & old SEs.
 - Also, it sits next to the hamburger icon on mobile, rather than alongside the rest of the links.
 - This was to ensure that it was super accessible to users as they shop.
+- It is also only present on mobile *if* the user has an item in their shopping bag.
 
 <br>
 
@@ -1045,6 +1053,8 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 </details>
 
+<br>
+
 ## 5. Register
 
 The guest user is guided towards this registration page, which acts as the gateway to most of the application's more
@@ -1054,6 +1064,7 @@ the final hurdle. More detailed user information is collected later using the Us
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
 
 - The register form asks for the user's email twice (to avoid typos), their username once and their password twice.
 
@@ -1098,6 +1109,8 @@ the final hurdle. More detailed user information is collected later using the Us
 
 </details>
 
+<br>
+
 ## 6. Login
 
 The login page asks for the username __*or*__ email and the user's password.
@@ -1105,6 +1118,7 @@ The login page asks for the username __*or*__ email and the user's password.
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
 
 - Giving the user the option to login using either email or username is super useful, and adds to a positive User Experience.
 - While also keeping the login form as simple as possible.
@@ -1129,6 +1143,8 @@ The login page asks for the username __*or*__ email and the user's password.
 <br>
 
 </details>
+
+<br>
 
 ## 7. User Portal: Profile
 
@@ -1157,6 +1173,8 @@ This form page takes in further user data to enhance their experience of using t
 
 </details>
 
+<br>
+
 ## 8. User Portal: Shopping Bag
 
 Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its changing data is connected to the user's use of the application, and therefore grouping it with orders specifically felt more logically consistent to me.
@@ -1172,7 +1190,9 @@ Although technically connected to the Shop section of the site, I have chosen to
 
 - There are three ways a user can access their shopping bag information.
 
-### 1. The Shopping Bag Page
+<br>
+
+### 1. The Shopping Bag Page
 
 - Navigating to the shopping bag page. This is the most detailed of the three, and allows the user to edit or remove items from the bag.
 
@@ -1190,7 +1210,18 @@ Although technically connected to the Shop section of the site, I have chosen to
 
 <br>
 
-### 2. User prompted Toast Pop-Ups
+- If the shopping bag is empty, the page displays an image of an empty bag, with a message to match.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/empty-bag.png">
+</p>
+
+<br>
+
+
+### 2. User prompted Toast Pop-Ups
 
 - The second way a user has access to their shopping bag information is when they edit the bag in any way, for example adding an item to it from the Shop, or updating an item quantity from the shopping bag page itself.
 
@@ -1209,7 +1240,7 @@ Although technically connected to the Shop section of the site, I have chosen to
 
 <br>
 
-### 3. Shopping Cart Dropdown
+### 3. Shopping Cart Dropdown
 
 - The final way a user can access their shopping bag is by clicking the handy cart icon on the navbar (desktop) or next to the hamburger icon (mobile).
 
@@ -1228,6 +1259,8 @@ Although technically connected to the Shop section of the site, I have chosen to
 The shopping bag/cart... (I have used both of these intentionally - not to confuse, but I believe "bag" can be used when it refers to the user's immediate experience and "cart" when it refers to referencing it via the navbar.) ... is readily accessible to the user and there is no deterrant to an enjoyable and informed shopping experience.
 
 </details>
+
+<br>
 
 ## 9. User Portal: Order History
 
@@ -1266,6 +1299,8 @@ When a user orders of the products on sale, a record of that order is stored in 
 
 </details>
 
+<br>
+
 ## 10. User Portal: Reviews
 
 When a user orders and purchases a product, they are automatically entitled to review that product. The application connects the review objects to both the product and the user. There is also an association with individual order-line-items via a boolean field of "reviewed" attached to them, and it is the user's act of writing a review that turns this field's value from False to True.
@@ -1287,6 +1322,8 @@ When a user orders and purchases a product, they are automatically entitled to r
 
 - There is an obvious "Review" button under the order details that brings the user to the specific product details page and automatically scrolls down to the review portion of that page.
 - The review option is also accessible to a user, when they are browsing the product details pages, but only *if* that user has ordered that specific product and has yet to review it.
+- A user can submit a review title and can rank the product from 1 to 5 stars and they can write an actual review.
+- Those details are then displayed for other users, as well as the username of the user who wrote the review and the date it was reviewed.
 
 <br>
 
@@ -1322,9 +1359,11 @@ When a user orders and purchases a product, they are automatically entitled to r
 
 </details>
 
+<br>
+
 ## 11. Shop: All Products Page
 
-This page is the first shop page the user comes to, when they click on the "Shop" link. It displays a listing of all the digital products on offer. 
+This page is the first shop page the user arrives at when they click on the "Shop" link. It displays a listing of all the digital products on offer. This page is only accessible to logged in regular and admin users.
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1332,109 +1371,951 @@ This page is the first shop page the user comes to, when they click on the "Shop
 <br>
 
 - All Lionize's products are listed here on pleasingly aligned Bootstrap cards.
-- The Product Names are displayed under an illustration representing that product. 
-- Followed by a truncated description and the price ex. VAT.
+- The Product names are displayed under an illustration representing that product.
+- This is followed by a truncated description and the price ex. VAT.
 
 <br>
 
 <p align="center">
-  <img src="static/images/features/allproducts-page.png">
+  <img src="static/images/features/allproducts.png">
 </p>
 
 <br>
 
-- Users can also filter the all products page, by keyword searching in the search bar at the top of the page.
-- This uses Django's Q objects to search for the given keyword in the product names (friendly & otherwise), features and descriptions.
-- It is to help users find what they want, if they have a very narrow search term, however it is not infallible in terms of searching for a particular category. Searching for "SEO" for example, will not necessarily return all products under the SEO category umbrella.
-- That is what the Shop's side navigation is for.
+- Users can also filter the "All Products" page by keyword using the search bar at the top of the page.
+- This utilizes Django's Q objects to search the Product model's fields (name, friendly_name, description & features) for a given keyword.
+- It is useful for users with very narrow search terms, however it is not an infallible method of searching for a particular category. Searching for "SEO" for example, will not necessarily return all products under the SEO category umbrella. That is what the Shop's side category navigation is for.
 
 <br>
 
 <p align="center">
-  <img src="static/images/features/allproducts-search.png">
+  <img src="static/images/features/seo-search.png">
+</p>
+
+<br>
+
+- When a particular term is searched for, that term remains in the search bar as a reference for the user.
+- If no products are found for a particular search term, the user is informed via toast message.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/no-results-search-term.png">
+</p>
+
+<br>
+
+- If the user clicks on the search button, without entering a search term, they see an error message.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/no-search-term.png">
+</p>
+
+<br>
+
+- Clicking on the reset button, clears the search bar and resets the page to display "All Products" again.
+
+
+### Admin Users
+
+- There is a small addition to the All Products page for admin users. Under the "More Details" button on each of the product listings, they can see a "Edit/Delete in Admin" link. 
+- Clicking this will redirect to the Product Dashboard in the Admin Portal and display only that product in the view. 
+- The admin can then choose to click on the "Edit" or "Delete" buttons on that admin product listing.
+- I designed it like this so that all admin actions take place via the admin product page, I preferred that simplicity, rather than having multiple links to the "Edit" / "Delete" functionality.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/edit-delete-admin.png">
 </p>
 
 <br>
 
 </details>
+
+<br>
 
 ## 12. Shop: Product Category Page
 
+As well as the "All Products" page, the Shop section of the application is divided into four categories: Web Design, SEO, Social Media Mangement and Content Creation. These are to help the user quickly find the digital products they require, without having to wade through the long list on the "All Products" page.
+
+
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
+
+- I opted not to simply filter the "All Products" page, as I have done with the Admin Products Page, because I felt that User Experience would be vastly increased by a dedicated divided Category Navigation. 
+- If a user comes to the shop knowing that they need to find products to increase their SEO, then they can easily browse all the SEO products without being distracted by non-relevant items.
+- As the very nature of this shop is quality products over bulk, I saw no need to add search or filtering capabilities to the individual Product Category Pages.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/category-product-page.png">
+</p>
+
+<br>
+
+### Admin Users
+
+- As with the All Products Page, the product category pages also display the "Edit/Delete" in Admin link.
+<br>
+
+<p align="center">
+  <img src="static/images/features/edit-del-product-category-pages.png">
+</p>
+
+<br>
 
 </details>
+
+<br>
 
 ## 13. Shop: Product Details Page
 
-<details>
-<summary><b>click for features</b></summary>
-
-
-</details>
-
-## 14. Payment Portal
+If a user clicks on any of the "More Details" buttons on the product cards they are brought to the Product Details Page, which provides them with all the specific details of that product.
 
 <details>
 <summary><b>click for features</b></summary>
 
+<br>
+
+- The Product Name comes first, followed by the illustration representing that product. 
+- Then the full detailed description of the product is outlined. 
+- Followed by the specific bullet point features. 
+- Then the pricing breakdown shows the user the subtotal, vat & grand total prices. 
+- For smaller more piecemeal products such as blog posts, or social media engagement blocks, the user may choose to purchase more than one product at a time, and they can do so using the quantity selection buttons.
+- When they have decided to purchase an amount of a specific product, clicking "Add to Bag" will do just that.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/product-details-page.png">
+</p>
+
+<br>
+
+- The back button on the product details page, will direct the user back to the specific category page they arrived there from, *if* they came from a category page. 
+- If they came from their User Portal "Reviews" page, then it will direct them "Back to Reviews".
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/back-to-reviews.png">
+</p>
+
+<br>
+
+- If they came to the page from any other page, including "All Products", the back button will just say "Back".
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/back.png">
+</p>
+
+<br>
+
+- As already touched upon when discussing the "Reviews" features, the product details page also has a "reviews" section where users can add or view the product's associated reviews. 
+- If a user has ordered that product and still needs to review it, they will see an open "Add Review" form waiting to be completed.
+- If there are reviews already attached to that product they will see a "See Reviews" accordion button and clicking it will display those reviews.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/product-details-reviews.png">
+</p>
+
+<br>
+
+
+### Admin Users
+
+- As with the All Products Page and the Product Category pages, the details page also displays the "Edit/Delete" in Admin link under the main product name. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/edit-del-admin-detail-page.png">
+</p>
+
+<br>
 
 </details>
 
-## 15. Footer
+<br>
+
+## 14. Payment Portal (Checkout)
+
+When a user is happy with their selection of products and wants to complete the order, they can click on the "Checkout" button from either their shopping bag page, or the cart dropdown, or the shopping bag toast that pops up when a change is made to the cart. Clicking checkout, brings the user to the payment portal (or checkout) page.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- The checkout page is divided into two sections, the first: the user's billing details. They must fill out their name, email, phone number and address.
+- If they have saved these details via their Profile Page Form, then the checkout form will be auto-populated for them, saving time.
+- If they have not previously entered these details, they can choose to save them to their profile now, by checking the "save this information to profile" checkbox below the billing form.
+- Further down the page they must then enter their credit card details into Stripe's secure payment portal.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/checkout.png">
+</p>
+
+<br>
+
+- There are various form validation checks on both of these forms and these are handled by Django & Stripe respectively.
+- If they input an incorrect card number, they are told immediately with red text.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/card-error.png">
+</p>
+
+<br>
+
+- Likewise, if they fail to fill out a required field on the billing details section of the form, they are prompted to do so.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/checkout-form-validation.png">
+</p>
+
+<br>
+
+- The other section of the checkout form is a re-iteration of their order, including subtotal, vat total & grand total amounts.
+
+- The user can also click the "Adjust Bag" button, if they have forgotten something and they are brought back to the shopping bag page.
+
+- When they are ready to pay, they click "Complete Order" and the order is processed by Stripe.
+
+- While the order is being processed to avoid user impatience, an animated loading cog icon is displayed.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/processing.png">
+</p>
+
+<br>
+
+- Stripe webhooks have also been integrated, so even if something happens that cuts the user connection to the application mid-order, the webhooks add important redundancy to the payment process and a record of the order will be documented for Lionize.
+
+
+-  Once the order is finalized and the payment processed successfully, the order summary page is displayed alongside a toast message informing the user that the order was successful. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/order-summary-checkout.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 15. Footer
+
+The footer is the third and final navigation "bar" available to the user. It lists all the nav links available to the user based on their status (guest, logged in, admin etc..)
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- Guest users see the following simple footer that just lists the informational pages and the Register & Login links. 
+- There are also links to Lionize's various social media accounts. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/guest-footer.png">
+</p>
+
+<br>
+
+- Logged in regular users will see links to the informational pages, their user portal and the shop.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/loggedin-footer.png">
+</p>
+
+<br>
+
+- Admin users will see all of the above, plus the admin dashboard links as well. 
+- As mentioned before, I did not see a need to remove the user portal links and functionality for administrative users. I actually think that would be unnecessarily doing a disservice to admins, as they would then be less likely to have a deep understanding of how users use the application.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/admin-footer.png">
+</p>
+
+<br>
+
+
+</details>
+
+<br>
+
+## 16. Logout
+
+The logout link does what you might expect, logs a user out and ends their session.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- When the user clicks on the logout link, they are prompted with a logout modal/page to confirm that decision.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/logout.png">
+</p>
+
+<br>
+
+
+</details>
+
+<br>
+
+## 17. Messages
+
+As evidenced in the write-up of all other features, Bootstrap's Toast messages have been used extensively across all aspects of the application.
+
+<details>
+<summary><b>click for features</b></summary>
+
+- Each type of message has a different colour border. 
+- Success Messages are bordered in a light blue.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/success-toast.png">
+</p>
+
+<br>
+
+- Warning Messages are bordered in yellow.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/warning-toast.png">
+</p>
+
+<br>
+
+- Information Messages are bordered green.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/info-toast.png">
+</p>
+
+<br>
+
+- Error messages are bordered red.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/error-toast.png">
+</p>
+
+<br>
+
+- One extra point about how the success message in particular is displayed. If a user has items in their shopping bag and then performs a non-shopping bag related action, the success message will contain the shopping bag information. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/success-msg-bag.png">
+</p>
+
+<br>
+
+- This is intentional behaviour, as I felt it was a useful reminder to users who had perhaps drifted away from the shopping experience, to complete their orders while at the same time displaying information that was useful for them.
+
+</details>
+
+<br>
+
+## 18. Admin: Backend Functionality via Django
+
+Site administrators can login via the Django application backend found at ```/admin```. This admin backend is automatically 
+provided by Django, with only some very simple customisation via the individual app's admin.py files.
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+- Each of the application's main apps are present in the backend for advanced admin control.
+- For certain models they are only available for manipulation in the Django backend. 
+
+- The Messages model for example, has a "resolved" field that can currently only be checked from the Django backend.
+
+- The Orders & order line items are also available for viewing via this backend and how they are viewed & ordered can be easily changed by admin. 
+
+- If a user contacts Lionize requesting that their account be deleted, this can also be achieved via the Django backend. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/djangobackend.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 19. Admin: Frontend Product Dashboard
+
+Admin users are able to access the "Admin Portal" when they login to the application. The admin portal link displays in the top navbar (desktop) and the side navigation. The "Products" Dashboard allows admin to easily add, edit or delete products from the Shop. 
+
+<details>
+<summary><b>click for features</b></summary>
+
+<br>
+
+### Searching & Filtering Products
+
+- Admin users can filter down products in 2 ways: they can use a keyword search against name, friendly_name, description & features; or they can click any of the visible category buttons which will return all products in that category.
+- The search operates identically to the "All products" search that normal users can do, with the search term remaining in the search bar until it is cleared using the reset button.
+- If there are no results for a search term, a message is displayed informing the user.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/no-results.png">
+</p>
+
+<br>
+
+
+- If no search term is entered and the search button is clicked, an error message is displayed. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/enter-search-term-error.png">
+</p>
+
+<br>
+
+### Adding new Products
+
+- Admin users can also click on the "Add Product" button to add a new Product to the shop.
+- They are redirected to the "Add Product" Form page, and can enter all the relevant product details there.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/add.png">
+</p>
+
+<br>
+
+- At the bottom of the form they can click "Cancel" to ignore the form and redirect back to the admin product dashboard.
+- When they click to confirm "Add Product", they are brought to the new product's detail page, with a message telling them they have successfully added a new product. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/new-product.png">
+</p>
+
+<br>
+
+- This functionality is also available to admin users via the Django backend, but this method is far more immediate and aesthetically pleasing for admin users, as they can see how their new products look in the shop straight away.
+
+### List of all products
+
+- All the products are displayed on this admin page and each product card displays: The product friendly_name, the product "unfriendly" name, a truncated description and its price ex. VAT. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/product-admin.png">
+</p>
+
+<br>
+
+- Admin users have 3 available actions attached to each product listing via buttons: 
+
+1. They can view the product "Details" (they are redirected to the product detail page, albeit with a useful back button that brings them back to this page). 
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/product-admin-2.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/back-to-product-admin.png">
+</p>
+
+<br>
+
+2. They can click to "Edit" the product and this loads the edit product form, which enables the administrator to edit all visible product fields such as:
+Category, name, friendly_name, description, features, price ex. VAT and image.
+- When "Edit" is clicked the admin user also sees an alert telling them that they "are editing productname".
+- When they have finished editing the product details, they can click "Update Product" and they are redirected back to that product details page to view the edited result.
+- They also see a success message informing them that their update was successful.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/edit-admin.png">
+</p>
+
+<br>
+
+3. They can choose to "Delete" any of the products.
+
+- If the admin user clicks the delete button a Deletion Confirmation Modal pops up asking them to confirm this action. 
+- I felt it was important to include a 2 stage deletion process, to guard against accidental deletions. 
+- At the modal confirmation stage, the user can click, "No, Cancel" to undo the action, or they can proceed with "Yes, Delete It".
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/deletion-confirmation.png">
+</p>
+
+<br>
+
+- If they choose to delete the product, it is instantly removed from the database and thus the Shop, and the user sees a success message confirming the deletion.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/deletion-success-msg.png">
+</p>
+
+<br>
+
+<br>
+
+</details>
+
+<br>
+
+## 20. Admin: Frontend User Dashboard
+
+The admin dashboard is only available for admin users and it allows them to view a list of all the application's registered users. It displays some important user details and any emails they have sent to Lionize.
+
 
 <details>
 <summary><b>click for features</b></summary>
 
 
+<br>
+
+- Each listing is divided in two sections: User Details & Messages.
+
+- The user details listed are: their username, their full name, their email address, phone number and whether or not they have availed of the free consultation.
+
+- The Messages are a list of any emails that user has sent to Lionize using the application's contact form.
+- When a user sends an email using the Lionize contact form, a database message entry is automatically created.
+- I thought this was a useful feature for admin to have a reference to all communication from that user in the one place. To quickly be able to get a sense of any issues that user was having.
+- The Messages listing includes: the subject of the message, the message itself, the date it was sent and whether or not admin has marked it as "resolved". 
+- The "resolved" marker can only currently be done manually via the Django backend, but I felt that the reference to it here on the front-end was useful.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/admin-users.png">
+</p>
+
+<br>
+
+
+- As with the admin Products dashboard, admin users can perform a keyword search against the user's first_name, last_name and email address.
+- The search functionality is identical to the products search functionality.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/users-no-search-term.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/all-users-no-search.png">
+</p>
+
+<br>
+
+
+- This page's functionality has the scope to be expanded substantially, but for now its purpose is to act as a quick reference for admin users. Should an admin need to take further action or alter any of the associated user data, they can do so manually using the Django backend.
+
+<br>
+
 </details>
 
-## 16. Logout
+<br>
 
-<details>
-<summary><b>click for features</b></summary>
+#### back to [contents](#table-of-contents) 
+<br>
 
+# 4. Responsivity
 
-</details>
-
-## 17. Admin: Backend Functionality via Django
-
-<details>
-<summary><b>click for features</b></summary>
+This application was developed to be fully responsive and accessible on all devices.
 
 
-</details>
+## Homepage
 
-## 18. Admin: Frontend Product Dashboard
+### Mobile Devices
 
-<details>
-<summary><b>click for features</b></summary>
+- The main business name and tagline is centered on both vertical and landscape mobile screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/homepage-vert-mob.png">
+</p>
+
+<br>
+
+- In vertical orientation, all the homepage elements are centered and stacked vertically one on top of the other. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/homepage-vert-mob-2.png">
+</p>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/homepage-vert-mob-3.png">
+</p>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/homepage-vert-mob-4.png">
+</p>
+
+<br>
+
+- The services informational page listing and the biographies of "who we are" are all stacked vertically in this way. 
+
+- For landscape orientations, the informational page listing and the biographies are stacked 2 per row as space allows.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/home-land-mob-1.png">
+</p>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/home-land-2.png">
+</p>
+
+<br>
+
+### Tablet
+
+- For vertical tablet viewing the hamburger icon is still present, however much more of the homepage is visible at once.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-vert-home-1.png">
+</p>
+
+<br>
+
+- Two of the informational pages are stacked per row and all the elements have a little more space around them.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-vert-home-2.png">
+</p>
+
+<br>
+
+- The same applies to the biography listings.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-vert-home-3.png">
+</p>
+
+<br>
+
+- For tablets displaying on landscape orientation, the hamburger icon disappears and the navbar shows up instead.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-land-home-1.png">
+</p>
+
+<br>
+
+- The informational page listings display three per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-land-home-2.png">
+</p>
+
+<br>
+
+- As do the biographies.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/tab-land-home-3.png">
+</p>
+
+<br>
 
 
-</details>
+### Desktop
 
-## 19. Admin: Frontend User Dashboard
+- On small desktops the first impression of the homepage is much the same as on landscape oriented tablets. 
+- The navbar is visible.
 
-<details>
-<summary><b>click for features</b></summary>
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/desk-home-1.png">
+</p>
+
+<br>
+
+- The informational pages and the biographies are still displayed three elements per page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/desk-home-2.png">
+</p>
+
+<br>
+
+- There is a nice amount of room for the contact form, and it displays fully on the page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/desk-home-3.png">
+</p>
+
+<br>
+
+### Wide Desktop
+
+- On a wider desktop, the first impression has substantially more breathing room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/desk-wide-home-2.png">
+</p>
+
+<br>
+
+- The only other difference is that the informational pages now display in a single row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/homepage/desk-wide-home-1.png">
+</p>
+
+<br>
+
+## Informational Pages
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Navigation
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Register, Login & Logout Pages
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Profile 
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Shopping Bag 
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Order History 
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Reviews
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Shop: All Products
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Shop: Category Pages
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Shop: Product Details Page
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Checkout
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Footer
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Messages
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Admin: Product Dashboard
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
+
+## Admin: User Dashboard
+
+### Mobile
+
+### Tablet 
+
+### Desktop
+
+### Wide Desktop
 
 
-</details>
-
-## 20. Admin: User Messages
-
-<details>
-<summary><b>click for features</b></summary>
-
-
-</details>
-
-- [4. Responsivity](#responsivity)
-    - [Mobile Devices](#mobile-devices-materialize-sm-breakpoint)
-    - [Tablet Devices](#tablet-devices-materialize-m-breakpoint)
-    - [Desktop Devices](#desktop-devices-materialize-l-breakpoint)
-    - [Wide Desktop Devices](#wide-desktop-devices-materialize-xl-breakpoint)
 
 # Future Features To Implement and Issues Remaining
 
@@ -1442,14 +2323,18 @@ This page is the first shop page the user comes to, when they click on the "Shop
 
 The addition of specific features to the products works perfectly as long as the administrator adding the products formats them correctly with commas after each new feature. There is potential here for errors, and one way around this would be to incorporate a tag block using JavaScript.
 
-## Adding Subscription Services for Social Media Management
+## Adding Subscription Services for Social Media Management
 
 There is the potential to add monthly subscription services and connect them to the Stripe subscription payment system.
 This would streamline the social media management services in particular and allow for better customer retention. 
 
-## Filtering Messages by "Date" or "Resolved"
+## Filtering Messages by "Date" or "Resolved"
 
 I would enable admin users to filter the messages component of the user data by date sent or by whether or not the subject of the message had been resolved. This would add some nice functionality for administrators on the front end.
+
+## Pagination or Ajax loading
+
+If the application were to grow, pagination or infinite scroll loading on pages such as the All Products page, or the Admin User Dashboard, would have to be implemented to help with page load times.
 
 # Deployment 
 
@@ -1752,6 +2637,10 @@ I would enable admin users to filter the messages component of the user data by 
 - ### [Remove example.com as the default SITE in django](https://github.com/maxking/docker-mailman/issues/12)
 
     Used when I accidentally deleted my Site from the Django admin.
+
+- ### [django order_by query set, ascending and descending](https://stackoverflow.com/questions/9834038/django-order-by-query-set-ascending-and-descending)
+
+    Used to order review items in the User Portal Review Page.
 
 ## 6. Jinja
 

@@ -22,7 +22,7 @@
                 <div class="container">
                     <form method="GET" action="{% url 'admin-dash-users' %}">
                         <div class="input-group 1-100">
-                            <input class="form-control" type="text" name="q" placeholder="Search for User">
+                            <input class="form-control" type="text" name="q" placeholder="Search for User" value="{% if search_term %}{{search_term}}{% else %}{% endif %}">
                             <div class="input-group-append">
                                 <button class="button button-accent" type="submit">
                                     <span class="icon">
