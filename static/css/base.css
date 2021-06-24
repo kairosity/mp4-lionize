@@ -132,6 +132,9 @@ button.decrement-qty{
 .extra-pad-i{
     padding: 0.3rem;
 }
+.margin-top-sm{
+    margin-top: 0.5rem;
+}
 /* Navigation */
 
 .active-page{
@@ -484,12 +487,12 @@ img.web-design-example{
 /* Login & Register Pages */
 
 .form-container{
-    padding: 3rem;
+    padding: 2rem;
     justify-content: center;
     max-width: 600px;
-    margin-top: 3rem;
+    margin-top: 2rem;
     background-color: var(--white);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 h1.form-heading{
     font-family: var(--heading-font);
@@ -829,6 +832,12 @@ p.small-instruction{
 p.password-reset-instruction{
     margin-top: 1rem;
 }
+ /* Logout */
+ .more-space{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 4rem;
+}
 /* Footer */
 footer.footer{
     background-color: var(--main-colour);
@@ -892,8 +901,7 @@ footer a.nav-link:hover{
         right: 255px;
     }
     .form-container{
-        padding: 1.5rem;
-        margin-top: 1.5rem;
+        padding: 4.5rem;
     }
      /* Logout */
     .more-space{
@@ -914,8 +922,8 @@ footer a.nav-link:hover{
     .form-container{
         border-radius: 12px;
         border: var(--main-colour) 3px solid;
-        padding: 2rem;
-        margin-top: 2rem;
+        margin-top: 4.5rem;
+        margin-bottom: 4.5rem;
     }
     .whoarewe-text{
         padding-left: 5rem;
@@ -924,7 +932,7 @@ footer a.nav-link:hover{
      /* Logout */
     .more-space{
         margin-top: 7rem;
-        margin-bottom: 7rem;
+        margin-bottom: 12rem;
         padding: 5rem;
     }
     /* Other account Incidental Pages */
@@ -973,10 +981,10 @@ footer a.nav-link:hover{
         padding-left: 8rem;
         padding-right: 8rem;
     }
-    /* .form-container{
-        padding: 3rem;
-        margin-top: 3rem;
-    } */
+    .form-container{
+        margin-top: 5.5rem;
+        margin-bottom: 5.5rem;
+    }
     /* Logout */
     .more-space{
         margin-top: 7rem;
@@ -996,6 +1004,7 @@ footer a.nav-link:hover{
         padding-left: 15rem;
         padding-right: 15rem;
     }
+   
     .footer .links-row{
         width: 50%;
     }

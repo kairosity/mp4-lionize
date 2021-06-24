@@ -2169,105 +2169,854 @@ This application was developed to be fully responsive and accessible on all devi
 
 ### Mobile
 
+- The information pages stack vertically on mobile, each element one per row on top of each other. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/mob-vert-info-1.png">
+</p>
+
+<br>
+
+- Text has small margins and the featured bullet points take up 100% of the width.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/mob-vert-info-2.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/mob-vert-info-3.png">
+</p>
+
+<br>
+
+- In mobile landscape orientation, the only difference is that the featured bullet points are given some margin space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/mob-land-info-1.png">
+</p>
+
+<br>
+
 ### Tablet 
+
+- The industry listings now sit two per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/tab-vert-info-3.png">
+</p>
+
+<br>
+
+- The featured bullet points also sit two per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/tab-vert-info-1.png">
+</p>
+
+<br>
+
+- On landscape oriented tablets, the bullet points sit four per row, however the industry images still sit two per row.
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/tab-land-info-1.png">
+</p>
+
+<br>
 
 ### Desktop
 
+- On desktop, the layout is similar to landscape tablet, but with a little more space around the elements.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/desk-info-1.png">
+</p>
+
+<br>
+
+- This also applies to the yellow backed featured text, which has much more generous margins and padding.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/desk-info-2.png">
+</p>
+
+<br>
+
+
 ### Wide Desktop
+
+- Other than spacing the only different on wider desktops is that the industry images all sit on the same row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/wide-desk-info-1.png">
+</p>
+
+<br>
+
+- And all elements have more padding and margins.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/info-pages/wide-desk-info-2.png">
+</p>
+
+<br>
 
 ## Navigation
 
-### Mobile
+### Mobile
+
+- The navigation on mobile is triggered using the hamburger icon which sits in the middle of the screen when the shopping cart icon is also present. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/mob-vert-nav-1.png">
+</p>
+
+<br>
+
+- When it is not present as below, the hamburger icon sits flush with the right edge of the screen.
+- The navigation items operate as a dropdown list under the hamburger toggle, with further sub-dropdowns for information pages, user portal pages, shop pages and admin pages. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/mob-vert-nav-2.png">
+</p>
+
+<br>
+
+- When there is at least one item in the shopping cart, the top nav cart icon triggers a shopping cart summary dropdown as below. 
+- Which can in turn be used to navigate to "Checkout", or to the shopping bag page.
+- This dropdown is edited to be slimmer on mobile than on wider screens, but only marginally so. 
+- The buttons are also smaller on mobile.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/mob-vert-nav-3.png">
+</p>
+
+<br>
+
+- Held in a landscape orientation, the navigation operates the same way, but is slightly less intuitive, as less is visible at one time.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/mob-land-nav.png">
+</p>
+
+<br>
+
+- The same note applies to the shopping cart dropdown.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/mob-land-nav-2.png">
+</p>
+
+<br>
 
 ### Tablet 
 
+- On a vertical tablet, the navigation follows the same layout as on mobile, but of course it no longer takes up the entire screen.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/tab-vert-nav-2.png">
+</p>
+
+<br>
+
+- Each element, including the shopping cart dropdown is easier to view. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/tab-vert-nav-1.png">
+</p>
+
+<br>
+
+- On landscape tablet, the layout switches and the hamburger-led navigation becomes a top navbar.
+- Instead of sub-dropdown menus, the sidebar is visible for the first time.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/navigation/tab-land-nav-1.png">
+</p>
+
+<br>
+
 ### Desktop
 
-### Wide Desktop
+- There is no major change for small or wide desktops. The top navbar and sidebars remain and everything has more space.
 
-## Register, Login & Logout Pages
+<br>
 
-### Mobile
+<p align="center">
+  <img src="static/images/responsivity/navigation/desk-nav-1.png">
+</p>
+
+<br>
+
+
+## Register, Login & Logout Pages
+
+These pages are very similar in their layouts and so will be looked at jointly.
+
+### Mobile
+
+- The register and login forms have sufficient room and are displayed well on vertical mobile. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/mob-vert-log-1.png">
+</p>
+
+<br>
+
+- The logout form sits centered on vertical mobile, with a decent margin for space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/mob-vert-log-2.png">
+</p>
+
+<br>
+
+- The forms are less intuitive on mobiles in a landscape orientation, but are still functional.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/mob-land-log-1.png">
+</p>
+
+<br>
+
 
 ### Tablet 
 
+- The forms are perfectly centered and fully visible on vertical tablets.
+- All forms gain a thin blue border from tablet sized screens and upwards.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/tab-vert-log-1.png">
+</p>
+
+<br>
+
+- They also look fine on landscape oriented tablets, but again, their use is less intuitive this way.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/tab-land-log-1.png">
+</p>
+
+<br>
+
+- The logout forms sit centered on tablets in both orientations.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/tab-land-log-2.png">
+</p>
+
+<br>
+
 ### Desktop
 
-### Wide Desktop
+- The forms are all centered and aesthetically pleasing on both regular and wide desktop screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/desk-log-1.png">
+</p>
+
+<br>
+
+- Likewise the logout modal.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/login-reg-logout/desk-log-2.png">
+</p>
+
+<br>
+
 
 ## Profile 
 
 ### Mobile
 
+- The user portal profile page sits centered on mobile, with one field per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/mob-vert-pro-1.png">
+</p>
+
+<br>
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/mob-vert-pro-2.png">
+</p>
+
+<br>
+
+- In landscape orientation, the social media fields sit two per row.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/mob-land-pro-2.png">
+</p>
+
+<br>
+
 ### Tablet 
+
+- The page looks best on a vertical tablet screen, the full form is visible and there is no wasted space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/tab-vert-pro-1.png">
+</p>
+
+<br>
+
+- It just gets pushed into the sidebar layout on a landscape tablet, which looks a tiny bit awkward, but is still fully accessible and functional.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/tab-land-pro-1.png">
+</p>
+
+<br>
 
 ### Desktop
 
-### Wide Desktop
+- On Desktop, there is now enough room for the sidebar layout to look well.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/profile/desk-pro-1.png">
+</p>
+
+<br>
 
 ## Shopping Bag 
 
 ### Mobile
 
+- In comparison and with reference to the shopping bag layout used for larger desktop screens, the layout on mobile and tablets is rather different. 
+- While the larger desktop shopping bag is laid out as a table, doing so on smaller screens necessitated horizontal scrolling, to which I am very averse. 
+- Instead each table heading is repeated per item in the bag and those items are listed one above the other. 
+- While this requires more vertical scrolling, I feel this is preferable. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-1.png">
+</p>
+
+<br>
+
+- The layout leans somewhat to the left of the page, but again, as the information presented is numerical and data-centric, I did not think it was necessary or beneficial to center the text.
+
+- This slight imbalance is somewhat counteracted by the totals right-alignment at the bottom of the list.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-2.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-3.png">
+</p>
+
+<br>
+
+- When there is nothing in the shopping bag, the image below is centered on all screens. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/mob-land-bag-1.png">
+</p>
+
+<br>
+
+
 ### Tablet 
+
+- The layout does not change for tablet screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/tab-vert-bag-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/tab-vert-bag-2.png">
+</p>
+
+<br>
+
+- Except that on horizontally oriented tablets, the side bar navigation is added.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/tab-land-bag-1.png">
+</p>
+
+<br>
 
 ### Desktop
 
+- This remains the case for smaller desktop screens. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/desk-bag-1.png">
+</p>
+
+<br>
+
 ### Wide Desktop
 
-## Order History 
+- On wider desktops however, there is sufficient space for a pleasing tabular layout.
 
-### Mobile
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/wide-desk-bag-1.png">
+</p>
+
+<br>
+
+## Order History 
+
+### Mobile
+
+- As with the shopping bag data, the order history tabular data is presented on smaller screens with individual table headings for each order, as opposed to one table heading. 
+- Again, this is to avoid a situation where a user must scroll horizontally.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/mob-vert-oh-1.png">
+</p>
+
+<br>
+
+- Clicking any of the truncated order reference numbers bring the user to that order's individual summary page, which on vertical mobile stacks the titles above each respective value. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/mob-vert-oh-2.png">
+</p>
+
+<br>
+
+- The same is true of both these pages on landscape mobile. 
+- Although as is the case with many layouts, landscape mobile makes them harder to view comfortably.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/mob-land-oh-2.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/mob-land-oh-1.png">
+</p>
+
+<br>
 
 ### Tablet 
 
+- The order history page just has more space between the elements on tablet.  
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/tab-vert-og-1.png">
+</p>
+
+<br>
+
+- However the order summary page is different in that the headings now sit next to their respective values.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/tab-vert-oh-2.png">
+</p>
+
+<br>
+
+- On landscape tablets the side bar navigation is added, but nothing else changes. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/tab-land-oh-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/tab-land-oh-2.png">
+</p>
+
+<br>
+
 ### Desktop
+
+- The layouts on smaller desktop screens are the same as on landscape oriented tablets, albeit with slightly more room for viewing.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/desk-oh-2.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/desk-oh-1.png">
+</p>
+
+<br>
 
 ### Wide Desktop
 
-## Reviews
+- On larger desktops the order history becomes a normal table as it has room to do so comfortably.
 
-### Mobile
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/orderhistory/wide-desk-oh-1.png">
+</p>
+
+<br>
+
+## Reviews
+
+### Mobile
+
+- The product orders to be reviewed are stacked one on top of the other on vertical mobile. 
+- When they are all displayed the user's reviews are then displayed, again one on top of the other. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/mob-vert-reviews-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/mob-vert-reviews-3.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/mob-vert-reviews-2.png">
+</p>
+
+<br>
+
+- The layout is the same for landscape, but more awkward to read.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/mob-land-reviews-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/mob-land-reviews-2.png">
+</p>
+
+<br>
 
 ### Tablet 
 
+- The orders to be reviewed and the reviews already written have space to sit next to each other on vertical tablets. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/tab-vert-reviews-1.png">
+</p>
+
+<br>
+
+- On landscape tablets the same is true, except that the sidebar navigation is also displayed.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/tab-land-reviews-1.png">
+</p>
+
+<br>
+
+
 ### Desktop
 
-### Wide Desktop
+- The layout doesn't change for desktop screens, but the wider the screen, the more space.
 
-## Shop: All Products
 
-### Mobile
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/reviews/wide-desk-reviews-1.png">
+</p>
+
+<br>
+
+## Shop: Product Listing Pages
+
+### Mobile
+
+- On vertical mobile screens the product search bar sits centrally over the products which are stacked on top of each other.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/mob-vert-prodlist-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/mob-vert-prodlist-2.png">
+</p>
+
+<br>
+
+- On mobile landscape screens the products sit two to a row, but browsing is less enjoyable.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/mob-land-prodlist-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/mob-land-prodlist-2.png">
+</p>
+
+<br>
 
 ### Tablet 
 
+
+- On vertical tablets the shop product listings look good, they are 2 to a row and the search bar and products are visible together.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/tab-vert-prodlist-1.png">
+</p>
+
+<br>
+
+- On landscape tablets the layout remains the same, but the side navigation is visible.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/tab-land-prodlist-2.png">
+</p>
+
+<br>
+
 ### Desktop
+
+- The layout doesn't change for small desktops, they just have slightly more breathing room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-all/desk-prodlist-1.png">
+</p>
+
+<br>
 
 ### Wide Desktop
 
-## Shop: Category Pages
+- On wide desktops the products sit three to a row.
 
-### Mobile
+<br>
 
-### Tablet 
+<p align="center">
+  <img src="static/images/responsivity/shop-all/wide-desk-prodlist-1.png">
+</p>
 
-### Desktop
-
-### Wide Desktop
+<br>
 
 ## Shop: Product Details Page
 
-### Mobile
+### Mobile
+
+- On vertical mobile screens the product details page elements are stacked one on top of the other, first the product name, followed by the product illustration, followed by features, price, quantity selector and finally the "add to bag" button.
+- Everything fits and reads well. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-details/mob-vert-prodetail-1.png">
+</p>
+
+<br>
+
+- On landscape mobile screens, the layout is the same, but as always slightly harder to read.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-details/mob-land-prodetail-1.png">
+</p>
+
+<br>
 
 ### Tablet 
 
+- On vertical tablet screens the layout is the same, but with more space.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-details/tab-vert-prodetail-1.png">
+</p>
+
+<br>
+
+- On landscape tablet screens the side navigation bar is visible.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-details/tab-land-prodetail-2.png">
+</p>
+
+<br>
+
 ### Desktop
 
-### Wide Desktop
+- The layout remains the same for all sizes of desktop screens.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shop-details/desk-prodetail-1.png">
+</p>
+
+<br>
 
 ## Checkout
 
-### Mobile
+### Mobile
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/checkout/mob-vert-check-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/checkout/mob-land-check-1.png">
+</p>
+
+<br>
 
 ### Tablet 
 
@@ -2277,7 +3026,7 @@ This application was developed to be fully responsive and accessible on all devi
 
 ## Footer
 
-### Mobile
+### Mobile
 
 ### Tablet 
 
@@ -2287,7 +3036,7 @@ This application was developed to be fully responsive and accessible on all devi
 
 ## Messages
 
-### Mobile
+### Mobile
 
 ### Tablet 
 
@@ -2295,9 +3044,9 @@ This application was developed to be fully responsive and accessible on all devi
 
 ### Wide Desktop
 
-## Admin: Product Dashboard
+## Admin: Product Dashboard
 
-### Mobile
+### Mobile
 
 ### Tablet 
 
@@ -2307,7 +3056,7 @@ This application was developed to be fully responsive and accessible on all devi
 
 ## Admin: User Dashboard
 
-### Mobile
+### Mobile
 
 ### Tablet 
 
