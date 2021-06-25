@@ -3465,6 +3465,129 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
+# Accessibility 
+
+## 1. Accessibility for Users with Visual Impairments
+
+### Semantic HTML
+
+I ensured that wherever possible I was careful to use semantic HTML5 so as to provide the best possible user experience to users who rely on screen readers.
+
+### Aria Labels
+
+Whenever possible I tried not to include elements without a clear textual references to accompany them.
+Most of the buttons and links I've incorporated into this application are textual, however there are exceptions that I used for space and aesthetic reasons.
+
+These exceptions are:
+
+1. The Shopping cart icon on the navbar and mobile nav. 
+2. The Lionize logo on the navigation bars.
+3. The Search & Reset search buttons on the admin pages & in all products.
+4. The plus and minus buttons on the quantity selector.
+5. The Stars on the reviews.
+6. The X buttons on modal and message pop-ups.
+
+To make these elements accessible I made sure to include aria-labels on all of them.
+
+### Colourblind Users
+
+At the outset of the design process, I was sure to select colours and contrasts that would not impede on the application's functionality for colourblind users.
+
+None of the application's functionality is colour-dependent, the colour enhances the design and visuals, but its functionality and the user's ability to use the application, would remain if all the colour were removed.
+
+### Zoom Ratio
+
+The application is comfortable to view on a screen zoom of up to 300% which is well above the recommended 200% as per accessibility standards.
+
+Below is an example of the "All Products" shop page as viewed on a desktop with a 200% zoom ratio:
+
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/zoom-200.png">
+</p>
+
+<br>
+
+## 2. Accessibility for Keyboard Users
+
+### Skip To Main Link
+
+All pages contain a hidden but keyboard accessible "skip to main" link. It is the first tabbable element on each page and it allows keyboard users to bypass having to tediously tab through each of the navigation links.
+
+### Focus Highlights
+
+Bootstrap integration is actually pretty excellent for many accessibility concerns, having used Materialize for my last project, the difference is immense. Bootstrap's automatic focus highlighting works a charm, and looks good. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/focus-highlights.png">
+</p>
+
+<br>
+
+## 3. Accessibility for Users with Hearing Impairments 
+
+This application does not incoporate any sound-based functionality, therefore it is fully accessible for users with hearing impairments.
+
+## 4. Accessibility for Users with Cognitive Impairments 
+
+E-commerce applications have a huge responsibility to ensure that they cater to all users. Particular during COVID as so many vulnerable older people had to rely on online shopping to order essential goods and services. 
+
+While this application is a fictional business, I was cognizant of how important it was to make things as simple and clear as possible for all kinds of users.
+
+- The language used to indicate how things work has been kept as straightforward and simple as possible.
+- There are no distracting ads or pop-ups. 
+- The layout and navigation is consistent across the application.
+- Registration is straightforward and does not demand too many details. 
+- Login can be done using username or email. 
+- All buttons and links are in obvious placements and are clear and easy to click.
+
+## 5. Accessibility for Users with Slow Internet Connections
+
+To ensure the fastest possible loading times, I've limited the size and quality of many of the images used in the application. 
+
+# Security
+
+
+The following security features were integrated into this application:
+
+## 1. CSRF Protection
+
+Django has CSRF Protection built into all applications that avail of it. The Django CSRF protection works by checking for a secret in each POST request, so that malicious users cannot replay a form and have another user unknowingly submit that form.
+
+To ensure this application took full advantage of Django's CSRF protection I:
+
+- Made sure ``` 'django.middleware.csrf.CsrfViewMiddleware'``` was in my SETTINGS file. 
+- Ensured that the application was deployed with HTTPS
+- Did *not* use the crsf_exempt decorator on any views.
+
+## 2. Cross Site Scripting (XSS) Protection
+
+Django has good XSS protection out of the box.
+
+There are a few weak spots as per the [Django documentation](https://docs.djangoproject.com/en/3.2/topics/security/) but I was careful not to use ```is_safe, safe or mark_safe``` with custom template tags. 
+
+Finally, at no point do I store HTML in the database.
+
+## 3. Clickjacking Protection
+
+Django contains excellent clickjacking protection which I ensured was included in the SETTINGS:
+
+```'django.middleware.clickjacking.XFrameOptionsMiddleware'```
+
+This middleware prevents the site from being rendered inside a frame, and nowhere in the application did I manually override it.
+
+## 4. HTTPS
+
+Lionize is deployed behind HTTPS for extra security, however I have not implemented the ```django.middleware.security.SecurityMiddleware``` as doing so would interfere with the static files being served by AWS.
+
+## 5. Secure Cookies
+
+I've ensure that both SESSION_COOKIE_SECURE and  CSRF_COOKIE_SECURE are both set to True, in order to protect against leaky cookies. 
+
+
 
 # Future Features To Implement and Issues Remaining
 
@@ -3484,6 +3607,43 @@ I would enable admin users to filter the messages component of the user data by 
 ## Pagination or Ajax loading
 
 If the application were to grow, pagination or infinite scroll loading on pages such as the All Products page, or the Admin User Dashboard, would have to be implemented to help with page load times.
+
+# Attribution
+
+- Much of the foundational code from the checkout process and shopping bag functionality in particular comes from the Code Institute "Boutique Ado" tutorial. I have altered that code to suit the specific needs of this application which is rather different in form from that tutorial project, however a lot of the code is "heavily inspired" by that tutorial.
+
+# Unsplash Images Used
+
+- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-headshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-headshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-at-work?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@anikinearthwalker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dimitry Anikin</a> on <a href="https://unsplash.com/s/photos/industry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@impatrickt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Patrick Tomasso</a> on <a href="https://unsplash.com/s/photos/cafe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@guipetri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Guilherme Petri</a> on <a href="https://unsplash.com/s/photos/salon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@rojekilian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sarah Kilian</a> on <a href="https://unsplash.com/s/photos/mistake?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@martijnbaudoin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martijn Baudoin</a> on <a href="https://unsplash.com/s/photos/server?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+- Photo by <a href="https://unsplash.com/@miteneva?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Teneva</a> on <a href="https://unsplash.com/s/photos/bad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+- Photo by <a href="https://unsplash.com/@a_pudov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Pudov</a> on <a href="https://unsplash.com/s/photos/forbidden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@israelandrxde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Israel Andrade</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/empty-bag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+#### back to [contents](#table-of-contents) 
+<br>
+
 
 # Deployment 
 
@@ -3839,9 +3999,7 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used to order review items in the User Portal Review Page.
 
-## 6. Jinja
-
-## 7. General
+## 6. General
 
 - ### [Temp Mail](https://temp-mail.org/)
 
@@ -3861,37 +4019,6 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
 <br>
 
-# Unsplash Images Used
-
-- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-headshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-headshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-at-work?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@anikinearthwalker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dimitry Anikin</a> on <a href="https://unsplash.com/s/photos/industry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@impatrickt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Patrick Tomasso</a> on <a href="https://unsplash.com/s/photos/cafe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@guipetri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Guilherme Petri</a> on <a href="https://unsplash.com/s/photos/salon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@rojekilian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sarah Kilian</a> on <a href="https://unsplash.com/s/photos/mistake?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@martijnbaudoin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martijn Baudoin</a> on <a href="https://unsplash.com/s/photos/server?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-
-- Photo by <a href="https://unsplash.com/@miteneva?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maria Teneva</a> on <a href="https://unsplash.com/s/photos/bad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-
-- Photo by <a href="https://unsplash.com/@a_pudov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Pudov</a> on <a href="https://unsplash.com/s/photos/forbidden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@israelandrxde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Israel Andrade</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-- Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/empty-bag?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-
-#### back to [contents](#table-of-contents) 
-<br>
 
 # Libraries, extensions and packages
 
@@ -3904,3 +4031,41 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 #### back to [contents](#table-of-contents) 
 <br>
 
+# Technology Used
+
+- HTML5
+- CSS
+- JavaScript
+- Python 3
+- Django
+- sqlite3
+- Postgres
+- AWS
+- Stripe
+- Gunicorn
+- Git
+- GitHub
+- Adobe Photoshop
+- Figma
+- Heroku
+- Slack
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>
+
+# Acknowledgements
+
+Thanks to tutor support for helping out with a few issues.
+
+Thanks to the Code Institute Slack Community.
+
+Thanks to my Mother for yet again, proof-reading a long document she has no interest in.
+
+Thanks to my Code Institute mentor [Oluwafemi Medale](https://github.com/omedale) for his invaluable insight and instruction.
+
+<br>
+
+#### back to [contents](#table-of-contents) 
+<br>

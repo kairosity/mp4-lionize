@@ -246,10 +246,6 @@ li.nav-item>a.nav-link{
     color: var(--white) !important;
     letter-spacing: 1px;
 }
-/* .nav-link:hover{
-    background-color: var(--accent-colour);
-    color: var(--accent-colour);
-} */
 ul.nav-register-login-container{
     margin-left: 1rem;
     margin-right: 0 !important;
@@ -662,51 +658,6 @@ img.empty-shopping-bag{
 i.fa-star{
     color: var(--accent-colour);
 }
-/* The Following Code is all from the CI Boutique Ado Tutorial */
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-/* .arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-/* Convenience classes - colors copied from Bootstrap */
-/* .arrow-primary {
-    border-bottom-color: #007bff !important;
-} */
-
-/* .arrow-secondary {
-    border-bottom-color: #6c757d !important;
-} */
-
-/* .arrow-success {
-    border-bottom-color: #28a745 !important;
-} */
-
-/* .arrow-danger {
-    border-bottom-color: #dc3545 !important;
-} */
-
-/* .arrow-warning {
-    border-bottom-color: #ffc107 !important;
-}
-
-.arrow-info {
-    border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
-} */
 
 .bag-notification-wrapper {
     height: 200px;
@@ -714,16 +665,11 @@ i.fa-star{
     overflow-y: auto;
 }
 
-/* CI Boutique Ado Tutorial Code Ends Here */
-
-
 /* Product Form - Code From CI Boutique Ado Tut */
-
 .btn-file {
     position: relative;
     overflow: hidden;
 }
-
 .btn-file input[type="file"] {
     position: absolute;
     top: 0;
@@ -733,23 +679,19 @@ i.fa-star{
     opacity: 0;
     cursor: pointer;
 }
-
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
 }
-
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #dc3545 !important;
     border-color: #dc3545 !important;
     border-radius: 0 !important;
 }
-
 /* CI Boutique Ado Tutorial Code Ends Here */
 
 /* Admin Pages */
 /* Admin Dashboard */
-
 .accordion-container{
     margin-top: 2rem;
 }
@@ -1004,7 +946,6 @@ footer a.nav-link:hover{
         padding-left: 15rem;
         padding-right: 15rem;
     }
-   
     .footer .links-row{
         width: 50%;
     }

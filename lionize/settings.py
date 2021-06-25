@@ -10,16 +10,11 @@ import os
 from os import path 
 import dj_database_url
 
-
 if path.exists("env.py"):
     import env 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
@@ -29,7 +24,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = False
 
 ALLOWED_HOSTS = ['lionize-ms4.herokuapp.com', 'localhost']
-
 
 # Application definition
 
@@ -46,8 +40,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    # 'compressor',
 
     'home',
     'products',
@@ -85,7 +77,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', #required by allauth: allows us access to the request obj in our templates.
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -114,8 +106,6 @@ if 'DATABASE_URL' in os.environ:
 else:
     SITE_ID = 2
 
-
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -143,7 +133,6 @@ else:
         }
     }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -162,6 +151,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -176,7 +168,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -188,16 +179,6 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# STATICFILES_FINDERS = [ 'django.contrib.staticfiles.finders.FileSystemFinder', #Without this and...
-#                         'django.contrib.staticfiles.finders.AppDirectoriesFinder', # This, the admin css styles disappear.
-#                         'compressor.finders.CompressorFinder' 
-#                         ]
-
-# COMPRESS_PRECOMPILERS = ( ('text/x-scss', 'django_libsass.SassCompiler'),)
 
 if 'USE_AWS' in os.environ:
     # Cache Control 
