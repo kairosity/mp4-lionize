@@ -523,9 +523,9 @@ The best way to view all the wireframes, user flows, mockups, colour palette & t
 
 Alternatively here are the individual wireframes:
 
-1. [Mobile Wireframes]()
-2. [Tablet Wireframes]()
-3. [Desktop Wireframes]()
+1. [Mobile Wireframes](static/images/wireframes/lionize-mobile-wireframes.pdf)
+2. [Tablet Wireframes](static/images/wireframes/lionize-tablet-wireframes.pdf)
+3. [Desktop Wireframes](static/images/wireframes/lionize-desktop-wireframes.pdf)
 
 If you do opt to view them this way, please click download as the GitHub viewer can expand the smaller files to an uncomfortably large zoom ratio.
 
@@ -556,16 +556,11 @@ I played it really safe with the typography, I thought Quicksilver worked well f
 
 ## Design Mockups
 
-I haven't done extensive mockups, rather I have chosen a selection of important pages and limited my mockups to them. 
-As the colour theme and typography vary so little and the application as a whole is so consistent, I felt that limited mockups would suffice.
+I haven't done extensive mockups, rather I have chosen a selection of important pages and limited my mockups to them for a desktop view. As my wireframes are relatively detailed and the colour theme and design does not change dramatically from page to page, I felt that these five mockups were sufficient to get a clear picture of what I would build.
 
-Again, the best way to view these is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41)
+Again, the best way to view these is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41) - As well as the Mockups linked below, the Figma link also has pages dedicated to first draft mockups and style ideas. 
 
-Alternatively here are the individual mockups:
-
-1. [Mobile Mockups]()
-2. [Tablet Mockups]()
-3. [Desktop Mockups]()
+[Alternatively click here for the individual mockups.](static/images/mockups/lionize-mockups.pdf)
 
 Again, please remember to click download as the GitHub viewer can expand the smaller files to an uncomfortably large zoom ratio.
 
@@ -3494,7 +3489,7 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 ## Application deployment using Heroku
 
-1. I created a new Heroku account, then created a new Heroku application selecting Europe as my region, as below: 
+1. Create a new Heroku account, then create a new Heroku application selecting Europe as the region, as below: 
 
 <p align="center">
   <img src="static/images/deployment/heroku-deployment-1.png">
@@ -3502,62 +3497,63 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 <br>
 
-2. I provisioned a new Postgres database, as below:
+2. Provision a new Postgres database, as below:
 
 <p align="center">
   <img src="static/images/deployment/heroku-deployment-postgres-db.png">
 </p>
 
-3. I installed dj_database_url & psycopg2 to enable the connection between Django and Postgres.
+3. Instal dj_database_url & psycopg2 to enable the connection between Django and Postgres.
 
-4. Then I ran: ``` pip3 freeze > requirements.txt ```
+4. Then run:  
+  ``` pip3 freeze > requirements.txt ```
 
     <p align="center">
         <img src="static/images/deployment/deployment-psyco-djdb.png">
     </p>
 
-5. I imported dj_database_url into my project's settings.py file and then added the POSTGRES database connection as the default database when in production mode alongside the sqlite database, when in development:
+5. Import dj_database_url into the project's settings.py file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database, when in development:
 
 <p align="center">
     <img src="static/images/deployment/deployment-db-connection.png">
 </p>
 
-6. I created a superuser using ```python3 manage.py createsuperuser```
+6. Create a superuser using ```python3 manage.py createsuperuser```
 
-7. Then I installed gunicorn.
+7. Then install gunicorn with: ```pip3 install gunicorn```
 
-8. I created a Procfile with the following code ```web: gunicorn lionize.wsgi:application``` to tell Heroku to create a web dyno to run gunicorn and serve the application.
+8. Create a Procfile with the following code:  ```web: gunicorn lionize.wsgi:application``` to tell Heroku to create a web dyno to run gunicorn and serve the application.
 
-9. I temporarily disabled COLLECTSTATIC in the Heroku CLI
+9. Temporarily disable COLLECTSTATIC in the Heroku CLI
 
 <p align="center">
     <img src="static/images/deployment/disable-collectstatic.png">
 </p>
 
-10. I added the application's Heroku hostname to ALLOWED_HOSTS in settings.py:
+10. Add the application's Heroku hostname to ALLOWED_HOSTS in settings.py:
 
 <p align="center">
     <img src="static/images/deployment/deployment-allowed-hosts.png">
 </p>
 
 
-11. I added a SECRET_KEY config variable in Heroku. 
+11. Add a SECRET_KEY config variable in Heroku. 
 
-12. I initialized an heroku git remote as below:
+12. Initialize a heroku git remote as below:
 
 <p align="center">
     <img src="static/images/deployment/deploy-heroku-remote.png">
 </p>
 
-13. I pushed to Heroku master to deploy using ```git push heroku master```
+13. Push to Heroku master to deploy using ```git push heroku master```
 
-14. I set up automatic deployments in Heroku by connecting to the Lionize github repo as below:
+14. Set up automatic deployments in Heroku by connecting to the Lionize github repo as below:
 
 <p align="center">
     <img src="static/images/deployment/github-heroku-deploy-1.png">
 </p>
 
-15. I then enabled automatic deploys by selecting the master branch and clicking the button as below:
+15. Enable automatic deploys by selecting the master branch and clicking the button as below:
 
 <p align="center">
     <img src="static/images/deployment/enable-auto-deploys.png">
@@ -3565,17 +3561,17 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 ## Setting up AWS S3 
 
-1. I set up an AWS account. 
+1. Set up an AWS account. 
 
-2. In the AWS Management Console I searched for S3
+2. In the AWS Management Console search for S3.
 
-3. In the S3 Management Console I clicked on "Create bucket" to create a new bucket. I named the bucket lionize-ms4 and selected Europe as my region. I also allowed public access, as below:
+3. In the S3 Management Console click on "Create bucket" to create a new bucket. Name the bucket lionize-ms4 and select Europe as the region. Allow public access, as below:
 
 <p align="center">
     <img src="static/images/deployment/s3-setup-aws.png">
 </p>
 
-4. Once the new bucket was created, I navigated to the properties tab of the bucket and scrolled down to "Static website hosting", clicked "Edit", and then I selected "Enable" under the "Static website hosting" option. I entered index.html & error.html as default values, as below:
+4. Once the new bucket is created, navigate to the properties tab of the bucket and scroll down to "Static website hosting", click "Edit", and then select "Enable" under the "Static website hosting" option. Enter index.html & error.html as default values, as below:
 
 <p align="center">
     <img src="static/images/deployment/s3-static-website-hosting1.png">
@@ -3585,58 +3581,58 @@ If the application were to grow, pagination or infinite scroll loading on pages 
     <img src="static/images/deployment/s3-static-website-hosting2.png">
 </p>
 
-5. On the bucket's permissions tab, I added a CORS configuration, as below:
+5. On the bucket's permissions tab, add a CORS configuration, as below:
 
 <p align="center">
     <img src="static/images/deployment/s3-cors.png">
 </p>
 
-6. On the bucket's policy tab, I clicked on "policy generator" and created a new policy which I added to my bucket.
+6. On the bucket's policy tab, click on "policy generator" and create a new policy which should then be added to the bucket.
 
-7. After saving the bucket policy, I scrolled to the "Access control list (ACL)" tab and I checked the list objects box under the "Everyone (public access)" header.
+7. After saving the bucket policy, scroll to the "Access control list (ACL)" tab and check the list objects box under the "Everyone (public access)" header.
 
 ## Setting up AWS Identity and Access Management Configuration
 
-1. In the IAM dashboard I navigated to the "User Groups" tab and created a new group. 
+1. In the IAM dashboard navigate to the "User Groups" tab and create a new group. 
 
-2. Under the policies tab, I clicked on the JSON tab and then "Import managed policy"
+2. Under the policies tab, click on the JSON tab and then click on "Import managed policy"
 
 <p align="center">
     <img src="static/images/deployment/iam-import-managed-policy.png">
 </p>
 
-3. I selected the S3FullAccess policy and clicked import.
+3. Select the S3FullAccess policy and click import.
 
 <p align="center">
     <img src="static/images/deployment/s3-full-access-policy.png">
 </p>
 
-4. I edited the imported JSON code to allow full access to the lionize bucket and its' associated files, using the lionize bucket's arn.
+4. Edit the imported JSON code to allow full access to the lionize bucket and its' associated files, using the lionize bucket's arn.
 
-5. I gave the policy a name and description and then created the policy:
+5. Give the policy a name and description and then create the policy:
 
 <p align="center">
     <img src="static/images/deployment/s3-policy-created.png">
 </p>
 
-6. I went back to the "User groups" tab and clicked on the "manage-lionize" group. Then I went to the "permissions" tab and clicked the dropdown menu "Add permission" and then "Attach Policies", I checked the policy just created and then clicked to "Add permissions".
+6. Go back to the "User groups" tab and click on the "manage-lionize" group. Then go to the "permissions" tab and click the dropdown menu "Add permission" and then "Attach Policies". Then click to check the policy that was just created and then click to "Add permissions".
 
 <p align="center">
     <img src="static/images/deployment/iam-policy-attached.png">
 </p>
 
 
-7. I created a user to add to the group with programmatic access.
+7. Create a user to add to the group with programmatic access.
 
 <p align="center">
     <img src="static/images/deployment/iam-new-user.png">
 </p>
 
-8. I downloaded the CSV file containing the new user's access key and secret access key in order to add them to Django to authenticate this user.
+8. Download the CSV file containing the new user's access key and secret access key in order to add them to Django to authenticate this user.
 
-9. I then installed boto3 & django-storages, freezing them into requirements.txt and then adding 'storages' to the installed apps list in settings.py
+9. Install boto3 & django-storages, freeze them into requirements.txt and then add 'storages' to the installed apps list in settings.py
 
-10. I also added the following AWS config variables to my settings.py file for use *only* if the USE_AWS var is found in os.environ:
+10. Add the following AWS config variables to the settings.py file for use *only* if the USE_AWS var is found in os.environ:
 
         AWS_STORAGE_BUCKET_NAME = 'lionize-ms4'
         AWS_S3_REGION_NAME = 'eu-west-1'
@@ -3652,37 +3648,84 @@ If the application were to grow, pagination or infinite scroll loading on pages 
         STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-11. I then added the Access Keys as well as the USE_AWS=TRue to the Heroku config vars.
+11. Add the Access Keys as well as the USE_AWS=TRue to the Heroku config vars.
 
-12. I committed these changes and pushed to github & thus Heroku (because of automatic deployments) and the build collected all the Static files and placed them in the S3 bucket and Heroku served them successfully. 
+12. Commit these changes and push to github & thus Heroku (because of automatic deployments) and the build will collect all the Static files and place them in the S3 bucket and Heroku will then serve them successfully. 
 
-13. I then created a new folder in my S3 bucket called Media and set permissions to grant publin-read access as below:
+13. Then create a new folder in the S3 bucket called Media and set permissions to grant publin-read access as below:
 
 <p align="center">
     <img src="static/images/deployment/s3-media-files-permissions.png">
 </p>
 
-14. I then uploaded all my in-app images into that folder.
+14. Then upload all the in-app images into that folder.
 
 ## Setting up Stripe for Deployment
 
-1. I added the STRIPE_PUBLIC_KEY & the STRIPE_SECRET_KEY as config variables in Heroku. 
+(This part of the deployment process assumes you have a Stripe account set up, I will not go into the process for doing that, as it is straightforward.)
 
-2. I created a new Production Webhook Endpoint in my Stripe Dashboard by clicking on the "Developers" tab and then "Webhooks" and then "Add endpoint". I then added my application's heroku url + checkout/wh/ to "receive all events", as below:
+1. Add the STRIPE_PUBLIC_KEY & the STRIPE_SECRET_KEY as config variables in Heroku. 
+
+2. Create a new Production Webhook Endpoint in the Stripe Dashboard by clicking on the "Developers" tab and then "Webhooks" and then "Add endpoint". Then add the application's heroku url + checkout/wh/ to "receive all events", as below:
 
 <p align="center">
     <img src="static/images/deployment/stripe-webhook.png">
 </p>
 
-3. I then added the webhook's signing secret to my Heroku config variables.
+3. Add the webhook's signing secret to the Heroku config variables.
 
 ## Setting up Django Emails for Deployment
 
-1. In the application's associated Gmail account I set up 2-step verification. 
+1. In the application's associated Gmail account set up 2-step verification. 
 
-2. Then I generated a new app password and added it to my application's config variables in Heroku alongside a EMAIL_HOST_USER variable that stored the associated email. 
+2. Generate a new app password and add it to the application's config variables in Heroku alongside a EMAIL_HOST_USER variable that stores the associated email. 
 
-3. Then in settings.py I 
+3. Then in settings.py use the following settings to connect the application to send emails via Gmail:
+
+
+        if 'DEVELOPMENT' in os.environ:
+            EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+            DEFAULT_FROM_EMAIL = 'lionizemarketingltd@gmail.com'
+        else:
+            EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+            EMAIL_USE_TLS = True 
+            EMAIL_PORT = 587
+            EMAIL_HOST = 'smtp.gmail.com'
+            EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+            EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+            DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+In the local environment emails sent will print to the console, whereas in production they will send successfully from the connected Gmail account, whose configuration variables are saved securely in Heroku. 
+
+## Local Deployment
+
+To run this locally on your machine, I would recommend using a virtual environment to keep all the dependecies localised.
+
+Typing ```pip3 install virutalenv``` in your terminal will get you started with using the Python virtualenv.
+
+1. Once you have a virutal environment up and running, ensure you have the following installed:
+- Python3 
+- Pip 
+- GIT
+
+2. Open your IDE of choice.
+
+3. Click on the "Code" button at the top of this repo and copy the HTTPS URL.
+
+<p align="center">
+    <img src="static/images/deployment/local-deployment.png">
+</p>
+
+4. Open a new terminal in your IDE and input the following command: (git clone followed by the copied url)
+
+  ``` git clone https://github.com/kairosity/mp4-lionize.git```
+
+(You could also choose to open with GitHub Desktop, or alternatively download the ZIP files and open them in your IDE - all options available under the "Code" button.)
+
+5. Once you hit enter, the local clone will download and you will have access to a local version of this application.
+
+6. In your IDE terminal and with your virtual environment activated type ``` pip3 install -r requirements.txt``` to install all the requirements.txt file's dependencies.
+
 
 # Tools and Other Resources Used
 
