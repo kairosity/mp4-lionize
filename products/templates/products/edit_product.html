@@ -10,6 +10,8 @@
 {% endblock %}
 
 {% block content %}
+
+
 <div class="flex-container product-details-flex-container">
 
     {% include 'includes/side-nav.html' %}
@@ -17,7 +19,8 @@
     <div class="container mt-2 p-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <h2 class="admin-page-heading mb-3 details-page-heading">Edit Product "{{product.friendly_name|title}}"</h2>
+                {% include 'includes/skip-to-main.html' %}
+                <h2 id="main" class="admin-page-heading mb-3 details-page-heading">Edit Product "{{product.friendly_name|title}}"</h2>
             </div>
         </div>
 

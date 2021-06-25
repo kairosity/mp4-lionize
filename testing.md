@@ -276,3 +276,11 @@ __Fix:__ To add a conditional message I therefore decided that I would use JavaS
       if (!ordersPresent){
     ordersNotPresent.innerHTML = `<p>You have no orders to review.</p>`
     }
+
+## Skip To Main & Autofocus 
+
+__Issue:__ This is more of a note than an issue, when integrating the "skip to main" links on each page, I found that the autofocus widget on the forms interfered with its functioning, which has led me to conclude that autofocus itself as a mechanism is not accessibility friendly. 
+
+It forces keyboard users to engage with whatever form is on the page, so in an example whereby they might no longer wish to be on that page, they would have to tab through an entire form before being able to access the navigation again.
+
+__Fix:__ I deleted the autofocus functionality from my forms, instead trusting the user to click into them manually.

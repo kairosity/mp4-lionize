@@ -16,11 +16,8 @@
             <!-- Favicon Links -->
             <link rel="shortcut icon" type="image/png" href="{% static 'favicon/favicon.ico' %}">
             <link rel="alternate icon" href="{% static 'favicon/favicon.svg' %}">
-
-
         {% endblock %}
 
-    
         {% block corecss %}
             
             <!-- Bootstrap CSS -->
@@ -29,8 +26,6 @@
         {% endblock %}
 
         {% block extra_css %}
-
-
         {% endblock %}
 
         {% block corejs %}
@@ -86,7 +81,6 @@
                                                             <p class="my-0 small text-muted cart-dropdown-text">Qty: {{ item.quantity }}</p>
                                                         </div>
                                                         <div class="col-9 offset-3">
-                                                            
                                                             {% if item.quantity == 1 %}
                                                                 <p class="my-0 cart-dropdown-text">Price: €{{ item.product.price }}</p>
                                                                 <p class="my-0 cart-dropdown-text">Vat @23%: €{{ item.product.price | vat|floatformat:2 }}</p>
@@ -341,7 +335,6 @@
                     </div>
                 </div>
             </nav>
-        
         {% if messages %}
             <section class="toast-container">
                 {% for message in messages %}

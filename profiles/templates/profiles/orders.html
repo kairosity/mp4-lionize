@@ -14,14 +14,15 @@
     <div class="container-fluid">
         <header class=" d-flex flex-column">
             <div class="container">
+                {% include 'includes/skip-to-main.html' %}
                 {% if request.user.userprofile.default_first_name %}
-                    <h1 class="profile-page-heading mt-4 mb-3">{{request.user.userprofile.default_first_name}}'s Order History</h1>
+                    <h1  class="profile-page-heading mt-4 mb-3">{{request.user.userprofile.default_first_name}}'s Order History</h1>
                 {% else %}
                     <h1 class="profile-page-heading mt-4 mb-3">{{request.user.username}}'s Order History</h1>
                 {% endif %}
             </div>
         </header>
-        <section>
+        <section id="main">
             <div class="row">
                 <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                     <div class="order-history table-responsive">

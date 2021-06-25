@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="flex-container product-details-flex-container hello">
 
 {% include 'includes/side-nav.html' %}
@@ -15,6 +16,7 @@
     <div class="container-fluid">
         
         <header class="shopping-bag-header d-flex flex-column">
+            {% include 'includes/skip-to-main.html' %}
             <div class="container">
                 {% if request.user.userprofile.default_first_name %}
                     <h1 class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Profile</h1>
@@ -30,7 +32,7 @@
         
                     <form action="{% url 'profile' %}" method="POST" class="mt-3 profile-page-form" id="profile-update-form">
                         {% csrf_token %}
-                        <small>Personal Details</small>
+                        <small id="main">Personal Details</small>
                         <div class="form-row row">
                             <div class="form-row row">
                                 <div class="form-group col-12 mb-0">

@@ -10,7 +10,8 @@
     <div class="container-fluid col-12 col-md-8">
         <header class="details-page-header d-flex flex-column">
             <div class="container">
-                <h1 class="details-page-heading">All Users</h1>
+                {% include 'includes/skip-to-main.html' %}
+                <h1 id="main" class="details-page-heading">All Users</h1>
                 <h2 class="details-page-subheading mb-4">Here are all of Lionize's Users. Any messages sent by the user to Lionize are also listed below.
                     You can also use the search bar below to filter by name or username.
                 </h2>
@@ -42,7 +43,6 @@
         </section>
 <section class="user-listing">
             <div class="row">
-
                 {% for user in user_profiles %}
                     <div class="col-12">
                         <div class="card m-4">

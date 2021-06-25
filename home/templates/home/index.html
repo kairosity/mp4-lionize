@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-
     <div class="container-fluid">
         <header class="homepage-header d-flex flex-column">
             <div class="container">
@@ -10,8 +9,9 @@
                 <h2 class="homepage-subheading">A digitial agency with <span class="accent-underline">fresh</span> ideas to enhance your online presence & brand identity.</h2>
             </div>
         </header>
+        {% include 'includes/skip-to-main.html' %}
         <section class="services-section row">
-            <h3 class="homepage-body-heading">Our Services</h3>
+            <h3 id="main" class="homepage-body-heading">Our Services</h3>
             <div class="homepage-cards-container row">
                 <div class="card homepage-card" style="width: 18rem;">
                     <img src="{{ MEDIA_URL }}wd6.png" class="card-img-top homepage-card-image" alt="illustration of an apple computer with web design on monitor">

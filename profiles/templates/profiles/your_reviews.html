@@ -14,15 +14,19 @@ Divde into Reviewed & Review
 {% endblock %}
 
 {% block content %}
+
 <div class="flex-container product-details-flex-container">
 
 {% include 'includes/side-nav.html' %}
 
 <div class="overlay"></div>
+
     <div class="container-fluid">
+        
         <header class=" d-flex flex-column">
             <div class="container">
-                <h1 class="profile-page-heading mt-4 mb-3">Product Reviews</h1>
+                {% include 'includes/skip-to-main.html' %}
+                <h1 id="main" class="profile-page-heading mt-4 mb-3">Product Reviews</h1>
                 <p class="details-page-text mb-5">When you order any of our products, you are entitled to review that product.
                     On the left hand side of this page, you will see a list of products you can review. On the right, you will see a list 
                     of any reviews you have written.

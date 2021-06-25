@@ -57,7 +57,22 @@ a.yellow-link{
 a.yellow-link:hover{
     color: var(--accent-lighter);
 }
-/* Buttons */
+/*-------------------------- Skip To Main: Accessibility for keyboard users. */
+
+.skip-to-main {
+	text-transform: uppercase;
+	pointer-events: none;
+	cursor: default;
+    float: right;
+    color: #FFF;
+    margin-right: 2rem;
+    width: 110px;
+}   
+.skip-to-main:focus {
+	color: var(--accent-colour);
+}
+
+/*-------------------------- Buttons */
 .button {
     padding:7px 14px;
     font-family: var(--main-text-font);

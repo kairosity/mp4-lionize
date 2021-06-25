@@ -11,8 +11,9 @@
     <div class="container-fluid">
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
+                {% include 'includes/skip-to-main.html' %}
                 {% if request.user.userprofile.default_first_name %}
-                    <h1 class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Shopping Bag</h1>
+                    <h1 id="main" class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Shopping Bag</h1>
                 {% else %}
                     <h1 class="profile-page-heading">{{request.user.username}}'s Shopping Bag</h1>
                 {% endif %}

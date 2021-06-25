@@ -3515,6 +3515,14 @@ Below is an example of the "All Products" shop page as viewed on a desktop with 
 
 All pages contain a hidden but keyboard accessible "skip to main" link. It is the first tabbable element on each page and it allows keyboard users to bypass having to tediously tab through each of the navigation links.
 
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/skip-to-main.png">
+</p>
+
+<br>
+
 ### Focus Highlights
 
 Bootstrap integration is actually pretty excellent for many accessibility concerns, having used Materialize for my last project, the difference is immense. Bootstrap's automatic focus highlighting works a charm, and looks good. 
@@ -3581,11 +3589,13 @@ This middleware prevents the site from being rendered inside a frame, and nowher
 
 ## 4. HTTPS
 
-Lionize is deployed behind HTTPS for extra security, however I have not implemented the ```django.middleware.security.SecurityMiddleware``` as doing so would interfere with the static files being served by AWS.
+Lionize is deployed behind HTTPS for extra security, however I have not implemented all of the ```django.middleware.security.SecurityMiddleware``` as doing so interferes with the static files being served by AWS.
 
 ## 5. Secure Cookies
 
-I've ensure that both SESSION_COOKIE_SECURE and  CSRF_COOKIE_SECURE are both set to True, in order to protect against leaky cookies. 
+I've ensured that both SESSION_COOKIE_SECURE and  CSRF_COOKIE_SECURE are both set to True, in order to protect against leaky cookies. 
+
+## 6. 
 
 
 

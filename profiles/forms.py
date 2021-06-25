@@ -44,7 +44,6 @@ class UserProfileForm(forms.ModelForm):
             
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True 
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:
@@ -53,4 +52,3 @@ class UserProfileForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-class-here'
-            # self.fields[field].label = False
