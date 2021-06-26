@@ -33,7 +33,7 @@
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </button>
-                                <a class="button button-accent" href="{% url 'admin-dash-products'%}">
+                                <a class="button button-accent xtra-pad" href="{% url 'admin-dash-products'%}">
                                     <span class="icon">
                                         <i class="fas fa-undo-alt"></i>
                                     </span>
@@ -60,7 +60,7 @@
         </div>
         <div class="row">
             {% for product in products %}
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 product-card-col">
+                    <div class="col-12 col-sm-6 col-xl-4 col-xxl-3 product-card-col">
                         <div class="card">
                             {% if product.image %}
                                 <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="...">
@@ -73,15 +73,35 @@
                                 <p class="card-text">{{ product.description|truncatechars:72 }}</p>
                                 <p>Price excl. VAT: €{{ product.price }}</p>
                                 <div class="button-group">
-                                    <a href="{% url 'product_detail' product.id %}" class="button button-main button-tiny">Details</a>
-                                    <a href="{% url 'edit_product' product.id %}" class="button button-accent button-tiny">Edit</a>
+                                    <a href="{% url 'product_detail' product.id %}" class="button button-main button-tiny xtra-pad">Details</a>
+                                    <a href="{% url 'edit_product' product.id %}" class="button button-accent button-tiny xtra-pad">Edit</a>
                                     
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="button button-cancel button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
+                                    <!-- Button Delete trigger modal -->
+                                    <button type="button" class="button button-delete button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
                                         Delete
                                     </button>
                                     
-                                    <!-- Modal -->
+                                    <!-- Remove Modal -->
+                                    <div class="modal fade" id="removeProductModal" tabindex="-1" aria-labelledby="removeProductModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title details-page-subheading" id="deleteProductModalLabel">Remove From Shop</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body deletion-modal-text">
+                                            Are you sure you want to remove this product from the shop? You can reinstate this product using the Django admin login.
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="button button-main" data-bs-dismiss="modal">No, Cancel</button>
+                                            <a href="" class="button button-cancel product-delete-button">Yes, Remove It</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <!-- Remove Modal Ends -->
+
+                                    <!-- Delete Modal -->
                                     <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                         <div class="modal-content">
@@ -99,9 +119,20 @@
                                         </div>
                                         </div>
                                     </div>
-                                    <!-- Modal Ends -->
+                                    <!-- Delete Modal Ends -->
 
                                 </div>
+                                {% if product.in_shop %}
+                                        <!-- Button Remove trigger modal -->
+                                        <button type="button" class="button button-remove-from-shop button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#removeProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
+                                            Remove from Shop
+                                        </button>
+                                    {% else %}
+                                        <!-- Add To Shop Link -->
+                                        <a href="{% url 'add_to_shop' product.id %}" class="button button-addtoshop button-tiny margin-top-sm">
+                                            Add to Shop
+                                        </a>
+                                    {% endif %}
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ def all_products(request):
     '''
     A view to show all products.
     '''
-    products = Product.objects.all()
+    products = Product.objects.filter(in_shop=True)
     query = None
 
     if request.GET:
@@ -44,7 +44,7 @@ def webdesign(request):
     A view to show all web design products
     '''
 
-    products = Product.objects.filter(category__name='web-design')
+    products = Product.objects.filter(category__name='web-design', in_shop=True)
 
     context = {
         'products': products,
@@ -58,7 +58,7 @@ def seo(request):
     A view to show all content creation products
     '''
 
-    products = Product.objects.filter(category__name='seo')
+    products = Product.objects.filter(category__name='seo', in_shop=True)
 
     context = {
         'products': products,
@@ -72,7 +72,7 @@ def content_creation_products(request):
     A view to show all content creation products
     '''
 
-    products = Product.objects.filter(category__name='content-creation')
+    products = Product.objects.filter(category__name='content-creation', in_shop=True)
 
     context = {
         'products': products,
@@ -87,7 +87,7 @@ def social_media_management(request):
     A view to show all social media management products
     '''
 
-    products = Product.objects.filter(category__name='social-media-management')
+    products = Product.objects.filter(category__name='social-media-management', in_shop=True)
 
     context = {
         'products': products,
@@ -247,3 +247,31 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, f'Product "{product.name}" deleted!')
     return redirect(reverse('products'))
+
+@login_required
+def remove_from_shop(request, product_id):
+    """ Remove a product from being visible in the shop """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, but you are not authorized to remove a product from the Shop! If you have an admin account, please login.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.in_shop = False
+    product.save()
+    messages.success(request, f'Product "{product.name}" removed from the shop!')
+    return redirect(reverse('admin-dash-products'))
+
+@login_required
+def add_to_shop(request, product_id):
+    """ Make a product visible in the shop """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, but you are not authorized to alter products! If you have an admin account, please login.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.in_shop = True
+    product.save()
+    messages.success(request, f'Product "{product.name}" added to the shop!')
+    return redirect(reverse('admin-dash-products'))

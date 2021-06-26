@@ -3626,6 +3626,10 @@ I would enable admin users to filter the messages component of the user data by 
 
 If the application were to grow, pagination or infinite scroll loading on pages such as the All Products page, or the Admin User Dashboard, would have to be implemented to help with page load times.
 
+## Product Deletion
+
+When an admin deletes a product
+
 # Attribution
 
 - Much of the foundational code from the checkout process and shopping bag functionality in particular comes from the Code Institute "Boutique Ado" tutorial. I have altered that code to suit the specific needs of this application which is rather different in form from that tutorial project, however a lot of the code is "heavily inspired" by that tutorial.

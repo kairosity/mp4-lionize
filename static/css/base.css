@@ -11,6 +11,8 @@
     --accent-lighter: #FDE691;
     --cancel-colour: #B33D3D;
     --lighter-cancel: #EE4D4D;
+    --information-colour: #07da63;
+    --information-colour-darker: #5dbb63;
     --white: #FFF;
     --dark-text: #333;
     --muted-text: #736F73;
@@ -81,6 +83,10 @@ a.yellow-link:hover{
     transition: all 0.5s ease;
     text-decoration: none;
 }
+a.button:hover{
+    text-decoration: none;
+    color: var(--dark-text);
+}
 .button-main{
     background-color: var(--main-colour);
     color: var(--white);
@@ -112,16 +118,39 @@ a.yellow-link:hover{
     background-color: var(--lighter-cancel);
     color: var(--white);
 }
+.button-remove-from-shop{
+    background-color: var(--lighter-cancel);
+    color:var(--white);
+    border-radius: 5px; 
+}
+.button-remove-from-shop:hover{
+    background-color: var(--cancel-colour);
+    color: var(--white);
+}
+.button-addtoshop{
+    background-color: var(--information-colour);
+    color:var(--white);
+    border-radius: 5px; 
+}
+a.button-addtoshop:hover{
+    background-color: var(--information-colour-darker);
+    color: var(--white);
+}
+.button-delete{
+    background-color: var(--dark-text);
+    color:var(--white);
+    border-radius: 5px; 
+}
+.button-delete:hover{
+    background-color: var(--muted-text);
+    color: var(--white);
+}
 .backlink{
     margin-top: 1.5rem;
     padding-left: 1.2rem;
 }
 .backlink > a.button-back:hover{
     color: var(--accent-colour);
-}
-a.button:hover{
-    text-decoration: none;
-    color: var(--dark-text);
 }
 button.increment-qty,
 button.decrement-qty{
@@ -133,6 +162,7 @@ button.decrement-qty{
 .button-tiny{
     font-size: 0.8rem;
 }
+
 .back-button-error{
     width: 200px;
     align-items: center;
@@ -220,7 +250,7 @@ ul.dropdown-menu-cart{
     border: var(--lighter-main) solid 3px;
 }
 .informational-toast{
-    border: #07da63 solid 3px;
+    border: var(--information-colour) solid 3px;
 }
 .erroneous-toast{
     border: var(--lighter-cancel) solid 3px;
