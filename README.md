@@ -613,6 +613,7 @@ The product model stores the product specific data and is mainly used for produc
 | price | decimal | The product's price as a decimal number with two decimal places. |
 | image_url | string | The product's url. |
 | image | string | An image associated with the product. Stored as a varchar file path. |
+| in_shop | boolean | A boolean field designating whether or not the product is visible in the shop. Defaults to true.|
 
 <br>
 
@@ -720,7 +721,7 @@ The Message model stores all emails send by registered users via the contact for
 <br>
 
 <p align="center">
-  <img src="static/images/erd/lionize-erd.png">
+  <img src="static/images/erd/erd2.png">
 </p>
 
 <br>
@@ -1856,7 +1857,7 @@ Admin users are able to access the "Admin Portal" when they login to the applica
 
 <br>
 
-- Admin users have 3 available actions attached to each product listing via buttons: 
+- Admin users have 4 available actions attached to each product listing via buttons: 
 
 1. They can view the product "Details" (they are redirected to the product detail page, albeit with a useful back button that brings them back to this page). 
 
@@ -1864,7 +1865,7 @@ Admin users are able to access the "Admin Portal" when they login to the applica
 <br>
 
 <p align="center">
-  <img src="static/images/features/product-admin-2.png">
+  <img src="static/images/features/admin-product-dash-3.png">
 </p>
 
 <br>
@@ -1912,6 +1913,20 @@ Category, name, friendly_name, description, features, price ex. VAT and image.
 
 <p align="center">
   <img src="static/images/features/deletion-success-msg.png">
+</p>
+
+<br>
+
+4. They can choose to "Remove" or "Add" the product from/to the shop. This is arguably more useful than deleting the product in its entirety. 
+
+- All the shop product views are programmed to only show products who have the in_shop boolean field checked to True, these buttons toggle that field.
+
+- I set the remove from shop to have a confirmation modal, but did not apply that to the "add to shop". However, because both actions are non-destructive, there is arguably no need for a modal confirmation on the remove button, but I prefer to keep my deletion actions consistent, so felt it was better for User Experience to include the confirmation modal.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/removal-confirm.png">
 </p>
 
 <br>
@@ -3288,7 +3303,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/mob-vert-adminpro-2.png">
+  <img src="static/images/responsivity/admin-products/mob-vert-adminpro-r1.png">
 </p>
 
 <br>
@@ -3298,7 +3313,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/mob-land-adminpro-1.png">
+  <img src="static/images/responsivity/admin-products/mob-land-adminpro-r1.png">
 </p>
 
 <br>
@@ -3320,18 +3335,18 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/tab-vert-adminpro-2.png">
+  <img src="static/images/responsivity/admin-products/tablet-vert-adminpro-r1.png">
 </p>
 
 <br>
 
-- On landscape tablet views, the side navigation bar is visible, there is proportionately less room and so the action buttons rearrange themselves in an upside down triangle formation.
-- Product cards sit three per row.
+- On landscape tablet views, the side navigation bar is visible.
+- Product cards sit two per row.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/tab-land-adminpro-1.png">
+  <img src="static/images/responsivity/admin-products/tablet-land-adminpro-r1.png">
 </p>
 
 <br>
@@ -3344,17 +3359,17 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/desk-adminpro-1.png">
+  <img src="static/images/responsivity/admin-products/desk-adminpro-r1.png">
 </p>
 
 <br>
 
-- The product card buttons line up on the same row on desktop as there is more space.
+- The product cards line up the same as they do on landscape tablets.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/desk-adminpro-2.png">
+  <img src="static/images/responsivity/admin-products/desk-adminpro-r2.png">
 </p>
 
 <br>
@@ -3376,7 +3391,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-products/wide-desk-adminpro-2.png">
+  <img src="static/images/responsivity/admin-products/wide-desk-adminpro-r1.png">
 </p>
 
 <br>
