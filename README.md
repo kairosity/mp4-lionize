@@ -1194,6 +1194,10 @@ Although technically connected to the Shop section of the site, I have chosen to
 
 - It displays: the product illustration, the product name & category, the price ex. VAT, the VAT added, the quantity of that item in their bag, and the total price of each item incl. VAT.
 
+- Under the quantity selector, the user can click to update their bag once a new quantity has been chosen. 
+
+- The very last column is for removing all quantities of a particular product in the bag. Initially this "remove" button was next to the "update" button, but my mentor suggested I move it to its own column for better User Experience. 
+
 - At the page bottom it displays the subtotal, vat total & grand total amounts, as well as buttons for "Keep Shopping" and "Secure Checkout".
 
 - The page is both detailed and simple with all the required functionality. 

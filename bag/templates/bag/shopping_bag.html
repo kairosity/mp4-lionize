@@ -37,7 +37,7 @@
                     </thead>
                     {% for item in bag_items %}
                         <tr class="bag-product-row">
-                            <td class="p-3 w-25 bag-td">
+                            <td style="width: 160px;" class="p-3 bag-td">
                                 {% if item.product.image %}
                                     <img class="img-fluid rounded bag-img" src="{{ item.product.image.url }}" alt="">
                                 {% else %}
