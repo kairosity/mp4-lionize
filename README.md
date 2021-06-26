@@ -3589,14 +3589,22 @@ This middleware prevents the site from being rendered inside a frame, and nowher
 
 ## 4. HTTPS
 
-Lionize is deployed behind HTTPS for extra security, however I have not implemented all of the ```django.middleware.security.SecurityMiddleware``` as doing so interferes with the static files being served by AWS.
+Lionize is deployed behind HTTPS for extra security. 
 
 ## 5. Secure Cookies
 
 I've ensured that both SESSION_COOKIE_SECURE and  CSRF_COOKIE_SECURE are both set to True, in order to protect against leaky cookies. 
 
-## 6. 
+## 6. Django's Security Middleware
 
+This middleware (```'django.middleware.security.SecurityMiddleware'```) is present in my SETTINGS file, enabling the following protections:
+
+- SECURE_CONTENT_TYPE_NOSNIFF - prevents the browser from guessing the Content Types of user (admin in this case) uploaded files.
+
+ 
+## Security Vulnerabilities
+
+- Admin can upload their own files. 
 
 
 # Future Features To Implement and Issues Remaining
