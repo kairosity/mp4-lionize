@@ -13,7 +13,7 @@
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
                 {% if request.user.userprofile.default_first_name %}
-                    <h1 id="main" class="profile-page-heading">{{request.user.userprofile.default_first_name}}'s Shopping Bag</h1>
+                    <h1 id="main" class="profile-page-heading mb-4">{{request.user.userprofile.default_first_name}}'s Shopping Bag</h1>
                 {% else %}
                     <h1 class="profile-page-heading">{{request.user.username}}'s Shopping Bag</h1>
                 {% endif %}
@@ -22,7 +22,7 @@
         <section>
             {% if bag_items %}
             <div class="row justify-content-center">
-            <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 bag-table">
+            <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 col-xl-12 my-2 bag-table">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>

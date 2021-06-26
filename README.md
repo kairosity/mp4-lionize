@@ -1205,7 +1205,7 @@ Although technically connected to the Shop section of the site, I have chosen to
 <br>
 
 <p align="center">
-  <img src="static/images/features/shopping-bag.png">
+  <img src="static/images/features/shopping-bag-rf.png">
 </p>
 
 <br>
@@ -2605,7 +2605,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-sb-rf-2.png">
 </p>
 
 <br>
@@ -2617,10 +2617,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-2.png">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-sb-rf-1.png">
 </p>
 
 <br>
+
+
+- When there is nothing in the shopping bag, the image below is centered on all screens. 
 
 <br>
 
@@ -2630,12 +2633,12 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-- When there is nothing in the shopping bag, the image below is centered on all screens. 
+- The layout is effectively the same on landscape oriented mobile screens.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/mob-land-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/mob-land-sb-rf-1.png">
 </p>
 
 <br>
@@ -2648,7 +2651,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/tab-vert-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/tab-vert-sb-rf-1.png">
 </p>
 
 <br>
@@ -2656,7 +2659,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/tab-vert-bag-2.png">
+  <img src="static/images/responsivity/shoppingbag/tab-vert-sb-rf-2.png">
 </p>
 
 <br>
@@ -2666,7 +2669,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/tab-land-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/tab-land-sb-rf-1.png">
 </p>
 
 <br>
@@ -2678,7 +2681,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/desk-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/desk-sb-rf-1.png">
 </p>
 
 <br>
@@ -2690,7 +2693,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/shoppingbag/wide-desk-bag-1.png">
+  <img src="static/images/responsivity/shoppingbag/wide-desk-sb-rf-1.png">
 </p>
 
 <br>
