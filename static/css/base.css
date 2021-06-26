@@ -62,13 +62,13 @@ a.yellow-link:hover{
 /*-------------------------- Skip To Main: Accessibility for keyboard users. */
 
 .skip-to-main {
-	text-transform: uppercase;
+    text-transform: uppercase;
 	pointer-events: none;
 	cursor: default;
     float: right;
     color: #FFF;
     margin-right: 2rem;
-    width: 110px;
+    width: 135px;
 }   
 .skip-to-main:focus {
 	color: var(--accent-colour);
