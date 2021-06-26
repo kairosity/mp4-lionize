@@ -3643,7 +3643,7 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 ## Product Deletion
 
-When an admin deletes a product
+When an admin deletes a product it automatically deletes the order line items associated with that product. To avoid this issue, I implemented a "remove from shop" feature, as a less drastic solution, however if an admin user does decide to delete a product, the order line item references to that product are also gone. The order record remains, however there is definitely scope to implement some form of order line item recording irrespective of product deletion.
 
 # Attribution
 
@@ -3732,7 +3732,6 @@ When an admin deletes a product
 <p align="center">
     <img src="static/images/deployment/deployment-allowed-hosts.png">
 </p>
-
 
 11. Add a SECRET_KEY config variable in Heroku. 
 

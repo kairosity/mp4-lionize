@@ -76,8 +76,6 @@
                                     </div>
                                 </form>
                                 <a class="update-link text-info hvr-underline-from-center"><small>Update</small></a>
-                                <a class="remove-item text-danger float-right hvr-underline-from-center" id="remove_{{ item.item_id }}"
-                                                    data-size="{{ item.size }}"><small>Remove</small></a>
                             </td>
                             <!-- <td class="py-3">
                                 <p class="my-0 small ">€{{item.product.price | calc_subtotal:item.quantity}}</p>
@@ -85,7 +83,10 @@
                             <td class="py-3 bag-td">
                                 <p class="my-0 ">€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}} </p>
                             </td>
-                                
+                            <td class="py-3 bag-td">
+                                <a class="remove-item text-danger float-right hvr-icon-grow-rotate" id="remove_{{ item.item_id }}"
+                                                    data-size="{{ item.size }}"><i class="fas fa-trash-alt hvr-icon"></i> <small>Remove</small></a>
+                            </td>  
                         </tr>
                     {% endfor %}
 
