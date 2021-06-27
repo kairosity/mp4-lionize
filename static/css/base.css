@@ -162,7 +162,22 @@ button.decrement-qty{
 .button-tiny{
     font-size: 0.8rem;
 }
-
+.button-reopen{
+    background-color: var(--main-colour);
+    color: var(--white);
+    border-radius: 5px;
+}
+.button-reopen:hover{
+    background-color: var(--lighter-main);
+}
+.button-resolved{
+    background-color: var(--accent-lighter);
+    color: var(--dark-text);
+    border-radius: 5px;
+}
+.button-resolved:hover{
+    background-color: var(--accent-colour);
+}
 .back-button-error{
     width: 200px;
     align-items: center;
@@ -771,6 +786,17 @@ i.fa-star{
     font-size: 1.1rem;
 }
 
+/* Admin Messages */
+
+.resolved-dim{
+    background-color: #eee;
+    color: #ccc;
+    border: var(--dark-text) 2px solid;
+}
+.open-message-style{
+    border: var(--main-colour) 2px solid;
+    background-color: var(--lighter-main);
+}
 
 /* Edit Product Form Page */
 .admin-page-heading{
@@ -1102,6 +1128,11 @@ only screen and (max-width: 1200px)  {
 	.message-row > td:nth-of-type(5):before { 
         content: "Resolved";
         color: var(--main-colour); 
+    }
+    .message-row > td:nth-of-type(6):before { 
+        content: "Edit in Django";
+        color: var(--main-colour); 
+        margin-top: -1rem;
     }
     .final-totals-row,
     .bag-buttons-row{

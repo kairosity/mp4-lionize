@@ -28,7 +28,7 @@
                                     <th class="msg-th" scope="col">Subject</th>
                                     <th class="msg-th" scope="col">Message</th>
                                     <th class="msg-th" scope="col">Resolved</th>
-                                    <th class="msg-th ps-3" scope="col">Edit</th>
+                                    <th class="msg-th ps-3" scope="col">Toggle Status</th>
                                 </tr>
                             </thead>
                             {% for message in user_messages %}
@@ -47,13 +47,23 @@
                                     </td>
                                     <td class="p-3 bag-td">
                                         {% if message.resolved %}
-                                            <i class="fas fa-check"></i>
+                                            <p class="resolved-msg">Yes</p>
                                         {% else %}
-                                            <i class="fas fa-times"></i>
+                                            <p class="open-msg">No</p>
                                         {% endif %}
                                     </td>
-                                    <td class="p-3 bag-td ps-3">
-                                        <a class="hvr-icon-bob" href='admin/profiles/message/{{message.id}}/change/'><i class="fas fa-edit hvr-icon"></i></a>
+                                    <td style="width: 150px; height: 50px;">
+                                        {% if message.resolved %}
+                                        <!-- Button Remove trigger modal -->
+                                        <a style="float:left" href="{% url 'mark_active' message.id %}" class="button button-reopen button-tiny margin-top-sm">
+                                            Re-Open <i class="fas fa-folder-open"></i>
+                                        </a>
+                                    {% else %}
+                                        <!-- Add To Shop Link -->
+                                        <a style="float:left" href="{% url 'mark_closed' message.id %}" class="button button-resolved  button-tiny margin-top-sm">
+                                            Resolved <i class="fas fa-check"></i>
+                                        </a>
+                                    {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -63,4 +73,9 @@
     </section>  
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/messages.js' %}"></script>
 {% endblock %}

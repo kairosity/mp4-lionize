@@ -1694,7 +1694,7 @@ The logout link does what you might expect, logs a user out and ends their sessi
 
 <br>
 
-## 17. Messages
+## 17. Toast Messages
 
 As evidenced in the write-up of all other features, Bootstrap's Toast messages have been used extensively across all aspects of the application.
 
@@ -1995,9 +1995,24 @@ The admin dashboard is only available for admin users and it allows them to view
 
 <br>
 
+
 </details>
 
 <br>
+
+## 21. Admin: Frontend Messages Dashboard
+This was a late addition to the application, on the advice of my mentor, I had originally incorporated the messages into the admin user dashboard, but it was suggested that it might be more beneficial to separate them. So this page acts as a reference where admin users can see all messages sent by users via the contact form to Lionize. 
+
+<details>
+<summary><b>click for features</b></summary>
+
+- Details included are: the username, the date sent, the subject of the message, the message itself and whether the message issue has been marked as "Resolved" or not. 
+
+- The messages are ordered by date, with the most recent listed first. 
+
+- There is a link included under "Edit" to the Django backend for admin users to easily and quickly mark a message as resolved. 
+
+</details>
 
 #### back to [contents](#table-of-contents) 
 <br>
