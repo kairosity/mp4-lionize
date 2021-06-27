@@ -149,6 +149,11 @@ def admin_dash_users(request):
             if not user_profiles:
                 messages.warning(request, "No users were returned for that search term.")
 
+
+    for user in user_profiles:
+        for msg in user.user_messages.all():
+            print(f'User: {user}: Message: {msg.message}')
+
     context = {
         'user_profiles': user_profiles,
         'user_messages': user_messages,
@@ -156,3 +161,24 @@ def admin_dash_users(request):
     }
 
     return render(request, 'home/admin_dash_users.html', context)
+
+
+@login_required
+def admin_dash_messages(request):
+    '''
+    A view to return the admin users dashboard. Only available & visible to logged in admin users.
+    '''
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
+        raise PermissionDenied()
+
+    user_profiles = UserProfile.objects.all()
+    user_messages = Message.objects.all().order_by('-date')
+
+    context = {
+        'user_profiles': user_profiles,
+        'user_messages': user_messages,
+    }
+
+    return render(request, 'home/admin_dash_messages.html', context)

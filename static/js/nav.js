@@ -51,6 +51,8 @@ $(function(){
     let adminProductsLinkMob = document.querySelector('#admin-products-link-mob');
     let adminUsersLink = document.querySelector('#admin-users-link');
     let adminUsersLinkMob = document.querySelector('#admin-users-link-mob');
+    let adminMessagesLink = document.querySelector('#admin-messages-link');
+    let adminMessagesLinkMob = document.querySelector('#admin-messages-link-mob');
 
     let registerLink = document.querySelector('#register-link');
 
@@ -127,7 +129,7 @@ $(function(){
             shopContentCreationLink.classList.add('active-page-side-nav');
             shopContentCreationLinkMob.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0].includes('admin-product-dashboard') || splitPath[0].includes('admin-user-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit') {
+    } else if (splitPath[0].includes('admin-product-dashboard') || splitPath[0].includes('admin-user-dashboard') || splitPath[0].includes('admin-messages-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit') {
         adminLink.classList.add('active-page');
         adminLinkMob.classList.add('active-page');
         if (splitPath[0].includes('admin-product-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit'){
@@ -136,6 +138,9 @@ $(function(){
         } else if (splitPath[0].includes('admin-user-dashboard')){
             adminUsersLink.classList.add('active-page-side-nav');
             adminUsersLinkMob.classList.add('active-page-side-nav')
+        } else if (splitPath[0].includes('admin-messages-dashboard')){
+            adminMessagesLink.classList.add('active-page-side-nav');
+            adminMessagesLinkMob.classList.add('active-page-side-nav')
         }
     } else if (splitPath[1] == 'signup'){
         registerLink.classList.add('active-page');

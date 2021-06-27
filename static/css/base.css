@@ -771,6 +771,7 @@ i.fa-star{
     font-size: 1.1rem;
 }
 
+
 /* Edit Product Form Page */
 .admin-page-heading{
     font-family: var(--heading-font);
@@ -991,6 +992,10 @@ footer a.nav-link:hover{
         padding-left: 15rem;
         padding-right: 15rem;
     }
+    /* Admin Messages Page */
+    .message-row > td, th.msg-th{
+        border-bottom: 1px solid #ddd;
+    }
     .footer .links-row{
         width: 50%;
     }
@@ -1076,6 +1081,27 @@ only screen and (max-width: 1200px)  {
         content: "Subtotal Incl. VAT";
         color: var(--main-colour);
         font-weight: 500;
+    }
+     /* Labels For Messages Table */
+	.message-row > td:nth-of-type(1):before { 
+        content: "User";
+        color: var(--main-colour);
+    }
+	.message-row > td:nth-of-type(2):before { 
+        content: "Date";
+        color: var(--main-colour);
+    }
+	.message-row > td:nth-of-type(3):before { 
+        content: "Subject";
+        color: var(--main-colour); 
+    }
+	.message-row > td:nth-of-type(4):before { 
+        content: "Message";
+        color: var(--main-colour);
+    }
+	.message-row > td:nth-of-type(5):before { 
+        content: "Resolved";
+        color: var(--main-colour); 
     }
     .final-totals-row,
     .bag-buttons-row{
