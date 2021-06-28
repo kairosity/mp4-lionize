@@ -154,11 +154,9 @@ def product_detail(request, product_id):
         referring_page_path = referring_page.split('/')[3:]
         
         if len(referring_page_path) > 1:
-            print("greater than 1")
             referring_page_path1 = referring_page_path[1]
         else:
             referring_page_path1 = None
-        print(referring_page_path1)
 
         context = {
             'product': product,

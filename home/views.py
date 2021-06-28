@@ -150,13 +150,8 @@ def admin_dash_users(request):
                 messages.warning(request, "No users were returned for that search term.")
 
 
-    for user in user_profiles:
-        for msg in user.user_messages.all():
-            print(f'User: {user}: Message: {msg.message}')
-
     context = {
         'user_profiles': user_profiles,
-        'user_messages': user_messages,
         'search_term': query,
     }
 
@@ -177,7 +172,6 @@ def admin_dash_messages(request):
     user_messages = Message.objects.all().order_by('-date')
 
     context = {
-        'user_profiles': user_profiles,
         'user_messages': user_messages,
     }
 

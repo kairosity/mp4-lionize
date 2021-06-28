@@ -104,28 +104,28 @@ def your_reviews(request):
 def mark_closed(request, message_id):
     """ Mark as message as issue closed """
 
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, but you are not authorized to edit message statuses! If you have an admin account, please login.')
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
         return redirect(reverse('admin-dash-messages'))
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = True
     message.save()
-    messages.success(request, f'That message has been successfully marked as closed.')
+    messages.success(request, f'That message issue has been successfully marked as resolved.')
     return redirect(reverse('admin-dash-messages'))
 
 @login_required
 def mark_active(request, message_id):
     """ Mark a message as active """
 
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, but you are not authorized to edit message statuses! If you have an admin account, please login.')
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
         return redirect(reverse('admin-dash-messages'))
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = False
     message.save()
-    messages.success(request, f'That message has been successfully marked as still active.')
+    messages.success(request, f'That message issue has been successfully re-opened.')
     return redirect(reverse('admin-dash-messages'))
 
 

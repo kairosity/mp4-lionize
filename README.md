@@ -2010,7 +2010,13 @@ This was a late addition to the application, on the advice of my mentor, I had o
 
 - The messages are ordered by date, with the most recent listed first. 
 
-- There is a link included under "Edit" to the Django backend for admin users to easily and quickly mark a message as resolved. 
+- Messages that are un-resolved display a button saying "Mark Resolved" which admin users can click when the message issue is resolved.
+
+- Likewise messages that are resolved can be re-opened by clicking the "Re-Open Issue" button.
+
+- Changing the message status prompts a success toast message pop-up confirming the change, alongside the obvious colour and style change feedback.
+
+- Resolved messages are greyed out and un-resolved messages are highlighted in a bright blue colour.
 
 </details>
 

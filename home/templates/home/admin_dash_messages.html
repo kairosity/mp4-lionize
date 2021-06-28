@@ -12,8 +12,8 @@
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
                 <h1 id="main" class="details-page-heading">All Messages</h1>
-                <h2 class="details-page-subheading mb-4">Here are all of the messages sent to Lionize ordered by date. If you need to 
-                    adjust the "Resolved" status on any of these messages, please do so via the Django backend by clicking on the edit icon.
+                <h2 class="details-page-subheading mb-4">Here are all of the messages sent to Lionize ordered by date. If a user issue / question has been resolved or answered, 
+                    please click on "Mark Resolved", or if it was resolved and now needs to be addressed again, please click on "Re-Open Issue".
                 </h2>
             </div>
         </header>
@@ -56,12 +56,12 @@
                                         {% if message.resolved %}
                                         <!-- Button Remove trigger modal -->
                                         <a style="float:left" href="{% url 'mark_active' message.id %}" class="button button-reopen button-tiny margin-top-sm">
-                                            Re-Open <i class="fas fa-folder-open"></i>
+                                            Re-Open Issue <i class="fas fa-folder-open"></i>
                                         </a>
                                     {% else %}
                                         <!-- Add To Shop Link -->
                                         <a style="float:left" href="{% url 'mark_closed' message.id %}" class="button button-resolved  button-tiny margin-top-sm">
-                                            Resolved <i class="fas fa-check"></i>
+                                            Mark Resolved <i class="fas fa-check"></i>
                                         </a>
                                     {% endif %}
                                     </td>

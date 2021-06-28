@@ -62,7 +62,21 @@
                                     {% else %}
                                         <p class=" text-muted"><strong>Free Consultation Done?</strong>  No</p>
                                     {% endif %}
-                                    
+                                    {% if user.instagram_handle or user.twitter_handle or user.facebook_handle or user.linkedin_handle %}
+                                        <h5 class="divider">Social Media:</h5>
+                                    {% endif %}
+                                    {% if user.instagram_handle %}
+                                        <p class=""><strong>Instagram:</strong>  {{user.instagram_handle}}</p>
+                                    {% endif %}
+                                    {% if user.twitter_handle %}
+                                        <p class=""><strong>Twitter:</strong>  {{user.twitter_handle}}</p>
+                                    {% endif %}
+                                    {% if user.facebook_handle %}
+                                        <p class=""><strong>Facebook:</strong>  {{user.facebook_handle}}</p>
+                                    {% endif %}
+                                    {% if user.linkedin_handle %}
+                                        <p class=""><strong>LinkedIn:</strong>  {{user.linkedin_handle}}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
