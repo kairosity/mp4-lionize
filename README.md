@@ -4063,6 +4063,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used to order review items in the User Portal Review Page.
 
+- ### [Django SMTPAuthenticationError](https://stackoverflow.com/questions/26697565/django-smtpauthenticationerror/26698173)
+
+    Used when Django and/or Gmail decided to stop working for no apparent reason.
+
 ## 6. General
 
 - ### [Temp Mail](https://temp-mail.org/)

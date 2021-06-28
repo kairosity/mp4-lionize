@@ -33,7 +33,8 @@ def index(request):
         if form.is_valid():
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
+            message_body = form.cleaned_data['message']
+            message = f'Email from: {email} \nMessage: {message_body}'
             try:
                 send_mail(subject, message, email, [settings.DEFAULT_FROM_EMAIL])
                 
