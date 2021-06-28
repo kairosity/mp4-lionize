@@ -65,15 +65,15 @@ Divde into Reviewed & Review
                             {% for review in reviews %}
                                 <div class=" container review-border">
                                     {% if review.review_stars == 'option1' %}
-                                        <p><i class="fas fa-star review-star"></i></p>
+                                        <p aria-label="one review star"><i class="fas fa-star review-star"></i></p>
                                     {% elif review.review_stars == 'option2' %}
-                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
+                                        <p aria-label="two review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
                                     {% elif review.review_stars == 'option3' %}
-                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                        <p aria-label="three review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                                     {% elif review.review_stars == 'option4' %}
-                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                        <p aria-label="four review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                                     {% elif review.review_stars == 'option5' %}
-                                        <p><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                                        <p aria-label="five review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                                     {% endif %}
                                     <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
                                     <p><strong>Review Title:</strong>  {{review.review_title}}</p>

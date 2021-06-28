@@ -284,3 +284,28 @@ __Issue:__ This is more of a note than an issue, when integrating the "skip to m
 It forces keyboard users to engage with whatever form is on the page, so in an example whereby they might no longer wish to be on that page, they would have to tab through an entire form before being able to access the navigation again.
 
 __Fix:__ I deleted the autofocus functionality from my forms, instead trusting the user to click into them manually.
+
+## Gmail Connection Issue
+
+__Issue:__ This application is connected to a Gmail email account via 2-factor authorization and a secure app password. Everything was working perfectly and emails were delivering and then it stopped working for no apparent reason.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/issues/smtp-error.png">
+</p>
+
+<br>
+
+- It would seem that gmail disabled the account because of the app connection.
+
+<br>
+
+<p align="center">
+  <img src="static/images/issues/gmail_disabled.png">
+</p>
+
+<br>
+
+__Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.

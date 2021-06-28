@@ -232,6 +232,10 @@ ul.dropdown-menu-cart{
 .navbar-toggler{
     margin-right: 0.6rem;
 }
+.focus-outline {
+    outline: 2px solid navy;
+}
+
 /* Messages */
 .toast{
     border: var(--accent-colour) solid 4px;
@@ -1130,7 +1134,7 @@ only screen and (max-width: 1200px)  {
         color: var(--main-colour); 
     }
     .message-row > td:nth-of-type(6):before { 
-        content: "Edit in Django";
+        content: "Toggle Status";
         color: var(--main-colour); 
         margin-top: -1rem;
     }

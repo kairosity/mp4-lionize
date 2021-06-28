@@ -1943,7 +1943,7 @@ Category, name, friendly_name, description, features, price ex. VAT and image.
 
 ## 20. Admin: Frontend User Dashboard
 
-The admin dashboard is only available for admin users and it allows them to view a list of all the application's registered users. It displays some important user details and any emails they have sent to Lionize.
+The admin dashboard is only available for admin users and it allows them to view a list of all the application's registered users. It displays some important user details for staff reference.
 
 
 <details>
@@ -1952,23 +1952,29 @@ The admin dashboard is only available for admin users and it allows them to view
 
 <br>
 
-- Each listing is divided in two sections: User Details & Messages.
+- Each listing is divided in two sections: User Details & Social Media (if the user has any social media details listed)
 
 - The user details listed are: their username, their full name, their email address, phone number and whether or not they have availed of the free consultation.
-
-- The Messages are a list of any emails that user has sent to Lionize using the application's contact form.
-- When a user sends an email using the Lionize contact form, a database message entry is automatically created.
-- I thought this was a useful feature for admin to have a reference to all communication from that user in the one place. To quickly be able to get a sense of any issues that user was having.
-- The Messages listing includes: the subject of the message, the message itself, the date it was sent and whether or not admin has marked it as "resolved". 
-- The "resolved" marker can only currently be done manually via the Django backend, but I felt that the reference to it here on the front-end was useful.
 
 <br>
 
 <p align="center">
-  <img src="static/images/features/admin-users.png">
+  <img src="static/images/features/users-top.png">
 </p>
 
 <br>
+
+- The Social Media sections lists instagram, twitter, facebook & linkedin handles, *if* the user has supplied them to Lionize.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/users-main.png">
+</p>
+
+<br>
+
+- Initially there was a record of all the messages a user sent to Lionize here, but my mentor recommended that I make that a separate messages page, which I have done. 
 
 
 - As with the admin Products dashboard, admin users can perform a keyword search against the user's first_name, last_name and email address.
@@ -1977,7 +1983,7 @@ The admin dashboard is only available for admin users and it allows them to view
 <br>
 
 <p align="center">
-  <img src="static/images/features/users-no-search-term.png">
+  <img src="static/images/features/user-no-search-term.png">
 </p>
 
 <br>
@@ -1985,13 +1991,13 @@ The admin dashboard is only available for admin users and it allows them to view
 <br>
 
 <p align="center">
-  <img src="static/images/features/all-users-no-search.png">
+  <img src="static/images/features/all_users_no_search.png">
 </p>
 
 <br>
 
 
-- This page's functionality has the scope to be expanded substantially, but for now its purpose is to act as a quick reference for admin users. Should an admin need to take further action or alter any of the associated user data, they can do so manually using the Django backend.
+- This page's functionality has the scope to be expanded substantially, but for now its purpose is to act as a quick reference for staff admin users. 
 
 <br>
 
@@ -2006,15 +2012,35 @@ This was a late addition to the application, on the advice of my mentor, I had o
 <details>
 <summary><b>click for features</b></summary>
 
+- When a user sends an email using the Lionize contact form, a database message entry is automatically created.
+
+- I it would be useful for staff admin to have a reference to all communication from users to Lionize in one place, so that they might quickly be able to get a sense of any issues users are having.
+
 - Details included are: the username, the date sent, the subject of the message, the message itself and whether the message issue has been marked as "Resolved" or not. 
 
 - The messages are ordered by date, with the most recent listed first. 
 
 - Messages that are un-resolved display a button saying "Mark Resolved" which admin users can click when the message issue is resolved.
 
+<br>
+
+<p align="center">
+  <img src="static/images/features/messages-main.png">
+</p>
+
+<br>
+
 - Likewise messages that are resolved can be re-opened by clicking the "Re-Open Issue" button.
 
 - Changing the message status prompts a success toast message pop-up confirming the change, alongside the obvious colour and style change feedback.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/reopen-msg.png">
+</p>
+
+<br>
 
 - Resolved messages are greyed out and un-resolved messages are highlighted in a bright blue colour.
 
@@ -3463,17 +3489,17 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-users/tab-vert-adminuser-1.png">
+  <img src="static/images/responsivity/admin-users/tab-vert-adminuser-2.png">
 </p>
 
 <br>
 
-- On landscape tablets the side navigation becomes visible and the "user details" and "messages" sections sit next to each other instead of vertically stacked.
+- On landscape tablets the side navigation becomes visible and there are now two user listings per row.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-users/tab-land-adminuser-1.png">
+  <img src="static/images/responsivity/admin-users/tab-land-adminuser-2.png">
 </p>
 
 <br>
@@ -3481,25 +3507,99 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 ### Desktop
 
-- On smaller desktop screens this layout does not change, however there is more breathing room.
+- On desktop screens this layout does not change, however there is more breathing room.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-users/desk-adminuser-1.png">
+  <img src="static/images/responsivity/admin-users/admin-users-desk.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 16. Admin: Messages Dashboard
+
+<details>
+<summary><b>click for responsivity breakdown</b></summary>
+
+### Mobile
+
+- Messages are displayed in a vertical column and headings ("User", "Date", "Subject", "Message", "Resolved" & "Toggle Status") are repeated for each message listing.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/mob-vert-admsg-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/mob-vert-admsg-2.png">
+</p>
+
+<br>
+
+- The layout is the same on mobiles with a horizontal orientation, however there is more room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/mob-land-admsg-1.png">
 </p>
 
 <br>
 
 
-### Wide Desktop
+### Tablet 
 
-- On wide desktops, there is plenty of room for the full messages to be displayed and the messages take up a much larger percentage of the screen width than the user details.
+- On vertical tablets, there are larger margins, but again the layout does not change.
 
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/admin-users/wide-desk-adminuser-1.png">
+  <img src="static/images/responsivity/admin-messages/tab-vert-admsg-1.png">
+</p>
+
+<br>
+
+- On landscape tablets the side navigation becomes visible.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/tab-land-admsg-1.png">
+</p>
+
+<br>
+
+
+### Desktop
+
+- On small desktop screens this layout does not change, however there is more breathing room.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/admin-msgs-desk.png">
+</p>
+
+<br>
+
+### Wide Desktop
+
+- On wider desktop screens the layout becomes tabular and messages are displayed in rows.
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/admin-messages/wide-desk-admsg.png">
 </p>
 
 <br>
@@ -3510,13 +3610,13 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 # Accessibility 
 
-## 1. Accessibility for Users with Visual Impairments
+## 1. Accessibility for Users with Visual Impairments
 
-### Semantic HTML
+### Semantic HTML
 
 I ensured that wherever possible I was careful to use semantic HTML5 so as to provide the best possible user experience to users who rely on screen readers.
 
-### Aria Labels
+### Aria Labels
 
 Whenever possible I tried not to include elements without a clear textual references to accompany them.
 Most of the buttons and links I've incorporated into this application are textual, however there are exceptions that I used for space and aesthetic reasons.
@@ -3529,16 +3629,17 @@ These exceptions are:
 4. The plus and minus buttons on the quantity selector.
 5. The Stars on the reviews.
 6. The X buttons on modal and message pop-ups.
+7. The footer social media links.
 
 To make these elements accessible I made sure to include aria-labels on all of them.
 
-### Colourblind Users
+### Colourblind Users
 
 At the outset of the design process, I was sure to select colours and contrasts that would not impede on the application's functionality for colourblind users.
 
 None of the application's functionality is colour-dependent, the colour enhances the design and visuals, but its functionality and the user's ability to use the application, would remain if all the colour were removed.
 
-### Zoom Ratio
+### Zoom Ratio
 
 The application is comfortable to view on a screen zoom of up to 300% which is well above the recommended 200% as per accessibility standards.
 
@@ -3552,9 +3653,9 @@ Below is an example of the "All Products" shop page as viewed on a desktop with 
 
 <br>
 
-## 2. Accessibility for Keyboard Users
+## 2. Accessibility for Keyboard Users
 
-### Skip To Main Link
+### Skip To Main Link
 
 All pages contain a hidden but keyboard accessible "skip to main" link. It is the first tabbable element on each page and it allows keyboard users to bypass having to tediously tab through each of the navigation links.
 
@@ -3578,6 +3679,8 @@ Bootstrap integration is actually pretty excellent for many accessibility concer
 
 <br>
 
+The only element Bootstrap focus did not cover was my Side Navigation, as it was written as links within <li> elements. Therefore I added some custom JavaScript to cover the side nav.
+
 ## 3. Accessibility for Users with Hearing Impairments 
 
 This application does not incoporate any sound-based functionality, therefore it is fully accessible for users with hearing impairments.
@@ -3595,12 +3698,15 @@ While this application is a fictional business, I was cognizant of how important
 - Login can be done using username or email. 
 - All buttons and links are in obvious placements and are clear and easy to click.
 
-## 5. Accessibility for Users with Slow Internet Connections
+## 5. Accessibility for Users with Slow Internet Connections
 
-To ensure the fastest possible loading times, I've limited the size and quality of many of the images used in the application. 
+To ensure the fastest possible loading times, I've limited the size and quality of many of the images used in the application, by using an image compressor and small file sizes.
+
+#### back to [contents](#table-of-contents) 
+
+<br>
 
 # Security
-
 
 The following security features were integrated into this application:
 
@@ -3614,7 +3720,7 @@ To ensure this application took full advantage of Django's CSRF protection I:
 - Ensured that the application was deployed with HTTPS
 - Did *not* use the crsf_exempt decorator on any views.
 
-## 2. Cross Site Scripting (XSS) Protection
+## 2. Cross Site Scripting (XSS) Protection
 
 Django has good XSS protection out of the box.
 
@@ -3640,17 +3746,50 @@ I've ensured that both SESSION_COOKIE_SECURE and  CSRF_COOKIE_SECURE are both se
 
 ## 6. Django's Security Middleware
 
-This middleware (```'django.middleware.security.SecurityMiddleware'```) is present in my SETTINGS file, enabling the following protections:
+This middleware (```'django.middleware.security.SecurityMiddleware'```) is present in my SETTINGS file, enabling a host of security protections that can be customised. 
 
-- SECURE_CONTENT_TYPE_NOSNIFF - prevents the browser from guessing the Content Types of user (admin in this case) uploaded files.
+Of these, I left the SECURE_REFERRER_POLICY set to 'same-origin' and the SECURE_CONTENT_TYPE_NOSNIFF set to True.
 
- 
-## Security Vulnerabilities
-
-- Admin can upload their own files. 
+The latter prevents the browser from guessing the Content Types of headers and helps protect against malicious uploads.
 
 
-# Future Features To Implement and Issues Remaining
+## 7. Access Control 
+
+Most of the application's functionality is only accessible to users who are logged in and authenticated. 
+
+- Only authenticated users have access to the Shop, Product listings, prices and details. 
+- Only authenticated users can purchase products.
+- Normal (non-staff non-super) users cannot access the Admin Dashboards.
+- Normal users cannot make any changes to the shop, products or pricing. 
+- Staff users can add, edit & delete products. They can also add and remove products from the Shop, without deleting them fully.
+- Staff users cannot access the Django backend. 
+
+In this way a hierarchy of security is created for this application based on the user status.
+
+## 8. Request Methods
+
+- The application does not server any database altering requests using GET.
+- All ADD, EDIT, DELETE functions are based on POST requests. 
+
+
+## 9. Security Vulnerabilities
+
+- Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
+
+#### back to [contents](#table-of-contents) 
+
+<br>
+
+# Testing
+
+[Please click here to read all testing documentation](testing.md)
+
+#### back to [contents](#table-of-contents) 
+
+
+<br> 
+
+# Future Features To Implement & Issues Remaining
 
 ## Adding Features to Products
 
@@ -3673,9 +3812,15 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 When an admin deletes a product it automatically deletes the order line items associated with that product. To avoid this issue, I implemented a "remove from shop" feature, as a less drastic solution, however if an admin user does decide to delete a product, the order line item references to that product are also gone. The order record remains, however there is definitely scope to implement some form of order line item recording irrespective of product deletion.
 
+#### back to [contents](#table-of-contents) 
+
+<br>
+
 # Attribution
 
 - Much of the foundational code from the checkout process and shopping bag functionality in particular comes from the Code Institute "Boutique Ado" tutorial. I have altered that code to suit the specific needs of this application which is rather different in form from that tutorial project, however a lot of the code is "heavily inspired" by that tutorial.
+
+<br>
 
 # Unsplash Images Used
 
@@ -3898,7 +4043,7 @@ When an admin deletes a product it automatically deletes the order line items as
 
 3. Add the webhook's signing secret to the Heroku config variables.
 
-## Setting up Django Emails for Deployment
+## Setting up Django Emails for Deployment
 
 1. In the application's associated Gmail account set up 2-step verification. 
 
@@ -3950,18 +4095,23 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
 6. In your IDE terminal and with your virtual environment activated type ``` pip3 install -r requirements.txt``` to install all the requirements.txt file's dependencies.
 
+<br>
+
+#### back to [contents](#table-of-contents) 
+
+<br>
 
 # Tools and Other Resources Used
 
 ## 1. Design
 
-- ### [Font Awesome](https://fontawesome.com/)
+- ### [Font Awesome](https://fontawesome.com/)
 
     Used for all the application's icons.
 
 ## 2. HTML, CSS & SASS
 
-- ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
+- ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
 
     Used for Mixin inspo when designing my buttons.
 
@@ -3985,7 +4135,7 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
 ## 3. JavaScript
 
-- ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
+- ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
 
     - Very succinct and accurate guide to the above. Didn't end up using it though.
 
@@ -4031,7 +4181,7 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used to work out how to reference the referring page, for back buttons.
 
-- ### [Advanced Form Rendering with Django Crispy Forms](https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html)
+- ### [Advanced Form Rendering with Django Crispy Forms](https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html)
 
     Used to customise the layout and content of all forms on the application.
 

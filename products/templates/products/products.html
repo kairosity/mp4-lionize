@@ -25,12 +25,12 @@
                         <div class="input-group 1-100">
                             <input class="form-control" type="text" name="q" placeholder="Search for Product" value="{% if search_term %}{{search_term}}{% else %}{% endif %}">
                             <div class="input-group-append">
-                                <button class="button button-accent" type="submit">
+                                <button aria-label="search button" class="button button-accent" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </button>
-                                <a class="button button-accent xtra-pad" href="{% url 'products'%}">
+                                <a aria-label="reset button" class="button button-accent xtra-pad" href="{% url 'products'%}">
                                     <span class="icon">
                                         <i class="fas fa-undo-alt extra-pad-i"></i>
                                     </span>
