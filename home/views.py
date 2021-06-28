@@ -35,7 +35,7 @@ def index(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, email, [os.getenv('DEFAULT_FROM_EMAIL')])
+                send_mail(subject, message, email, [settings.DEFAULT_FROM_EMAIL])
                 
                 if request.user.is_authenticated:
                     messages.success(request, (
