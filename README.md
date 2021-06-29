@@ -129,7 +129,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 
 1. Login to my user account, using my email and password.
 2. Be redirected to the User Portal and easily view the various custom user pages.
-3. Edit my account information: change my password, username & other details.
+3. Edit my account information.
 4. Recover my password if I forget it.
 5. Logout of my account.
 
@@ -143,7 +143,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 
 ### User Portal
 
-1. View / add / updated my profile details easily on a page specifically for that purpose.
+1. View / add / update my profile details easily on a page specifically for that purpose.
 2. Navigate to my shopping bag quickly from the user portal side bar.
 3. Easily view all my past orders, and all their attendent details.
 4. View a list of my ordered and purchased products that I can review.

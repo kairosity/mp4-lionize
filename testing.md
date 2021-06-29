@@ -57,11 +57,500 @@
 
 ## First Time User Goals Testing
 
+### *As a first time user I want to be able to...*
+
+1. __Easily understand the purpose of the web application.__
+
+  - The landing page is elegant and clear. The name of the business is center-stage and the tagline clearly outlines the purpose of the application: *"A digital agency with fresh ideas to enhance your online presence & brand identity"*
+
+      __PASS__
+
+2. __Quickly and easily understand how to navigate and access information on the website.__
+
+  - The navbar at the top of the application is conventional and intutitive. 
+
+- The content of the homepage itself clearly tells the user what is expected of them and what "next steps" to take i.e. registering.
+- The top navbar is mirrored by a footer, which also has links to all pages available to a first-time user.
+
+    __PASS__
+
+3. __Quickly and easily have an idea of what kinds of products are offered.__
+
+  - The four categories of products / services are outlined under the main page heading and "Learn More" buttons are clearly visible.
+
+    __PASS__
+
+4. __View further details of each of the services on offer, on specific pages dedicated to that service, so as to decide if I want to avail of any of them.__
+
+- Clicking on the "Learn More" buttons brings the user to an information page specific to that category of product, which has a further link and CTA to register.
+
+  __PASS__
+
+5. __View a website that is visually and creatively appealing and physically easy to look at.__
+
+- The website is bright, colourful, but without being garish, and user experience is enhanced by its' design, not burdened.
+
+    __PASS__
+
+6. __Notice the login/register options and easily navigate to those pages.__
+
+- The register and login links along the top navbar are set to the right hand side so as to distinguish them from informational pages. 
+- This also makes them more noticeable. 
+- The login button is also style differently to draw further attention to it and its' use.
+
+    __PASS__
+
+7. __Understand the purpose of user registration and the benefits thereof.__
+
+- There is a section on the homepage called "Benefits of Registration" that covers this question for first-time users.
+
+    __PASS__
+
+8. __Easily register a free account using my email.
+Receive an email confirmation of my registration.__
+
+- Registration via the registration form asks for a user's email and then send a confirmation email to the user asking them to confirm their address. 
+
+    __PASS__
+
 ## Returning User Goals Testing
+
+### *As a returning user I want to be able to...*
+
+### Registration, Login, Logout, & Update Data
+
+1. __Login to my user account, using my email and password.__
+
+- Registered users can login successfully using email and password, or indeed using their username and password.
+
+    __PASS__
+
+2. __Be redirected to the User Portal and easily view the various custom user pages.__
+
+- On successful login, users are immediately redirected to their profile page, from which (on larger screens) they can view the other User Portal pages from the side navigation, or on mobile from the dropdown menus. 
+
+    __PASS__
+
+3. __Edit my account information.__
+
+- Profile details can be edited and updated via the Profile Page.
+
+  __PASS__
+
+4. __Recover my password if I forget it.__
+
+
+- Passwords can be changed, whether by choice or because they have been forgotten, via the link present on the login page. A confirmation link is sent to the user's email address and they click it to select a new password.
+
+    __PASS__
+  
+
+5. __Logout of my account.__
+
+- User can logout at any time using the "Logout" link in the navigation.
+
+    __PASS__
+
+
+### Information Gathering
+
+1. __Quickly navigate to the products / services information pages from anywhere on the website.__
+
+- The links to the information pages are available to all users and are ever-present on the main navigation bar.
+
+    __PASS__
+
+2. __Gather more in depth information about the services and products on offer.__
+
+- For unregistered un-authenticated users, the information pages offer good introductory information about the services and products on offer. 
+
+- Logged in users can navigate to the shop, where they can see all the various products listed, and clicking on any of them will bring them to the products details page, where the most in-depth information can be viewed.
+
+- Users also have the option of contacting Lionize via the contact form (also linked separately in the navigation) to ask for clarification or for any more information that they might require.
+
+    __PASS__
+
+3. __Easily contact Lionize to ask for specific information about the services and products on offer.__
+
+- As abovementioned, all users have the option to contact Lionize via the Contact Form.
+
+    __PASS__
+
+4. __Easily find the prices of all products.__
+
+- Users can view the product prices both in the "All Products" and category product listing pages *and* on the specific product details page. 
+
+- The product details page also displays the VAT and the Total incl. VAT. 
+
+- The Shopping Bag dropdown menu and shopping Bag page also display the prices of items a user has selected for purchase. 
+
+- The Checkout Page also displays the full prices of items a User is about to purchase. 
+
+- The order history page displays the prices of items a user has purchased previously.
+
+    __PASS__
+
+5. __View the reviews of other users on products/services I am interested in.__
+
+- The product details page includes any reviews users have added for that particular product. 
+
+    __PASS__
+
+### User Portal
+
+1. __View / add / update my profile details easily on a page specifically for that purpose.__
+
+- Users are brought to their profile page immediately after they sign in. They can edit many of their profile details easily from this page.
+
+    __PASS__
+
+2. __Navigate to my shopping bag quickly from the user portal side bar.__
+
+- Clicking on the "Your Shopping Bag" brings users to their shopping bag. If empty they will see an image of an empty paper bag.
+
+    __PASS__
+
+3. __Easily view all my past orders, and all their attendent details.__
+
+- Clicking on the "Your Orders" link under User Portal, brings users to an exhaustive list of their past orders.
+- Each individual order can also be clicked on for more details.
+
+    __PASS__
+
+4. __View a list of my ordered and purchased products that I can review.__
+
+- Clicking on the "Your Reviews" link brings the user to 2 lists: 1. A list of products they can review. 2. A list of products reviews they have written. 
+
+    __PASS__
+
+5. __View a list of all the reviews I have written.__
+
+- As abovementioned this is displayed on the "Your Reviews" Page.
+
+    __PASS__
+
+
+### Shopping
+
+1. __Browse all products.__
+
+- Users can browse all products on the "Shop All Products" shopping page. 
+
+    __PASS__
+
+2. __Easily view the prices & specific details of each product by clicking into a product details page.__
+
+- By clicking on the "More Details" button on any of the five shopping pages, users are brought to that product's details page.
+
+    __PASS__
+
+3. __Browse products by category.__
+
+- Clicking on any of the category shop pages allow users to shop by category. 
+
+    __PASS__
+
+4. __Filter products by keyword using a search form.__
+
+- The search input on the "All Products" Page fulfils this role.
+
+    __PASS__
+  
+5. __Add products to my shopping bag and have this visually confirmed for me.__
+
+- Clicking "Add to Bag" on any of the product details page add that product to the user's shopping bag and prompts a toast pop-up confirming this and displaying the current bag contents.
+
+    __PASS__
+
+6. __Easily view all the items in my shopping bag.__
+
+- Shopping bag contents can be viewed in 3 ways: 
+
+  1. The toast pop-up mentioned above displays the current bag contents anytime a user updates their bag in any way. 
+  2. Clicking the shopping cart icon opens a dropdown box with the shopping bag contents displayed. 
+  3. Navigating to the shopping bag page under the User Portal navigation link, brings the user to the most detailed shopping bag view.
+
+    __PASS__
+
+7. __Update the items in my shopping bag, by adding more or less of an item.__
+
+- A user can achieve this easily by using the quantity selector buttons on the shopping bag page.
+
+    __PASS__
+
+8. __Remove any item from my shopping bag.__
+
+- Users can click the "remove" icon that sits at the end of each item row on the shopping bag page, to delete all quantities of that item from their bag.
+
+    __PASS__
+
+
+9. __Make changes to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.__
+
+- When an item is added to the shopping bag, those changes are reflected in the toast pop-up that follows the action. 
+
+    __PASS__
+
+10. __Email Lionize with a custom quotation request for a specific product/service I have in mind that I cannot find in the shop.__
+
+- The contact form link is readily available to all users.
+
+    __PASS__
+
+### Purchasing
+
+1. __Purchase the products I have added to my shopping bag.__
+
+- Clicking on the "Secure Checkout" button from the shopping bag page, or the "Checkout" button from the shopping cart dropdown will bring the user to the checkout page, where they can input their payment details and purchase their item(s).
+
+    __PASS__
+
+2. __Use my credit card to pay for my items.__
+
+- The checkout page accepts credit cards. 
+
+    __PASS__
+
+3. __Be confident in the knowledge that my payment is being handled securely.__
+
+- The payment portal is handled by Stripe which is secure.
+- The payment portal sits under HTTPS which the user's browser will designate as secure. 
+- The link to the checkout page reads "Secure Checkout" which will reassure users.
+- The brief intro text on the checkout page itself tells the user it is secure. 
+
+    __PASS__
+
+4. __View the VAT added to both the individual products and the total cost before paying.__
+
+- The VAT breakdown is fully detailed on the shopping bag page, and the VAT total is outlined on the checkout page.
+
+    __PASS__
+
+5. __Have my personal details such as name, email, phone number & address saved to my profile and automatically populate the checkout form.__
+
+- If the user has completed the profile page form, their personal details will be prefilled on the checkout page.
+- If not, when they complete the checkout page form, they can tick the box to "save this information to my profile", so it will be auto-populated the next time around.
+
+    __PASS__
+
+6. __See confirmation of my order after completing the checkout process.__
+
+- An order confirmation is the first thing users see after purchasing any products successfully.
+
+    __PASS__
+
+7. __Receive an email confirming my order after completing the checkout process.__
+
+- An email is sent with the order details after any product is purchased. 
+
+    __PASS__
+  
+8. __Have the VAT reflected on the order confirmation.__
+
+- The VAT charged is present on the order confirmation.
+
+    __PASS__
+
+9. __Navigate to my order history page and easily see a list of past orders processed with all associated information clearly outlined.__
+
+- The order history page is accessible via the User Portal and lists orders from most recent to oldest. 
+
+## Persona Based User Stories
+
+### Tom Lynch - Hipster Coffee Shop Owner
+### *As a sole trading small business owner I want to be able to...*
+
+1. __Order a professional looking website for my small business.__
+
+- There are multiple web-design products on offer. 
+
+    __PASS__
+
+2. __See some examples of Lionize's web design work prior to ordering.__
+
+- There are a few examples on display on the web-design inforamational page.
+- Users are free to contact Lionize via the contact form to request any further details they might want.
+
+    __PASS__
+
+3. __Easily understand all the various web design options available to me.__
+
+- These are clearly outlined in the product details. Including a name, description and list of features. 
+- If a user has any other questions, they can contact Lionize via the contact form.
+
+    __PASS__
+
+4. __Easily communicate with Lionize about my requirements, my order and my billing.__
+
+- If a user has any questions, they can contact Lionize via the contact form.
+
+    __PASS__
+
+### Annalise Maior - Real Estate Marketing Manager
+### *As a regional marketing manager of a large corporation I want to be able to...*
+
+1. __Delegate the social media management of our Irish branch to specialists.__
+
+- Lionize offers multiple social media management options.
+
+2. __Improve all social media KPIs and see a measurable return on investment.__
+
+- Creating a social media strategy using Lionize products would lead to a measurable return on investment. 
+
+    __PASS__
+
+### Rosemary Geoghan - Plumbing Co. CEO
+### *As the CEO of a plumbing company seeking to future-proof how we communicate with clients, I want to be able to...*
+
+1. __Order a new ecommerce site, with an easy-to-use CMS.__
+
+- Ecommerce websites are offered as part of Lionize's web-design products.
+
+    __PASS__
+
+2. __Get the project up and running and then delegate the project management & website administration to our marketing dept.__
+
+- With a CMS attached to the website, other members of staff are able to manage it.
+
+    __PASS__
+
+### David Murphy - Entrepreneurial Make-up Artist
+### *As a createive professional whose brand is focused around my personality, I want to be able to...*
+
+1. __Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.__
+
+- Lionize's various social media management products will fulfill this.
+
+    __PASS__
+
+2. __Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.__
+
+- Lionize offers many content creation products including blog post writing that would increase follower engagement. 
+
+    __PASS__
+
+3. __Easily pay for content creation products as I need them.__
+
+- The shopping and checkout sections of the application are fully functional. 
+
+    __PASS__
 
 ## Accessibility User Goals Testing
 
+1. __*As a user who is colourblind*__, __I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.__
+
+- The application has been fully tested for colourblind users and employs sufficient contrast across the board.
+
+- Testing was done using the ["Web Disability Simulator"](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla?hl=en), a very useful and important tool.
+
+__Total Colourblindness__:
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/total-cb.png">
+</p>
+
+<br>
+
+__Red / Green Colourblindness__:
+
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/red-green-cb.png">
+</p>
+
+<br>
+
+__Yellow / Blue Colourblindness__:
+
+<br>
+
+<p align="center">
+  <img src="static/images/accessibility/yellow-blue-cb.png">
+</p>
+
+<br>
+
+  __PASS__
+  
+2. __*As a keyboard user*__, __I want to be able to navigate the application using the keyboard.__
+
+- The application is fully keyboard accessible and has been thouroughly tested using just the keyboard to navigate. 
+- It employs "skip to main" links on all pages.
+- Focus elements are clear.
+
+    __PASS__
+
+3. __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
+
+- Aria-Labels have been used extensively.
+- [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) tech has been used to test the application.
+
+    __PASS__
+
+## Admin User Stories
+### *As an application admin user I want to be able to...*
+
+1. __Add a new product to the shop.__
+
+- Under the Admin "Products" tab, admins can click on the "Add Product" button, fill out the form and a new product is easily and quickly added to the shop. 
+
+    __PASS__
+
+2. __Edit an existing product.__
+
+- By navigation to the Products dashboard, under the Admin Portal navigation option, admin users can click to "Edit" any aspect of a product's listing. 
+
+    __PASS__
+
+3. __Delete a product from the shop.__
+
+- Again, by navigating to the admin product dashboard, admin users can click the black "Delete" button. 
+- They will be prompted by a modal asking them to confirm deletion, and when they do so that product is deleted. 
+
+- However, in a late addition to the original application design, I also decided to include "Add to Shop" and "Remove from Shop" options, which are less destructive than the "Delete" option. 
+
+    __PASS__
+
+4. __See a list of registered users and any emails they have sent to Lionize.__
+
+- By navigating to the User Dashboard under the Admin Portal, admin users can view an exhaustive list of the application's users.
+- Various important details are also listed here. 
+
+- By navigating to the Messages Dashboard under the Admin Portal, admin users can view an exhaustive list of messages sent by users to Lionize via the contact form.
+
+- Admin can opt to mark each message as "Resolved" or they can "Re-Open" them if the issue needs re-opening. 
+
+    __PASS__
+
 ## Application Creator User Goals Testing
+### *As the application creator and Lionize business stakeholder I want to be able to...*
+
+1. __Create and maintain a user-friendly platform allowing business owners, stakeholders and employees to easily see and understand the services on offer.__
+
+- This has been achieved by this application. It is user-friendly, has prioritized a high positive user experience and the services and products on offer have been displayed and outlined in a simple, effective and aesthetically pleasing manner.
+
+    __PASS__
+
+
+2. __Ensure that the application is as accessible as possible to include as wide a variety of users as possible.__
+
+- As already delved into during accessibility user testing, care was given to ensure the application is accessible for a wide variety of users.
+
+    __PASS__
+
+3. __Accept online payments from users.__
+
+- Payments are accepted securely and records are saved to the database.
+
+    __PASS__
+
+4. __Increase Lionize's client base and profits through use of the website and associated ease of online orders.__
+
+- This would be a natural corollary of the application's functionality and design. 
+
+    __PASS__
 
 # Issues and bugs caught during testing
 
@@ -309,3 +798,117 @@ __Issue:__ This application is connected to a Gmail email account via 2-factor a
 <br>
 
 __Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.
+
+# Status Code Testing
+
+## 200 Status Code Testing
+
+## Guest Users
+
+- / - __PASS__
+- /webdesign - __PASS__
+- /seo - __PASS__
+- /social-media-management - __PASS__
+- /content-creation - __PASS__
+- /#contact-us - __PASS__
+- /accounts/signup/ - __PASS__
+- /accounts/login/ - __PASS__
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-guest.png">
+</p>
+
+<br>
+
+- /accounts/confirm-email/ - __PASS__
+- /accounts/confirm-email/<confirmation_code>/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-guest-2.png">
+</p>
+
+<br>
+
+## Logged in Regular Users
+
+- / - __PASS__
+- /webdesign - __PASS__
+- /seo - __PASS__
+- /social-media-management - __PASS__
+- /content-creation - __PASS__
+- /#contact-us - __PASS__
+- /user-portal/profile/ - __PASS__
+- /bag/ - __PASS__
+- /user-portal/orders - __PASS__
+- /user-portal/order_history/<order_number> - __PASS__
+- /user-portal/reviews - __PASS__
+- /products/ - __PASS__
+- /products/?q=seo - __PASS__
+- /products/web-design-products/ - __PASS__
+- /products/seo-products/ - __PASS__
+- /products/social-media-management/ - __PASS__
+- /products/content-creation-products/ - __PASS__
+- /products/<product_id>:int/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-logged-user-1.png">
+</p>
+
+<br>
+
+
+- /checkout/ - __PASS__
+- /checkout/checkout_success/<order_number> - __PASS__
+- /accounts/logout/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-logged-user-2.png">
+</p>
+
+<br>
+
+## Logged in Admin Users
+
+- / - __PASS__
+- /webdesign - __PASS__
+- /seo - __PASS__
+- /social-media-management - __PASS__
+- /content-creation - __PASS__
+- /#contact-us - __PASS__
+- /user-portal/profile/ - __PASS__
+- /bag/ - __PASS__
+- /user-portal/orders - __PASS__
+- /user-portal/order_history/<order_number> - __PASS__
+- /user-portal/reviews - __PASS__
+- /products/ - __PASS__
+- /products/?q=seo - __PASS__
+- /products/web-design-products/ - __PASS__
+- /products/seo-products/ - __PASS__
+- /products/social-media-management/ - __PASS__
+- /products/content-creation-products/ - __PASS__
+- /products/<product_id>:int/ - __PASS__
+- /checkout/ - __PASS__
+- /checkout/checkout_success/<order_number> - __PASS__
+- /accounts/logout/ - __PASS__
+
+- /admin-product-dashboard - __PASS__
+- /admin-product-dashboard?q=seo - __PASS__
+- /products/add/ - __PASS__
+- /products/edit/ - __PASS__
+- /products/delete/<int:product_id>/ - __PASS__
+- /products/remove/<int:product_id>/ - __PASS__
+- /products/addtoshop/<int:product_id>/ - __PASS__
+- /admin-user-dashboard - __PASS__
+- /admin-user-dashboard?q=mariella - __PASS__
+- /admin-messages-dashboard - __PASS__
+- /user-portal/mark-closed/<int:message_id> - __PASS__
+- /user-portal/mark-active/<int:message_id> - __PASS__
