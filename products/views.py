@@ -180,9 +180,9 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to add new products! If you have an admin account, please login.')
-        return redirect(reverse('home'))
+        raise PermissionDenied()
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -208,9 +208,9 @@ def edit_product(request, product_id):
     Edit a product in the store.
     '''
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to edit Lionize products! If you have an admin account, please login.')
-        return redirect(reverse('home'))
+        raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -240,7 +240,7 @@ def delete_product(request, product_id):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, but you are not authorized to delete Lionize products! If you have an admin account, please login.')
-        return redirect(reverse('home'))
+        raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
@@ -251,9 +251,9 @@ def delete_product(request, product_id):
 def remove_from_shop(request, product_id):
     """ Remove a product from being visible in the shop """
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to remove a product from the Shop! If you have an admin account, please login.')
-        return redirect(reverse('home'))
+        raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
     product.in_shop = False
@@ -265,9 +265,9 @@ def remove_from_shop(request, product_id):
 def add_to_shop(request, product_id):
     """ Make a product visible in the shop """
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to alter products! If you have an admin account, please login.')
-        return redirect(reverse('home'))
+        raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
     product.in_shop = True

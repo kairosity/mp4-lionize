@@ -953,6 +953,11 @@ __Fix:__ I changed the email address I was using and reconnected everything from
 
 The following url requests by the following categories of users should return a 302 redirect status code:
 
+<details>
+<summary><b>click for details</b></summary>
+
+<br>
+
 ### Guest Users
 
 - /user-portal/profile/ - __PASS__
@@ -988,9 +993,84 @@ The following url requests by the following categories of users should return a 
 
 - /checkout/ - __PASS__
 - /checkout/checkout_success/<order_number> - __PASS__
-- /accounts/logout/ - __PASS__
+- /admin-product-dashboard - __PASS__
+- /admin-product-dashboard?q=seo - __PASS__
+- /admin-messages-dashboard
+- /products/add/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-guest-3.png">
+</p>
+
+<br>
+
+- /products/edit/<int:product_id>/ (8) - __PASS__
+- /products/delete/<int:product_id>/ (51) - __PASS__ 
+- /products/remove/<int:product_id>/ (8) - __PASS__
+- /products/addtoshop/<int:product_id>/ (51) - __PASS__
+- /admin-user-dashboard?q=mariella - __PASS__
+- /user-portal/mark-closed/<int:message_id>/ (4) - __PASS__
+- /user-portal/mark-active/<int:message_id>/ (5) - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-guest-4.png">
+</p>
+
+<br>
+
+## Logged in Regular Users
+
+- /accounts/login/
+- /accounts/signup/
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-logged-1.png">
+</p>
+
+<br>
+
+## Admin Users
+
+- /accounts/login/
+- /accounts/signup/
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-admin-1.png">
+</p>
+
+<br>
+
+
+</details>
+
+<br>
+
+## 403 Status Codes
+
+The following url requests by the following categories of users should return a 403 Forbidden status code:
+
+## Logged in Regular Users
 
 - /admin-product-dashboard - __PASS__
 - /admin-product-dashboard?q=seo - __PASS__
+- /admin-messages-dashboard
 - /products/add/ - __PASS__
-- /products/edit/ - __PASS__
+- /products/edit/<int:product_id>/ (8) - __PASS__
+- /products/delete/<int:product_id>/ (51) - __PASS__ 
+- /products/remove/<int:product_id>/ (8) - __PASS__
+- /products/addtoshop/<int:product_id>/ (51) - __PASS__
+- /admin-user-dashboard?q=mariella - __PASS__
+- /user-portal/mark-closed/<int:message_id>/ (4) - __PASS__
+- /user-portal/mark-active/<int:message_id>/ (5) - __PASS__
+
+## Logged in Admin (Staff) Users
+
+- /products/delete/<int:product_id>/ (51) - __PASS__  (only superusers are allowed delete products completely)
