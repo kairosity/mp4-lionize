@@ -90,7 +90,7 @@ def admin_dash_products(request):
     A view to return the admin products dashboard. Only available & visible to logged in admin users.
     '''
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
         raise PermissionDenied()
 
@@ -129,7 +129,7 @@ def admin_dash_users(request):
     A view to return the admin users dashboard. Only available & visible to logged in admin users.
     '''
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
         raise PermissionDenied()
 
@@ -165,7 +165,7 @@ def admin_dash_messages(request):
     A view to return the admin users dashboard. Only available & visible to logged in admin users.
     '''
 
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to view this page. If you have an admin account, please login and try again.')
         raise PermissionDenied()
 
