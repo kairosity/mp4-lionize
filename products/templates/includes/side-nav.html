@@ -60,7 +60,7 @@
         </ul>
         <hr class="white-hr">
         {% endif %}
-        {% if request.user.is_superuser %}
+        {% if request.user.is_staff %}
             {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' or request.path == '/admin-messages-dashboard' or request.path == '/products/add/' or 'edit' in request.path %}
                 <hr class="white-hr">
                 <p class="side-nav-heading">Admin Dashboard</p>
