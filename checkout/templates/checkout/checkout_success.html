@@ -16,7 +16,7 @@
         <div class="col-12">
             {% if from_profile %}
                 <div class="backlink">
-                    <a class="button button-back" href="{{ referring_page }}">
+                    <a class="button button-back" href="{% url 'user_orders' %}">
                         <i class="fas fa-arrow-left"></i>
                         Back to Order History
                     </a>

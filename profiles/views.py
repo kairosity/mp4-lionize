@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
-
+from django.core.exceptions import PermissionDenied
 from .models import UserProfile, Message
 from products.models import Review
 from .forms import UserProfileForm
@@ -67,7 +67,14 @@ def order_history_user_portal(request):
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
-    referring_page = request.META['HTTP_REFERER']
+    print(str(order.user_profile))
+    print(str(request.user.username))
+
+    referring_page = '/user-portal/orders'
+
+    if str(request.user.username) != str(order.user_profile):
+        messages.error(request, "Sorry, but you are not permitted to view another user's order history.")
+        raise PermissionDenied()
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}.' 

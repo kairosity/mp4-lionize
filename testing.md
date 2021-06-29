@@ -1061,13 +1061,15 @@ The following url requests by the following categories of users should return a 
 
 - /admin-product-dashboard - __PASS__
 - /admin-product-dashboard?q=seo - __PASS__
+- /admin-user-dashboard - __PASS__
+- /admin-user-dashboard?q=mariella - __PASS__
 - /admin-messages-dashboard
 - /products/add/ - __PASS__
 - /products/edit/<int:product_id>/ (8) - __PASS__
 - /products/delete/<int:product_id>/ (51) - __PASS__ 
 - /products/remove/<int:product_id>/ (8) - __PASS__
 - /products/addtoshop/<int:product_id>/ (51) - __PASS__
-- /admin-user-dashboard?q=mariella - __PASS__
+
 - /user-portal/mark-closed/<int:message_id>/ (4) - __PASS__
 - /user-portal/mark-active/<int:message_id>/ (5) - __PASS__
 
