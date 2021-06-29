@@ -976,6 +976,16 @@ The following url requests by the following categories of users should return a 
 - /products/social-media-management/ - __PASS__
 - /products/content-creation-products/ - __PASS__
 - /products/<product_id>:int/ - __PASS__
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-guest-2.png">
+</p>
+
+<br>
+
 - /checkout/ - __PASS__
 - /checkout/checkout_success/<order_number> - __PASS__
 - /accounts/logout/ - __PASS__
