@@ -67,9 +67,6 @@ def order_history_user_portal(request):
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
-    print(str(order.user_profile))
-    print(str(request.user.username))
-
     referring_page = '/user-portal/orders'
 
     if str(request.user.username) != str(order.user_profile):
