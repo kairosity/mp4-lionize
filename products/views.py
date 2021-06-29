@@ -10,6 +10,7 @@ from .forms import ProductForm, ReviewForm
 
 # Add auth decorators to all these views so that users must be registered and logged in to see them.
 
+@login_required
 def all_products(request):
     '''
     A view to show all products.

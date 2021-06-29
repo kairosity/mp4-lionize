@@ -803,6 +803,11 @@ __Fix:__ I changed the email address I was using and reconnected everything from
 
 ## 200 Status Code Testing
 
+<details>
+<summary><b>click for details</b></summary>
+
+<br>
+
 ## Guest Users
 
 - / - __PASS__
@@ -904,11 +909,78 @@ __Fix:__ I changed the email address I was using and reconnected everything from
 - /admin-product-dashboard?q=seo - __PASS__
 - /products/add/ - __PASS__
 - /products/edit/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-admin-1.png">
+</p>
+
+<br>
+
 - /products/delete/<int:product_id>/ - __PASS__
 - /products/remove/<int:product_id>/ - __PASS__
 - /products/addtoshop/<int:product_id>/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-admin-2.png">
+</p>
+
+<br>
+
 - /admin-user-dashboard - __PASS__
 - /admin-user-dashboard?q=mariella - __PASS__
 - /admin-messages-dashboard - __PASS__
 - /user-portal/mark-closed/<int:message_id> - __PASS__
 - /user-portal/mark-active/<int:message_id> - __PASS__
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/200-admin-3.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 302 Status Code Testing
+
+The following url requests by the following categories of users should return a 302 redirect status code:
+
+### Guest Users
+
+- /user-portal/profile/ - __PASS__
+- /bag/ - __PASS__
+- /user-portal/orders - __PASS__
+- /user-portal/order_history/<order_number> - __PASS__
+- /user-portal/reviews - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/302-guest-1.png">
+</p>
+
+<br>
+
+- /products/ - __PASS__
+- /products/?q=seo - __PASS__
+- /products/web-design-products/ - __PASS__
+- /products/seo-products/ - __PASS__
+- /products/social-media-management/ - __PASS__
+- /products/content-creation-products/ - __PASS__
+- /products/<product_id>:int/ - __PASS__
+- /checkout/ - __PASS__
+- /checkout/checkout_success/<order_number> - __PASS__
+- /accounts/logout/ - __PASS__
+
+- /admin-product-dashboard - __PASS__
+- /admin-product-dashboard?q=seo - __PASS__
+- /products/add/ - __PASS__
+- /products/edit/ - __PASS__

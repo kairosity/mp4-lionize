@@ -14,9 +14,7 @@ deleteProductModal.addEventListener('show.bs.modal', function (event) {
     modalTitle.textContent = `DELETION CONFIRMATION`
     modalBody.textContent = `Are you certain you want to delete the product "${productName}"? This is an irreversible action. You should consider just removing the product from the shop.`
     deletionHref.setAttribute('href', `/products/delete/${productId}/`)
-
-})
-
+});
 var removeProductModal = document.getElementById('removeProductModal')
 removeProductModal.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
@@ -33,5 +31,4 @@ removeProductModal.addEventListener('show.bs.modal', function (event) {
     modalTitle.textContent = `REMOVAL CONFIRMATION`
     modalBody.textContent = `Are you sure you want to remove the product "${productName}"? from the shop? You can reinstate this product using the Django admin login.`
     deletionHref.setAttribute('href', `/products/remove/${productId}/`)
-
-})
+});
