@@ -110,7 +110,7 @@ def mark_closed(request, message_id):
 
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
-        return redirect(reverse('admin-dash-messages'))
+        raise PermissionDenied()
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = True
@@ -124,7 +124,7 @@ def mark_active(request, message_id):
 
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
-        return redirect(reverse('admin-dash-messages'))
+        raise PermissionDenied()
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = False

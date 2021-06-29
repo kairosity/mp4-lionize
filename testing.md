@@ -1059,6 +1059,8 @@ The following url requests by the following categories of users should return a 
 
 ## Logged in Regular Users
 
+- /user-portal/order_history/<order_number>/ (not their own) - __PASS__
+
 - /admin-product-dashboard - __PASS__
 - /admin-product-dashboard?q=seo - __PASS__
 - /admin-user-dashboard - __PASS__
