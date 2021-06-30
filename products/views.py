@@ -222,11 +222,14 @@ def edit_product(request, product_id):
         raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
+    in_shop = product.in_shop
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
-            form.save()
+            product_edited = form.save(commit=False)
+            product_edited.in_shop = in_shop
+            product_edited.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
