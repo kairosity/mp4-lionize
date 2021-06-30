@@ -1379,3 +1379,142 @@ Django won't tell you which one you have incorrect, to protect against the hacki
 <br>
 
 4. Profile Form Validations
+
+None of the profile form fields are required on the profile page, however for fields that are filled in, I have added a number of validations:
+- The first_name field must not be longer than 40 characters.
+- The last_name field must not be longer than 60 characters.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/profile-val-max-chars-names.png">
+</p>
+
+<br>
+
+- The Last Name Field must be longer than 2 characters.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/profile-val-lastname-min.png">
+</p>
+
+<br>
+
+- The Phone Number field must be a number.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/num-val-notnum.png">
+</p>
+
+<br>
+
+- The Phone Number field must be at least 5 numbers long:
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/num-val-5.png">
+</p>
+
+<br>
+
+- The social media fields are not required, but *if* completed the twitter, instagram & facebook fields must all include the @ symbol.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/sm-val.png">
+</p>
+
+<br>
+
+5. Review Form Validations
+
+- The Review Title & Review are both required fields.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/review-req-fields.png">
+</p>
+
+<br>
+
+- The review title cannot be longer than 120 characters.
+
+- The review itself cannot be longer than 500 characters.
+
+6. Checkout Form Validations
+
+- Full Name, Email, Phone Number, Street Address 1, Town / City and Country are all required fields.
+
+- Stripe takes care of the Payment validation - the credit card number entered must be valid.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/payment-validation.png">
+</p>
+
+<br>
+
+7. Admin: Add a new product Form
+
+- The Name field must be a minimum of 2 characters long.
+- The Friendly_name field must be a minimum of 2 characters long.
+- The Description must be a minimum of 50 characters long.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/50-chars-valid.png">
+</p>
+
+<br>
+
+- The fields have the following max_length character limits attached to them:
+
+    - Name: 254
+    - Friendly Name: 254
+    - Description: 500
+    - Features: 1200
+    - Price: 6 digits (with 2 decimal places)
+    - ImageUrl: 1024
+
+- The Price must be a decimal. The DecimalField field type will not allow users input a non numeric value.
+- The image must be an image. The ImageField has its own validations to check that. Django validates the image uploaded using the Python Imaging Library and it will raise a validation error if the file the user is attempting to upload is not an image.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/image-not.png">
+</p>
+
+<br>
+
+8. Admin: Edit Product Form
+
+- All of the above validations apply to the edit form as well. 
+
+## 6. Email
+
+__PASS__
+
+Testing Process:
+
+- Used the contact form to send an email to the dummy Lionize email account from my dummy user "Mariella" -- __PASS__
+- Verified its successful receipt by logging into the Lionize email account and reading the email. -- __PASS__
+
+# Security Testing
+
+- I attempted to upload a non-image file into the Add Product Form.
+
+- Firstly it would not allow me to select any non-image files for the upload. 
+
+- When I then re-named a non-image .doc file to a .jpg, Django correctly rejected the POST request and returned an error message.
+
+
