@@ -4220,6 +4220,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used when Django and/or Gmail decided to stop working for no apparent reason.
 
+- ### [Django Docs: Validators](https://docs.djangoproject.com/en/3.2/ref/validators/)
+
+    Used to understand how to add custom validation to Django Forms.
+
 ## 6. General
 
 - ### [Temp Mail](https://temp-mail.org/)

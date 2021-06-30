@@ -1200,6 +1200,12 @@ Testing Process:
 
 <br>
 
+<div align="center">
+    <img src="static/images/feature-gifs/login.gif" width="600">
+</div>
+
+<br>
+
 ## 3. Links
 
 Testing Process
@@ -1227,7 +1233,7 @@ __PASS__
 
 Testing Process:
 
-- Submitted all forms and then immediately checked the Django backend and the application response to ensure they submitted succesffully. -- __PASS__
+- Submitted all forms and then immediately checked the Django backend and the application response to ensure they submitted successfully. -- __PASS__
 - Submitted each form with various incorrect or forbidden inputs to ensure that the form was not submitted, and that the appropriate error message was displayed to the user. -- __PASS__
 
 ## 6. Input Validations
@@ -1507,7 +1513,343 @@ __PASS__
 Testing Process:
 
 - Used the contact form to send an email to the dummy Lionize email account from my dummy user "Mariella" -- __PASS__
+
+<br>
+
+<p align="">
+  <img src="static/images/functionality-testing/email-test-1.png">
+</p>
+
+<br>
+
 - Verified its successful receipt by logging into the Lionize email account and reading the email. -- __PASS__
+
+<br>
+
+<p align="">
+  <img src="static/images/functionality-testing/email-test-2.png">
+</p>
+
+<br>
+
+## 7. Logout
+
+__PASS__
+
+Testing Process:
+
+- Logged in with my dummy Mariella account and then clicked "Logout" and then manually ensured that Mariella did not have access to any of the logged in functionality. -- __PASS__
+
+- Visually confirmed that the successful logout message was displayed to "Mariella". -- __PASS__
+
+<br>
+
+<p align="">
+  <img src="static/images/functionality-testing/logout.png">
+</p>
+
+<br>
+
+- Tried again to access one of the logged in only pages e.g. /products/ and confirmed that the application redirected the now guest user to the login page.-- __PASS__
+
+- Checked in Chrome Dev Tools to ensure that Django flushes the session variable. The session variables does not disappear from Chrome Dev Tools, but it changes to reflect the new (non-logged in) session. -- __PASS__
+
+## Advanced Functionality: Regular Users
+
+## User Portal
+
+### 1. Updating Profile
+
+Testing Process:
+
+- Navigate to the "Your Profile" page in the User Portal.
+- Alter the profile form data in some way. 
+- Click the "Update Information".
+- Check that the profile form now displays the new information.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/profile.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 2. Viewing Order History & Viewing Individual Orders
+
+Testing Process:
+
+- Navigate to the "Your Orders" Page. 
+- Click on any of the orders to see more details about that past order. 
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/orders.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 3. Viewing "Your Reviews" and adding a new review
+
+Testing Process:
+
+- Navigate to and view, the "Your Reviews" Page.
+- Click on the "Review" button under any of the "Products To Review".
+- Add a review title. 
+- Select a star rating from 1-5.
+- Write the review.
+- Click Submit. 
+- Check that the review was added to the product details page.
+- Check that the review is now in the "Your Reviews" list on the "Your Reviews" Page.
+- Check that that product is no longer listed in the "Products to Review" list.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/reviews.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+## Shopping
+
+### 1. Browsing & Filtering All Products
+
+Testing Process:
+
+- Navigated to the "All Products" Page in "Shop"
+- Searched for "website content"
+- Cleared the search field.
+- Searched for "Social Media Strategy"
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/all-products.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 2. Browsing Product Category Pages
+
+Testing Process:
+
+- Navigated to each of the 4 categories shop pages.
+- Checked that all products were in the correct category.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/products-cats.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 3. Adding products to the shopping bag.
+
+Testing Process:
+
+- Navigated to the all products page.
+- Added two items to the shopping bag.
+- Viewed the shopping bag.
+- Verified that those items were listed.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/addtobag.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 4. Updating the quantity of a product in the shopping bag.
+
+Testing Process:
+
+- Navigated to the shopping bag page.
+- Added 1 to the quantity of an item.
+- Verified that it was added and that the price increased correctly.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/addonetobag.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+
+### 5. Removing a product from the shopping bag.
+
+Testing Process:
+
+- Navigated to the shopping bag page.
+- Removed a product from the shopping bag.
+- Verified that it was removed and the total price changed to reflect that.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/removedfrombag.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 6. Checkout & Purchasing a Product. 
+
+Testing Process:
+
+- Navigated to the shopping bag.
+- Clicked on "Secure Checkout".
+- Verified that the Form Details were entered correctly.
+- Entered the test credit card number. 
+- Clicked "Complete Order"
+- Viewed checkout successful order confirmation. 
+- Clicked on "Your Orders" and verified that new order is now listed at the top.
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/checkout.gif" width="600">
+</div>
+
+<br>
+
+
+## Advanced Functionality: Admin (Staff) Users
+
+
+## Admin Product Dashboard
+
+### 1. Search for Products
+
+Testing Process:
+
+- Navigated to the "Products" Page under Admin Portal
+- Searched for "website content"
+- Cleared the search field.
+- Searched for "Social Media Strategy"
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminprodsearch.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+
+### 2. Add a New Product
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked the "Add Product Button".
+- Completed the form & uploaded an illustration for the Product.
+- Clicked "Add Product"
+- Verified that the new product was present in the Shop and under the correct Category Page.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminaddproduct.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 3. Edit a Product
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked on the "Edit" Button of a product.
+- Altered some of the product info on the form & clicked "Update Product".
+- Verified that the changes had been applied to the product in the Shop and on the Product Details Page.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/admineditproduct.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 4. Remove a Product from the Shop
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked the "Remove from Shop" button on any product.
+- Verified that that button was replaced with an "Add to Shop" button.
+- Navigated to the Shop to ensure that that product was nowhere to be seen. 
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminremovefromshop.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 5. Add a Product to the Shop
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked the "Add to Shop" button on any product.
+- Verified that that button was replaced with an "Remove from Shop" button.
+- Navigated to the Shop to ensure that that product is now being displayed.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminaddtoshop.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 6. Attempt to Delete a Product
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked the "Delete" button on the "To Be Deleted" Product.
+- Verified that this staff admin user was not allowed to delete the product as that ability is reserved for superusers.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/admindeleteproductno.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
 
 # Security Testing
 

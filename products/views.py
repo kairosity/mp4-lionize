@@ -153,8 +153,13 @@ def product_detail(request, product_id):
         else:
             features = None
 
-        referring_page = request.META['HTTP_REFERER']
-        referring_page_path = referring_page.split('/')[3:]
+        print(request.META)
+
+        if request.META['HTTP_REFERER'] != None:
+            referring_page = request.META['HTTP_REFERER']
+            referring_page_path = referring_page.split('/')[3:]
+        else:
+            referring_page = 'none'
         
         if len(referring_page_path) > 1:
             referring_page_path1 = referring_page_path[1]
@@ -189,7 +194,9 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            product = form.save()
+            product = form.save(commit=False)
+            product.in_shop = True
+            product.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
