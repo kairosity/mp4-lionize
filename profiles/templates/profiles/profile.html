@@ -40,6 +40,9 @@
                                 </div>
                             </div>
                             <div class="form-row row">
+                                {% if form.errors %}
+                                    {{ form.default_last_name.errors }}
+                                {% endif %}
                                 <div class="form-group col-12 mb-0">
                                     {{ form.default_last_name | as_crispy_field }}
                                 </div>

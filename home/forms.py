@@ -11,5 +11,5 @@ class BaseSignupForm(AuthenticationForm):
 
 class ContactForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control'}), required=True)
-    subject = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), required=True)
-    message = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control'}), required=True)
+    subject = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), min_length=1, max_length=100, required=True)
+    message = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control'}), min_length=20, max_length=2000, required=True)

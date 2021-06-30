@@ -1057,6 +1057,11 @@ The following url requests by the following categories of users should return a 
 
 The following url requests by the following categories of users should return a 403 Forbidden status code:
 
+<details>
+<summary><b>click for details</b></summary>
+
+<br>
+
 ## Logged in Regular Users
 
 - /user-portal/order_history/<order_number>/ (not their own) - __PASS__
@@ -1084,3 +1089,293 @@ The following url requests by the following categories of users should return a 
 ## Logged in Admin (Staff) Users
 
 - /products/delete/<int:product_id>/ (51) - __PASS__  (only superusers are allowed delete products completely)
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/403-admin-1.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+## 404 Status Codes
+
+The following url requests by the following categories of users should return a 403 Forbidden status code:
+
+<details>
+<summary><b>click for details</b></summary>
+
+<br>
+
+Any time any user types in an incorrect URL - they should receive a 404 status code.
+
+Specifically important is that urls that are almost correct, as in they have the correct prefix, but lead to a non-existent order number for example, also return a 404 status code.
+
+## Guest Users
+
+- /totally-incorrect-url - __PASS__
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/404-guest-1.png">
+</p>
+
+<br>
+
+
+## Logged in Regular Users
+
+- /totally-incorrect-url - __PASS__
+- /user-portal/order_history/<incorrect order number>/ - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/404-logged-1.png">
+</p>
+
+<br>
+
+## Logged in Admin Users
+
+- /totally-incorrect-url - __PASS__
+- /user-portal/order_history/<incorrect order number>/ - __PASS__
+- /products/edit/<int:incorrect_product_id>/ (999) - __PASS__
+- /products/delete/<int:incorrect_product_id>/ (999) - __PASS__ 
+- /products/remove/<int:incorrect_product_id>/ (999) - __PASS__
+- /products/addtoshop/<int:incorrect_product_id>/ (999) - __PASS__
+- /user-portal/mark-closed/<int:incorrect_message_id>/ (999) - __PASS__
+- /user-portal/mark-active/<int:incorrect_message_id>/ (999) - __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/404-admin-1.png">
+</p>
+
+<br>
+
+</details>
+
+<br>
+
+# Functionality Testing
+
+## Base Functionality
+
+## 1. Navigation
+
+__PASS__
+
+Testing process:
+
+- Clicked through each main navbar link to ensure they directed the user to the correct page. -- __PASS__
+- Clicked through each mobile navigation link to ensure they directed the user to the correct page. -- __PASS__
+- Clicked through each side navigation link to ensure they directed the user to the correct page. -- __PASS__
+- Checked every navigation link on the site to ensure they linked to the correct page. -- __PASS__
+- Clicked throught every external link to ensure they opened in a new browser tab. -- __PASS__
+- Used W3 Link Checker to ensure there were no broken links on the page. -- __PASS__
+
+## 2. Login 
+
+__PASS__
+
+Testing Process:
+
+- I created 2 dummy users, one regular user: Mariella Devalle, and one staff user: Alexandra Marsden. -- __PASS__
+- I logged into each account individually to ensure that the login was functional. -- __PASS__
+- I used Chrome Dev Tools in both instances to ensure that new sessions were created. -- __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/functionality-testing/session-creation.png">
+</p>
+
+<br>
+
+## 3. Links
+
+Testing Process
+
+__PASS__
+
+- I checked each link on the page to ensure they linked to the correct page. -- __PASS__
+- I used W3 Link Checker to ensure there were no broken links. -- __PASS__
+
+
+## 4. Buttons
+
+Testing Process:
+
+__PASS__
+
+- Checked to ensure that all buttons with no text contained aria-labels for screen reader accessibility. -- __PASS__
+- Checked that all form submit buttons, successfully POST(ed) their data, but manually confirming that data's presence in the Django backend. -- __PASS__
+- Manually checked each button to ensure that they are only used to submit data and not as a substitute for link tags. -- __PASS__
+
+
+## 5. Forms 
+
+__PASS__
+
+Testing Process:
+
+- Submitted all forms and then immediately checked the Django backend and the application response to ensure they submitted succesffully. -- __PASS__
+- Submitted each form with various incorrect or forbidden inputs to ensure that the form was not submitted, and that the appropriate error message was displayed to the user. -- __PASS__
+
+## 6. Input Validations
+
+__PASS__
+
+Bootstrap comes with a useful set of input/form validations, which have been used in this application to supplement Django validations. 
+
+1. Contact Form Validations.
+
+  - Django automatically uses an email validator on EmailFields, so text input in a non-email format will throw a validator error message. 
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/emailvalidator.png">
+</p>
+
+<br>
+
+- The subject field has 3 validators:
+
+  - It is a required field.
+  - It must have a minimum length of 1
+  - It must have a maximum length of 100
+
+- The message field has 3 validators:
+
+  - It is a required field.
+  - It must have a minimum length of 20
+  - It must have a maximum length of 2000
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/min-length-validator.png">
+</p>
+
+<br>
+
+2. Register Form Validations
+
+- These are part and parcel of the Django allauth models, but briefly here are the validations attached:
+
+- The Email field must be in a valid email format.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/register-form-validation-email.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/email-valid-2.png">
+</p>
+
+<br>
+
+- The emails entered must match.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/same-email-valid.png">
+</p>
+
+<br>
+
+- Usernames must be a minimum of 5 characters and a maximum of 150 characters.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/username-valid.png">
+</p>
+
+<br>
+
+- Passwords must match.
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/passwords-match-valid.png">
+</p>
+
+<br>
+
+- Passwords must be a minimum of 8 characters. (MinimumLengthValidator)
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/password-min.png">
+</p>
+
+<br>
+
+- Passwords must not be one of 20,000 common passwords that Django checks it against. (CommonPasswordValidator)
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/common-pass-valid.png">
+</p>
+
+<br>
+
+- Passwords must not be purely numeric (NumericPasswordValidator)
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/numeric-pass-valid.png">
+</p>
+
+<br>
+
+- Passwords must not be too similar to user attributes. For example if your username is thisMightBeaGre8tPassword678 if you try and set that as your password, Django won't let you. (UserAttributeSimilarityValidator)
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/user-attr-pass-valid.png">
+</p>
+
+<br>
+
+3. Login Form Validations
+
+- Your login details must match your registered account details. 
+- Username OR Email 
+- Password
+
+Django won't tell you which one you have incorrect, to protect against the hacking of accounts. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/validations/login-valid.png">
+</p>
+
+<br>
+
+4. Profile Form Validations

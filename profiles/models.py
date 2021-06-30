@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -29,6 +31,12 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def clean(self):
+        if len(self.default_last_name) < 2:
+            raise ValidationError('Your last name must not be less than 2 characters.')
+        if len(self.default_phone_number) < 5:
+            raise ValidationError('Your phone number must be at least 5 numbers long.')
 
 
 @receiver(post_save, sender=User)
