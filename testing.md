@@ -2175,13 +2175,42 @@ The application scored highly on the lighthouse accessibility scale.
 
 ### Desktop
 
+<br>
+
+<div align="center">
+    <img src="static/images/accessibility/lighthouse-access.png">
+</div>
+
+<br>
+
 ## WAVE Web Accessibility Evaluation Tool
 
 This is a great tool for getting a fast overview of a website's accessibility ranking and it highlights any areas that need improvement.
 
-## Web Accessibility by Level Access
+The few issues it flagged were non-issues:
 
-I also used this accessibility checker to look at a range of other accessibility factors. Lionize ranked highly here as well.
+- It found a duplicate aria-labelledby element, which I fixed. 
+- It determined that my application did not have quite enough contrast between the blue and the white, I verified this by checking the WebAIM Contrast checker and:
+
+The application's contrast ratio was: 2.58:1 and the accessibility acceptable ratio is 3:1
+
+- So I darkened my main blue colour until the ratio was 3.11:1 
+
+- It took issue with there being 2 links to the home page: home & the brand icon, I think this is acceptable.
+- It took issue with the skip to main link because it has a "positive tabindex". This is somewhat suprising given that it's an accessibility feature. So I can safely disregard that as well. 
+
+## Web Accessibility by Level Access
+
+I also used this accessibility checker and Lionize ranked highly here as well, passing with 0 violations out of the 266 tests run.
+
+<br>
+
+<div align="center">
+    <img src="static/images/accessibility/webaccessibility.png">
+</div>
+
+<br>
+
 
 ## Keyboard Manual Testing
 
