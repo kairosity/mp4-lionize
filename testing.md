@@ -2169,9 +2169,17 @@ In addition to the accessibility user story testing outlined above, I also ran o
 
 ## Lighthouse Accessibility Tests
 
-The application scored highly on the lighthouse accessibility scale. 
+The application scored highly on the lighthouse accessibility scale, and while the contrast ratio is 3.11:1 (which is acceptable by web accessibility standards), the lighthouse test still flags it as not enough contrast.
 
 ### Mobile
+
+<br>
+
+<div align="center">
+    <img src="static/images/accessibility/light-mob-access.png">
+</div>
+
+<br>
 
 ### Desktop
 
@@ -2199,6 +2207,16 @@ The application's contrast ratio was: 2.58:1 and the accessibility acceptable ra
 - It took issue with there being 2 links to the home page: home & the brand icon, I think this is acceptable.
 - It took issue with the skip to main link because it has a "positive tabindex". This is somewhat suprising given that it's an accessibility feature. So I can safely disregard that as well. 
 
+<br>
+
+<div align="center">
+    <img src="static/images/accessibility/wave1.png">
+</div>
+
+<br>
+
+- For some reason the aria-labelledby error and the contrast errors refused to disappear from the report, even after I had corrected them, but they have been resolved.
+
 ## Web Accessibility by Level Access
 
 I also used this accessibility checker and Lionize ranked highly here as well, passing with 0 violations out of the 266 tests run.
@@ -2212,13 +2230,398 @@ I also used this accessibility checker and Lionize ranked highly here as well, p
 <br>
 
 
-## Keyboard Manual Testing
+## Keyboard Manual Testing
 
 - Throughout the development process, I consistently tested the application using only my keyboard to ensure it remained fully keyboard accessible. 
 
 __PASS__
 
-## Screen Reader Testing
+## Screen Reader Testing
 
 - I used Apple's voice over utility as well as the ChromeVox extension to test screen reader's ability to correctly interpret the site. 
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
+# Browser Testing
+
+The application's functionality and appearance was tested on all major browsers. 
+
+These are the results of that testing using [Browser Stack:](https://www.browserstack.com/)
+
+## Desktop Browser Testing
+
+
+| OS  | Browser | Version | Design Check | Functionality Check | 
+| ---- | ------- | ------- | :---: | :---: |
+| **Windows 7, 8, 8.1 & 10**   | *Microsoft Edge*  |  93 (dev) | ✓ | ✓
+|   |   | 92 (beta) | ✓ | ✓
+|   |   | 91 (latest) | ✓ | ✓
+|   |   | 90 | ✓ | ✓
+|   |   | 89 | ✓ | ✓
+|   |   | 86 | ✓ | ✓
+|   |   | 85 | ✓ | ✓
+|   |   | 84 | ✓ | ✓
+|   |   | 83 | ✓ | ✓
+|   |   | 82 | ✓ | ✓
+|   |   | 81 | ✓ | ✓
+|   |   | 80 | ✓ | ✓
+|   |   | 18 | ✓ | x
+|   |   | 17 | ✓ | x
+|   |   | 16 | ✓ | x
+|   |   | 15 | ✓ | x
+| **Windows 7, 8, 8.1 & 10 &**  | *Firefox*  |  90 (beta)| ✓ | ✓
+|  **Mac OSX Mavericks and Newer** |   | 89 (latest) | ✓ | ✓
+|   |   | 88 | ✓ | ✓
+|   |   | 87 | ✓ | ✓
+|   |   | 86 | ✓ | ✓
+|   |   | 85 | ✓ | ✓
+|   |   | 84 | ✓ | ✓
+|   |   | 83 | ✓ | ✓
+|   |   | 82 | ✓ | ✓
+|   |   | 81 | ✓ | ✓
+|   |   | 80 | ✓ | ✓
+|   |   | 79 | ✓ | ✓
+|   |   | 78 | ✓ | ✓
+|   |   | 77 | ✓ | ✓
+| ↑  |  ↑  | 55 | ✓ | ✓
+| ↓  |  ↓  | 54 | X | X
+| **Windows 7, 8, 8.1 & 10 &**   | *Chrome*  |  93 (dev)
+| **Mac OSX Mavericks and Newer**  |   | 92 (beta) | ✓ | ✓
+|   |   | 91 (latest) | ✓ | ✓
+|   |   | 90 | ✓ | ✓
+|   |   | 89 | ✓ | ✓
+|   |   | 88 | ✓ | ✓
+|   |   | 87 | ✓ | ✓
+|   |   | 86 | ✓ | ✓
+|   |   | 85 | ✓ | ✓
+|   |   | 84 | ✓ | ✓
+|   |   | 83 | ✓ | ✓
+|   |   | 82 | ✓ | ✓
+|   |   | 81 | ✓ | ✓
+|   |   | 80 | ✓ | ✓
+| ↑ | ↑  | 60 | ✓ | ✓
+| ↓ | ↓  | 59 | X | X
+| **Windows 7, 8, 8.1 & 10 &**  | *Opera*  |  78 (dev) | ✓ | ✓
+| **Mac OSX Mavericks and Newer**  |   | 77 (latest) | ✓ | ✓
+|   |   | 76 | ✓ | ✓
+|   |   | 75 | ✓ | ✓
+|   |   | 74 | ✓ | ✓
+|   |   | 73 | ✓ | ✓
+|   |   | 72 | ✓ | ✓
+|   |   | 71 | ✓ | ✓
+|   |   | 68 | ✓ | ✓
+|   |   | 67 | ✓ | ✓
+|   |   | 66 | ✓ | ✓
+|   |   | 65 | ✓ | ✓
+|  ↑ |  ↑ | 47 | ✓ | ✓
+|  ↓  |  ↓  | 46 | X | X
+
+For Mac systems nothing older than OSX Mavericks could successfully load the application, and for Windows nothing older than Windows 7. 
+
+- On Windows desktops it worked perfectly on Microsoft Edge from the development version 93 until the functionality stopped working at version 18.
+- On Windows & Mac desktops it worked on all versions of Firefox from v55 upwards.
+- On Windows & Mac desktops it worked on all versions of Chrome from v60 upwards.
+- On Windows & Mac desktops it worked on all versions of Opera from v47 upwards.
+
+Below are three random screenshots from the desktop browser testing:
+
+### Edge v91 on Mac Big Sur (functional)
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/edgev91.png">
+</div>
+
+<br>
+
+### Firefox v44 on Mac Catalina (not functional)
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/firefoxv44.png">
+</div>
+
+<br>
+
+### Opera v63 on Windows 10 (functional)
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/operav63.png">
+</div>
+
+<br>
+
+## Mobile Browser Testing
+
+Lionize's functionality was tested across a wide platform of mobile devices, operating systems and mobile browsers:
+
+| Mobile Device  | OS  | Browser | Design Check | Functionality Check | 
+| ---- | ------- | ------- | :---: | :---: |
+| **iPhone & iPad**   | 14  |  Safari & Chrome | ✓ | ✓
+|   | 13  | Safari & Chrome | ✓ | ✓
+|   | 12 | Safari & Chrome | ✓ | ✓
+|   | 11  | Chrome & Safari (ipad) | ✓ | ✓
+| ↓   | 11  | Chrome & Safari (iPhone) | X | X
+| ↓   | 10  | Chrome & Safari (iPad) | X | X
+| **Samsung Galaxy S21, S21+, S20, S9, S8, S10+, S10e, S9+, S8+, S7, S6, S5, S4, A51, A11, A10, A8, Note 20 - Note3**  | 11,10, 9, 8, 7, 6, 5, 4.4  |  Chrome, Firefox, Samsung Internet & UC Browser| ✓ | ✓
+|  **Google Pixel 5, 4, 4XL, 3a, 3a XL, 3, 2, Pixel, PixelXL, Nexus6P, Nexus 6, 5, 9, 7** | 11, 10, 9, 8, 7.1, 7, 6, 5, 4.4, 5.1, 6  | Chrome, Firefox & UC Browser | ✓ | ✓
+|  **OnePlus 8, 7T, 7, 6T** | 10, 9  | Chrome, Firefox & UC Browser | ✓ | ✓
+|  **Moto G9 Play, Moto G7 Play, Moto X 2nd Gen, Moto G 2nd Gen** | 9, 6, 5  | Chrome, Firefox & UC Browser | ✓ | ✓
+|  **Xiaomi Redmi Note 9, 8, 7** | 10, 9  | Chrome, Firefox & UC Browser | ✓ | ✓
+|  **Vivo Y50** | 10  | Chrome & Firefox | ✓ | ✓
+|  **Oppo Reno 3 Pro** | 10  | Chrome & Firefox | ✓ | ✓
+|  **Huawei P30** | 9  | Chrome, Firefox & UC | ✓ | ✓
+|  **Xperia** | 5.1  | Chrome & UC | ✓ | ✓
+
+<br>
+
+As the above demonstrates there are issues running the application on Apple iphones from versions 11 on Chrome and Safari. 
+For some reason v11 is still functional on iPads.
+V10 and down stops working on iPads as well.
+
+Androids are far more backwards compatible, and using Browser Stack I found the application worked perfectly on all browsers and all OS versions.
+
+Below is a selection of randomly selected screenshots of the application successfully running on a spectrum of mobile devices:
+
+<details>
+<summary><b>Open for Examples</b></summary>
+
+1. Huawei P30 Firefox OS 9
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/ffhuaweip30os9.png">
+</div>
+
+<br>
+
+2. Oppo Reno 3 Pro Firefox OS 10
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/ffos10opporeno3.png">
+</div>
+
+<br>
+
+3. Galaxy S4 Chrome OS 4.4
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/galaxys4os4.4.png">
+</div>
+
+<br>
+
+4. Galaxy S21 Samsung Browser OS 11
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/galaxys21sambr11.png">
+</div>
+
+<br>
+
+5. One Plus 7T Chrome OS 10
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/oneplus7Tchromeos10.png">
+</div>
+
+<br>
+
+6. Google Pixel 5 Chrome OS 10
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/os10pixel5chrome.png">
+</div>
+
+<br>
+
+7. Xiaomi Redmi Note 8 Firefox OS 9
+
+<br>
+
+<div align="center">
+    <img src="static/images/browser-tests/xiaomiredminote8ffos9.png">
+</div>
+
+<br>
+
+</details>
+
+<br>
+
+</details>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
+# Responsivity Testing
+
+In addition to the extensive testing outlined in the Responsivity section of this project's README.md, I also used Chrome's [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) for a quick visual overview of how the webiste performs across a range of different screens. 
+
+<br>
+
+<div align="center">
+    <img src="static/images/responsivity/responsive-viewer.png">
+</div>
+
+<br>
+
+I love using this tool as it allows testing the site on numerous screens simultaneously.
+
+I also used the Chrome Dev Tools Mobile emulator __and__ I asked friends and family to test the application on their phones, tablets and browsers to flag any issues that I had not previously discovered. 
+
+<br>
+
+<div align="center">
+    <img src="static/images/responsivity/iphone8.png" width="250">
+</div>
+<div align="center">
+    <img src="static/images/responsivity/motog4.png" width="250">
+</div>
+<div align="center">
+    <img src="static/images/responsivity/nexus5.png" width="250">
+</div>
+
+<br>
+
+# Code Validators
+
+## 1. HTML Validators
+
+### W3C HTML Validator
+
+### W3C Link Checker
+
+## 2. CSS Validators
+
+### W3C CSS Validator
+
+## 3. JavaScript Validators
+
+### JSHint
+
+## 4. Python Validators
+
+### PEP8 Online 
+
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
+# Performance & Web Development Tools Testing
+
+## Lighthouse
+
+### Mobile Lighthouse Test Results
+
+### Summary:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-mob.png">
+</div>
+
+<br>
+
+### Performance:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-performance-mob.png">
+</div>
+
+<br>
+
+### Best Practices:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/best-practices-mob.png">
+</div>
+
+<br>
+
+### SEO
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/light-seo-mob.png">
+</div>
+
+<br>
+
+### Desktop Lighthouse Test Results
+
+### Summary:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-desk.png">
+</div>
+
+<br>
+
+### Performance:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-performance.png">
+</div>
+
+<br>
+
+### Best Practices:
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-bp.png">
+</div>
+
+<br>
+
+### SEO
+
+<br>
+
+<div align="center">
+    <img src="static/images/lighthouse/lighthouse-seo.png">
+</div>
+
+<br>
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
 

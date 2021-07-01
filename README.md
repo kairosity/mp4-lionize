@@ -4131,6 +4131,14 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used to test palettes.
 
+- ### [An article on Web Accessibility Contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html#:~:text=A%20contrast%20ratio%20of%203,for%20standard%20text%20and%20vision.)
+
+    Used to decide whether or not to improve the contrast ratio.
+
+- ### [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+    Used to check the application's contrast ratio.
+
 ## 2. HTML, CSS & SASS
 
 - ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
