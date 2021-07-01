@@ -824,6 +824,22 @@ Which stopped the date being overwritten each time the instance of the model was
 
 <br>
 
+
+## Stripe Webhooks Race Conditions
+
+__Issue:__ While testing the live site I discovered that because my internet connection is always dropping, my webhooks were kicking in and sending duplicate orders more than they should be.
+
+__Fix:__ After researching this problem in Slack and reading a long thread by ckz8780 where he explained the issue as endemic to the Boutique Ado code (where the webhook code for this project derives most of its logic), and as the webhooks *are* working correctly, I was happy to disable the webhooks for now. I did not want to keep the application running with multiple duplicate and sometimes triplicate orders. The functionality of the webhooks *is* working correctly, but needs some tinkering with. So in theory, I could go back to the webhook code and change it so that it waits a little longer before creating the duplicate order in Stripe and pushing it to the database, however this is past the remit of this project.
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/duplicates.png" width="600">
+</div>
+
+<br>
+
 #### back to [contents](#testing-table-of-contents) 
 
 <br>
