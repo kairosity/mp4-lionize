@@ -255,9 +255,18 @@ def delete_product(request, product_id):
         raise PermissionDenied()
 
     product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, f'Product "{product.name}" deleted!')
-    return redirect(reverse('products'))
+
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, f'Product "{product.name}" deleted!')
+        return redirect(reverse('admin-dash-products'))
+    
+    template = 'products/delete_product.html'
+    context = {
+        'product': product,
+    }
+    
+    return render(request, template, context)
 
 @login_required
 def remove_from_shop(request, product_id):

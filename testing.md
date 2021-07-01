@@ -1760,7 +1760,25 @@ Testing Process:
 __PASS__
 
 
-### 2. Add a New Product
+### 2. Filter by Category
+
+Testing Process:
+
+- Navigated to the "Products" Page under Admin Portal
+- Clicked on the various category buttons to ensure they are working correctly.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminprodfilter.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+
+### 3. Add a New Product
 
 Testing Process:
 
@@ -1779,7 +1797,7 @@ Testing Process:
 
 __PASS__
 
-### 3. Edit a Product
+### 4. Edit a Product
 
 Testing Process:
 
@@ -1797,7 +1815,7 @@ Testing Process:
 
 __PASS__
 
-### 4. Remove a Product from the Shop
+### 5. Remove a Product from the Shop
 
 Testing Process:
 
@@ -1815,7 +1833,7 @@ Testing Process:
 
 __PASS__
 
-### 5. Add a Product to the Shop
+### 6. Add a Product to the Shop
 
 Testing Process:
 
@@ -1833,7 +1851,7 @@ Testing Process:
 
 __PASS__
 
-### 6. Attempt to Delete a Product
+### 7. Attempt to Delete a Product
 
 Testing Process:
 
@@ -1850,13 +1868,71 @@ Testing Process:
 
 __PASS__
 
+### 8. Delete a Product (superusers only)
+
+Testing Process:
+
+- On the "Products" Page under Admin Portal, clicked the "Delete" button on the "To Be Deleted" Product.
+- One the delete product page, clicked the "Yes, Delete it!" button.
+- Verified that this superuser admin user was able to successfully delete the product.
+- Verified that the product had been removed from the database by checking the Django backend.</s>
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/admindeleteproduct.gif" width="600">
+</div>
+
+<br>
+
+- Superusers can still delete products, but they now do so from the Django backend, which (because it is not a GET request on the application itself), is far more secure.
+
+__PASS__
+
 
 # Security Testing
 
+## 1. Testing CSRF Protection
+
+CSRF is hard to test without actively launching an attack, however I did undertake the following checks:
+
+### Testing Process:
+
+- Checked that no important functionality is served by GET requests. __PASS__
+- No sensitive data is passed via GET requests. __PASS__
+- All POST forms are embedded with Django's CSRF protection. __PASS__
+
+## 2. Testing the Image Field Security
+
+Any application that accepts file uploads instantly opens itself to potential threats. Django's ImageField comes equipped with an image verification protection.
+
+### Testing Process:
+
 - I attempted to upload a non-image file into the Add Product Form.
+- Firstly it would not allow me to select any files with non-image suffixes for upload.
+- When I then re-named a non-image .doc file to a .jpg, Django correctly rejected the POST request and returned an error message, regardless of the fake suffix.
 
-- Firstly it would not allow me to select any non-image files for the upload. 
+## 3. Access Control Testing
 
-- When I then re-named a non-image .doc file to a .jpg, Django correctly rejected the POST request and returned an error message.
+One of the most important security checks is that user logins are secure and that other users cannot access sensitive user data that does not pertain to them. 
+
+The way this application is structured is by its nature very secure. All data is returned based on the login credentials passed to Django's allauth. When the application retrieves user data it does so by referencing the user id passed in via the authetication process. 
+
+No specific data is passed through or referenced via a URL, so without the user login details or admin login credentials it is effectively impossible to gain access to user data.
+
+As detailed above during the status code testing, I also attempted to gain access to admin pages without being logged in as an admin user, and I confirmed this was impossible. 
+
+Data altering actions on the application are: 
+
+1. Purchasing a product. (regular user)
+2. Altering profile details. (regular user)
+
+3. Adding a new product. (staff user)
+4. Editing a product. (staff user)
+5. Adding and removing products from the Shop. (staff user)
+
+6. Deleting a product. (superuser) * This *had* been included as a GET request until reaching this security testing process, at which point, I decided that it was safer to remove the delete product functionality from the front-end completely. As there is no need for staff members to delete products, and superusers can do so far more securely from the Django backend. 
+
+All of which 
 
 

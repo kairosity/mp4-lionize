@@ -109,7 +109,7 @@ $(function(){
         ordersLink.classList.add('active-page-side-nav');
         ordersLinkMob.classList.add('active-page-side-nav');
 
-    } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit'){
+    } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit' && splitPath[1] !== 'delete'){
         shopLink.classList.add('active-page');
         shopLinkMob.classList.add('active-page');
 
@@ -129,10 +129,10 @@ $(function(){
             shopContentCreationLink.classList.add('active-page-side-nav');
             shopContentCreationLinkMob.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0].includes('admin-product-dashboard') || splitPath[0].includes('admin-user-dashboard') || splitPath[0].includes('admin-messages-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit') {
+    } else if (splitPath[0].includes('admin-product-dashboard') || splitPath[0].includes('admin-user-dashboard') || splitPath[0].includes('admin-messages-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit' || splitPath[1] == 'delete') {
         adminLink.classList.add('active-page');
         adminLinkMob.classList.add('active-page');
-        if (splitPath[0].includes('admin-product-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit'){
+        if (splitPath[0].includes('admin-product-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit' || splitPath[1] == 'delete'){
             adminProductsLink.classList.add('active-page-side-nav');
             adminProductsLinkMob.classList.add('active-page-side-nav')
         } else if (splitPath[0].includes('admin-user-dashboard')){

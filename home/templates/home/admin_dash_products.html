@@ -75,11 +75,7 @@
                                 <div class="button-group">
                                     <a href="{% url 'product_detail' product.id %}" class="button button-main button-tiny xtra-pad">Details</a>
                                     <a href="{% url 'edit_product' product.id %}" class="button button-accent button-tiny xtra-pad">Edit</a>
-                                    
-                                    <!-- Button Delete trigger modal -->
-                                    <button type="button" class="button button-delete button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
-                                        Delete
-                                    </button>
+                                    <a href="{% url 'delete_product' product.id %}" class="button button-delete button-tiny xtra-pad">Delete</a>
                                     
                                     <!-- Remove Modal -->
                                     <div class="modal fade" id="removeProductModal" tabindex="-1" aria-labelledby="removeProductModalLabel" aria-hidden="true">
@@ -100,26 +96,6 @@
                                         </div>
                                     </div>
                                     <!-- Remove Modal Ends -->
-
-                                    <!-- Delete Modal -->
-                                    <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                            <h5 class="modal-title details-page-subheading" id="deleteProductModalLabel">Delete</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body deletion-modal-text">
-                                            Are you sure you want to delete this product?
-                                            </div>
-                                            <div class="modal-footer">
-                                            <button type="button" class="button button-main" data-bs-dismiss="modal">No, Cancel</button>
-                                            <a href="" class="button button-cancel product-delete-button">Yes, Delete It</a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <!-- Delete Modal Ends -->
 
                                 </div>
                                     {% if product.in_shop %}

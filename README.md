@@ -1897,16 +1897,16 @@ Category, name, friendly_name, description, features, price ex. VAT and image.
 
 <br>
 
-3. They can choose to "Delete" any of the products.
+3. Superuser admins can also choose to "Delete" any of the products.
 
-- If the admin user clicks the delete button a Deletion Confirmation Modal pops up asking them to confirm this action. 
+- If a superuser admin user clicks the delete button they are brought to a page asking them to confirm the deletion.
 - I felt it was important to include a 2 stage deletion process, to guard against accidental deletions. 
-- At the modal confirmation stage, the user can click, "No, Cancel" to undo the action, or they can proceed with "Yes, Delete It".
+- On this page, the admin can click, "No, Cancel" to undo the action, or they can proceed with "Yes, Delete It".
 
 <br>
 
 <p align="center">
-  <img src="static/images/features/deletion-confirmation.png">
+  <img src="static/images/features/deletion-confirmation-post.png">
 </p>
 
 <br>
@@ -1921,7 +1921,7 @@ Category, name, friendly_name, description, features, price ex. VAT and image.
 
 <br>
 
-4. They can choose to "Remove" or "Add" the product from/to the shop. This is arguably more useful than deleting the product in its entirety. 
+4.  Staff and superuser admin users can also choose to "Remove" or "Add" the product from/to the shop. This is arguably more useful than deleting the product in its entirety, and less permanent. 
 
 - All the shop product views are programmed to only show products who have the in_shop boolean field checked to True, these buttons toggle that field.
 
@@ -4112,6 +4112,14 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used for all the application's icons.
 
+- ### [unDraw](https://undraw.co/)
+
+    Gorgeous open-source illustrations, used for product images.
+
+- ### [Coolors](https://coolors.co/)
+
+    Used to test palettes.
+
 ## 2. HTML, CSS & SASS
 
 - ### [SASS Button Mixin by Olga](https://codepen.io/OlgaFil/pen/JxjbOb)
@@ -4241,6 +4249,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 - ### [How can I get a favicon to show up in my django app?](https://stackoverflow.com/questions/21938028/how-can-i-get-a-favicon-to-show-up-in-my-django-app)
 
     Stack overflow article used to incorporate favicon into application.
+
+- ### [EZ Gif.com - mp4 to gif converter](https://ezgif.com/video-to-gif)
+
+    Used in the testing docs.
 
 <br>
 
