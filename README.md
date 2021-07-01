@@ -3775,13 +3775,13 @@ In this way a hierarchy of security is created for this application based on the
 
 ## 9. Content Security Policy
 
-I've integrated django-csp to take care of the content security policy, as Django doesn't have any built-in CSP functionality.
-
-In my settings file I've added the middleware code and all the various trusted content urls. 
+I tried to integrate django-csp to take care of the content security policy, as Django doesn't have any built-in CSP functionality, however no matter what settings and urls I added in, it would not correctly display the static styles with the CSP added to settings, so after a lot of refactoring, I removed it entirely.
 
 ## 10. Security Vulnerabilities
 
 - Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
+
+- The lack of a CSP is a glaring security vulnerability, but it will have to be implemented at a later date.
 
 #### back to [contents](#table-of-contents) 
 
@@ -3818,6 +3818,10 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 ## Product Deletion
 
 When an admin deletes a product it automatically deletes the order line items associated with that product. To avoid this issue, I implemented a "remove from shop" feature, as a less drastic solution, however if an admin user does decide to delete a product, the order line item references to that product are also gone. The order record remains, however there is definitely scope to implement some form of order line item recording irrespective of product deletion.
+
+## Content Security Policy
+
+After much tinkering with trying to add a CSP, I eventually decided that its' integration would have to be done at a later date.
 
 #### back to [contents](#table-of-contents) 
 

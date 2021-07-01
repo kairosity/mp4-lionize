@@ -2110,8 +2110,16 @@ I tried to implement a CSP using django-csp with the following settings:
 
 But no matter what combination of urls I implemented, it would not load static styles correctly.
 
+Some resources online have referenced that newer versions of Bootstrap have become somewhat [harder to integrate into a CSP](https://github.com/twbs/bootstrap/issues/25394).
+
+ There is definitely a way to implement this, but for now it will be added to future application improvements. The CSP was __a lot__ simpler to implement in a Flask application.
+
 ## 6. Mozilla Observatory Security Scanning
 
 To check a range of other security concerns, I used the [Mozilla Observatory](https://observatory.mozilla.org/) a super useful free security scanning system.
+
+The application received a B grade when the incomplete CSP was added, however once removed it reverted to a D grade based on the lack of a CSP.
+
+However looking at the breakdown of categories, the overall security profile remains strong. 
 
 

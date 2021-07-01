@@ -25,7 +25,7 @@ if 'DEVELOPMENT' in os.environ:
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['lionize-ms4.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['lionize-ms4.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -62,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'lionize.urls'
@@ -176,7 +175,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+
+if 'DATABASE_URL' in os.environ:
+    SECURE_SSL_REDIRECT = True
+
+else:
+    SECURE_SSL_REDIRECT = False
 
 
 # Internationalization

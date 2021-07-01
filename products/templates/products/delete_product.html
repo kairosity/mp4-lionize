@@ -3,29 +3,23 @@
 
 {% block content %}
 
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
     <div class="container-fluid col-12 col-md-8">
-        
-            {% include 'includes/skip-to-main.html' %}
-            <div class="container form-container more-space2">
+        {% include 'includes/skip-to-main.html' %}
+        <div class="container form-container more-space2">
             <div class="container">
                 <h1 id="main" class="details-page-heading delete-page-heading">Delete Confirmation</h1>
                 <h2 class="details-page-subheading mb-4">Are you certain you want to delete the product "{{product.friendly_name}}" 
                     completely? This action is irreversible.
                 </h2>
             </div>
-        <form method="POST" class="text-align-center" action="{% url 'delete_product' product.id %}">
-            {% csrf_token %}
-            <a class="button button-main xtra-pad" href="{% url 'admin-dash-products' %}">No, Cancel</a>
-            <button type="submit" class="button button-cancel">Yes, Delete it!</button>
-        </form>
+            <form method="POST" class="text-align-center" action="{% url 'delete_product' product.id %}">
+                {% csrf_token %}
+                <a class="button button-main xtra-pad" href="{% url 'admin-dash-products' %}">No, Cancel</a>
+                <button type="submit" class="button button-cancel">Yes, Delete it!</button>
+            </form>
+        </div>
     </div>
-        
-    </div>
-
 </div>
 {% endblock %}
