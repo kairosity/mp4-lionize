@@ -3773,7 +3773,13 @@ In this way a hierarchy of security is created for this application based on the
 - The application does not server any database altering requests using GET (except for altering message status.)
 - All ADD, EDIT, DELETE functions are based on POST requests. 
 
-## 9. Security Vulnerabilities
+## 9. Content Security Policy
+
+I've integrated django-csp to take care of the content security policy, as Django doesn't have any built-in CSP functionality.
+
+In my settings file I've added the middleware code and all the various trusted content urls. 
+
+## 10. Security Vulnerabilities
 
 - Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
 

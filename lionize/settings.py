@@ -185,18 +185,33 @@ CSP_DEFAULT_SRC = ("'self'", )
 CSP_STYLE_SRC = ("'self'",  
     "stackpath.bootstrapcdn.com",
     "cdn.jsdelivr.net",
-    "https://s3.amazon.com")
+    "https://s3.amazon.com",
+    "lionize-ms4.s3-eu-west-1.amazonaws.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "ka-f.fontawesome.com",
+    "kit.fontawesome.com")
 
 # scripts from our domain and other domains
 CSP_SCRIPT_SRC = ("'self'",
     "cdn.jsdelivr.net",
     "code.jquery.com",
     "js.stripe.com",
-    "https://s3.amazon.com", )
+    "https://s3.amazon.com",
+    "lionize-ms4.s3-eu-west-1.amazonaws.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "ka-f.fontawesome.com",
+    "kit.fontawesome.com" )
 
 # images from our domain and other domains
 CSP_IMG_SRC = ("'self'", 
-    "https://s3.amazon.com",)
+    "https://s3.amazon.com",
+    "lionize-ms4.s3-eu-west-1.amazonaws.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "ka-f.fontawesome.com",
+    "kit.fontawesome.com")
 
 # loading manifest, workers, frames, etc
 CSP_FONT_SRC = ("'self'",
@@ -213,7 +228,12 @@ CSP_INCLUDE_NONCE_IN = ('script-src', )
 CSP_MANIFEST_SRC = ("'self'", )
 CSP_WORKER_SRC = ("'self'", )
 CSP_MEDIA_SRC = ("'self'",
-    "https://s3.amazon.com", )
+    "https://s3.amazon.com",
+    "lionize-ms4.s3-eu-west-1.amazonaws.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "ka-f.fontawesome.com",
+    "kit.fontawesome.com" )
 
 
 # Internationalization

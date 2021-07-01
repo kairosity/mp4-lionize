@@ -2045,7 +2045,11 @@ __PASS__
 
 <br>
 
-## 5. Mozilla Observatory Security Scanning
+## 5. Content Security Policy
+
+I used 
+
+## 6. Mozilla Observatory Security Scanning
 
 To check a range of other security concerns, I used the [Mozilla Observatory](https://observatory.mozilla.org/) a super useful free security scanning system.
 
