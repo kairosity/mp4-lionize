@@ -174,73 +174,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Security Settings
 
-if 'DATABASE_URL' in os.environ:
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-
-
-    # default source as self
-    CSP_DEFAULT_SRC = ("'self'",
-            "localhost:8000/",
-            "amazonaws.com" )
-
-    # style from our domain and bootstrapcdn
-    CSP_STYLE_SRC = ("'self'",  
-        "stackpath.bootstrapcdn.com",
-        "cdn.jsdelivr.net",
-        "https://s3.amazon.com",
-        "lionize-ms4.s3-eu-west-1.amazonaws.com",
-        "fonts.googleapis.com",
-        "fonts.gstatic.com",
-        "fontawesome.com",
-        "amazonaws.com",
-        "unsafe-inline",)
-
-    # scripts from our domain and other domains
-    CSP_SCRIPT_SRC = ("'self'",
-        "cdn.jsdelivr.net",
-        "code.jquery.com",
-        "js.stripe.com",
-        "https://s3.amazon.com",
-        "lionize-ms4.s3-eu-west-1.amazonaws.com",
-        "fonts.googleapis.com",
-        "fonts.gstatic.com",
-        "fontawesome.com",
-        "unsafe-inline",)
-
-    # images from our domain and other domains
-    CSP_IMG_SRC = ("'self'", 
-        "https://s3.amazon.com",
-        "lionize-ms4.s3-eu-west-1.amazonaws.com",
-        "fonts.googleapis.com",
-        "fonts.gstatic.com",
-        "fontawesome.com",
-        "amazonaws.com")
-
-    # loading manifest, workers, frames, etc
-    CSP_FONT_SRC = ("'self'",
-        "fonts.googleapis.com",
-        "fonts.gstatic.com",
-        "fontawesome.com" )
-    CSP_CONNECT_SRC = ("'self'",)
-    CSP_OBJECT_SRC = ("'self'", )
-    CSP_BASE_URI = ("'self'", )
-    CSP_FRAME_ANCESTORS = ("'self'", )
-    CSP_FORM_ACTION = ("'self'", )
-    CSP_INCLUDE_NONCE_IN = ('script-src', )
-    CSP_MANIFEST_SRC = ("'self'", )
-    CSP_WORKER_SRC = ("'self'", )
-    CSP_MEDIA_SRC = ("'self'",
-        "https://s3.amazon.com",
-        "lionize-ms4.s3-eu-west-1.amazonaws.com",
-        "fonts.googleapis.com",
-        "fonts.gstatic.com",
-        "fontawesome.com",
-        "amazonaws.com", )
-else:
-    SECURE_SSL_REDIRECT = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

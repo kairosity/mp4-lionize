@@ -2047,7 +2047,68 @@ __PASS__
 
 ## 5. Content Security Policy
 
-I used 
+I tried to implement a CSP using django-csp with the following settings:
+
+    # default source as self
+    CSP_DEFAULT_SRC = ("'self'",
+            "localhost:8000/",
+            "amazonaws.com" )
+
+    # style from our domain and bootstrapcdn
+    CSP_STYLE_SRC = ("'self'",  
+        "stackpath.bootstrapcdn.com",
+        "cdn.jsdelivr.net",
+        "https://s3.amazon.com",
+        "lionize-ms4.s3-eu-west-1.amazonaws.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "fontawesome.com",
+        "amazonaws.com",
+        "unsafe-inline",)
+
+    # scripts from our domain and other domains
+    CSP_SCRIPT_SRC = ("'self'",
+        "cdn.jsdelivr.net",
+        "code.jquery.com",
+        "js.stripe.com",
+        "https://s3.amazon.com",
+        "lionize-ms4.s3-eu-west-1.amazonaws.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "fontawesome.com",
+        "unsafe-inline",)
+
+    # images from our domain and other domains
+    CSP_IMG_SRC = ("'self'", 
+        "https://s3.amazon.com",
+        "lionize-ms4.s3-eu-west-1.amazonaws.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "fontawesome.com",
+        "amazonaws.com")
+
+    # loading manifest, workers, frames, etc
+    CSP_FONT_SRC = ("'self'",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "fontawesome.com" )
+    CSP_CONNECT_SRC = ("'self'",)
+    CSP_OBJECT_SRC = ("'self'", )
+    CSP_BASE_URI = ("'self'", )
+    CSP_FRAME_ANCESTORS = ("'self'", )
+    CSP_FORM_ACTION = ("'self'", )
+    CSP_INCLUDE_NONCE_IN = ('script-src', )
+    CSP_MANIFEST_SRC = ("'self'", )
+    CSP_WORKER_SRC = ("'self'", )
+    CSP_MEDIA_SRC = ("'self'",
+        "https://s3.amazon.com",
+        "lionize-ms4.s3-eu-west-1.amazonaws.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "fontawesome.com",
+        "amazonaws.com", )
+
+But no matter what combination of urls I implemented, it would not load static styles correctly.
 
 ## 6. Mozilla Observatory Security Scanning
 
