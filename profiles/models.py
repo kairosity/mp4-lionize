@@ -56,5 +56,5 @@ class Message(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_messages')
     subject = models.CharField(max_length=120, null=True, blank=True)
     message = models.TextField(max_length=500, null=True, blank=True)
-    date = models.DateField(auto_now=True)
+    date = models.DateField(auto_now_add=True)
     resolved = models.BooleanField(default=False)

@@ -3761,16 +3761,17 @@ Most of the application's functionality is only accessible to users who are logg
 - Only authenticated users can purchase products.
 - Normal (non-staff non-super) users cannot access the Admin Dashboards.
 - Normal users cannot make any changes to the shop, products or pricing. 
-- Staff users can add, edit & delete products. They can also add and remove products from the Shop, without deleting them fully.
-- Staff users cannot access the Django backend. 
+- Staff users can add and edit products. They can also add and remove products from the Shop, without deleting them fully.
+- Staff users can mark messages as open or resolved. (Incidentally this is the only data altering GET request included and it is protected under an admin login.)
+- Staff users cannot access the Django backend.
+- Only superusers can delete products completely.
 
 In this way a hierarchy of security is created for this application based on the user status.
 
 ## 8. Request Methods
 
-- The application does not server any database altering requests using GET.
+- The application does not server any database altering requests using GET (except for altering message status.)
 - All ADD, EDIT, DELETE functions are based on POST requests. 
-
 
 ## 9. Security Vulnerabilities
 

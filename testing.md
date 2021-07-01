@@ -799,6 +799,42 @@ __Issue:__ This application is connected to a Gmail email account via 2-factor a
 
 __Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.
 
+
+
+## Messages Date Updating
+
+__Issue:__ During testing I discovered that marking messages as Resolved and Re-Opened was overwriting their date attribute, thus making it useless in terms of organising the messages by original date of receipt.
+
+__Fix:__ I changed the date option on the model from 
+
+        date = models.DateField(auto_now=True)
+
+to:
+
+        date = models.DateField(auto_now_add=True)
+
+Which stopped the date being overwritten each time the instance of the model was saved.
+
+
+<br>
+
+<p align="center">
+  <img src="static/images/issues/smtp-error.png">
+</p>
+
+<br>
+
+- It would seem that gmail disabled the account because of the app connection.
+
+<br>
+
+<p align="center">
+  <img src="static/images/issues/gmail_disabled.png">
+</p>
+
+<br>
+
+__Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.
 # Status Code Testing
 
 ## 200 Status Code Testing
@@ -1735,8 +1771,7 @@ Testing Process:
 <br>
 
 
-## Advanced Functionality: Admin (Staff) Users
-
+## Advanced Functionality: Admin (Staff & Superuser) Users
 
 ## Admin Product Dashboard
 
@@ -1861,7 +1896,7 @@ Testing Process:
 <br>
 
 <div align="center">
-    <img src="static/images/feature-gifs/admindeleteproductno.gif" width="600">
+    <img src="static/images/feature-gifs/admindeleteproductno2.gif" width="600">
 </div>
 
 <br>
@@ -1880,15 +1915,73 @@ Testing Process:
 <br>
 
 <div align="center">
-    <img src="static/images/feature-gifs/admindeleteproduct.gif" width="600">
+    <img src="static/images/feature-gifs/admindeleteproduct1.gif" width="600">
 </div>
 
 <br>
 
-- Superusers can still delete products, but they now do so from the Django backend, which (because it is not a GET request on the application itself), is far more secure.
 
 __PASS__
 
+
+## Admin User Dashboard
+
+### 1. Search for Users
+
+Testing Process:
+
+- Navigated to the "Users" Page under Admin Portal.
+- Entered "mariella" in the search bar and clicked search.
+- Clicked to reset the search.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminusersearch.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 2. Browse Users
+
+Testing Process:
+
+- Navigated to the "Users" Page under Admin Portal.
+- Scrolled and browsed users. 
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminuserbrowse.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+
+## Admin Messages Dashboard
+
+### 1. Browse Messages & Mark one message as resolved and re-open another one.
+
+Testing Process:
+
+- Navigated to the "Messages" Page under Admin Portal.
+- Browsed the messages.
+- Marked a message as "Resolved"
+- "Re-Opened" another message.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/adminmessages.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
 
 # Security Testing
 
@@ -1931,8 +2024,10 @@ Data altering actions on the application are:
 4. Editing a product. (staff user)
 5. Adding and removing products from the Shop. (staff user)
 
-6. Deleting a product. (superuser) * This *had* been included as a GET request until reaching this security testing process, at which point, I decided that it was safer to remove the delete product functionality from the front-end completely. As there is no need for staff members to delete products, and superusers can do so far more securely from the Django backend. 
+6. Deleting a product. (superuser) * This *had* been included as a GET request until reaching this security testing process, at which point, I decided that it was safer to change the delete functionality to be a POST request. So now, clicking the delete button brings the superuser to a separate delete page, where they must confirm the deletion via a CSRF protected POST request. I also decided to only grant superusers the power to delete products completely, as it is an irreversible command and given that staff users can remove products from the shop, there is really no need for them to be able to delete products completely from the database. 
 
-All of which 
+*Only for the __CRUD__ requirement in the FullStacks framework assessment guidelines, I would probably remove this functionality completely from the Front End, as it is not needed there. 
+
+7. Marking a message as resolved or open. (staff user)
 
 
