@@ -2120,6 +2120,26 @@ To check a range of other security concerns, I used the [Mozilla Observatory](ht
 
 The application received a B grade when the incomplete CSP was added, however once removed it reverted to a D grade based on the lack of a CSP.
 
+<br>
+
+<div align="center">
+    <img src="static/images/security/security-ranking.png">
+</div>
+
+<br>
+
 However looking at the breakdown of categories, the overall security profile remains strong. 
 
+# Accessibility Testing
 
+In addition to the accessibility user story testing outlined above, I also ran other manual & automated accessibility tests. 
+
+## Lighthouse Accessibility Tests
+
+### Mobile
+
+### Desktop
+
+## WAVE Web Accessibility Evaluation Tool
+
+This is a great tool for getting a fast overview of a website's accessibility ranking and it highlights any areas that need improvement.
