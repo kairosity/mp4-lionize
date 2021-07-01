@@ -818,23 +818,12 @@ Which stopped the date being overwritten each time the instance of the model was
 
 <br>
 
-<p align="center">
-  <img src="static/images/issues/smtp-error.png">
-</p>
+<div align="center">
+    <img src="static/images/issues/messagesbug.gif" width="600">
+</div>
 
 <br>
 
-- It would seem that gmail disabled the account because of the app connection.
-
-<br>
-
-<p align="center">
-  <img src="static/images/issues/gmail_disabled.png">
-</p>
-
-<br>
-
-__Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.
 # Status Code Testing
 
 ## 200 Status Code Testing
@@ -1995,6 +1984,8 @@ CSRF is hard to test without actively launching an attack, however I did underta
 - No sensitive data is passed via GET requests. __PASS__
 - All POST forms are embedded with Django's CSRF protection. __PASS__
 
+__PASS__
+
 ## 2. Testing the Image Field Security
 
 Any application that accepts file uploads instantly opens itself to potential threats. Django's ImageField comes equipped with an image verification protection.
@@ -2002,8 +1993,10 @@ Any application that accepts file uploads instantly opens itself to potential th
 ### Testing Process:
 
 - I attempted to upload a non-image file into the Add Product Form.
-- Firstly it would not allow me to select any files with non-image suffixes for upload.
-- When I then re-named a non-image .doc file to a .jpg, Django correctly rejected the POST request and returned an error message, regardless of the fake suffix.
+- Firstly it would not allow me to select any files with non-image suffixes for upload. __PASS__
+- When I then re-named a non-image .doc file to a .jpg, Django correctly rejected the POST request and returned an error message, regardless of the fake suffix. __PASS__
+
+__PASS__
 
 ## 3. Access Control Testing
 
@@ -2029,5 +2022,31 @@ Data altering actions on the application are:
 *Only for the __CRUD__ requirement in the FullStacks framework assessment guidelines, I would probably remove this functionality completely from the Front End, as it is not needed there. 
 
 7. Marking a message as resolved or open. (staff user)
+
+__PASS__
+
+## 4. Chrome Dev Tools Security Check
+
+- I checked the security summary using Chrome Dev Tools and it passed. __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/security/chromedevsecurity.png">
+</div>
+
+<br>
+
+<br>
+
+<div align="center">
+    <img src="static/images/security/chromedevtoolssecuritycert.png">
+</div>
+
+<br>
+
+## 5. Mozilla Observatory Security Scanning
+
+To check a range of other security concerns, I used the [Mozilla Observatory](https://observatory.mozilla.org/) a super useful free security scanning system.
 
 

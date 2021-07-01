@@ -4255,6 +4255,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used in the testing docs.
 
+- ### [Mozilla Observatory](https://observatory.mozilla.org/)
+
+    Used to test the security of my application.
+
 <br>
 
 
