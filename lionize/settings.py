@@ -195,7 +195,8 @@ if 'DATABASE_URL' in os.environ:
         "fonts.googleapis.com",
         "fonts.gstatic.com",
         "fontawesome.com",
-        "amazonaws.com",)
+        "amazonaws.com",
+        "unsafe-inline",)
 
     # scripts from our domain and other domains
     CSP_SCRIPT_SRC = ("'self'",
@@ -206,7 +207,8 @@ if 'DATABASE_URL' in os.environ:
         "lionize-ms4.s3-eu-west-1.amazonaws.com",
         "fonts.googleapis.com",
         "fonts.gstatic.com",
-        "fontawesome.com",)
+        "fontawesome.com",
+        "unsafe-inline",)
 
     # images from our domain and other domains
     CSP_IMG_SRC = ("'self'", 
