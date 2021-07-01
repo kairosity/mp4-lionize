@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'lionize.urls'
@@ -171,9 +172,48 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Security Settings
+
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
+
+# default source as self
+CSP_DEFAULT_SRC = ("'self'", )
+
+# style from our domain and bootstrapcdn
+CSP_STYLE_SRC = ("'self'",  
+    "stackpath.bootstrapcdn.com",
+    "cdn.jsdelivr.net",
+    "https://s3.amazon.com")
+
+# scripts from our domain and other domains
+CSP_SCRIPT_SRC = ("'self'",
+    "cdn.jsdelivr.net",
+    "code.jquery.com",
+    "js.stripe.com",
+    "https://s3.amazon.com", )
+
+# images from our domain and other domains
+CSP_IMG_SRC = ("'self'", 
+    "https://s3.amazon.com",)
+
+# loading manifest, workers, frames, etc
+CSP_FONT_SRC = ("'self'",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "ka-f.fontawesome.com",
+    "kit.fontawesome.com" )
+CSP_CONNECT_SRC = ("'self'",)
+CSP_OBJECT_SRC = ("'self'", )
+CSP_BASE_URI = ("'self'", )
+CSP_FRAME_ANCESTORS = ("'self'", )
+CSP_FORM_ACTION = ("'self'", )
+CSP_INCLUDE_NONCE_IN = ('script-src', )
+CSP_MANIFEST_SRC = ("'self'", )
+CSP_WORKER_SRC = ("'self'", )
+CSP_MEDIA_SRC = ("'self'",
+    "https://s3.amazon.com", )
 
 
 # Internationalization
