@@ -824,6 +824,10 @@ Which stopped the date being overwritten each time the instance of the model was
 
 <br>
 
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
 # Status Code Testing
 
 ## 200 Status Code Testing
@@ -1190,6 +1194,10 @@ Specifically important is that urls that are almost correct, as in they have the
 
 <br>
 
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
 # Functionality Testing
 
 ## Base Functionality
@@ -1531,7 +1539,7 @@ None of the profile form fields are required on the profile page, however for fi
 
 - All of the above validations apply to the edit form as well. 
 
-## 6. Email
+## 7. Email
 
 __PASS__
 
@@ -1557,7 +1565,7 @@ Testing Process:
 
 <br>
 
-## 7. Logout
+## 8. Logout
 
 __PASS__
 
@@ -1578,6 +1586,12 @@ Testing Process:
 - Tried again to access one of the logged in only pages e.g. /products/ and confirmed that the application redirected the now guest user to the login page.-- __PASS__
 
 - Checked in Chrome Dev Tools to ensure that Django flushes the session variable. The session variables does not disappear from Chrome Dev Tools, but it changes to reflect the new (non-logged in) session. -- __PASS__
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
 
 ## Advanced Functionality: Regular Users
 
@@ -1759,6 +1773,11 @@ Testing Process:
 
 <br>
 
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
 
 ## Advanced Functionality: Admin (Staff & Superuser) Users
 
@@ -1972,6 +1991,12 @@ Testing Process:
 
 __PASS__
 
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
 # Security Testing
 
 ## 1. Testing CSRF Protection
@@ -2114,7 +2139,9 @@ Some resources online have referenced that newer versions of Bootstrap have beco
 
  There is definitely a way to implement this, but for now it will be added to future application improvements. The CSP was __a lot__ simpler to implement in a Flask application.
 
-## 6. Mozilla Observatory Security Scanning
+ <br>
+
+## 6. Mozilla Observatory Security Scanning
 
 To check a range of other security concerns, I used the [Mozilla Observatory](https://observatory.mozilla.org/) a super useful free security scanning system.
 
@@ -2130,16 +2157,39 @@ The application received a B grade when the incomplete CSP was added, however on
 
 However looking at the breakdown of categories, the overall security profile remains strong. 
 
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
+
 # Accessibility Testing
 
 In addition to the accessibility user story testing outlined above, I also ran other manual & automated accessibility tests. 
 
-## Lighthouse Accessibility Tests
+## Lighthouse Accessibility Tests
 
-### Mobile
+The application scored highly on the lighthouse accessibility scale. 
 
-### Desktop
+### Mobile
 
-## WAVE Web Accessibility Evaluation Tool
+### Desktop
+
+## WAVE Web Accessibility Evaluation Tool
 
 This is a great tool for getting a fast overview of a website's accessibility ranking and it highlights any areas that need improvement.
+
+## Web Accessibility by Level Access
+
+I also used this accessibility checker to look at a range of other accessibility factors. Lionize ranked highly here as well.
+
+## Keyboard Manual Testing
+
+- Throughout the development process, I consistently tested the application using only my keyboard to ensure it remained fully keyboard accessible. 
+
+__PASS__
+
+## Screen Reader Testing
+
+- I used Apple's voice over utility as well as the ChromeVox extension to test screen reader's ability to correctly interpret the site. 
+
