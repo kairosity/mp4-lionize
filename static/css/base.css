@@ -1,9 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import 'hover-effects.css';
 
 /*-------------------------- Variables */
 :root {
-/* Colours */
+/*-------------------------- Colours */
     --main-colour: #079AE4;
     --lighter-main: #91E3FD;
     --accent-colour: #F3C311;
@@ -16,26 +23,27 @@
     --dark-text: #333;
     --muted-text: #736F73;
     --lightest-grey: rgb(243, 243, 243);
-
-    /* Font Styles */ 
+/*-------------------------- Font Styles */
     --heading-font: "Quicksand", sans-serif;
     --subheading-font: "Open Sans", sans-serif;
     --main-text-font: "Open Sans", sans-serif;
-
-    /* Breakpoints */
+/*-------------------------- Breakpoints */
     --breakpoint-large-mobile: 576px;
     --breakpoint-tablet: 768px;
     --breakpoint-small-desktop: 992px;
     --breakpoint-desktop: 1200px;
     --breakpoint-large-desktop: 1400px;
 }
-/* Universal Styles */
+/*-------------------------- Universal Styles */
 *{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
 }
 .justify-content-center{
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .text-align-left{
     text-align: left;
@@ -59,7 +67,6 @@ a.yellow-link:hover{
     color: var(--accent-lighter);
 }
 /*-------------------------- Skip To Main: Accessibility for keyboard users. */
-
 .skip-to-main {
     text-transform: uppercase;
 	pointer-events: none;
@@ -72,13 +79,14 @@ a.yellow-link:hover{
 .skip-to-main:focus {
 	color: var(--accent-colour);
 }
-
 /*-------------------------- Buttons */
 .button {
     padding:7px 14px;
     font-family: var(--main-text-font);
     font-size: 1.1rem;
     border: none;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     text-decoration: none;
 }
@@ -179,7 +187,9 @@ button.decrement-qty{
 }
 .back-button-error{
     width: 200px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 2rem;
@@ -194,8 +204,7 @@ button.decrement-qty{
 .margin-top-sm{
     margin-top: 0.5rem;
 }
-/* Navigation */
-
+/*-------------------------- Navigation */
 .active-page{
     color: var(--accent-colour);
     border-bottom: var(--accent-colour) solid 5px;
@@ -234,8 +243,7 @@ ul.dropdown-menu-cart{
 .focus-outline {
     outline: 2px solid navy;
 }
-
-/* Messages */
+/*-------------------------- Messages */
 .toast{
     border: var(--accent-colour) solid 4px;
     border-radius: 12px;
@@ -262,7 +270,6 @@ ul.dropdown-menu-cart{
 }
 .toast-capper {
     height: 2px;
-
 }
 .successful-toast{
     border: var(--lighter-main) solid 3px;
@@ -276,7 +283,7 @@ ul.dropdown-menu-cart{
 .warning-toast{
     border: var(--accent-colour) solid 3px;
 }
-/* Homepage Nav & Header */
+/*-------------------------- Homepage Navigation & Header */
 nav {
     font-family: var(--main-text-font);
     background-color: var(--main-colour);
@@ -322,8 +329,12 @@ div.container-fluid{
 .homepage-header {
     height: 520px;
     background-color: var(--main-colour);
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 h1.homepage-heading{
     font-family: var(--heading-font);
@@ -342,8 +353,12 @@ h2.homepage-subheading span.accent-underline{
     border-bottom: var(--accent-colour) 5px solid;
 }
 .services-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .homepage-body-heading{
     font-size: 3rem;
@@ -364,7 +379,9 @@ h2.homepage-subheading span.accent-underline{
     padding: 0.4rem;
 }
 .homepage-cards-container{
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-top: 3rem;
 }
 .homepage-card{
@@ -373,6 +390,7 @@ h2.homepage-subheading span.accent-underline{
 }
 .homepage-card-image{
     height: 250px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 .blue-bg-section{
@@ -382,8 +400,12 @@ h2.homepage-subheading span.accent-underline{
 }
 .button-wrapper{
     margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .register-benefits-button{
     padding: 1rem 3rem;
@@ -415,15 +437,15 @@ ul.social-media-process-list{
 ul.social-media-process-list > li{
     list-style-type: none;
 }
-
-/* Registered Users Side Nav */
+/*-------------------------- Registered Users Side Navigation */
 .side-nav-container{
     background-color: var(--main-colour);
     padding-top: 2rem;
     margin-bottom: -2rem;
     width: 250px;
     min-height: calc(100vh - 200px);
-    flex-shrink: inherit;
+    -ms-flex-negative: inherit;
+        flex-shrink: inherit;
 }
 .white-hr{
     background-color: var(--white);
@@ -435,12 +457,18 @@ p.side-nav-heading{
     font-size: 1.2rem;
     margin-left: 1rem;
 }
-
-/* Product Categories Pages */
+/*-------------------------- Product Categories Pages */
 .web-design-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .details-page-heading,
 .profile-page-heading{
@@ -453,16 +481,23 @@ p.side-nav-heading{
     padding-bottom: 1rem;
     letter-spacing: 1.4px;
     font-weight: 400;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     width: 100%;
 }
 .details-page-info{
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .edit-del-product-details-btns{
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     text-align: center;
     /* margin-right: 5rem; */
     padding-bottom: 2rem;
@@ -478,7 +513,9 @@ p.side-nav-heading{
 }
 .details-page-intro-image{
     height: auto;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 .all-industries{
     border: var(--main-colour) 3px solid;
@@ -486,8 +523,12 @@ p.side-nav-heading{
     margin-bottom: 2rem;
 }
 .industry-images-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .examples-subheading{
     margin-bottom: 2rem;
@@ -508,7 +549,9 @@ img.web-design-example{
     letter-spacing: 1.1px;
     font-weight: 200;
     overflow-wrap: break-word;
-    flex-grow: 2;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
     margin: 0 auto;
     width: 90%;
 }
@@ -542,12 +585,12 @@ img.web-design-example{
     margin-bottom: 4rem;
     margin-top: 2rem;
 }
-
-/* Login & Register Pages */
-
+/*-------------------------- Login & Register Pages */
 .form-container{
     padding: 2rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 600px;
     margin-top: 2rem;
     background-color: var(--white);
@@ -577,19 +620,22 @@ form button.form-button{
     color: var(--white);
     margin-top: 1rem;
 }
-
-/* Product Category Shop Page */
+/*-------------------------- Product Category Shop Pages */
 .product-card-col{
     margin-top: 2rem;
 }
 /* Product Details Page */
 .product-details-flex-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 2rem;
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
 }
 .product-card-img{
     height: 200px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 .product-card-body{
@@ -597,9 +643,12 @@ form button.form-button{
 }
 .admin-edit-delete-btns{
     margin-top: 1rem;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
 .product-details-flexbox{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 img.product-details-page-img{
@@ -607,7 +656,9 @@ img.product-details-page-img{
     min-width: 300px;
 }
 .form-container-product-details{
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .details-page-features-heading{
     text-align: left;
@@ -620,7 +671,8 @@ img.product-details-page-img{
     margin-bottom: 0.9rem;
 }
 .product-details-text-container{
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
 }
 .card-text{
     min-height: 72px;
@@ -650,19 +702,17 @@ label[for="id_review"]{
     margin-bottom: 0.5rem;    
 }
 .input-container{
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
-
 .review-block:not(:last-child):after{
     content: "";
     display: block;
     border-bottom: var(--lighter-main) 2px dotted;
     margin-bottom: 0.6rem;
 }
-
-
-/* Profile Page */
-
+/*-------------------------- Profile Page */
 .profile-page-btn{
     margin-top: 1.5rem;
     margin-bottom: 2rem;
@@ -676,23 +726,26 @@ small.form-heading{
     margin-top: 4rem;
     padding-top: 2rem;
 }
-/* Shopping Bag */
-
+/*-------------------------- Shopping Bag Page */
 .update-link, 
 .remove-item {
     cursor: pointer;
     text-decoration: none;
 }
 .image-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 img.empty-shopping-bag{
     max-width: 300px;
+    -o-object-fit: cover;
     object-fit: cover;
     margin-top: 1rem;
 }
-
 .keep-shopping-button{
     padding: 0.53rem;
     margin-right: 4px;
@@ -700,9 +753,7 @@ img.empty-shopping-bag{
 .secure-checkout-button{
     margin-top: 0.8rem;
 }
-
-/* Review Page */
-
+/*-------------------------- Review Page */
 .review-border{
     padding: 1rem;
     margin-top: 1rem;
@@ -717,18 +768,15 @@ img.empty-shopping-bag{
 .review-product-button{
     font-size: 0.9rem;
 }
-
 i.fa-star{
     color: var(--accent-colour);
 }
-
 .bag-notification-wrapper {
     height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
-/* Product Form - Code From CI Boutique Ado Tut */
+/*-------------------------- Product Form - Code From CI Boutique Ado Tut */
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -751,10 +799,8 @@ i.fa-star{
     border-color: #dc3545 !important;
     border-radius: 0 !important;
 }
-/* CI Boutique Ado Tutorial Code Ends Here */
-
-/* Admin Pages */
-/* Admin Dashboard */
+/*-------------------------- CI Boutique Ado Tutorial Code Ends Here */
+/*-------------------------- Admin Product Dashboard */
 .accordion-container{
     margin-top: 2rem;
 }
@@ -783,7 +829,9 @@ i.fa-star{
 }
 .admin-card-body{
     height: 350px;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 .deletion-modal-text{
     font-size: 1.1rem;
@@ -792,9 +840,7 @@ i.fa-star{
 .delete-page-heading{
     font-size: 1.3rem;
 }
-
-/* Admin Messages */
-
+/*-------------------------- Admin Messages Dashboard */
 .resolved-dim{
     background-color: #eee;
     color: #ccc;
@@ -804,8 +850,7 @@ i.fa-star{
     border: var(--main-colour) 2px solid;
     background-color: var(--lighter-main);
 }
-
-/* Edit Product Form Page */
+/*-------------------------- Edit Product Page */
 .admin-page-heading{
     font-family: var(--heading-font);
     text-align: center;
@@ -813,10 +858,11 @@ i.fa-star{
     padding: 1rem;
     letter-spacing: 1.4px;
     font-weight: 400;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     width: 100%;
 }
-/* Order Success Page */
+/*-------------------------- Order Success Page */
 .order-listing-title{
     color: var(--main-colour);
     font-weight: 500;
@@ -837,9 +883,8 @@ i.fa-star{
     border: var(--main-colour) 2px solid;
     border-radius: 5px;
 }
-
-/* Other account Incidental Pages */
-/* Verify Email Address Page */
+/*-------------------------- Other Allauth Account Pages */
+/*-------------------------- Verify Email Address Page */
 h1.small-heading{
     font-family: var(--heading-font);
     color: var(--main-colour);
@@ -853,8 +898,8 @@ p.small-instruction{
 p.password-reset-instruction{
     margin-top: 1rem;
 }
- /* Logout */
- .more-space{
+/*-------------------------- Logout Page */
+.more-space{
     margin-top: 4rem;
     margin-bottom: 4rem;
     padding: 4rem;
@@ -864,7 +909,7 @@ p.password-reset-instruction{
     margin-bottom: 4rem;
     padding: 2rem;
 }
-/* Footer */
+/*-------------------------- Footer */
 footer.footer{
     background-color: var(--main-colour);
     background-position: center center;
@@ -873,7 +918,9 @@ footer.footer{
 .footer .links-row{
     padding-top: 4rem;
     width: 55%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .text-links-container .center-me{
     padding: 1.2rem;
@@ -907,9 +954,8 @@ footer a.nav-link:hover{
     color: var(--white);
     font-size: 0.9rem;
 }
-/* footer styles end */
-
-/* Media Queries - Bootstrap sm */
+/*-------------------------- MEDIA QUERIES */
+/*-------------------------- MEDIA QUERIES: Bootstrap sm */
 @media (min-width: 576px ) {
     .details-page-heading,
     .profile-page-heading{
@@ -932,15 +978,13 @@ footer a.nav-link:hover{
     .form-container{
         padding: 4.5rem;
     }
-     /* Logout */
     .more-space{
         margin-top: 7rem;
         margin-bottom: 7rem;
         padding: 5rem;
     }
 }
-
-/* Media Queries - Bootstrap md */
+/*-------------------------- MEDIA QUERIES: Bootstrap md */
 @media (min-width: 768px ) {
     .details-page-intro-image{
         max-width: 600px;
@@ -958,14 +1002,11 @@ footer a.nav-link:hover{
         padding-left: 5rem;
         padding-right: 5rem;
     }
-     /* Logout */
     .more-space{
         margin-top: 7rem;
         margin-bottom: 12rem;
         padding: 5rem;
     }
-    /* Other account Incidental Pages */
-    /* Verify Email Address Page */
     h1.small-heading{
         font-size: 3rem;
     }
@@ -973,8 +1014,7 @@ footer a.nav-link:hover{
         width: 80%;
     }
 }
-
-/* Media Queries - Bootstrap lg */
+/*-------------------------- MEDIA QUERIES: Bootstrap lg */
 @media (min-width: 992px ) {
     nav{
         font-family: var(--main-text-font);
@@ -1014,7 +1054,6 @@ footer a.nav-link:hover{
         margin-top: 5.5rem;
         margin-bottom: 5.5rem;
     }
-    /* Logout */
     .more-space{
         margin-top: 7rem;
         margin-bottom: 7rem;
@@ -1024,7 +1063,7 @@ footer a.nav-link:hover{
         width: 70%;
     }
 }
-/* Media Queries - Bootstrap xl */
+/*-------------------------- MEDIA QUERIES: Bootstrap xl */
 @media (min-width: 1200px) {
     body {
         margin: 0;
@@ -1041,19 +1080,17 @@ footer a.nav-link:hover{
         width: 50%;
     }
 }
-/* Media Queries - Bootstrap xxl */
+/*-------------------------- MEDIA QUERIES: Bootstrap xxl */
 @media (min-width: 1400px) {
     .footer .links-row{
         width: 40%;
     }
     
 }
-
-/* Transforming the Shopping Bag Table To be responsive on mobile.
+/* Transforming the Shopping Bag Table to be responsive on mobile.
 Initial boilerplate code for this taken from:  https://css-tricks.com/responsive-data-tables/ */
 @media 
 only screen and (max-width: 1200px)  {
-
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
@@ -1088,7 +1125,6 @@ only screen and (max-width: 1200px)  {
         font-size: 1.1rem;
         font-weight: 300;
 	}
-
     .update-form{
         width: 55%;
     }
@@ -1098,7 +1134,7 @@ only screen and (max-width: 1200px)  {
 	.bag-product-row{
         padding-top: 1rem;
     }
-    /* Labels */
+/*-------------------------- Labels */
 	.bag-product-row > td:nth-of-type(1):before { 
         content: "Product Info";
         color: var(--main-colour);
@@ -1123,7 +1159,7 @@ only screen and (max-width: 1200px)  {
         color: var(--main-colour);
         font-weight: 500;
     }
-     /* Labels For Messages Table */
+/*-------------------------- Labels For Messages Table */
 	.message-row > td:nth-of-type(1):before { 
         content: "User";
         color: var(--main-colour);
@@ -1157,12 +1193,11 @@ only screen and (max-width: 1200px)  {
         font-size: 0.9rem;
         margin-top: 0.6rem;
     }
-
-    /* Orders Page */
+/*-------------------------- Orders Page */
     .order-table-row{
         text-align: right;
     }
-    /* Labels */
+/*-------------------------- Orders Page Labels */
 	.order-table-row > td:nth-of-type(1):before { 
         content: "Order Reference:";
         text-align: left;
