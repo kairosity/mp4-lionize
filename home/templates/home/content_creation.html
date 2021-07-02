@@ -2,11 +2,9 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container-fluid">
-    
+<!-- Content Creation page Header -->
     <header class="details-page-header d-flex flex-column">
-        
         <div class="container web-design-container">
             {% include 'includes/skip-to-main.html' %}
             <h1 id="main" class="details-page-heading">Content Creation</h1>
@@ -22,12 +20,14 @@
             </div>
         </div>
     </header>
+<!-- Register CTA -->
     <section>
         <div class="container web-design-container">
-            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> and then we will schedule in a free consultation to talk to you about your content creation requirements.</h3>
+            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> 
+                and then we will schedule in a free consultation to talk to you about your content creation requirements.</h3>
             <br>
-            <h4 class="col col-12 details-page-text ">Whatever your needs, we offer a comprehensive range of solutions that we can custom design to your exact requirements. Here are 
-                just some of the content creation services we offer.
+            <h4 class="col col-12 details-page-text ">Whatever your needs, we offer a comprehensive range of solutions that we can 
+                custom design to your exact requirements. Here are just some of the content creation services we offer.
             </h4>
             <div class="web-design-categories-container row">
                 <h4 class="web-des-category col col-12 col-md-6 col-lg-3">Blog Posts</h4>
@@ -37,6 +37,5 @@
             </div>
         </div>
     </section>
-    
 </div>
 {% endblock %}

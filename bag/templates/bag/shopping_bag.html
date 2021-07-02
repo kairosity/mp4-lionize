@@ -3,12 +3,10 @@
 {% load bag_tools %}
 
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
     <div class="container-fluid">
+<!-- Shopping Bag Page Header -->
         <header class="shopping-bag-header d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -19,23 +17,24 @@
                 {% endif %}
             </div>
         </header>
+<!-- Bag Items List -->
         <section>
             {% if bag_items %}
             <div class="row justify-content-center">
-            <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 col-xl-12 my-2 bag-table">
-                <table class="table table-sm table-borderless">
-                    <thead class="text-black">
-                        <tr>
-                            <th class="text-align-right" scope="col"></th>
-                            <th scope="col">Product Info</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">VAT @23%</th>
-                            <th scope="col">Quantity</th>
-                            <!-- <th scope="col">Subtotal</th> -->
-                            <th scope="col">Subtotal Incl. VAT</th>
-                        </tr>
-                    </thead>
-                    {% for item in bag_items %}
+                <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 col-xl-12 my-2 bag-table">
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th class="text-align-right" scope="col"></th>
+                                <th scope="col">Product Info</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">VAT @23%</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Subtotal Incl. VAT</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        {% for item in bag_items %}
                         <tr class="bag-product-row">
                             <td style="width: 160px;" class="p-3 bag-td">
                                 {% if item.product.image %}
@@ -57,17 +56,16 @@
                             <td class="py-3 bag-td">
                                 <form class="update-form inc-dec-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
+<!-- Bag Item Quantity Selector -->
                                     <div class="form-group">
                                         <div class="input-group">
                                             <button aria-label="minus button" class="decrement-qty button button-accent"
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                     <span class=""><i class="fas fa-minus fa-sm"></i></span>
                                             </button>
-            
                                             <input class="qty_input form-control form-control-sm" type="number" name="quantity" 
                                             value="{{ item.quantity }}" min="1" max="20" data-item_id="{{ item.item_id }}" 
                                             id="id_qty_{{ item.item_id }}">
-            
                                             <button aria-label="plus button" class="increment-qty button button-accent"
                                                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                     <span class=""><i class="fas fa-plus fa-sm"></i></span>
@@ -77,9 +75,6 @@
                                 </form>
                                 <a class="update-link text-info hvr-underline-from-center hvr-icon-spin"><i class="fas fa-sync-alt hvr-icon"></i> <small>Update</small></a>
                             </td>
-                            <!-- <td class="py-3">
-                                <p class="my-0 small ">€{{item.product.price | calc_subtotal:item.quantity}}</p>
-                            </td> -->
                             <td class="py-3 bag-td">
                                 <p class="my-0 ">€{{item.product.price | subtotalinclvat:item.quantity|floatformat:2}} </p>
                             </td>
@@ -88,36 +83,38 @@
                                                     data-size="{{ item.size }}"><i class="fas fa-trash-alt hvr-icon"></i> <small>Remove</small></a>
                             </td>  
                         </tr>
-                    {% endfor %}
-
-                    <tr class="final-totals-row">
-                        <td colspan="6" class="pt-5 text-align-right">
-                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
-                            <h6><strong>VAT @23%: €{{ vat_total|floatformat:2 }}</strong></h6>
-                            <h6><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h6>
-                        </td>
-                    </tr>
-                    <tr class="bag-buttons-row">
-                        <td colspan="6" class="text-align-right">
-                            <a href="{% url 'products' %}" class="button button-main bag-button keep-shopping-button">
-                                Keep Shopping <i class="fas fa-shopping-cart"></i>
-                            </a>
-                            <a href="{% url 'checkout' %}">
-                                <button  class="button button-accent bag-button secure-checkout-button">
-                                    Secure Checkout <i class="far fa-credit-card"></i>
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+                        {% endfor %}
+<!-- Totals Row -->
+                        <tr class="final-totals-row">
+                            <td colspan="6" class="pt-5 text-align-right">
+                                <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                                <h6><strong>VAT @23%: €{{ vat_total|floatformat:2 }}</strong></h6>
+                                <h6><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h6>
+                            </td>
+                        </tr>
+<!-- Button options row -->
+                        <tr class="bag-buttons-row">
+                            <td colspan="6" class="text-align-right">
+                                <a href="{% url 'products' %}" class="button button-main bag-button keep-shopping-button">
+                                    Keep Shopping <i class="fas fa-shopping-cart"></i>
+                                </a>
+                                <a href="{% url 'checkout' %}">
+                                    <button  class="button button-accent bag-button secure-checkout-button">
+                                        Secure Checkout <i class="far fa-credit-card"></i>
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             {% else %}
-            <p class="profile-page-subheading">Your shopping bag is empty.</p>
-            <div class="image-container">
-                <img class="img-fluid empty-shopping-bag" src="{{ MEDIA_URL }}empty-bag.jpg" alt="empty shopping bag">
-            </div>
+<!-- Empty Shopping Bag -->
+                <p class="profile-page-subheading">Your shopping bag is empty.</p>
+                <div class="image-container">
+                    <img class="img-fluid empty-shopping-bag" src="{{ MEDIA_URL }}empty-bag.jpg" alt="empty shopping bag">
+                </div>
             {% endif %}
-        </div>
+            </div>
         </section>
     </div>
 </div>
@@ -126,14 +123,12 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
-
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         console.log("Remove item clicked")
@@ -148,5 +143,4 @@
             });
     })
 </script>
-
 {% endblock %}

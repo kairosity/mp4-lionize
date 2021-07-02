@@ -8,11 +8,10 @@
 
 {% block content %}
 <div class="flex-container product-details-flex-container hello">
-
     {% include 'includes/side-nav.html' %}
-<div class="overlay"></div>
-
+    <div class="overlay"></div>
     <div class="container-fluid">
+<!-- Checkout Page Header -->
         <header class="shopping-bag-header d-flex flex-column mb-4 mt-4">
             <div class="container">
                 <h1 class="profile-page-heading mb-4">Checkout</h1>
@@ -25,6 +24,7 @@
         <section class="row">
             <div class="col col-10 offset-1">
                 <div class="row">
+<!-- Checkout Order Summary -->
                     <div class="col-12 col-lg-6 order-lg-last mb-5">
                         <p class="text-muted">Order Summary ({{ product_count }})</p>
                         <div class="row">
@@ -69,9 +69,9 @@
                             </div>
                         </div> 
                     </div>
+<!-- Checkout Form Details -->
                     <div class="col-12 col-lg-6">
                         <p>Please fill out the form below to complete your order:</p>
-
                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}
                             <fieldset class="px-3 mb-5 checkout-border">
@@ -90,15 +90,16 @@
                                     <input class="form-check-input" type="checkbox" id='id-save-info' name='save-info'>
                                 </div>
                             </fieldset>
+<!-- Checkout Payment Details -->
                             <fieldset class="px-3 mb-5 checkout-border">
                                 <legend class="fieldset-label small text-black px-2 w-auto">Payment:</legend>
-                                <!-- Stripe card element -->
+<!-- Stripe card element -->
                                 <div class="mb-3" id="card-element"></div>
-                                <!-- Used to display form errors -->
+<!-- Used to display form errors -->
                                 <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
                             </fieldset>
-
+<!-- Option Buttons -->
                             <div class="submit-button text-right mt-5 mb-2">
                                 <a href="{% url 'view_shopping_bag' %}" class="button button-accent xtra-pad">Adjust Bag</a>
                                 <button id="submit-button" class="button button-accent">Complete Order</button>
@@ -109,7 +110,8 @@
                 </div>
             </div>
         </section>
-    </div> 
+    </div>
+<!-- Loading Spinner -->
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">

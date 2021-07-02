@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container-fluid">
+<!-- Social Media Management Information Page Header -->
     <header class="details-page-header d-flex flex-column">
         <div class="container web-design-container">
             {% include 'includes/skip-to-main.html' %}
@@ -20,9 +20,11 @@
             </div>
         </div>
     </header>
+<!-- Register CTA -->
     <section>
         <div class="container web-design-container">
-            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> and then we will schedule in a free consultation to talk to you about your social media requirements.</h3>
+            <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> 
+                and then we will schedule in a free consultation to talk to you about your social media requirements.</h3>
             <br>
             <p class="col col-12 details-page-text ">Whatever your needs, we offer a comprehensive range of social media management solutions. 
             </p>
@@ -34,6 +36,7 @@
             <p class="col col-12 details-page-text">The details of these packages and their prices can be viewed once you register your free account with us!</p>
         </div>
     </section>
+<!-- Technical Expertise Section -->
     <section>
         <div class="tech-container">
             <h2 class="details-page-subheading featured-subheading">Social Media Expertise</h2>
@@ -42,6 +45,7 @@
             </h3>
         </div>
     </section>
+<!-- Social Media Mangement Process -->
     <section>
         <div class="container social-media-process-container">
             <h2 class="details-page-subheading examples-subheading">What is the process?</h2>
@@ -50,13 +54,10 @@
                 <li class="details-page-text">2. We have a chat about your requirements, your specific business tone and how you'd like your online presence shaped.</li>
                 <li class="details-page-text">3. You decide on which social media product you would like to proceed with and you purchase it via our secure web portal.</li>
                 <li class="details-page-text">4. We deliver the product, be it posts, comments, engagement or increasing your following.</li>
-                <li class="details-page-text">5. We communicate with you to fine tune the tone & content of any posts created.</li>
+                <li class="details-page-text">5. We communicate with you to fine-tune the tone & content of any posts created.</li>
                 <li class="details-page-text">6. You sit back and watch your social media presence grow beautifully.</li>
             </ul>
         </div>
     </section>
-    
 </div>
-
-
 {% endblock %}

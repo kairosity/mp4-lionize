@@ -2528,6 +2528,94 @@ I also used the Chrome Dev Tools Mobile emulator __and__ I asked friends and fam
 
 As many of the pages relied on being authenticated, I have to copy and paste the page sources into the checker to get an accurate assessment.
 
+### 1. Homepage -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlv-index.png">
+</div>
+
+<br>
+
+### 2. Information Pages --  __PASS__
+
+- Web Design Information Page: 
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvwebdesigninfo.png">
+</div>
+
+<br>
+
+- SEO Information Page: 
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvseoinfo.png">
+</div>
+
+<br>
+
+- Social Media Management Information Page: 
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvsmminfo.png">
+</div>
+
+<br>
+
+- Content Creation Information Page: 
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvccinfo.png">
+</div>
+
+<br>
+
+### 3. Register Page --  __PASS__
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvregister.png">
+</div>
+
+<br>
+
+### 3. Login Page --  __PASS__
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvlogin.png">
+</div>
+
+<br>
+
+### Shop All Products Page --  __PASS__
+
+- These errors remain but are immaterial for the following reasons:
+
+- 
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/htmlvshopallproducts.png">
+</div>
+
+<br>
+
 ### W3C Link Checker
 
 ## 2. CSS Validators

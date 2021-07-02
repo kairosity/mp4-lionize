@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
     <div class="container-fluid col-12 col-md-8">
+<!-- Admin User Dashboard Header -->
         <header class="details-page-header d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -17,7 +15,7 @@
                 </h2>
             </div>
         </header>
-
+<!-- Admin User Search Bar -->
         <section class="container-fluid col-12 col-md-8">
             <div class="details-page-header d-flex flex-column">
                 <div class="container">
@@ -41,7 +39,8 @@
                 </div>
             </div>
         </section>
-<section class="user-listing">
+<!-- User Listings -->
+        <section class="user-listing">
             <div class="row">
                 {% for user in user_profiles %}
                     <div class="col-12 col-lg-6">
@@ -51,16 +50,16 @@
                                     <h5 class="divider">User Details: {{ user.user.username }}</h5>
                                     <p class="card-title"><strong>Username: </strong>{{user.user.username}}</p>
                                     {% if user.user.first_name %}
-                                        <p><strong>Name: </strong>{{user.user.first_name}} {{user.user.last_name}}</strong></p>
+                                        <p><strong>Name: </strong>{{user.user.first_name}} {{user.user.last_name}}</p>
                                     {% endif %}
                                     {% if user.default_phone_number %}
                                         <p class=""><strong>Phone:</strong>  {{user.default_phone_number}}</p>
                                     {% endif %}
                                     <p class=""><strong>Email:</strong>  {{user.user.email}}</p>
                                     {% if user.consultation %}
-                                        <p class=" text-muted"><strong>Free Consultation Done?</strong>  Yes</p>
+                                        <p class="text-muted"><strong>Free Consultation Done?</strong>  Yes</p>
                                     {% else %}
-                                        <p class=" text-muted"><strong>Free Consultation Done?</strong>  No</p>
+                                        <p class="text-muted"><strong>Free Consultation Done?</strong>  No</p>
                                     {% endif %}
                                     {% if user.instagram_handle or user.twitter_handle or user.facebook_handle or user.linkedin_handle %}
                                         <h5 class="divider">Social Media:</h5>
@@ -84,8 +83,6 @@
                 {% endfor %}
             </div>
     </section>
-        
     </div>
-
 </div>
 {% endblock %}

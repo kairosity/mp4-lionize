@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
     <div class="container-fluid col-12 col-md-8">
+<!-- Admin Messages Dashboard Header -->
         <header class="details-page-header d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -17,60 +15,59 @@
                 </h2>
             </div>
         </header>
-    <section class="user-listing">
+<!-- Messages Listing -->
+        <section class="user-listing">
             <div class="row justify-content-center">
-                    <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 col-xl-12 my-2 bag-table">
-                        <table class="table table-sm table-borderless">
-                            <thead class="text-black">
-                                <tr>
-                                    <th class="msg-th" scope="col">User</th>
-                                    <th class="msg-th" scope="col">Date</th>
-                                    <th class="msg-th" scope="col">Subject</th>
-                                    <th class="msg-th" scope="col">Message</th>
-                                    <th class="msg-th" scope="col">Resolved</th>
-                                    <th class="msg-th ps-3" scope="col">Toggle Status</th>
-                                </tr>
-                            </thead>
-                            {% for message in user_messages %}
-                                <tr class="message-row p-4">
-                                    <td class="p-3 bag-td">
-                                        <strong><small>{{message.user}}</small></strong>
-                                    </td>
-                                    <td class="p-2 bag-td">
-                                        <small>{{message.date}}</small>
-                                    </td>
-                                    <td class="p-3 bag-td">
-                                        {{message.subject}}
-                                    </td>
-                                    <td class="p-3 bag-td">
-                                        {{message.message}}
-                                    </td>
-                                    <td class="p-3 bag-td">
-                                        {% if message.resolved %}
-                                            <p class="resolved-msg">Yes</p>
-                                        {% else %}
-                                            <p class="open-msg">No</p>
-                                        {% endif %}
-                                    </td>
-                                    <td style="width: 150px; height: 50px;">
-                                        {% if message.resolved %}
-                                        <!-- Button Remove trigger modal -->
-                                        <a style="float:left" href="{% url 'mark_active' message.id %}" class="button button-reopen button-tiny margin-top-sm">
-                                            Re-Open Issue <i class="fas fa-folder-open"></i>
-                                        </a>
+                <div class="table-responsive rounded col col-10 offset-sm-1 offset-0 col-md-10 col-xl-12 my-2 bag-table">
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th class="msg-th" scope="col">User</th>
+                                <th class="msg-th" scope="col">Date</th>
+                                <th class="msg-th" scope="col">Subject</th>
+                                <th class="msg-th" scope="col">Message</th>
+                                <th class="msg-th" scope="col">Resolved</th>
+                                <th class="msg-th ps-3" scope="col">Toggle Status</th>
+                            </tr>
+                        </thead>
+                        {% for message in user_messages %}
+                            <tr class="message-row p-4">
+                                <td class="p-3 bag-td">
+                                    <strong><small>{{message.user}}</small></strong>
+                                </td>
+                                <td class="p-2 bag-td">
+                                    <small>{{message.date}}</small>
+                                </td>
+                                <td class="p-3 bag-td">
+                                    {{message.subject}}
+                                </td>
+                                <td class="p-3 bag-td">
+                                    {{message.message}}
+                                </td>
+                                <td class="p-3 bag-td">
+                                    {% if message.resolved %}
+                                        <p class="resolved-msg">Yes</p>
                                     {% else %}
-                                        <!-- Add To Shop Link -->
-                                        <a style="float:left" href="{% url 'mark_closed' message.id %}" class="button button-resolved  button-tiny margin-top-sm">
-                                            Mark Resolved <i class="fas fa-check"></i>
-                                        </a>
+                                        <p class="open-msg">No</p>
                                     {% endif %}
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </table>
-                        </div>
-                        </div>
-    </section>  
+                                </td>
+                                <td style="width: 150px; height: 50px;">
+                                    {% if message.resolved %}
+                                    <a style="float:left" href="{% url 'mark_active' message.id %}" class="button button-reopen button-tiny margin-top-sm">
+                                        Re-Open Issue <i class="fas fa-folder-open"></i>
+                                    </a>
+                                {% else %}
+                                    <a style="float:left" href="{% url 'mark_closed' message.id %}" class="button button-resolved  button-tiny margin-top-sm">
+                                        Mark Resolved <i class="fas fa-check"></i>
+                                    </a>
+                                {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </section>  
     </div>
 </div>
 {% endblock %}

@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container-fluid">
+<!-- SEO Information page Header -->
     <header class="details-page-header d-flex flex-column">
         <div class="container web-design-container">
             {% include 'includes/skip-to-main.html' %}
@@ -20,6 +20,7 @@
             </div>
         </div>
     </header>
+<!-- Register CTA -->
     <section>
         <div class="container web-design-container">
             <h3 class="details-page-text text-align-left">The first step is to <a href="{% url 'account_signup' %}">register with us</a> and then we will schedule in a free consultation to talk to you about your specific SEO requirements.</h3>
@@ -39,6 +40,7 @@
             </div>
         </div>
     </section>
+<!-- Technical Expertise Section -->
     <section>
         <div class="container">
             <hr>
@@ -50,6 +52,4 @@
         </div>
     </section>
 </div>
-
-
 {% endblock %}

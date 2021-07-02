@@ -6,15 +6,11 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="flex-container product-details-flex-container hello">
-
-{% include 'includes/side-nav.html' %}
-
-<div class="overlay"></div>
-
-    <div class="container-fluid">
-        
+    <div class="flex-container product-details-flex-container hello">
+    {% include 'includes/side-nav.html' %}
+    <div class="overlay"></div>
+        <div class="container-fluid"> 
+<!-- Profile Page Header -->
         <header class="shopping-bag-header d-flex flex-column">
             {% include 'includes/skip-to-main.html' %}
             <div class="container">
@@ -26,10 +22,10 @@
                 <h2 class="profile-page-subheading">Here are your profile details, please keep this form fully updated.</h2>
             </div>
         </header>
+<!-- Profile Page Form -->
         <section>
             <div class="row justify-content-center">
                 <div class="col-10 col-lg-8">
-        
                     <form action="{% url 'profile' %}" method="POST" class="mt-3 profile-page-form" id="profile-update-form">
                         {% csrf_token %}
                         <small id="main">Personal Details</small>
@@ -99,19 +95,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row form-row">
-                            
-                        </div>
                     </form>
                 </div>
             </div>
         </section>  
         </div>
-</div>  
-    
+    </div>  
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script> 
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script> 
 {% endblock %}

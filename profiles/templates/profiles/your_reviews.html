@@ -1,11 +1,3 @@
-<!-- Cycle through each order the user has made and paid for and allow them to leave 1 review per product.
-
-- List the products for review here. 
-
-Divde into Reviewed & Review
-
--->
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -14,15 +6,11 @@ Divde into Reviewed & Review
 {% endblock %}
 
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
 {% include 'includes/side-nav.html' %}
-
 <div class="overlay"></div>
-
     <div class="container-fluid">
-        
+<!-- Reviews Page Header -->
         <header class=" d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -33,64 +21,66 @@ Divde into Reviewed & Review
                 </p>
             </div>
         </header>
-    
-                <section class="reviews row">
-                    <div class="col-12 col-md-6 review-padding">
-                        <h2 class="details-page-subheading">Products To Review</h2>
-                        <div class="no-orders-to-review review-border container text-align-center"></div>
-                        {% if orders %}
-                            {% for order in orders %}
-                                {% for item in order.lineitems.all %}
-                                    {% if not item.reviewed %}
-                                        <div class="review-border container orders-to-review">
-                                            <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
-                                            <small><strong>Order Date:</strong> {{order.date}}</small>
-                                            <p></p>
-                                            <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
-                                            <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
-                                            <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}#add-review">Review</a>
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endfor %}
-                        {% else %}
-                            <div class="review-border container orders-to-review text-align-center">
-                                <p>You have not ordered any products yet.</p>
-                            </div>  
-                        {% endif %}
-                    </div>
-                    <div class="col-12 col-md-6 review-padding">
-                        <h2 class="details-page-subheading">Your Reviews</h2>
-                        {% if reviews %}
-                            {% for review in reviews %}
-                                <div class=" container review-border">
-                                    {% if review.review_stars == 'option1' %}
-                                        <p aria-label="one review star"><i class="fas fa-star review-star"></i></p>
-                                    {% elif review.review_stars == 'option2' %}
-                                        <p aria-label="two review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
-                                    {% elif review.review_stars == 'option3' %}
-                                        <p aria-label="three review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                    {% elif review.review_stars == 'option4' %}
-                                        <p aria-label="four review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                    {% elif review.review_stars == 'option5' %}
-                                        <p aria-label="five review stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                                    {% endif %}
-                                    <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
-                                    <p><strong>Review Title:</strong>  {{review.review_title}}</p>
-                                    <p><strong>Review:</strong> {{review.review}}</p>
-                                    <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+        <section class="reviews row">
+<!-- Products To Review -->
+            <div class="col-12 col-md-6 review-padding">
+                <h2 class="details-page-subheading">Products To Review</h2>
+                <div class="no-orders-to-review review-border container text-align-center"></div>
+                {% if orders %}
+                    {% for order in orders %}
+                        {% for item in order.lineitems.all %}
+                            {% if not item.reviewed %}
+                                <div class="review-border container orders-to-review">
+                                    <small><strong>Order #:</strong> {{order.order_number|truncatechars:12}}</small>
+                                    <small><strong>Order Date:</strong> {{order.date}}</small>
+                                    <p></p>
+                                    <p><strong>Category:</strong> {{item.product.category.friendly_name}}</p>
+                                    <p><strong> Product: </strong> {{item.product.friendly_name}}</p>
+                                    <a class="review-product-button button button-accent" href="{% url 'product_detail' item.product.id %}#add-review">Review</a>
                                 </div>
-                            {% endfor %}
-                        {% else %}
-                            <div class=" container review-border">
-                                <p class="text-align-center">You have not written any reviews yet.</p>
-                            </div>
-                        {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% else %}
+<!-- No Products to Review -->
+                    <div class="review-border container orders-to-review text-align-center">
+                        <p>You have not ordered any products yet.</p>
+                    </div>  
+                {% endif %}
+            </div>
+<!-- Products already reviewed -->
+            <div class="col-12 col-md-6 review-padding">
+                <h2 class="details-page-subheading">Your Reviews</h2>
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class=" container review-border">
+                            {% if review.review_stars == 'option1' %}
+                                <p aria-label="one star"><i class="fas fa-star review-star"></i></p>
+                            {% elif review.review_stars == 'option2' %}
+                                <p aria-label="two stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option3' %}
+                                <p aria-label="three stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option4' %}
+                                <p aria-label="four stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option5' %}
+                                <p aria-label="five stars"><i class="fas fa-star review-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% endif %}
+                            <h5>Product: <strong>{{review.product.friendly_name}}</strong></h5>
+                            <p><strong>Review Title:</strong>  {{review.review_title}}</p>
+                            <p><strong>Review:</strong> {{review.review}}</p>
+                            <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+                        </div>
+                    {% endfor %}
+                {% else %}
+<!-- User has not reviewed any products yet -->
+                    <div class=" container review-border">
+                        <p class="text-align-center">You have not written any reviews yet.</p>
                     </div>
-                </section>
-        </div>
-        </div>
-        
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

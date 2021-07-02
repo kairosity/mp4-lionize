@@ -8,7 +8,7 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="Lionize ">
+            <meta name="description" content="Lionize is a digital agency with ideas to enhance your online presence and brand identity.">
         {% endblock %}
 
         {% block extra_meta %}
@@ -54,10 +54,10 @@
                 </button>
 <!-- Shopping Cart Mobile Dropdown -->
                 {% if grand_total %}
-                    <ul class="text-center list-inline list-unstyled mb-0 d-lg-none">
+                    <div class="text-center list-inline list-unstyled mb-0 d-lg-none">
                         <li class="nav-item dropdown show">
                             <a aria-label="shopping cart dropdown" href="#" id="dropdown-mob-cart" class="navbar-brand nav-link dropdown-toggle m-0 p-0 me-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i><small>{{ product_count }}</small></a>
-                            <ul id="cart-ul" class="dropdown-menu" aria-labelledby="dropdown-mob-cart">
+                            <div id="cart-ul" class="dropdown-menu" aria-labelledby="dropdown-mob-cart">
                                 <div class="cart-body">
                                     <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
                                     <div class="row">
@@ -141,9 +141,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </ul>
+                            </div>
                         </li>
-                    </ul>
+                    </div>
                 {% endif %}
                 <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavDropdown">
                     <ul class="navbar-nav d-flex navbar-one">

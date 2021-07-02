@@ -7,11 +7,10 @@
 
 {% block content %}
 <div class="flex-container product-details-flex-container">
-
 {% include 'includes/side-nav.html' %}
-
 <div class="overlay"></div>
     <div class="container-fluid">
+<!-- Order History Header -->
         <header class=" d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -22,6 +21,7 @@
                 {% endif %}
             </div>
         </header>
+<!-- Order Listing -->
         <section id="main">
             <div class="row">
                 <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
@@ -54,7 +54,6 @@
                                                 {% endfor %}
                                             </ul>
                                         </td>
-                                        <!-- REference line item price here -->
                                         <td>€{{ order.grand_total }}</td>
                                     </tr>
                                 {% endfor %}
@@ -64,12 +63,11 @@
                 </div>
             </div>
         </section>  
-        </div>
-    </div>  
-    
+    </div>
+</div>  
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script> 
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script> 
 {% endblock %}
