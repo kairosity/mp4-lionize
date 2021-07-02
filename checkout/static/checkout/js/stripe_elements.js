@@ -1,5 +1,8 @@
+/* This code comes primary from the Code Institute Boutique Ado
+tutorial & originally from the Stripe docs.
 
-
+It handles the form submission to Stripe using a Stripe key 
+and a client secret */
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -22,8 +25,8 @@ var style = {
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
-// Handle realtime validation errors on card element
-
+/* Handles realtime validation errors using a 'change'
+event listener on the card element */
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
@@ -38,8 +41,8 @@ card.addEventListener('change', function (event) {
         errorDiv.textContent = '';
     }
 });
-
-// Handle form submit
+/* Handles the form submission so that the data gets transferred 
+correctly to Stripe. */
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
@@ -97,6 +100,5 @@ form.addEventListener('submit', function(ev) {
         });
     }).fail(function(){
         location.reload();
-    })
-
+    });
 });

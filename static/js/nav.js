@@ -1,11 +1,13 @@
+/* Selects the path and splits it and then selects all the navigation
+links on the website. Uses 2 for loops to first remove all .active-page classes 
+and all .active-page-side-nav classes on page load. Then proceeds to add them back 
+to the appropriate pages using very specific splitPath array selectors encompassed
+within a long if/else statement.
 
-// List all navigation pages and then add the active class when they are current? 
+Then it also adds an event listener to the cart link so that when clicked it changes 
+the title to "Shopping Cart".
 
-/* Adds the "active" class to the nav-link currently active. 
-Because of query strings - it checks whether the href contains the pathname
-rather than is equal TO the pathname. Also adds special cases for when the page 
-first loads and the path is '/' and for the search results page when the browse tab 
-should be highlighted but the path is 'search'.
+Finally it adds an event listener to show and hide the shopping cart.
 */
 $(function(){
 
@@ -55,7 +57,6 @@ $(function(){
     let adminMessagesLinkMob = document.querySelector('#admin-messages-link-mob');
 
     let registerLink = document.querySelector('#register-link');
-
     let logoutLink = document.querySelector('#logout-link');
 
     let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
@@ -76,15 +77,15 @@ $(function(){
     } else if (splitPath == "#contact-us"){
         contactLink.classList.add('active-page');
     } else if (splitPath == 'webdesign' || splitPath == 'seo' || splitPath == 'social-media-management' || splitPath == 'content-creation'){
-        servicesLink.classList.add('active-page')
+        servicesLink.classList.add('active-page');
         if (splitPath == 'webdesign'){
-            webdesignInfoLink.classList.add('active-page-side-nav')
+            webdesignInfoLink.classList.add('active-page-side-nav');
         } else if (splitPath == 'seo'){
-            seoInfoLink.classList.add('active-page-side-nav')
+            seoInfoLink.classList.add('active-page-side-nav');
         } else if (splitPath == 'social-media-management'){
-            smmInfoLink.classList.add('active-page-side-nav')
+            smmInfoLink.classList.add('active-page-side-nav');
         } else if (splitPath == 'content-creation'){
-            contentCreationInfoLink.classList.add('active-page-side-nav')
+            contentCreationInfoLink.classList.add('active-page-side-nav');
         }
     } else if (splitPath[0] == 'user-portal' || splitPath[0] == 'bag'){
         userPortalLink.classList.add('active-page');
@@ -134,13 +135,13 @@ $(function(){
         adminLinkMob.classList.add('active-page');
         if (splitPath[0].includes('admin-product-dashboard') || splitPath[1] == 'add' || splitPath[1] == 'edit' || splitPath[1] == 'delete'){
             adminProductsLink.classList.add('active-page-side-nav');
-            adminProductsLinkMob.classList.add('active-page-side-nav')
+            adminProductsLinkMob.classList.add('active-page-side-nav');
         } else if (splitPath[0].includes('admin-user-dashboard')){
             adminUsersLink.classList.add('active-page-side-nav');
-            adminUsersLinkMob.classList.add('active-page-side-nav')
+            adminUsersLinkMob.classList.add('active-page-side-nav');
         } else if (splitPath[0].includes('admin-messages-dashboard')){
             adminMessagesLink.classList.add('active-page-side-nav');
-            adminMessagesLinkMob.classList.add('active-page-side-nav')
+            adminMessagesLinkMob.classList.add('active-page-side-nav');
         }
     } else if (splitPath[1] == 'signup'){
         registerLink.classList.add('active-page');
@@ -149,8 +150,8 @@ $(function(){
     }
 
     cartLink.addEventListener('click', function(){
-        cartTitle.textContent = 'Shopping Cart:'
-    })
+        cartTitle.textContent = 'Shopping Cart:';
+    });
 
     $("#dropdown-mob-cart").click(function(){
         $("#cart-ul").toggleClass("show");

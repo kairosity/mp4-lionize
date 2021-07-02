@@ -2868,7 +2868,7 @@ The errors that remain are acceptable for the following reasons:
 
 <br>
 
-## 2. W3C Link Checker
+### __W3C Link Checker__
 
 ## 3. CSS Validators
 
@@ -2921,17 +2921,92 @@ The checkout css stylesheet for this project validated perfectly.
     <img src="static/images/code-validation/css/checkoutcssvalid.png">
 </div>
 
+<br>
+
 </details>
 
 <br>
 
 ## 3. JavaScript Validators
 
-### JSHint
+### __JSHint__
+
+<details>
+<summary><b>click for results by page</b></summary>
+
+<br>
+
+All the JavaScript files passed though the JSHint validator with only warnings about template literal syntax and the use of 'let' & 'const' as related to ES6.
+
+### __nav.js__ -- __PASS__
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/navjsvalid.png">
+</div>
+
+<br>
+
+### __delete-modal.js__ -- __PASS__
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/deletejsvalid.png">
+</div>
+
+<br>
+
+### __messages.js__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/messagesjsvalid.png">
+</div>
+
+<br>
+
+### __script.js__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/scriptjsvalid.png">
+</div>
+
+<br>
+
+### __reviews.js__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/reviewsjsvalid.png">
+</div>
+
+<br>
+
+### __stripe_elements.js__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/js/stripejsvalid.png">
+</div>
+
+<br>
+
+</details>
+
+<br>
 
 ## 4. Python Validators
 
-### PEP8 Online 
+### __PEP8 Online__
 
 
 <br>
