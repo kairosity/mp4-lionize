@@ -2523,7 +2523,7 @@ I also used the Chrome Dev Tools Mobile emulator __and__ I asked friends and fam
 
 ## 1. HTML Validators
 
-### W3C HTML Validator
+### __W3C HTML Validator__
 
 As many of the pages relied on being authenticated, I have to copy and paste the page sources into the checker to get an accurate assessment.
 
@@ -2868,11 +2868,62 @@ The errors that remain are acceptable for the following reasons:
 
 <br>
 
-### W3C Link Checker
+## 2. W3C Link Checker
 
-## 2. CSS Validators
+## 3. CSS Validators
 
-### W3C CSS Validator
+### __W3C CSS Validator__
+
+All css files were formatted and auto-prefixed before running them through the validator.
+
+<details>
+<summary><b>click for results by page</b></summary>
+
+<br>
+
+### base.css -- __PASS__
+
+The main css stylesheet for this project validated perfectly. 
+
+- It did however validate with 92 warnings that all referred to "unknown vendor extensions", which is the result of using Autoprefixer to make the stylesheets more readable to all browsers, so these warnings are fine to be ignored.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/css/basecssvalid.png">
+</div>
+
+<br>
+
+### hover-effects.css -- __PASS__
+
+The hover effects css stylesheet for this project validated perfectly. 
+
+- It did however validate with 72 warnings that all referred to "unknown vendor extensions", which is the result of using Autoprefixer to make the stylesheets more readable to all browsers, so these warnings are fine to be ignored.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/css/hovereffectscssvalid.png">
+</div>
+
+<br>
+
+### checkout.css -- __PASS__
+
+The checkout css stylesheet for this project validated perfectly. 
+
+- It did however validate with 34 warnings that all referred to "unknown vendor extensions", which is the result of using Autoprefixer to make the stylesheets more readable to all browsers, so these warnings are fine to be ignored.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/css/checkoutcssvalid.png">
+</div>
+
+</details>
+
+<br>
 
 ## 3. JavaScript Validators
 
