@@ -153,8 +153,6 @@ def product_detail(request, product_id):
         else:
             features = None
 
-        print(request.META)
-
         if request.META['HTTP_REFERER'] != None:
             referring_page = request.META['HTTP_REFERER']
             referring_page_path = referring_page.split('/')[3:]

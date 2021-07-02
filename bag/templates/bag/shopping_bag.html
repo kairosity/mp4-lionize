@@ -80,7 +80,7 @@
                             </td>
                             <td class="py-3 bag-td">
                                 <a class="remove-item text-danger float-right hvr-icon-grow-rotate" id="remove_{{ item.item_id }}"
-                                                    data-size="{{ item.size }}"><i class="fas fa-trash-alt hvr-icon"></i> <small>Remove</small></a>
+                                    data-size="{{ item.size }}"><i class="fas fa-trash-alt hvr-icon"></i> <small>Remove</small></a>
                             </td>  
                         </tr>
                         {% endfor %}
@@ -98,10 +98,8 @@
                                 <a href="{% url 'products' %}" class="button button-main bag-button keep-shopping-button">
                                     Keep Shopping <i class="fas fa-shopping-cart"></i>
                                 </a>
-                                <a href="{% url 'checkout' %}">
-                                    <button  class="button button-accent bag-button secure-checkout-button">
-                                        Secure Checkout <i class="far fa-credit-card"></i>
-                                    </button>
+                                <a href="{% url 'checkout' %}" class="button button-accent bag-button secure-checkout-button">
+                                    Secure Checkout <i class="far fa-credit-card"></i>
                                 </a>
                             </td>
                         </tr>

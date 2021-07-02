@@ -2522,11 +2522,14 @@ I also used the Chrome Dev Tools Mobile emulator __and__ I asked friends and fam
 
 # Code Validators
 
-## 1. HTML Validators
+## 1. HTML Validators
 
 ### W3C HTML Validator
 
 As many of the pages relied on being authenticated, I have to copy and paste the page sources into the checker to get an accurate assessment.
+
+<details>
+<summary><b>click for results by page</b></summary>
 
 ### 1. Homepage -- __PASS__
 
@@ -2591,7 +2594,7 @@ As many of the pages relied on being authenticated, I have to copy and paste the
 
 <br>
 
-### 3. Login Page --  __PASS__
+### 4. Login Page --  __PASS__
 
 
 <br>
@@ -2602,21 +2605,271 @@ As many of the pages relied on being authenticated, I have to copy and paste the
 
 <br>
 
-### Shop All Products Page --  __PASS__
+## User Portal Pages
 
-- These errors remain but are immaterial for the following reasons:
+### 5. User Profile Page --  __PASS__
 
-- 
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The section that lacks a heading is the form itself, but because it is just under the main page heading, this does not matter.
 
 <br>
 
 <div align="center">
-    <img src="static/images/code-validation/html/htmlvshopallproducts.png">
+    <img src="static/images/code-validation/html/profilepage.png">
 </div>
 
 <br>
 
-### W3C Link Checker
+### 6. Shopping Bag Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The table row it is referring to is the last one that outlines the totals, this was included in the main table for formatting reasons and the warning really has no great impact on the page functionality.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/bag.png">
+</div>
+
+<br>
+
+### 7. Order History Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The heading refers to the fact that the order listing section has no obvious heading, but I have placed it right underneath the main page heading, so that warning is not important.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/order-history.png">
+</div>
+
+<br>
+
+### 8. Order Details/Checkout Success Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The heading refers to the section encompassing the toast pop-up, which does not require a heading.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/orderdetails.png">
+</div>
+
+<br>
+
+### 9. Your Reviews Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The aria label warning is not important, it refers to the star labels I placed on the <p> tags for the review stars which otherwise are not readable by screen readers.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/reviews.png">
+</div>
+
+<br>
+
+### 10. Shop All Products Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The section that lacks a heading is the product search section, it does not require a heading and the product search bar has a placeholder.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/allproductsshop.png">
+</div>
+
+<br>
+
+### 11. Shop Categories Pages __PASS__
+
+- Web Design Shop Page __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/wbshop.png">
+</div>
+
+<br>
+
+- SEO Shop Page __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/seoshop.png">
+</div>
+
+<br>
+
+- Social Media Management Shop Page __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/smmshop.png">
+</div>
+
+<br>
+
+- Content Creation Shop Page __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/ccshop.png">
+</div>
+
+<br>
+
+### 12. Product Details Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The for attr it's referring to is automatically generated by Django.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/productdetails.png">
+</div>
+
+<br>
+
+### 13. Checkout Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The section without a header, has a small header for "order summary" but it is a p tag because that fits in with the style of the page better.
+
+- The last warning is a complaint about the fact that the loading spinner is nested in a h1, which was done to have control over the font-size of the spinner.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/checkout.png">
+</div>
+
+<br>
+
+### 14. Admin Product Dashboard --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The section that lacks a heading is the product search section, it does not require a heading and the product search bar has a placeholder.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/admindashproducts.png">
+</div>
+
+<br>
+
+### 15. Add Product Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The duplicate id is embedded within the Django templates widget, and has no effect on the page functionality.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/addproduct.png">
+</div>
+
+<br>
+
+### 16. Edit Product Page --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The toast container does not require a heading.
+
+- When I added an alt value to this input, it returned another error saying that this input could not have an alt attribute.
+
+- The duplicate id is embedded within the Django templates widget, and has no effect on the page functionality.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/editproduct.png">
+</div>
+
+<br>
+
+### 17. Delete Product Page --  __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/deleteproduct.png">
+</div>
+
+<br>
+
+### 18. Admin User Dashboard --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The section that lacks a heading is the product search section, it does not require a heading and the product search bar has a placeholder.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/adminusers.png">
+</div>
+
+<br>
+
+### 19. Admin Messages Dashboard --  __PASS__
+
+The errors that remain are acceptable for the following reasons:
+
+- The "cart-title" duplicate ID refers to the desktop and mobile versions of the shopping cart dropdown, although both are present in the source code, only one will ever be functional at a time.
+
+- The section that lacks a heading is the product search section, it does not require a heading and the product search bar has a placeholder.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/adminmessages.png">
+</div>
+
+<br>
+
+</details>
+
+<br>
+
+### W3C Link Checker
 
 ## 2. CSS Validators
 

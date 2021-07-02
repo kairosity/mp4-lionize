@@ -59,7 +59,7 @@ $(function(){
     let logoutLink = document.querySelector('#logout-link');
 
     let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
-    let successToastTitle = document.querySelector('#success-toast-title');
+    let cartTitle = document.querySelector('#cart-title');
     
     let currentActiveElements = document.getElementsByClassName('active-page');
     let currentActiveSideNavElements = document.getElementsByClassName('active-page-side-nav');
@@ -149,7 +149,7 @@ $(function(){
     }
 
     cartLink.addEventListener('click', function(){
-        successToastTitle.textContent = 'Shopping Cart:'
+        cartTitle.textContent = 'Shopping Cart:'
     })
 
     $("#dropdown-mob-cart").click(function(){

@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
-<div class="row flex-grow-1">
-    <div class="col col-12">
+    <div class="row flex-grow-1">
+        <div class="col col-12">
 <!-- Back Link -->
         <div class="backlink">
             <a class="button button-back hvr-underline-from-right" href="{{ referring_page }}">
@@ -71,12 +67,9 @@
                 </div>
             </div>
         </section>
-
         <div class="row">
-            <!-- <div class="form-container-product-details"> -->
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
-                    <!-- <div class="form-row"> -->
                         <div class="col-5 offset-3 col-md-2 offset-md-5">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group">
@@ -103,50 +96,49 @@
                             </div>
                         </div>
                         </div>
-                    <!-- </div> -->
+                  
                 </form>
-            <!-- </div> -->
+            
         </div>
-    <!-- Review Section -->
+<!-- Review Section -->
         <div class="row d-flex flex-column">
             <div class="accordion col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="reviewAccordion">
-
-                <!-- Only show this option to users who are logged in and who: 1. have purchased this -->
-                    {% if user_purchased_product_and_can_review %}
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                            <button id="add-review" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                ADD A REVIEW
-                            </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#reviewAccordion">
-                            <div class="accordion-body">
-                                <form class="review-form" method="POST" action="{% url 'product_detail' product.id %}">
-                                    {% csrf_token %}
-                                    <h2 class="details-page-subheading mb-2">Review of "{{product.friendly_name}}" by {{request.user}}</h2>
-                                    <div class="row">
-                                        <div class="col mt-3 mb-2">
-                                            {{ form.review_title | as_crispy_field }}
-                                        </div>
+                {% if user_purchased_product_and_can_review %}
+<!-- If the user can review the product -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                        <button id="add-review" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ADD A REVIEW
+                        </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#reviewAccordion">
+                        <div class="accordion-body">
+                            <form class="review-form" method="POST" action="{% url 'product_detail' product.id %}">
+                                {% csrf_token %}
+                                <h2 class="details-page-subheading mb-2">Review of "{{product.friendly_name}}" by {{request.user}}</h2>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review_title | as_crispy_field }}
                                     </div>
-                                    <div class="row">
-                                        <div class="col mt-3 mb-2">
-                                            {{ form.review_stars | as_crispy_field }}
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review_stars | as_crispy_field }}
                                     </div>
-                                    <div class="row">
-                                        <div class="col mt-3 mb-2">
-                                            {{ form.review | as_crispy_field }}
-                                        </div>
-                                    </div> 
-                                    <div class="input-container d-flex">
-                                        <input class="button button-accent" type="submit" value="Submit">
+                                </div>
+                                <div class="row">
+                                    <div class="col mt-3 mb-2">
+                                        {{ form.review | as_crispy_field }}
                                     </div>
-                                </form>
-                            </div>
-                            </div>
+                                </div> 
+                                <div class="input-container d-flex">
+                                    <input class="button button-accent" type="submit" value="Submit">
+                                </div>
+                            </form>
                         </div>
-                    {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
 
                 {% if reviews %}
                 <div class="accordion-item">
