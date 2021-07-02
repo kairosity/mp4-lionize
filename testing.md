@@ -2526,6 +2526,8 @@ I also used the Chrome Dev Tools Mobile emulator __and__ I asked friends and fam
 
 ### W3C HTML Validator
 
+As many of the pages relied on being authenticated, I have to copy and paste the page sources into the checker to get an accurate assessment.
+
 ### W3C Link Checker
 
 ## 2. CSS Validators

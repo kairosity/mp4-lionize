@@ -15,14 +15,14 @@ $(function(){
     
     let homeLink = document.querySelector('#home-link');
     let contactLink = document.querySelector('#contact-link');
-    let servicesLink = document.querySelector('#services-link');
+    let servicesLink = document.querySelector('.services-link');
     let webdesignInfoLink = document.querySelector('#webdesign-info-link');
     let seoInfoLink = document.querySelector('#seo-info-link');
     let smmInfoLink = document.querySelector('#smm-info-link');
     let contentCreationInfoLink = document.querySelector('#content-creation-info-link');
 
     let userPortalLink = document.querySelector('#user-portal-link');
-    let userPortalLinkMob = document.querySelector('#user-portal-link-mob');
+    let userPortalLinkMob = document.querySelector('.user-portal-link-mob');
     let profilePageLink = document.querySelector('#profile-page-link');
     let profilePageLinkMob = document.querySelector('#profile-page-link-mob');
     let bagLink = document.querySelector('#bag-link');
@@ -58,7 +58,7 @@ $(function(){
 
     let logoutLink = document.querySelector('#logout-link');
 
-    let cartLink = document.querySelector('#cart-link');
+    let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
     let successToastTitle = document.querySelector('#success-toast-title');
     
     let currentActiveElements = document.getElementsByClassName('active-page');

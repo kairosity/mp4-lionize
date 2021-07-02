@@ -3,24 +3,20 @@
 
 {% block content %}
 
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-    
-
     <div class="container-fluid col-12 col-md-8">
+<!-- Admin Product Dashboard Header -->
         <header class="details-page-header d-flex flex-column">
             {% include 'includes/skip-to-main.html' %}
             <div class="container">
-                
                 <h1 id="main" class="details-page-heading">Admin Product Control Dashboard</h1>
                 <h2 class="details-page-subheading mb-4">Here are all of Lionize's products, you can add a new product, or edit and delete existing products
                     directly from this page. You can also use the buttons below to filter the product listing by category. 
                 </h2>
             </div>
         </header>
-
+<!-- Product Search Bar -->
         <section class="container-fluid col-12 col-md-8">
             <div class="details-page-header d-flex flex-column">
                 <div class="container">
@@ -41,6 +37,7 @@
                             </div>
                         </div>
                     </form>
+<!-- Add New Product Button -->
                     <div class="row mt-4">
                         <div class="col-12 text-align-center mt-3 mb-3">
                             <a href="{% url 'add_product' %}" class="button button-accent add-product-button"><i class="fas fa-plus"></i> Add Product</a>
@@ -49,6 +46,7 @@
                 </div>
             </div>
         </section>
+<!-- Product Category Filter Buttons -->
         <div class="row mt-4">
             <div class="col-12 d-flex flex-wrap justify-content-center">
                 <a href="{% url 'admin-dash-products'%}" class="button button-accent m-1"><i class="fas fa-infinity"></i> All Products</a>
@@ -59,64 +57,61 @@
             </div>
         </div>
         <div class="row">
+<!-- Individual Product Listings -->
             {% for product in products %}
-                    <div class="col-12 col-sm-6 col-xl-4 col-xxl-3 product-card-col">
-                        <div class="card">
-                            {% if product.image %}
-                                <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="...">
-                            {% else %}
-                                <img class="card-img-top img-fluid product-card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
-                            {% endif %}
-                            <div class="card-body d-flex flex-column product-card-body admin-card-body">
-                                <h5 class="card-title">{{ product.friendly_name }}</h5>
-                                <h5 class="card-title muted-text small">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.description|truncatechars:72 }}</p>
-                                <p>Price excl. VAT: €{{ product.price }}</p>
-                                <div class="button-group">
-                                    <a href="{% url 'product_detail' product.id %}" class="button button-main button-tiny xtra-pad">Details</a>
-                                    <a href="{% url 'edit_product' product.id %}" class="button button-accent button-tiny xtra-pad">Edit</a>
-                                    <a href="{% url 'delete_product' product.id %}" class="button button-delete button-tiny xtra-pad">Delete</a>
-                                    
-                                    <!-- Remove Modal -->
-                                    <div class="modal fade" id="removeProductModal" tabindex="-1" aria-labelledby="removeProductModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                            <h5 class="modal-title details-page-subheading" id="deleteProductModalLabel">Remove From Shop</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body deletion-modal-text">
-                                            Are you sure you want to remove this product from the shop? You can reinstate this product using the Django admin login.
-                                            </div>
-                                            <div class="modal-footer">
-                                            <button type="button" class="button button-main" data-bs-dismiss="modal">No, Cancel</button>
-                                            <a href="" class="button button-cancel product-delete-button">Yes, Remove It</a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <!-- Remove Modal Ends -->
-
-                                </div>
-                                    {% if product.in_shop %}
-                                        <!-- Button Remove trigger modal -->
-                                        <button type="button" class="button button-remove-from-shop button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#removeProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
-                                            Remove from Shop
-                                        </button>
-                                    {% else %}
-                                        <!-- Add To Shop Link -->
-                                        <a href="{% url 'add_to_shop' product.id %}" class="button button-addtoshop button-tiny margin-top-sm">
-                                            Add to Shop
-                                        </a>
-                                    {% endif %}
+                <div class="col-12 col-sm-6 col-xl-4 col-xxl-3 product-card-col">
+                    <div class="card">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" class="card-img-top img-fluid product-card-img" alt="...">
+                        {% else %}
+                            <img class="card-img-top img-fluid product-card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.friendly_name }}">
+                        {% endif %}
+                        <div class="card-body d-flex flex-column product-card-body admin-card-body">
+                            <h5 class="card-title">{{ product.friendly_name }}</h5>
+                            <h5 class="card-title muted-text small">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description|truncatechars:72 }}</p>
+                            <p>Price excl. VAT: €{{ product.price }}</p>
+                            <div class="button-group">
+                                <a href="{% url 'product_detail' product.id %}" class="button button-main button-tiny xtra-pad">Details</a>
+                                <a href="{% url 'edit_product' product.id %}" class="button button-accent button-tiny xtra-pad">Edit</a>
+                                <a href="{% url 'delete_product' product.id %}" class="button button-delete button-tiny xtra-pad">Delete</a>
                             </div>
+                            {% if product.in_shop %}
+                                <!-- Button Remove trigger modal -->
+                                <button type="button" class="button button-remove-from-shop button-tiny margin-top-sm" data-bs-toggle="modal" data-bs-target="#removeProductModal" data-bs-product-id="{{product.id}}" data-bs-product-name="{{product.friendly_name}}">
+                                    Remove from Shop
+                                </button>
+                            {% else %}
+                                <!-- Add To Shop Link -->
+                                <a href="{% url 'add_to_shop' product.id %}" class="button button-addtoshop button-tiny margin-top-sm">
+                                    Add to Shop
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
+                </div>
             {% endfor %}
+<!-- Remove Modal -->
+            <div class="modal fade" id="removeProductModal" tabindex="-1" aria-labelledby="removeProductModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title details-page-subheading" id="deleteProductModalLabel">Remove From Shop</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body deletion-modal-text">
+                        Are you sure you want to remove this product from the shop? You can reinstate this product using the Django admin login.
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="button button-main" data-bs-dismiss="modal">No, Cancel</button>
+                        <a href="" class="button button-cancel product-delete-button">Yes, Remove It</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        
+<!-- Remove Modal Ends -->
+        </div>
     </div>
-
 </div>
 {% endblock %}
 
