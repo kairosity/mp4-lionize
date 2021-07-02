@@ -3,8 +3,16 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from decimal import Decimal
 
-def bag_contents(request):
 
+def bag_contents(request):
+    '''
+    * This function makes the shopping bag contents available universally.
+    \n Args:
+        request object
+    \n Returns:
+    * context object including the bag items, the total cost excl. vat, the
+    vat total, the grand total & the product count.
+    '''
     bag_items = []
     total = 0
     product_count = 0

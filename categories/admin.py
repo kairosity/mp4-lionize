@@ -7,5 +7,4 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-
 admin.site.register(Category, CategoryAdmin)

@@ -4177,11 +4177,19 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     Used to fix a bug whereby Bootstrap modals were not working.
 
+- ### [JSHint](https://jshint.com/)
+
+    Used to validate the JavaScript code.
+
 ## 4. Python
 
 - ### [f-strings formatter including for-loop or if conditions](https://stackoverflow.com/questions/59956496/f-strings-formatter-including-for-loop-or-if-conditions)
 
     Used to write a custom confirmation order email.
+
+- ### [PEP8 online](http://pep8online.com/)
+
+    Used to validate Python code.
 
 ## 5. Django
 

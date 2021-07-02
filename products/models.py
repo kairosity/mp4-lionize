@@ -3,7 +3,7 @@ from categories.models import Category
 from profiles.models import UserProfile
 from django.core.validators import MaxValueValidator, MinValueValidator
 from lionize.validations import (validate_min_length_2,
-                                validate_min_length_50
+                                validate_min_length_50,
                                 )
 
 
@@ -23,6 +23,7 @@ class Product(models.Model):
     
     def get_friendly_name(self):
         return self.friendly_name
+
 
 class Review(models.Model):
 

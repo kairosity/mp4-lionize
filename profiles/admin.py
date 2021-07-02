@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import UserProfile, Message
 
+
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
@@ -19,13 +20,13 @@ class UserProfileAdmin(admin.ModelAdmin):
         'facebook_handle',
     )
 
+
 class MessageAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'date',
         'subject',
         'message', 
-
     )
     ordering = ('-date',)
 

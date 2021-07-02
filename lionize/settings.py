@@ -28,7 +28,6 @@ else:
 ALLOWED_HOSTS = ['lionize-ms4.herokuapp.com', 'localhost']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -172,7 +171,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Security Settings
-
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
@@ -181,7 +179,6 @@ if 'DATABASE_URL' in os.environ:
 
 else:
     SECURE_SSL_REDIRECT = False
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -237,7 +234,6 @@ if 'USE_AWS' in os.environ:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Stripe
-
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')

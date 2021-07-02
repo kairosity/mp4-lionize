@@ -3008,8 +3008,76 @@ All the JavaScript files passed though the JSHint validator with only warnings a
 
 ### __PEP8 Online__
 
+<details>
+<summary><b>click for results by page</b></summary>
 
 <br>
+
+<br>
+
+### bag: __contexts.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/contexts.png">
+</div>
+
+<br>
+
+### bag: __views.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/bagviews.png">
+</div>
+
+<br>
+
+### checkout: __views.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/checkoutviews.png">
+</div>
+
+<br>
+
+### home: __views.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/homeviews.png">
+</div>
+
+<br>
+
+### products: __views.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/productviews.png">
+</div>
+
+<br>
+
+### profiles: __views.py__ -- __PASS__
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/python/profileview.png">
+</div>
+
+<br>
+
+<br>
+
+</details>
 
 #### back to [contents](#testing-table-of-contents) 
 

@@ -2,17 +2,16 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-
 from .models import Order, OrderLineItem
 from products.models import Product
-
 from profiles.models import UserProfile
 
 import json
 import time
 
+
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    '''Handles Stripe webhooks'''
 
     def __init__(self, request):
         self.request = request
@@ -37,7 +36,8 @@ class StripeWH_Handler:
             \n\nSubtotal: €{order.order_total}\
             \nVAT Total @23%: €{order.vat_total}\
             \nGrand Total: €{order.grand_total}\
-            \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
+            \n\nA more comprehensive breakdown of this order as well as a full\
+            order history can be found in the User Portal Order History section of our site. \n \
             \nJust login & navigate to your User Portal.\n\
             \nThank you again from all of us at Lionize!"
         
@@ -56,6 +56,7 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
+
 
     def handle_payment_intent_succeeded(self, event):
         """
@@ -88,7 +89,6 @@ class StripeWH_Handler:
                 profile.default_street_address2 = billing_details.address.line2
                 profile.default_county = billing_details.address.state
                 profile.save()
-
 
         order_exists = False
         attempt = 1
@@ -155,6 +155,7 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
+
 
     def handle_payment_intent_payment_failed(self, event):
         """

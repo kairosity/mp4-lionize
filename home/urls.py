@@ -11,5 +11,4 @@ urlpatterns = [
     path('admin-product-dashboard', views.admin_dash_products, name='admin-dash-products'),
     path('admin-user-dashboard', views.admin_dash_users, name='admin-dash-users'),
     path('admin-messages-dashboard', views.admin_dash_messages, name='admin-dash-messages'),
-    path('error_page', views.error_page, name='error_page'),
 ]

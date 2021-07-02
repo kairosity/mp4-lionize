@@ -6,13 +6,18 @@ from django.core.exceptions import PermissionDenied
 from .models import UserProfile, Message
 from products.models import Review
 from .forms import UserProfileForm
-
 from checkout.models import Order
+
 
 @login_required
 def profile(request):
     '''
-    Display the user profile.
+    * A view to display the user profile page and form.
+    * Only available & visible to logged in users.
+    \n Args:
+    1. request object
+    \n Returns:
+    * Template displaying the user profile form.
     '''
 
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -21,17 +26,18 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            # Save the first & last name from the profile to the Django user auth form.
+            # Save the first & last name from the profile to
+            # the Django user auth form.
             User = get_user_model()
             user_to_update = get_object_or_404(User, username=request.user)
             user_to_update.first_name = form.cleaned_data['default_first_name']
             user_to_update.last_name = form.cleaned_data['default_last_name']
             user_to_update.save()
-            
+
             messages.success(request, 'Profile updated successfully!')
         else:
-            messages.error(request, f'Update failed, please ensure your form entries are valid and then try again.' )
-
+            messages.error(request, f'Update failed, please ensure\
+                your form entries are valid and then try again.')
     else:
         form = UserProfileForm(instance=profile)
 
@@ -48,7 +54,12 @@ def profile(request):
 @login_required
 def order_history_user_portal(request):
     '''
-    Display the user's order history.
+    * A view to display the user's order history.
+    * Only available & visible to logged in users.
+    \n Args:
+    1. request object
+    \n Returns:
+    * Template displaying the user's order history'.
     '''
 
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -66,16 +77,26 @@ def order_history_user_portal(request):
 
 @login_required
 def order_history(request, order_number):
+    '''
+    * A view to display specific order details.
+    * Only available & visible to logged in users.
+    \n Args:
+    1. request object
+    2. order number
+    \n Returns:
+    * Template displaying the details of a specific order.
+    '''
     order = get_object_or_404(Order, order_number=order_number)
 
     referring_page = '/user-portal/orders'
 
     if str(request.user.username) != str(order.user_profile):
-        messages.error(request, "Sorry, but you are not permitted to view another user's order history.")
+        messages.error(request, "Sorry, but you are not permitted\
+            to view another user's order history.")
         raise PermissionDenied()
 
     messages.info(request, (
-        f'This is a past confirmation for order number {order_number}.' 
+        f'This is a past confirmation for order number {order_number}.'
         'A confirmation email was sent on the order date.'
     ))
 
@@ -88,12 +109,24 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
 @login_required
 def your_reviews(request):
+    '''
+    * A view to display the user's reviews page.
+    * Only available & visible to logged in users.
+    \n Args:
+    1. request object
+    \n Returns:
+    * Template displaying the products a user can review.
+    * And the reviews they have already written.
+    '''
 
-    profile = get_object_or_404(UserProfile, user=request.user)
+    profile = get_object_or_404(
+        UserProfile, user=request.user)
     orders = profile.orders.all()
-    reviews = Review.objects.filter(user=profile).order_by('-date_reviewed')
+    reviews = Review.objects.filter(
+        user=profile).order_by('-date_reviewed')
 
     template = 'profiles/your_reviews.html'
     context = {
@@ -104,34 +137,53 @@ def your_reviews(request):
     return render(request, template, context)
 
 
-
 @login_required
 def mark_closed(request, message_id):
-    """ Mark as message as issue closed """
+    '''
+    * Mark a message as closed.
+    * Functionality only available to admin users.
+    \n Args:
+    1. request object
+    2. message id
+    \n Returns:
+    * Marks a message as closed.
+    '''
 
     if not request.user.is_staff:
-        messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
+        messages.error(request, 'Sorry, but you are not authorized\
+            to edit message status! If you have an admin account,\
+            please login.')
         raise PermissionDenied()
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = True
     message.save()
-    messages.success(request, f'That message issue has been successfully marked as resolved.')
+    messages.success(request, f'That message issue has\
+        been successfully marked as resolved.')
     return redirect(reverse('admin-dash-messages'))
+
 
 @login_required
 def mark_active(request, message_id):
-    """ Mark a message as active """
+    '''
+    * Mark a message as re-opened.
+    * Functionality only available to admin users.
+    \n Args:
+    1. request object
+    2. message id
+    \n Returns:
+    * Marks a message as open again.
+    '''
 
     if not request.user.is_staff:
-        messages.error(request, 'Sorry, but you are not authorized to edit message status! If you have an admin account, please login.')
+        messages.error(request, 'Sorry, but you are not\
+            authorized to edit message status! If you have\
+            an admin account, please login.')
         raise PermissionDenied()
 
     message = get_object_or_404(Message, pk=message_id)
     message.resolved = False
     message.save()
-    messages.success(request, f'That message issue has been successfully re-opened.')
+    messages.success(request, f'That message issue\
+        has been successfully re-opened.')
     return redirect(reverse('admin-dash-messages'))
-
-
-
