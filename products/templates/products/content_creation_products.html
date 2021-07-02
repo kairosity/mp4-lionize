@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block content %}
-
 <div class="flex-container product-details-flex-container">
-
     {% include 'includes/side-nav.html' %}
-
     <div class="container-fluid col-12 col-md-10 col-lg-8 ps-5 pe-5">
+<!-- Content Creation Product Listing Header -->
         <header class="details-page-header d-flex flex-column">
             <div class="container">
                 {% include 'includes/skip-to-main.html' %}
@@ -17,10 +15,8 @@
                 Get ahead of the game with some of our fantastic content creation services below.</h2>
             </div>
         </header>
-
+<!-- Content Creation Products Listing -->
         {% include 'includes/product-cards.html' %}
-        
     </div>
-
 </div>
 {% endblock %}

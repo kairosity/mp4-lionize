@@ -9,181 +9,182 @@
     {% include 'includes/side-nav.html' %}
 
 <div class="row flex-grow-1">
-
-<div class="col col-12">
-    <div class="backlink">
-        <a class="button button-back hvr-underline-from-right" href="{{ referring_page }}">
-            <i class="fas fa-arrow-left"></i>
-            {% if referring_page_path0 == 'admin-product-dashboard' %}
-                Back to the Admin Dashboard
-            {% elif referring_page_path1 == 'web-design-products' %}
-                Back to Web Design Products
-            {% elif referring_page_path1 == 'seo-products' %}
-                Back to SEO Products
-            {% elif referring_page_path1 == 'social-media-management' %}
-                Back to Social Media Management Products
-            {% elif referring_page_path1 == 'content-creation-products' %}
-                Back to Content Creation Products
-            {% elif referring_page_path1 == 'reviews' %}
-                Back to Reviews
-            {% elif referring_page_path1 == 'edit' %}
-                Back to Edit {{product.friendly_name}}
-            {% elif referring_page_path1 == 'add' %}
-                Back to Add another product
-            {% else %}
-                Back
-            {% endif %}
-        </a>
-    </div>
-
-    <section class="d-flex flex-column">
-        <div class="d-flex details-page-info">
-            {% include 'includes/skip-to-main.html' %}
-            <h1 id="main" class="details-page-heading pb-0">{{product.friendly_name}}</h1>
-            {% if request.user.is_superuser %}
-                <small class="ml-3 edit-del-product-details-btns">
-                    <a class="text-danger" href="/admin-product-dashboard?q={{product.name}}">Edit / Delete in Admin</a>
-                </small>
-            {% endif %}
-            {% if product.image %}
-                <a class="align-self-center" href="{{ product.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid product-image product-details-page-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
-            {% else %}
-                <a href="">
-                    <img class="card-img-top img-fluid product-image product-details-page-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
-                </a>
-            {% endif %}
-            <div class="d-flex flex-column product-details-text-container">
-                <p class="details-page-text"> {{product.description}}</p>
-
-                {% if features %}
-                    <h3 class="details-page-features-heading">Features include:</h3>
-                    <ul class="details-page-text">
-                        {% for feature in features %}
-                            <li>{{ feature|title }}</li>
-                        {% endfor %}
-                    </ul>
+    <div class="col col-12">
+<!-- Back Link -->
+        <div class="backlink">
+            <a class="button button-back hvr-underline-from-right" href="{{ referring_page }}">
+                <i class="fas fa-arrow-left"></i>
+                {% if referring_page_path0 == 'admin-product-dashboard' %}
+                    Back to the Admin Dashboard
+                {% elif referring_page_path1 == 'web-design-products' %}
+                    Back to Web Design Products
+                {% elif referring_page_path1 == 'seo-products' %}
+                    Back to SEO Products
+                {% elif referring_page_path1 == 'social-media-management' %}
+                    Back to Social Media Management Products
+                {% elif referring_page_path1 == 'content-creation-products' %}
+                    Back to Content Creation Products
+                {% elif referring_page_path1 == 'reviews' %}
+                    Back to Reviews
+                {% elif referring_page_path1 == 'edit' %}
+                    Back to Edit {{product.friendly_name}}
+                {% elif referring_page_path1 == 'add' %}
+                    Back to Add another product
+                {% else %}
+                    Back
                 {% endif %}
-                <p class="details-page-text text-align-center product-details-price-subtotal"> €{{product.price}} + €{{vat|floatformat:2}} VAT @23%</p>
-                <p class="details-page-text text-align-center product-details-price"> TOTAL: €{{total_incl_vat|floatformat:2}}</p>
-            </div>
+            </a>
         </div>
-    </section>
-
-    <div class="row">
-        <!-- <div class="form-container-product-details"> -->
-            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                {% csrf_token %}
-                <!-- <div class="form-row"> -->
-                    <div class="col-5 offset-3 col-md-2 offset-md-5">
-                        <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <button class="decrement-qty button button-accent "
-                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                        <span class="icon"><i class="fas fa-minus"></i></span>
-                                </button>
-
-                                <input class="qty_input form-control form-control-sm" type="number" name="quantity" 
-                                value="1" min="1" max="20" data-item_id="{{ product.id }}" 
-                                id="id_qty_{{ product.id }}">
-
-                                <button class="increment-qty button button-accent"
-                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                        <span class="icon"><i class="fas fa-plus"></i></span>
-                                </button>
-                            </div>
-
-                        
-                        <div class="input-group mt-4 justify-content-center">
-                            <input type="submit" class="button button-accent special-input-group-button" value="Add to Bag">
-                            <input type="hidden" name="redirect_url" value="{% url 'view_shopping_bag' %}">
-                        </div>
-                    </div>
-                    </div>
-                <!-- </div> -->
-            </form>
-        <!-- </div> -->
-    </div>
-<!-- Review Section -->
-    <div class="row d-flex flex-column">
-        <div class="accordion col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="reviewAccordion">
-
-            <!-- Only show this option to users who are logged in and who: 1. have purchased this -->
-                {% if user_purchased_product_and_can_review %}
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                        <button id="add-review" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            ADD A REVIEW
-                        </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#reviewAccordion">
-                        <div class="accordion-body">
-                            <form class="review-form" method="POST" action="{% url 'product_detail' product.id %}">
-                                {% csrf_token %}
-                                <h2 class="details-page-subheading mb-2">Review of "{{product.friendly_name}}" by {{request.user}}</h2>
-                                <div class="row">
-                                    <div class="col mt-3 mb-2">
-                                        {{ form.review_title | as_crispy_field }}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col mt-3 mb-2">
-                                        {{ form.review_stars | as_crispy_field }}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col mt-3 mb-2">
-                                        {{ form.review | as_crispy_field }}
-                                    </div>
-                                </div> 
-                                <div class="input-container d-flex">
-                                    <input class="button button-accent" type="submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-                        </div>
-                    </div>
+        <section class="d-flex flex-column">
+            <div class="d-flex details-page-info">
+                {% include 'includes/skip-to-main.html' %}
+<!-- Product Name Heading -->
+                <h1 id="main" class="details-page-heading pb-0">{{product.friendly_name}}</h1>
+                {% if request.user.is_superuser %}
+<!-- Admin Options -->
+                    <small class="ml-3 edit-del-product-details-btns">
+                        <a class="text-danger" href="/admin-product-dashboard?q={{product.name}}">Edit / Delete in Admin</a>
+                    </small>
                 {% endif %}
+                {% if product.image %}
+                    <a class="align-self-center" href="{{ product.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid product-image product-details-page-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                {% else %}
+                    <a href="">
+                        <img class="card-img-top img-fluid product-image product-details-page-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                    </a>
+                {% endif %}
+                <div class="d-flex flex-column product-details-text-container">
+                    <p class="details-page-text"> {{product.description}}</p>
 
-            {% if reviews %}
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                SEE REVIEWS
-                </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#reviewAccordion">
-                <div class="accordion-body">
-                    {% for review in reviews %}
-                    <div class="review-block">
-                        <small class="pt-4">{{review.date_reviewed}}</small>
-                        {% if review.review_stars == 'option1' %}
-                            <p><i class="fas fa-star"></i></p>
-                        {% elif review.review_stars == 'option2' %}
-                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                        {% elif review.review_stars == 'option3' %}
-                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                        {% elif review.review_stars == 'option4' %}
-                            <p><i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                        {% elif review.review_stars == 'option5' %}
-                            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                        {% endif %}
-                        <h3>{{review.review_title}}</h3>
-                        <p>{{review.review}}</p>
-                        <p>Reviewed by: {{review.user}}</p>
-                    </div>
-                    {% endfor %}
-                </div>
+                    {% if features %}
+                        <h3 class="details-page-features-heading">Features include:</h3>
+                        <ul class="details-page-text">
+                            {% for feature in features %}
+                                <li>{{ feature|title }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <p class="details-page-text text-align-center product-details-price-subtotal"> €{{product.price}} + €{{vat|floatformat:2}} VAT @23%</p>
+                    <p class="details-page-text text-align-center product-details-price"> TOTAL: €{{total_incl_vat|floatformat:2}}</p>
                 </div>
             </div>
-            {% endif %}
-        
-    </div>
+        </section>
 
-    </div> 
-    </div>
+        <div class="row">
+            <!-- <div class="form-container-product-details"> -->
+                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <!-- <div class="form-row"> -->
+                        <div class="col-5 offset-3 col-md-2 offset-md-5">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <button class="decrement-qty button button-accent "
+                                            data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                            <span class="icon"><i class="fas fa-minus"></i></span>
+                                    </button>
+
+                                    <input class="qty_input form-control form-control-sm" type="number" name="quantity" 
+                                    value="1" min="1" max="20" data-item_id="{{ product.id }}" 
+                                    id="id_qty_{{ product.id }}">
+
+                                    <button class="increment-qty button button-accent"
+                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                            <span class="icon"><i class="fas fa-plus"></i></span>
+                                    </button>
+                                </div>
+
+                            
+                            <div class="input-group mt-4 justify-content-center">
+                                <input type="submit" class="button button-accent special-input-group-button" value="Add to Bag">
+                                <input type="hidden" name="redirect_url" value="{% url 'view_shopping_bag' %}">
+                            </div>
+                        </div>
+                        </div>
+                    <!-- </div> -->
+                </form>
+            <!-- </div> -->
+        </div>
+    <!-- Review Section -->
+        <div class="row d-flex flex-column">
+            <div class="accordion col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3" id="reviewAccordion">
+
+                <!-- Only show this option to users who are logged in and who: 1. have purchased this -->
+                    {% if user_purchased_product_and_can_review %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                            <button id="add-review" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ADD A REVIEW
+                            </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#reviewAccordion">
+                            <div class="accordion-body">
+                                <form class="review-form" method="POST" action="{% url 'product_detail' product.id %}">
+                                    {% csrf_token %}
+                                    <h2 class="details-page-subheading mb-2">Review of "{{product.friendly_name}}" by {{request.user}}</h2>
+                                    <div class="row">
+                                        <div class="col mt-3 mb-2">
+                                            {{ form.review_title | as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col mt-3 mb-2">
+                                            {{ form.review_stars | as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col mt-3 mb-2">
+                                            {{ form.review | as_crispy_field }}
+                                        </div>
+                                    </div> 
+                                    <div class="input-container d-flex">
+                                        <input class="button button-accent" type="submit" value="Submit">
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% if reviews %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    SEE REVIEWS
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#reviewAccordion">
+                    <div class="accordion-body">
+                        {% for review in reviews %}
+                        <div class="review-block">
+                            <small class="pt-4">{{review.date_reviewed}}</small>
+                            {% if review.review_stars == 'option1' %}
+                                <p><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option2' %}
+                                <p><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option3' %}
+                                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option4' %}
+                                <p><i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% elif review.review_stars == 'option5' %}
+                                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            {% endif %}
+                            <h3>{{review.review_title}}</h3>
+                            <p>{{review.review}}</p>
+                            <p>Reviewed by: {{review.user}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </div>
+                </div>
+                {% endif %}
+            
+        </div>
+
+        </div> 
+        </div>
     
 
 </div>

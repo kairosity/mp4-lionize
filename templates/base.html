@@ -54,7 +54,7 @@
                 </button>
 <!-- Shopping Cart Mobile Dropdown -->
                 {% if grand_total %}
-                    <div class="text-center list-inline list-unstyled mb-0 d-lg-none">
+                    <ul class="text-center list-inline list-unstyled mb-0 d-lg-none">
                         <li class="nav-item dropdown show">
                             <a aria-label="shopping cart dropdown" href="#" id="dropdown-mob-cart" class="navbar-brand nav-link dropdown-toggle m-0 p-0 me-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-shopping-cart"></i><small>{{ product_count }}</small></a>
                             <div id="cart-ul" class="dropdown-menu" aria-labelledby="dropdown-mob-cart">
@@ -102,28 +102,28 @@
                                     </div>
                                     <div class="row">
                                         <div class="col col-12">
-                                            <strong>
-                                                <p class="mt-1 cart-dropdown-text">
-                                                Subtotal: 
-                                                <span >€{{ total|floatformat:2 }}</span>
-                                                </p>
-                                            </strong>
+                                            <p class="mt-1 cart-dropdown-text">
+                                                <strong>
+                                                    Subtotal: 
+                                                    <span >€{{ total|floatformat:2 }}</span>
+                                                </strong>
+                                            </p>
                                         </div>
                                         <div class="col col-12">
-                                            <strong>
-                                                <p class="cart-dropdown-text">
-                                                VAT @23%: 
-                                                <span >€{{ vat_total|floatformat:2 }}</span>
-                                                </p>
-                                            </strong>
+                                            <p class="cart-dropdown-text">
+                                                <strong>
+                                                    VAT @23%: 
+                                                    <span >€{{ vat_total|floatformat:2 }}</span>
+                                                </strong>
+                                            </p>
                                         </div>
                                         <div class="col col-12">
-                                            <strong>
-                                                <p class="cart-dropdown-text">
-                                                Grand Total incl. VAT: 
-                                                <span >€{{ grand_total|floatformat:2 }}</span>
-                                                </p>
-                                            </strong>
+                                            <p class="cart-dropdown-text">
+                                                <strong>
+                                                    Grand Total incl. VAT: 
+                                                    <span >€{{ grand_total|floatformat:2 }}</span>
+                                                </strong>
+                                            </p>
                                         </div>
                                         <div class="col col-12">
                                             <a href="{% url 'checkout' %}" class="button button-main button-tiny">
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         </li>
-                    </div>
+                    </ul>
                 {% endif %}
                 <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavDropdown">
                     <ul class="navbar-nav d-flex navbar-one">
@@ -253,7 +253,7 @@
                                     <a aria-label="shopping cart dropdown" class="nav-link dropdown-toggle hvr-underline-from-left" href="#" id="navbarDropdownMenuLinkCart" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-shopping-cart"></i> <small>{{ product_count }}</small>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-cart" aria-labelledby="navbarDropdownMenuLinkCart">
+                                    <div class="dropdown-menu dropdown-menu-cart" aria-labelledby="navbarDropdownMenuLinkCart">
                                         <div class="cart-body">
                                             <strong id="success-toast-title" class="me-auto success-msg-heading">Shopping Cart</strong>
                                             <div class="row">
@@ -303,28 +303,28 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col col-12">
-                                                        <strong>
-                                                            <p class="mt-1 cart-dropdown-text">
-                                                            Subtotal: 
-                                                            <span >€{{ total|floatformat:2 }}</span>
-                                                            </p>
-                                                        </strong>
+                                                        <p class="mt-1 cart-dropdown-text">
+                                                            <strong>
+                                                                Subtotal: 
+                                                                <span >€{{ total|floatformat:2 }}</span>
+                                                            </strong>
+                                                        </p>
                                                     </div>
                                                     <div class="col col-12">
-                                                        <strong>
-                                                            <p class="cart-dropdown-text">
-                                                            VAT @23%: 
-                                                            <span >€{{ vat_total|floatformat:2 }}</span>
-                                                            </p>
-                                                        </strong>
+                                                        <p class="cart-dropdown-text">
+                                                            <strong>
+                                                                VAT @23%: 
+                                                                <span >€{{ vat_total|floatformat:2 }}</span>
+                                                            </strong>
+                                                        </p>
                                                     </div>
                                                     <div class="col col-12">
-                                                        <strong>
-                                                            <p class="cart-dropdown-text">
-                                                            Grand Total incl. VAT: 
-                                                            <span >€{{ grand_total|floatformat:2 }}</span>
-                                                            </p>
-                                                        </strong>
+                                                        <p class="cart-dropdown-text">
+                                                            <strong>
+                                                                Grand Total incl. VAT: 
+                                                                <span >€{{ grand_total|floatformat:2 }}</span>
+                                                            </strong>
+                                                        </p>
                                                     </div>
                                                     <div class="col col-12">
                                                         <a href="{% url 'checkout' %}" class="button button-main">
@@ -343,7 +343,7 @@
                                                 </div>
                                             {% endif %}
                                         </div>
-                                    </ul>
+                                    </div>
                                 </li>
 <!-- Logout Nav Link: Mobile & Desktop -->
                                 <li class="nav-item p-2 ">
