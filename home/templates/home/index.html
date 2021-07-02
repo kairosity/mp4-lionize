@@ -3,6 +3,7 @@
 
 {% block content %}
     <div class="container-fluid">
+<!-- Header -->
         <header class="homepage-header d-flex flex-column">
             <div class="container">
                 <h1 class="homepage-heading">lionize</h1>
@@ -11,6 +12,7 @@
         </header>
         <section class="services-section row">
             {% include 'includes/skip-to-main.html' %}
+<!-- Links to Services Information Pages -->
             <h3 id="main" class="homepage-body-heading">Our Services</h3>
             <div class="homepage-cards-container row">
                 <div class="card homepage-card" style="width: 18rem;">
@@ -47,15 +49,18 @@
                 </div>
             </div>
         </section>
+<!-- Intro to registered and logged in users... -->
         {% if request.user.is_authenticated %}
             <section class="row blue-bg-section justify-content-center">
                 <div class="registration-benefits-container col-10 col-lg-6">
                     <h3 class="homepage-body-heading">Welcome {{ request.user.first_name }}!</h3>
+<!-- Intro for users who have already availed of consultation -->
                     {% if request.user.userprofile.consultation %}
                         <p class="homepage-body-text">
                             You have already availed of your free consultation, but please do <a class="yellow-link" href="{% url 'home' %}#contact-us">contact us</a> below if you would like to arrange another consultation at the reduced
                             price of €120.
                         </p>
+<!-- Intro for users who have not yet availed of consultation -->
                     {% else %}
                         <p class="homepage-body-text">
                             Why not take the opportunity to schedule your free business consultation with us? 
@@ -68,19 +73,18 @@
                         <input id="user-twitter" type="hidden" data-user-twitter="{{ request.user.userprofile.twitter_handle }}">
                         <input id="user-facebook" type="hidden" data-user-facebook="{{ request.user.userprofile.facebook_handle }}">
                         <input id="user-linkedin" type="hidden" data-user-linkedin="{{ request.user.userprofile.linkedin_handle }}">
-
                         <p class="homepage-body-text">We will discuss your business needs in more depth and see how we can work together for your benefit.
                             Clicking the link below will pre-fill an email to us, but please feel free to edit it however you see fit. Thank You.
                         </p>
-                        <!-- Clicking here should prefill the contact form with consultation related info -->
+<!-- Autopopulates the contact form with consultation related info -->
                         <div class="button-wrapper">
                             <a id="schedule-consultation" href="{% url 'home' %}#contact-us" class="button button-accent register-benefits-button">Schedule Consulation</a>
                         </div>
                     {% endif %}
-                    
                 </div>  
             </section>
         {% else %}
+<!-- Intro for unregistered users -->
             <section class="row blue-bg-section justify-content-center">
                 <div class="registration-benefits-container col-10 col-lg-6">
                     <h3 class="homepage-body-heading">Benefits of Registration</h3>
@@ -101,6 +105,7 @@
                 </div>  
             </section>
         {% endif %}
+<!-- About Us Section -->
         <section class="row">
             <h3 class="homepage-body-heading">Who Are We?</h3>
             <p class="homepage-body-text whoarewe-text">Founded in 2018 by Janet Le Grand, Lionize is at the forefront of cutting edge digital branding. 
@@ -108,36 +113,33 @@
                 enormous target markets using cost-effective and measurable strategies. 
             </p>
             <div class="homepage-cards-container row">
-            <div class="card homepage-card bio-card" style="width: 18rem;">
-                <img src="{{ MEDIA_URL }}bio1.jpg" class="card-img-top homepage-card-image bio-image" alt="">
-                <div class="card-body bio-card-body">
-                    <h4 class="card-title">Janet Le Grand</h4>
-                    <p class="card-text">CEO & Founder</p>
-                    <p>Janet founded Lionize in 2018 after completing her PhD in Cybernetics. </p>
+                <div class="card homepage-card bio-card" style="width: 18rem;">
+                    <img src="{{ MEDIA_URL }}bio1.jpg" class="card-img-top homepage-card-image bio-image" alt="">
+                    <div class="card-body bio-card-body">
+                        <h4 class="card-title">Janet Le Grand</h4>
+                        <p class="card-text">CEO & Founder</p>
+                        <p>Janet founded Lionize in 2018 after completing her PhD in Cybernetics. </p>
+                    </div>
+                </div>
+                <div class="card homepage-card bio-card" style="width: 18rem;">
+                    <img src="{{ MEDIA_URL }}bio2.jpg" class="card-img-top homepage-card-image bio-image" alt="">
+                    <div class="card-body bio-card-body">
+                        <h4 class="card-title">Sophia Truglio</h4>
+                        <p class="card-text">CFO</p>
+                        <p>Sophia joined Lionize in 2019 and has been an amazing addition since.</p>
+                    </div>
+                </div>
+                <div class="card homepage-card bio-card" style="width: 18rem;">
+                    <img src="{{ MEDIA_URL }}bio3.jpg" class="card-img-top homepage-card-image bio-image" alt="">
+                    <div class="card-body bio-card-body">
+                        <h4 class="card-title">Athena Murphy</h4>
+                        <p class="card-text">CTO</p>
+                        <p>Athena is the force behind all of our technical output and she leads up our four tech teams.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card homepage-card bio-card" style="width: 18rem;">
-                <img src="{{ MEDIA_URL }}bio2.jpg" class="card-img-top homepage-card-image bio-image" alt="">
-                <div class="card-body bio-card-body">
-                    <h4 class="card-title">Sophia Truglio</h4>
-                    <p class="card-text">CFO</p>
-                    <p>Sophia joined Lionize in 2019 and has been an amazing addition since.</p>
-                    
-                </div>
-            </div>
-            <div class="card homepage-card bio-card" style="width: 18rem;">
-                <img src="{{ MEDIA_URL }}bio3.jpg" class="card-img-top homepage-card-image bio-image" alt="">
-                <div class="card-body bio-card-body">
-                    <h4 class="card-title">Athena Murphy</h4>
-                    <p class="card-text">CTO</p>
-                    <p>Athena is the force behind all of our technical output and she leads up our four tech teams.</p>
-                </div>
-            </div>
-        </div>
         </section>
-        <section>
-            
-        </section>
+<!-- Contact Form -->
         <section id="contact-us" class="row blue-bg-section">
             <h3 class="homepage-body-heading contact-us-heading">Contact Us</h3>
             <form class="contact-form col-10 offset-1 col-md-6 offset-md-3" method="POST">
@@ -147,7 +149,6 @@
             </form>
         </section>
     </div>
-    
 {% endblock %}
 
 {% block postloadjs %}
