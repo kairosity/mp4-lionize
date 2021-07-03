@@ -7,6 +7,7 @@ from .models import UserProfile, Message
 from products.models import Review
 from .forms import UserProfileForm
 from checkout.models import Order
+from django.http import HttpResponse
 
 
 @login_required
@@ -46,8 +47,8 @@ def profile(request):
         'form': form,
         'on_profile_page': True,
     }
-
-    return render(request, template, context)
+    return HttpResponse(status=500)
+    # return render(request, template, context)
 
 
 @login_required
