@@ -41,14 +41,14 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    template = 'profiles/profile.html'
+    # template = 'profiles/profile.html'
+    template = '500.html'
 
     context = {
         'form': form,
         'on_profile_page': True,
     }
-    return HttpResponse(status=500)
-    # return render(request, template, context)
+    return render(request, template, context)
 
 
 @login_required
