@@ -1346,7 +1346,9 @@ When a user orders and purchases a product, they are automatically entitled to r
 
 - The review is also now visible on right hand side of the user's review page, in their user portal.
 - These reviews are listed most recent first.
-- When an order has been reviewed, it is not longer listed on the left hand side of the User Portal's Review page.
+- When an order of a specific product has been reviewed, any orders of that product are no longer listed on the left hand side of the User Portal's Review page.
+- Even if the user has ordered multiple quantities of that product they are only allowed to leave 1 review.
+- This is to prevent against multiple reviews by the same person, which if someone were to order a weekly social media product, would fill up their review page very quickly and create a bad User Experience for them.
 
 <br>
 
@@ -1356,6 +1358,31 @@ When a user orders and purchases a product, they are automatically entitled to r
 
 <br>
 
+- Instead of allowing multiple reviews of the same product, a user can choose to Edit their review, if they do wish to change anything. 
+- Only the creator of a review can edit that review. 
+- They can choose to change the review title, the review content and the star rating.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/edit-review.png">
+</p>
+
+<br>
+
+- The review creator can also choose to delete a review. 
+- Clicking the delete button on their reviews page will bring them to the "delete review" page.
+- Once they confirm the deletion, the review is deleted.
+- Because that product has still been ordered by that user, they are now able to post a review on that product again. 
+- All orders of that product will be visible again in the "products to review" section of the reviews page.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/delete-review.png">
+</p>
+
+<br>
 
 </details>
 

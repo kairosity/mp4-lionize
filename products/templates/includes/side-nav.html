@@ -1,6 +1,6 @@
 {% if request.user.is_authenticated %}
     <div class="side-nav-container d-none d-lg-block">
-        {% if request.path == '/user-portal/profile' or request.path == '/bag/' or request.path == '/user-portal/orders' or request.path ==  '/user-portal/reviews' or 'checkout' in request.path %}
+        {% if request.path == '/user-portal/profile' or request.path == '/bag/' or request.path == '/user-portal/orders' or request.path ==  '/user-portal/reviews' or 'checkout' in request.path or 'edit-review' in request.path or 'delete-review' in request.path %}
             <hr class="white-hr">
             <p class="side-nav-heading">User Portal</p>
             <ul class="nav side-nav">
@@ -61,7 +61,7 @@
         <hr class="white-hr">
         {% endif %}
         {% if request.user.is_staff %}
-            {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' or request.path == '/admin-messages-dashboard' or request.path == '/products/add/' or 'edit' in request.path or 'delete' in request.path %}
+            {% if request.path == '/admin-product-dashboard' or request.path == '/admin-user-dashboard' or request.path == '/admin-messages-dashboard' or request.path == '/products/add/' or 'edit' in request.path and 'review' not in request.path or 'delete' in request.path and 'review' not in request.path %}
                 <hr class="white-hr">
                 <p class="side-nav-heading">Admin Dashboard</p>
                 <ul class="nav side-nav">

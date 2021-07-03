@@ -7,27 +7,28 @@
     <div class="overlay"></div>
     <div class="container mt-2 p-5">
         <div class="row justify-content-center">
-<!-- Edit Product Page Heading -->
+<!-- Edit Review Page Heading -->
             <div class="col-12 col-md-10 col-lg-8">
                 {% include 'includes/skip-to-main.html' %}
-                <h2 id="main" class="admin-page-heading mb-3 details-page-heading">Edit Review of "{{review.product.friendly_name|title}}"</h2>
+                <br>
+                <h2 id="main" class="admin-page-heading mb-3 text-align-center review-page-heading">Edit Review of "{{review.product.friendly_name|title}}"</h2>
             </div>
         </div>
-<!-- Edit Product Form -->
+<!-- Edit Review Form -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
                 <form method="POST" action="{% url 'edit_review' review.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <div class="form-row row mb-2">
+                    <div class="form-row row mb-2 mt-2">
                         <div class="form-group col-12 mb-0">
                             {{ form.review_title | as_crispy_field }}
                         </div>
                     </div>
-                    <div class="form-row row mb-2">
-                        <div class="form-group col-md-6">
+                    <div class="form-row row mb-4">
+                        <div class="form-group col-md-6 mt-4">
                             {{ form.review_stars | as_crispy_field }}
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 mt-4">
                             {{ form.review | as_crispy_field }}
                         </div>
                     </div>

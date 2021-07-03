@@ -87,7 +87,7 @@ $(function(){
         } else if (splitPath == 'content-creation'){
             contentCreationInfoLink.classList.add('active-page-side-nav');
         }
-    } else if (splitPath[0] == 'user-portal' || splitPath[0] == 'bag'){
+    } else if (splitPath[0] == 'user-portal' || splitPath[0] == 'bag' || splitPath[0] == 'products' && splitPath[1] == 'delete-review' || splitPath[0] == 'products' && splitPath[1] == 'edit-review'){
         userPortalLink.classList.add('active-page');
         userPortalLinkMob.classList.add('active-page');
 
@@ -100,7 +100,7 @@ $(function(){
         } else if (splitPath[0] == 'bag'){
             bagLink.classList.add('active-page-side-nav');
             bagLinkMob.classList.add('active-page-side-nav');
-        } else if (splitPath[1] == 'reviews'){
+        } else if (splitPath[1] == 'reviews' || splitPath[1] == 'edit-review' || splitPath[1] == 'delete-review'){
             reviewsLink.classList.add('active-page-side-nav');
             reviewsLinkMob.classList.add('active-page-side-nav');
         }
@@ -110,7 +110,7 @@ $(function(){
         ordersLink.classList.add('active-page-side-nav');
         ordersLinkMob.classList.add('active-page-side-nav');
 
-    } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit' && splitPath[1] !== 'delete'){
+    } else if (splitPath[0] == 'products' && splitPath[1] !== 'add' && splitPath[1] !== 'edit' && splitPath[1] !== 'delete' && splitPath[1] !== 'edit-review' && splitPath[1] !== 'delete-review'){
         shopLink.classList.add('active-page');
         shopLinkMob.classList.add('active-page');
 
