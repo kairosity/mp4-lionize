@@ -148,6 +148,8 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 3. Easily view all my past orders, and all their attendent details.
 4. View a list of my ordered and purchased products that I can review.
 5. View a list of all the reviews I have written.
+6. Edit any of the reviews I have written.
+7. Delete any of the reviews I have written.
 
 ### Shopping
 

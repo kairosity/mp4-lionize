@@ -5,10 +5,24 @@
 * [**User Story Testing**](#user-story-testing)
   * [1. First Time User Goals Testing](#first-time-user-goals-testing)
   * [2. Returning User Goals Testing](#returning-user-goals-testing)
-  * [3. Accessibility User Goals Testing](#accessibility-user-goals-testing)
-  * [4. Application Creator User Goals Testing](#application-creator-user-goals-testing)
+  * [3. Persona Based User Goals Testing](#persona-based-user-goal-testing)
+  * [4. Accessibility User Goals Testing](#accessibility-user-goals-testing)
+  * [5. Admin User Goals Testing](#admin-user-goals-testing)
+  * [6. Application Creator User Goals Testing](#application-creator-user-goals-testing)
 * [**Issues and bugs caught during testing**](#issues-and-bugs-caught-during-testing)
     * [1. Toast Initialization](#toast-initialization)
+    * [2. Removing Items from Shopping Bag](#removing-items-from-shopping-bag)
+    * [3. Development version of application css not loading](#development-version-of-application-css-not-loading)
+    * [4. Passing Data from the Homepage to an external JavaScript File.](#passing-data-from-the-homepage-to-an-external-javascript-file)
+    * [5. Product Review Model Errors](#product-review-model-errors)
+    * [6. First and Last Name Disconnect Issue](#first-and-last-name-disconnect-issue)
+    * [7. Error in Console When Attempting to Fire Bootstrap Modal](#error-in-console-when-attempting-to-fire-bootstrap-modal)
+    * [8. Changing Site Domain and Name](#changing-site-domain-and-name)
+    * [9. Communicating effectively with the user on the Reviews Page](#communicating-effectively-with-the-user-on-the-reviews-page)
+    * [10. Skip To Main and Autofocus](#skip-to-main-and-autofocus)
+    * [11. Gmail Connection Issue](#gmail-connection-issue)
+    * [12. Messages Date Updating](#messages-date-updating)
+    * [13. Stripe Webhooks Race Conditions](#stripe-webhooks-race-conditions)
 * [**Status Code Testing**](#status-code-testing)
     * [1. 200 Status Code Testing](#200-status-code-testing)
     * [2. 302 Status Code Testing](#302-status-code-testing)
@@ -24,15 +38,36 @@
     * [6. Input Validations](#6-input-validations)
     * [7. Email](#7-email)
     * [8. Logout](#8-logout)
-  * [**CRUD Functionality**](#crud-functionality)
-    * [Create](#create)
-        * [1. New User Registration](#1-new-user-registration)
-        * [2. Entering the Competition](#2-entering-the-competition)
-    * [Read](#read)
-      
-    * [Update](#update)
-     
-    * [Delete](#delete)
+  * [**Advanced CRUD Functionality: Regular Users**](#advanced-crud-functionality-regular-users)
+    * [User Portal](#user-portal-functionality)
+        * [1. Updating Profile (Update)](#1-updating-profile-update)
+        * [2. Viewing Order History and Viewing Individual Orders (Read)](#2-viewing-order-history-and-viewing-individual-orders-read)
+        * [3. Viewing Your Reviews and adding a new review (Create and Read)](#3-viewing-your-reviews-and-adding-a-new-review-create-and-read)
+        * [4. Editing a review (Update)](#4-editing-a-review-update)
+        * [5. Deleting a review (Delete)](#5-deleting-a-review-delete)
+    * [Shopping Functionality](#shopping-functionality)
+        * [1. Browsing and Filtering All Products (Read)](#1-browsing-and-filtering-all-products-read)
+        * [2. Browsing Product Category Pages (Read)](#2-browsing-product-category-pages-read)
+        * [3. Adding products to the shopping bag](#3-adding-products-to-the-shopping-bag)
+        * [4. Updating the quantity of a product in the shopping bag.](#4-updating-the-quantity-of-a-product-in-the-shopping-bag)
+        * [5. Removing a product from the shopping bag.](#5-removing-a-product-from-the-shopping-bag)
+        * [6. Checkout and Purchasing a Product. (Create)](#6-checkout-and-purchasing-a-product-create)
+
+  * [**Advanced CRUD Functionality: Admin (Staff and Superuser) Users**](#advanced-crud-functionality-admin-staff-and-superuser-users)
+    * [Admin Product Dashboard](#admin-product-dashboard)
+        * [1. Search for Products (Read)](#1-search-for-products-read)
+        * [2. Filter by Category (Read)](#2-filter-by-category-read)
+        * [3. Add a New Product (Create)](#3-add-a-new-product-create)
+        * [4. Edit a Product (Update)](#4-edit-a-product-update)
+        * [5. Remove a Product from the Shop (Update)](#5-remove-a-product-from-the-shop-update)
+        * [6. Add a Product to the Shop (Update)](#6-add-a-product-to-the-shop-update)
+        * [7. Attempt to Delete a Product](#7-attempt-to-delete-a-product)
+        * [8. Delete a Product (superusers only) (Delete)](#8-delete-a-product-superusers-only-delete)
+    * [Admin User Dashboard](#admin-user-dashboard)
+        * [1. Search for Users (Read)](#1-search-for-users-read)
+        * [2. Browse Users (Read)](#2-browse-users-read)
+    * [Admin Messages Dashboard](#admin-messages-dashboard)
+        * [1. Browse Messages and mark resolved and mark re-open. (Update)](#1-browse-messages-and-mark-resolved-and-mark-re-open-update)
 
 * [**Security Testing**](#security-testing)
     * [Testing the CSRF Protection](#testing-the-csrf-protection)
@@ -229,6 +264,18 @@ Receive an email confirmation of my registration.__
 
     __PASS__
 
+6. __Edit any of the reviews I have written.__
+
+- The user can click the edit button under the review in question, which will bring them to the edit review page.
+
+    __PASS__
+
+7. __Delete any of the reviews I have written.__
+
+- The user can click the delete button under the review in question, which will bring them to the delete review page.
+
+    __PASS__
+
 
 ### Shopping
 
@@ -355,7 +402,7 @@ Receive an email confirmation of my registration.__
 
 - The order history page is accessible via the User Portal and lists orders from most recent to oldest. 
 
-## Persona Based User Stories
+## Persona Based User Goal Testing
 
 ### Tom Lynch - Hipster Coffee Shop Owner
 ### *As a sole trading small business owner I want to be able to...*
@@ -489,7 +536,7 @@ __Yellow / Blue Colourblindness__:
 
     __PASS__
 
-## Admin User Stories
+## Admin User Goals Testing
 ### *As an application admin user I want to be able to...*
 
 1. __Add a new product to the shop.__
@@ -551,6 +598,12 @@ __Yellow / Blue Colourblindness__:
 - This would be a natural corollary of the application's functionality and design. 
 
     __PASS__
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
 
 # Issues and bugs caught during testing
 
@@ -654,7 +707,7 @@ __Fix:__ I used the data*- attribute on hidden input fields and gave the fields 
         <input id="user-first-name" type="hidden" data-user-first-name="{{ request.user.first_name }}">
         <input id="user-last-name" type="hidden" data-user-last-name="{{ request.user.last_name }}">
 
-## Product "Review" Model Errors
+## Product Review Model Errors
 
 __Issue:__ When creating my product "Review" model the following errors were thrown. 
 
@@ -676,7 +729,7 @@ To this:
 
 Fixed the issue.
 
-## First & Last Name Disconnect Issue
+## First and Last Name Disconnect Issue
 
 __Issue:__ I needed a way to allow users to add/edit their first & last names on their profile page and have this reflected and updated on the Django auth user model as well as the UserProfile Model. This was important as the checkout page form specifically asks for the first & last names and it gets them from calling the ```get_full_name()``` method on the Django auth User object. 
 
@@ -704,7 +757,7 @@ __Issue:__ When attempting to integrate a Bootstrap modal, it refused to fire an
 __Fix:__ I found [this Stack Overflow Post](https://stackoverflow.com/questions/67440523/bootstrap-v5-modal-show-issue) describing the error exactly and it directed me to place the bootrap.bundle.min.js link just before the closing body tag, instead of in the head of the page. Doing so fixed the issue.
 
 
-## Changing Site Domain & Name
+## Changing Site Domain and Name
 
 __Issue:__ To change my site domain from example.com to lionize.com & likewise name from example.com to Lionize, I deleted the example.com site and replaced it with a new one for lionize.com, which immediately created the following error anytime I navigated anywhere relating to the database:
 
@@ -765,7 +818,7 @@ __Fix:__ To add a conditional message I therefore decided that I would use JavaS
     ordersNotPresent.innerHTML = `<p>You have no orders to review.</p>`
     }
 
-## Skip To Main & Autofocus 
+## Skip To Main and Autofocus 
 
 __Issue:__ This is more of a note than an issue, when integrating the "skip to main" links on each page, I found that the autofocus widget on the forms interfered with its functioning, which has led me to conclude that autofocus itself as a mechanism is not accessibility friendly. 
 
@@ -925,6 +978,9 @@ __Fix:__ After researching this problem in Slack and reading a long thread by ck
 
 <br>
 
+- /products/edit-review/<review_id>:int/ - __PASS__
+- /products/delete-review/<review_id>:int/ - __PASS__
+
 ## Logged in Admin Users
 
 - / - __PASS__
@@ -945,6 +1001,8 @@ __Fix:__ After researching this problem in Slack and reading a long thread by ck
 - /products/social-media-management/ - __PASS__
 - /products/content-creation-products/ - __PASS__
 - /products/<product_id>:int/ - __PASS__
+- /products/edit-review/<review_id>:int/ - __PASS__
+- /products/delete-review/<review_id>:int/ - __PASS__
 - /checkout/ - __PASS__
 - /checkout/checkout_success/<order_number> - __PASS__
 - /accounts/logout/ - __PASS__
@@ -1066,6 +1124,9 @@ The following url requests by the following categories of users should return a 
 
 <br>
 
+- /products/edit-review/<review_id>:int/ - __PASS__
+- /products/delete-review/<review_id>:int/ - __PASS__
+
 ## Logged in Regular Users
 
 - /accounts/login/
@@ -1092,12 +1153,11 @@ The following url requests by the following categories of users should return a 
 
 <br>
 
-
 </details>
 
 <br>
 
-## 403 Status Codes
+## 403 Status Code Testing
 
 The following url requests by the following categories of users should return a 403 Forbidden status code:
 
@@ -1130,9 +1190,23 @@ The following url requests by the following categories of users should return a 
 
 <br>
 
+- /products/edit-review/<review_id>:int/ (not their own)- __PASS__
+- /products/delete-review/<review_id>:int/ (not their own)- __PASS__
+
+<br>
+
+<p align="center">
+  <img src="static/images/status-code/edit-del-review-403.png">
+</p>
+
+<br>
+
 ## Logged in Admin (Staff) Users
 
 - /products/delete/<int:product_id>/ (51) - __PASS__  (only superusers are allowed delete products completely)
+
+- /products/edit-review/<review_id>:int/ (not their own)- __PASS__
+- /products/delete-review/<review_id>:int/ (not their own)- __PASS__
 
 <br>
 
@@ -1146,7 +1220,7 @@ The following url requests by the following categories of users should return a 
 
 <br>
 
-## 404 Status Codes
+## 404 Status Code Testing
 
 The following url requests by the following categories of users should return a 403 Forbidden status code:
 
@@ -1261,6 +1335,7 @@ Testing Process
 __PASS__
 
 - I checked each link on the page to ensure they linked to the correct page. -- __PASS__
+- I checked that each external link had both ```rel="noopener"``` and ```target="_blank"``` set on them to ensure security (former) and user experience (latter).
 - I used W3 Link Checker to ensure there were no broken links. -- __PASS__
 
 
@@ -1282,7 +1357,7 @@ __PASS__
 Testing Process:
 
 - Submitted all forms and then immediately checked the Django backend and the application response to ensure they submitted successfully. -- __PASS__
-- Submitted each form with various incorrect or forbidden inputs to ensure that the form was not submitted, and that the appropriate error message was displayed to the user. -- __PASS__
+- Submitted each form with various incorrect or forbidden inputs to ensure that the form was not submitted, that the validations were functional and that the appropriate error messages were displayed to the user. -- __PASS__
 
 ## 6. Input Validations
 
@@ -1290,7 +1365,7 @@ __PASS__
 
 Bootstrap comes with a useful set of input/form validations, which have been used in this application to supplement Django validations. 
 
-1. Contact Form Validations.
+__1. Contact Form Validations.__
 
   - Django automatically uses an email validator on EmailFields, so text input in a non-email format will throw a validator error message. 
 
@@ -1323,7 +1398,7 @@ Bootstrap comes with a useful set of input/form validations, which have been use
 
 <br>
 
-2. Register Form Validations
+__2. Register Form Validations__
 
 - These are part and parcel of the Django allauth models, but briefly here are the validations attached:
 
@@ -1416,7 +1491,7 @@ Bootstrap comes with a useful set of input/form validations, which have been use
 
 <br>
 
-3. Login Form Validations
+__3. Login Form Validations__
 
 - Your login details must match your registered account details. 
 - Username OR Email 
@@ -1432,7 +1507,7 @@ Django won't tell you which one you have incorrect, to protect against the hacki
 
 <br>
 
-4. Profile Form Validations
+__4. Profile Form Validations__
 
 None of the profile form fields are required on the profile page, however for fields that are filled in, I have added a number of validations:
 - The first_name field must not be longer than 40 characters.
@@ -1486,7 +1561,7 @@ None of the profile form fields are required on the profile page, however for fi
 
 <br>
 
-5. Review Form Validations
+__5. Review Form Validations__
 
 - The Review Title & Review are both required fields.
 
@@ -1516,7 +1591,7 @@ None of the profile form fields are required on the profile page, however for fi
 
 <br>
 
-7. Admin: Add a new product Form
+__7. Admin: Add a new product Form__
 
 - The Name field must be a minimum of 2 characters long.
 - The Friendly_name field must be a minimum of 2 characters long.
@@ -1550,7 +1625,7 @@ None of the profile form fields are required on the profile page, however for fi
 
 <br>
 
-8. Admin: Edit Product Form
+__8. Admin: Edit Product Form__
 
 - All of the above validations apply to the edit form as well. 
 
@@ -1608,11 +1683,11 @@ Testing Process:
 
 <br>
 
-## Advanced Functionality: Regular Users
+## Advanced CRUD Functionality: Regular Users
 
-## User Portal
+## User Portal Functionality
 
-### 1. Updating Profile
+### 1. Updating Profile (Update)
 
 Testing Process:
 
@@ -1631,7 +1706,7 @@ Testing Process:
 
 __PASS__
 
-### 2. Viewing Order History & Viewing Individual Orders
+### 2. Viewing Order History and Viewing Individual Orders (Read)
 
 Testing Process:
 
@@ -1649,7 +1724,7 @@ Testing Process:
 
 __PASS__
 
-### 3. Viewing "Your Reviews" and adding a new review
+### 3. Viewing Your Reviews and adding a new review (Create and Read)
 
 Testing Process:
 
@@ -1673,9 +1748,52 @@ Testing Process:
 
 __PASS__
 
-## Shopping
+### 4. Editing a review (Update)
 
-### 1. Browsing & Filtering All Products
+Testing Process:
+
+- Navigate to and view, the "Your Reviews" Page.
+- Click on the "Edit" button.
+- Click on "Cancel" to check functionality.
+- Click back into Edit.
+- Make any changes to the review. 
+- Click on Update Review
+- Verify the changes have been made on the review page and on the product details page.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/edit-review.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+### 5. Deleting a review (Delete)
+
+Testing Process:
+
+- Navigate to and view, the "Your Reviews" Page.
+- Click on the "Delete" button under a review.
+- Click on "No, Cancel" to check functionality.
+- Click back into Delete.
+- Click "Yes, Delete it!" to confirm deletion.
+- Verify the changes have been made on the review page and verify that that specific product is now back in the "Products to review" section of the page.
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/delete-review.gif" width="600">
+</div>
+
+<br>
+
+__PASS__
+
+## Shopping Functionality
+
+### 1. Browsing and Filtering All Products (Read)
 
 Testing Process:
 
@@ -1694,7 +1812,7 @@ Testing Process:
 
 __PASS__
 
-### 2. Browsing Product Category Pages
+### 2. Browsing Product Category Pages (Read)
 
 Testing Process:
 
@@ -1711,7 +1829,7 @@ Testing Process:
 
 __PASS__
 
-### 3. Adding products to the shopping bag.
+### 3. Adding products to the shopping bag. 
 
 Testing Process:
 
@@ -1767,7 +1885,7 @@ Testing Process:
 
 __PASS__
 
-### 6. Checkout & Purchasing a Product. 
+### 6. Checkout and Purchasing a Product. (Create)
 
 Testing Process:
 
@@ -1794,11 +1912,11 @@ Testing Process:
 
 <br>
 
-## Advanced Functionality: Admin (Staff & Superuser) Users
+## Advanced CRUD Functionality: Admin (Staff and Superuser) Users
 
 ## Admin Product Dashboard
 
-### 1. Search for Products
+### 1. Search for Products (Read)
 
 Testing Process:
 
@@ -1818,7 +1936,7 @@ Testing Process:
 __PASS__
 
 
-### 2. Filter by Category
+### 2. Filter by Category (Read)
 
 Testing Process:
 
@@ -1836,7 +1954,7 @@ Testing Process:
 __PASS__
 
 
-### 3. Add a New Product
+### 3. Add a New Product (Create)
 
 Testing Process:
 
@@ -1855,7 +1973,7 @@ Testing Process:
 
 __PASS__
 
-### 4. Edit a Product
+### 4. Edit a Product (Update)
 
 Testing Process:
 
@@ -1873,7 +1991,7 @@ Testing Process:
 
 __PASS__
 
-### 5. Remove a Product from the Shop
+### 5. Remove a Product from the Shop (Update)
 
 Testing Process:
 
@@ -1891,7 +2009,7 @@ Testing Process:
 
 __PASS__
 
-### 6. Add a Product to the Shop
+### 6. Add a Product to the Shop (Update)
 
 Testing Process:
 
@@ -1926,7 +2044,7 @@ Testing Process:
 
 __PASS__
 
-### 8. Delete a Product (superusers only)
+### 8. Delete a Product (superusers only) (Delete)
 
 Testing Process:
 
@@ -1949,7 +2067,7 @@ __PASS__
 
 ## Admin User Dashboard
 
-### 1. Search for Users
+### 1. Search for Users (Read)
 
 Testing Process:
 
@@ -1967,7 +2085,7 @@ Testing Process:
 
 __PASS__
 
-### 2. Browse Users
+### 2. Browse Users (Read)
 
 Testing Process:
 
@@ -1987,7 +2105,7 @@ __PASS__
 
 ## Admin Messages Dashboard
 
-### 1. Browse Messages & Mark one message as resolved and re-open another one.
+### 1. Browse Messages and mark resolved and mark re-open. (Update)
 
 Testing Process:
 
