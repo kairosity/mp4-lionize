@@ -1359,7 +1359,7 @@ When a user orders and purchases a product, they are automatically entitled to r
 <br>
 
 - Instead of allowing multiple reviews of the same product, a user can choose to Edit their review, if they do wish to change anything. 
-- Only the creator of a review can edit that review. 
+- Only the creator of a review can edit that review.
 - They can choose to change the review title, the review content and the star rating.
 
 <br>

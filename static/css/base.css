@@ -305,7 +305,9 @@ ul.dropdown-menu li a {
     color: var(--white) !important;
     letter-spacing: 1px;
 }
-ul.dropdown-menu li a:hover {
+ul.dropdown-menu li a:hover,
+ul.dropdown-menu li a:focus-visible,
+ul.dropdown-menu li a:focus {
     background-color: var(--white);
     color: var(--main-colour) !important;
 }
