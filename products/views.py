@@ -206,11 +206,12 @@ def product_detail(request, product_id):
         else:
             features = None
 
-        if request.META['HTTP_REFERER'] is not None:
+        if 'HTTP_REFERER' in request.META:
             referring_page = request.META['HTTP_REFERER']
             referring_page_path = referring_page.split('/')[3:]
         else:
-            referring_page = 'none'
+            referring_page = '/products/'
+            referring_page_path = '/products/'
 
         if len(referring_page_path) > 1:
             referring_page_path1 = referring_page_path[1]

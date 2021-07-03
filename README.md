@@ -1353,7 +1353,7 @@ When a user orders and purchases a product, they are automatically entitled to r
 <br>
 
 <p align="center">
-  <img src="static/images/features/reviews-page.png">
+  <img src="static/images/features/reviews-page1.png">
 </p>
 
 <br>
