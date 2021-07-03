@@ -4,19 +4,19 @@
 
 ## Code Institute Milestone Project 4
 
-This project is an application and company website for a digital marketing business called "Lionize". The application both showcases the digital services offered and also allows clients to register a free account. Once registered the client is given access to further information about the services, as well as quote calculators and they also have the ability to order and pay for certain digital products online.
+This project is an application and company website for a digital marketing business called "Lionize". The application showcases the digital services offered and also allows clients to register a free account. Once registered, the client is given access to further information about the services, given access to the shop, and a User Portal where they can engage in more customised interactions with application.
  
-
 # Table of Contents
 
 - [1. UX](#ux)
-    * [User Personas - Four Examples](#user-personas-four-examples)
+    * [User Personas](#user-personas)
     * [User Stories](#user-stories)
       - [*First Time User Stories*](#first-time-user-stories)
       - [*Returning User Stories*](#returning-user-stories)
       - [*Persona Based User Stories*](#persona-based-user-stories)
-      - [*Accessibility User Stories*](#accessibility-user-stories)
+      - [*Admin User Stories*](#accessibility-user-stories)
       - [*Application Creator User Stories*](#application-creator-user-stories)
+      - [*Accessibility User Stories*](#accessibility-user-stories)
   * [Strategy](#strategy)
       - [*Project Goals*](#project-goals)
       - [*Target Users*](#target-users)
@@ -38,11 +38,7 @@ This project is an application and company website for a digital marketing busin
         - [*State Changes*](#state-changes)
         - [*Error Pages*](#error-pages)
         - [*Pre-Loader*](#pre-loader)
-      - [*Information Architecture*](#information-architecture)
-      - [*Application Sections*](#application-sections)
-        - [Guest Users (not logged in)](#guest-users-not-logged-in)
-        - [Guest User Flow](#guest-user-flow)
-        - [Logged in Users](#logged-in-users)
+      - [*Information Architecture and User Flow*](#information-architecture-and-user-flow)
   * [Skeleton](#skeleton)
       - [*Progressive Disclosure*](#progressive-disclosure)
       - [*Metaphorical Thinking*](#metaphorical-thinking)
@@ -57,12 +53,38 @@ This project is an application and company website for a digital marketing busin
       - [*Design Mockups*](#design-mockups)
 - [2. Database Architecture](#database-architecture)
     - [Schema](#schema)
+    - [Category Model](#category-model)
+    - [Product Model](#product-model)
+    - [Review Model](#review-model)
+    - [Order Model](#order-model)
+    - [Order Line Item Model](#order-line-item-model)
+    - [Profile Model](#profile-model)
+    - [Message Model](#message-model)
+    - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [3. Features](#features)
+    - [1. Home](#1-home)
+    - [2. Contact](#2-contact)
+    - [3. Services Information Pages](#3-services-information-pages)
+    - [4. Navigation](#4-navigation)
+    - [5. Register](#5-register)
+    - [6. Login](#6-login)
+    - [7. User Portal: Profile](#7-user-portal-profile)
+    - [8. User Portal: Shopping Bag](#8-user-portal-shopping-bag)
+    - [9. User Portal: Profile](#9-user-portal-order-history)
+    - [10. User Portal: Reviews](#10-user-portal-reviews)
+    - [11. Shop: All Products Page](#11-shop-all-products-page)
+    - [12. Shop: Product Category Page](#12-shop-product-category-page)
+    - [13. Shop: Product Details Page](#13-shop-product-details-page)
+    - [14. Payment Portal (Checkout)](#14-payment-portal-checkout)
+    - [15. Footer](#15-footer)
+    - [16. Logout](#16-logout)
+    - [17. Toast Messages](#17-toast-messages)
+    - [18. Admin: Backend Functionality via Django](#18-admin-backend-functionality-via-django)
+    - [19. Admin: Frontend Product Dashboard](#19-admin-frontend-product-dashboard)
+    - [20. Admin: Frontend User Dashboard](#20-admin-frontend-user-dashboard)
+    - [21. Admin: Frontend Messages Dashboard](#21-admin-frontend-messages-dashboard)
+    - [22. Error Pages](#22-error-pages)
 - [4. Responsivity](#responsivity)
-    - [Mobile Devices](#mobile-devices-materialize-sm-breakpoint)
-    - [Tablet Devices](#tablet-devices-materialize-m-breakpoint)
-    - [Desktop Devices](#desktop-devices-materialize-l-breakpoint)
-    - [Wide Desktop Devices](#wide-desktop-devices-materialize-xl-breakpoint)
 - [5. Accessibility](#accessibility)
     - [1. Accessibility for Users with Visual Impairments](#1-accessibility-for-users-with-visual-impairments)
     - [2. Accessibility for Keyboard Users](#2-accessibility-for-keyboard-users)
@@ -71,11 +93,22 @@ This project is an application and company website for a digital marketing busin
     - [5. Accessibility for Users with Slow Internet Connections](#5-accessibility-for-users-with-slow-internet-connections)
 - [6. Security](#security)
     - [1. CSRF Protection](#1-csrf-protection)
-    - [2. Flask-Talisman and Content Security policy](#2-flask-talisman-and-content-security-policy)
-    - [3. Access Control](#3-access-control)
-    - [4. Request Methods](#4-request-methods)
+    - [2. Cross Site Scripting (XSS) Protection](#2-cross-site-scripting-xss-protection)
+    - [3. Clickjacking Protection](#3-clickjacking-protection)
+    - [4. HTTPS](#4-https)
+    - [5. Secure Cookies](#5-secure-cookies)
+    - [6. Django's Security Middleware](#6-djangos-security-middleware)
+    - [7. Access Control](#7-access-control)
+    - [8. Request Methods](#8-request-methods)
+    - [9. Content Security Policy](#9-content-security-policy)
+    - [10. Security Vulnerabilities](#10-security-vulnerabilities)
 - [7. Testing](#testing)
 - [8. Future Features To Implement and Issues Remaining](#future-features-to-implement-and-issues-remaining)
+  - [Adding Features to Products](#adding-features-to-products)
+  - [Adding Subscription Services for Social Media Management](#adding-subscription-services-for-social-media-management)
+   - [Filtering Messages by "Date" or "Resolved"](#filtering-messages-by-date-or-resolved)
+   - [Pagination or Ajax loading](#pagination-or-ajax-loading)
+   - [Product Deletion](#product-deletion)
 - [9. Attribution](#attribution)
 - [10. Deployment](#deployment)
 - [11. Tools and Other Resources Used](#tools-and-other-resources-used)
@@ -84,15 +117,14 @@ This project is an application and company website for a digital marketing busin
     - [3. JavaScript](#3-javascript)
     - [4. Python](#4-python)
     - [5. Django](#5-django)
-    - [6. Jinja](#6-jinja)
-    - [7. General](#7-general)
-- [12. Libraries](#libraries)
+    - [6. General](#6-general)
+- [12. Libraries extensions and packages](#libraries-extensions-and-packages)
 - [13. Technology Used](#technology-used)
 - [14. Acknowledgements](#acknowledgements)
 
 # UX
 
-## User Personas - Four Examples
+## User Personas
 
 1. __Tom Lynch__ is a __sole trader__. He runs a tiny, stylish hipster coffee shop in Kinsale, Co. Cork. He is fairly tech-savvy and enjoys managing his social media accounts, but does not have the inclination or the time to develop his own website. A friend made one for him using a template site, but he doesn't feel like it reflects the quality of his business. He wants to hire a professional developer to better align his online presence with his offline business. He has a budget of €2,500 for this purpose.
 
@@ -206,12 +238,6 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 2. Delegate the content creation of blog posts for my website and to share on social media to increase and maintain follower engagement.
 3. Easily pay for content creation products as I need them.
 
-## Accessibility User Stories
-
-- __*As a user who is colourblind*__, I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.
-- __*As a keyboard user*__, I want to be able to navigate the application using the keyboard.
-- __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
-
 ## Admin User Stories
 ### *As an application admin user I want to be able to...*
 
@@ -227,6 +253,12 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 - Ensure that the application is as accessible as possible to include as wide a variety of users as possible.
 - Accept online payments from users.
 - Increase Lionize's client base and profits through use of the website and associated ease of online orders.
+
+## Accessibility User Stories
+
+- __*As a user who is colourblind*__, I want the colours and design elements used to employ sufficient contrast so that any visual cues are easily apparent.
+- __*As a keyboard user*__, I want to be able to navigate the application using the keyboard.
+- __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
 
 #### back to [contents](#table-of-contents) 
 <br>
@@ -295,6 +327,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 8.| Users can add widgets of their social media accounts to their user portal to view their accounts while inside the application. | 2 | 3 | 5
 9.| Users can view a list of products they have previously ordered and that can be reviewed. | 6 | 6 | 12
 10.| Users can view a list of their reviews. | 5 | 7 | 12
+11.| Users can add, edit & delete reviews on products they have previously ordered. | 5 | 7 | 12
 . | __*SHOP FUNCTIONALITY & FEATURES*__ 
 1.| Users can order digital products directly from the user portal / shop area. |6 | 6 | 12
 2.| The shop is divided into 4 categories of products: Web Design, SEO, Social Media Management & Content Creation. |4 | 5 | 9
@@ -352,6 +385,7 @@ The crux of this application's purpose is as a B2B service provider that allows 
 3. Users can view a list of their past orders.
 4. Users can view a list of items availble for them to review.
 5. Users can view a list of their reviews.
+6. Users can add, edit and delete reviews of products they have ordered.
 ### Searching & Filtering
 1. Users can view categories of products to shop using a side navigation bar.
 2. Users can perform a keyword search against the product names, descriptions & features.
@@ -455,12 +489,14 @@ The name of the application itself communicates the essence of what the business
 
 ### Form Validation Messages
 
-- The register, login and checkout forms include form validation that immediately communicates a message back to the user if they either fail to complete a required field or complete a field incorrectly.
+- The register, login, add product, edit product, add review, edit review and checkout forms include form validation that immediately communicates a message back to the user if they either fail to complete a required field or complete a field incorrectly.
 - If the user attempts to log in with incorrect details the message delivered is above the form and in red to communicate the error clearly.
 
 ### Deletion Confirmation Modals
 
-If an admin user chooses to delete a product, they are asked to confirm this deletion via a pop-up modal. This adds an extra level of protection against accidental deletion.
+If an admin superuser chooses to delete a product, they are asked to confirm this deletion via a pop-up modal. This adds an extra level of protection against accidental deletion.
+
+Likewise if a user decided
 
 ### State Changes
 
@@ -475,7 +511,7 @@ There are a number of specific error pages that cover the gamut of common errors
 
 <br>
 
-## Information Architecture & User Flow
+## Information Architecture and User Flow
 
 This application is mostly non-linear in its narrative form. Both first time and logged in users are able to browse the application at their leisure and any linearity is limited to the intended encouragement for first time users to register. This can be simply illustrated by:
 
@@ -713,6 +749,7 @@ The Message model stores all emails send by registered users via the contact for
 | date | date object | The date the email was sent. |
 | resolved | boolean | A boolean to keep track of whether the question was answered or issue resolved. |
 
+<br>
 
 ## Entity Relationship Diagram
 <br>
@@ -2149,10 +2186,12 @@ __500 Server error__
 
 </details>
 
+<br>
+
 #### back to [contents](#table-of-contents) 
 <br>
 
-# 4. Responsivity
+# Responsivity
 
 This application was developed to be fully responsive and accessible on all devices.
 
@@ -3002,7 +3041,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/reviews/mob-vert-reviews-2.png">
+  <img src="static/images/responsivity/reviews/mob-vert-reviews-2a.png">
 </p>
 
 <br>
@@ -3012,7 +3051,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/reviews/mob-land-reviews-1.png">
+  <img src="static/images/responsivity/reviews/mob-land-reviews-1a.png">
 </p>
 
 <br>
@@ -3032,7 +3071,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/reviews/tab-vert-reviews-1.png">
+  <img src="static/images/responsivity/reviews/tab-vert-reviews-1a.png">
 </p>
 
 <br>
@@ -3056,7 +3095,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 <p align="center">
-  <img src="static/images/responsivity/reviews/wide-desk-reviews-1.png">
+  <img src="static/images/responsivity/reviews/wide-desk-reviews-1a.png">
 </p>
 
 <br>
@@ -3863,7 +3902,8 @@ Most of the application's functionality is only accessible to users who are logg
 - Only authenticated users have access to the Shop, Product listings, prices and details. 
 - Only authenticated users can purchase products.
 - Normal (non-staff non-super) users cannot access the Admin Dashboards.
-- Normal users cannot make any changes to the shop, products or pricing. 
+- Normal users cannot make any changes to the shop, products or pricing.
+- Normal users can *only* edit and delete their own reviews. 
 - Staff users can add and edit products. They can also add and remove products from the Shop, without deleting them fully.
 - Staff users can mark messages as open or resolved. (Incidentally this is the only data altering GET request included and it is protected under an admin login.)
 - Staff users cannot access the Django backend.
@@ -3878,13 +3918,13 @@ In this way a hierarchy of security is created for this application based on the
 
 ## 9. Content Security Policy
 
-I tried to integrate django-csp to take care of the content security policy, as Django doesn't have any built-in CSP functionality, however no matter what settings and urls I added in, it would not correctly display the static styles with the CSP added to settings, so after a lot of refactoring, I removed it entirely.
+I tried to integrate django-csp to take care of the content security policy, as Django doesn't have any built-in CSP functionality, however no matter what settings and urls I added in, it would not correctly display the static styles using AWS with the CSP added to settings, so after a lot of refactoring, I removed it entirely.
 
 ## 10. Security Vulnerabilities
 
 - Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
 
-- The lack of a CSP is a glaring security vulnerability, but it will have to be implemented at a later date.
+- The lack of a CSP is something of a vulnerability and as testamount to its impact, it is the reason thr application scores somewhat poorly using Mozilla's secruity testing (outlined further in testing.md). It will have to be implemented at a later date.
 
 #### back to [contents](#table-of-contents) 
 
@@ -3892,14 +3932,14 @@ I tried to integrate django-csp to take care of the content security policy, as 
 
 # Testing
 
-[Please click here to read all testing documentation](testing.md)
+[__Please click here to read all testing documentation__](testing.md)
 
 #### back to [contents](#table-of-contents) 
 
 
 <br> 
 
-# Future Features To Implement & Issues Remaining
+# Future Features To Implement and Issues Remaining
 
 ## Adding Features to Products
 
@@ -3933,6 +3973,10 @@ After much tinkering with trying to add a CSP, I eventually decided that its' in
 # Attribution
 
 - Much of the foundational code from the checkout process and shopping bag functionality in particular comes from the Code Institute "Boutique Ado" tutorial. I have altered that code to suit the specific needs of this application which is rather different in form from that tutorial project, however a lot of the code is "heavily inspired" by that tutorial.
+
+- Anywhere the code is taken in its entirety I have made a note about that specific block of code.
+
+- All the really nice illustrations come from [unDraw](https://undraw.co/) which is an amazing resource. 
 
 <br>
 
