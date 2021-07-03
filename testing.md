@@ -52,6 +52,8 @@
         * [4. Updating the quantity of a product in the shopping bag.](#4-updating-the-quantity-of-a-product-in-the-shopping-bag)
         * [5. Removing a product from the shopping bag.](#5-removing-a-product-from-the-shopping-bag)
         * [6. Checkout and Purchasing a Product. (Create)](#6-checkout-and-purchasing-a-product-create)
+        * [7. Stripe Webhook Testing](#7-stripe-webhook-testing)
+        * [8. Stripe Payment Processing Testing](#8-stripe-payment-processing-testing)
 
   * [**Advanced CRUD Functionality: Admin (Staff and Superuser) Users**](#advanced-crud-functionality-admin-staff-and-superuser-users)
     * [Admin Product Dashboard](#admin-product-dashboard)
@@ -70,8 +72,18 @@
         * [1. Browse Messages and mark resolved and mark re-open. (Update)](#1-browse-messages-and-mark-resolved-and-mark-re-open-update)
 
 * [**Security Testing**](#security-testing)
-    * [Testing the CSRF Protection](#testing-the-csrf-protection)
-    * [Access Control Testing](#access-control-testing)
+    * [1. Testing CSRF Protection](#1-testing-csrf-protection)
+    * [2. Testing the Image Field Security](#2-testing-the-image-field-security)
+    * [3. Access Control Testing](#3-access-control-testing)
+    * [4. Chrome Dev Tools Security Check](#4-chrome-dev-tools-security-check)
+    * [5. Content Security Policy](#5-content-security-policy)
+    * [6. Mozilla Observatory Security Scanning](#6-mozilla-observatory-security-scanning)
+* [**Accessibility Testing**](#accessibility-testing)
+    * [Lighthouse Accessibility Tests](#lighthouse-accessibility-tests)
+    * [WAVE Web Accessibility Evaluation Tool](#wave-web-accessibility-evaluation-tool)
+    * [Web Accessibility by Level Access](#web-accessibility-by-level-access)
+    * [Keyboard Manual Testing](#keyboard-manual-testing)
+    * [Screen Reader Testing](#screen-reader-testing)
 * [**Browser Testing**](#browser-testing)
     * [Desktop Browser Testing](#desktop-browser-testing)
     * [Mobile Browser Testing](#mobile-browser-testing)
@@ -1929,7 +1941,7 @@ Testing Process:
 Testing Process:
 
 - This was as simple as using the Test Card numbers and purchasing products. 
-- Then checking in Stripe under the Payments & Developers Tabs to verify that those dummy orders were processed successfully, with all attendent details attached.
+- Then checking in Stripe under the Payments & Developers tabs to verify that those dummy orders were processed successfully, with all attendent details attached.
 
 <br>
 
@@ -3037,7 +3049,7 @@ I manually checked all the links anyway and the three mentioned links work perfe
 <br>
 
 
-## 3. CSS Validators
+## 2. CSS Validators
 
 ### __W3C CSS Validator__
 
@@ -3252,7 +3264,7 @@ All the JavaScript files passed though the JSHint validator with only warnings a
 
 <br>
 
-# Performance & Web Development Tools Testing
+# Performance and Web Development Tools Testing
 
 ## Lighthouse
 
