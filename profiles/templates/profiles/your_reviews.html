@@ -69,6 +69,9 @@
                             <p><strong>Review Title:</strong>  {{review.review_title}}</p>
                             <p><strong>Review:</strong> {{review.review}}</p>
                             <small class="text-muted"><strong>Reviewed:</strong> {{review.date_reviewed}}</small>
+                            <div><br></div>
+                            <a href="{% url 'edit_review' review.id %}" class="button button-accent button-tiny">Edit</a>
+                            <a href="{% url 'delete_review' review.id %}" class="button button-cancel button-tiny">Delete</a>
                         </div>
                     {% endfor %}
                 {% else %}

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.exceptions import PermissionDenied
-from .models import Product, Category
+from .models import Product, Category, Review
 from profiles.models import UserProfile
 from .forms import ProductForm, ReviewForm
 
@@ -323,6 +323,54 @@ def edit_product(request, product_id):
 
 
 @login_required
+def edit_review(request, review_id):
+    '''
+    * Displays the form for editing a review.
+    * Only available & visible to logged in users who
+    are trying to edit their own review.
+    \n Args:
+    1. request object
+    2. review id
+    \n Returns:
+    * POST saves the alterations to the review.
+    * GET displays the edit review form.
+    '''
+    review = get_object_or_404(Review, pk=review_id)
+
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, but you must be \
+            logged in to edit this review!')
+        raise PermissionDenied()
+
+    if str(review.user) != str(request.user):
+        messages.error(request, "I'm sorry but you cannot edit\
+            another user's review!")
+        raise PermissionDenied()
+
+    if request.method == 'POST':
+        form = ReviewForm(
+            request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            review_edited = form.save()
+            messages.success(request, 'Successfully updated review!')
+            return redirect(reverse('reviews'))
+        else:
+            messages.error(request, 'Failed to update review.\
+                Please ensure your entries are valid.')
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, f'You are editing your review.')
+
+    template = 'profiles/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def delete_product(request, product_id):
     '''
     * Deletes a product from the shop.
@@ -354,6 +402,59 @@ def delete_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    '''
+    * Deletes a user's review.
+    * Only available to logged in users looking to 
+    delete their own review.
+    \n Args:
+    1. request object
+    2. review id
+    \n Returns:
+    * POST deletes the review.
+    * GET displays the delete review page.
+    '''
+
+    review = get_object_or_404(Review, pk=review_id)
+    profile = get_object_or_404(UserProfile, user=request.user)
+    users_orders = profile.orders.all()
+    product_reviewed_id = review.product.id
+    product = get_object_or_404(Product, pk=product_reviewed_id)
+
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, but you need to be logged \
+        in to your user account in order to delete a review.')
+        raise PermissionDenied()
+
+    if str(review.user) != str(request.user):
+        messages.error(request, "I'm sorry but you cannot delete\
+            another user's review!")
+        raise PermissionDenied()
+
+    if request.method == 'POST':
+        review.delete()
+
+        # To set that item as not reviewed again.
+        for order in users_orders:
+            line_items = order.lineitems.all()
+            for item in line_items:
+                if item.product.id == product_reviewed_id:
+                    item.reviewed = False
+                    item.save()
+
+        messages.success(request, f'Review for "{review.product.friendly_name}" deleted!')
+        return redirect(reverse('reviews'))
+
+    template = 'profiles/delete_review.html'
+    context = {
+        'review': review,
+    }
+
+    return render(request, template, context)
+
 
 
 @login_required

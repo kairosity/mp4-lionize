@@ -2255,6 +2255,8 @@ __PASS__
 
 - I used Apple's voice over utility as well as the ChromeVox extension to test screen reader's ability to correctly interpret the site. 
 
+__PASS__
+
 <br>
 
 #### back to [contents](#testing-table-of-contents) 
@@ -2870,6 +2872,28 @@ The errors that remain are acceptable for the following reasons:
 
 ### __W3C Link Checker__
 
+The 15 anchors it found were all valid.
+
+<details>
+<summary><b>click for details</b></summary>
+
+<br>
+
+The three outliers referenced below were 2 links (linkedin & facebook) that were not checked due to robots exclusion and the instagram link returned a "too many requests" (429) code. 
+
+I manually checked all the links anyway and the three mentioned links work perfectly.
+
+<br>
+
+<div align="center">
+    <img src="static/images/code-validation/html/linkchecker.png">
+</div>
+
+</details>
+
+<br>
+
+
 ## 3. CSS Validators
 
 ### __W3C CSS Validator__
@@ -3079,6 +3103,8 @@ All the JavaScript files passed though the JSHint validator with only warnings a
 
 </details>
 
+<br>
+
 #### back to [contents](#testing-table-of-contents) 
 
 <br>
@@ -3088,6 +3114,8 @@ All the JavaScript files passed though the JSHint validator with only warnings a
 ## Lighthouse
 
 ### Mobile Lighthouse Test Results
+
+The application did well on all counts, but a little less well on mobile performace.
 
 ### Summary:
 
@@ -3130,6 +3158,8 @@ All the JavaScript files passed though the JSHint validator with only warnings a
 <br>
 
 ### Desktop Lighthouse Test Results
+
+The application did well on all counts.
 
 ### Summary:
 

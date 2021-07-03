@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="flex-container product-details-flex-container">
+    {% include 'includes/side-nav.html' %}
+    <div class="container-fluid col-12 col-md-8">
+        {% include 'includes/skip-to-main.html' %}
+<!-- Delete Confirmation -->
+        <div class="container form-container more-space2">
+            <div class="container">
+                <h1 id="main" class="details-page-heading delete-page-heading">Delete Confirmation</h1>
+                <h2 class="details-page-subheading mb-4">Are you certain you want to delete your review of 
+                "{{review.product.friendly_name}}"?
+                </h2>
+            </div>
+            <form method="POST" class="text-align-center" action="{% url 'delete_review' review.id %}">
+                {% csrf_token %}
+                <a class="button button-main xtra-pad" href="{% url 'reviews' %}">No, Cancel</a>
+                <button type="submit" class="button button-cancel">Yes, Delete it!</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
