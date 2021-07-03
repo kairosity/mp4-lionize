@@ -1906,6 +1906,31 @@ Testing Process:
 
 <br>
 
+### 7. Stripe Webhook Testing
+
+Testing Process:
+
+- Commented out the ```form.submit();``` line of code in my stripe elements JavaScript file.
+- Navigated to the checkout page with an item in my shopping bag. 
+- Purchased an item. 
+- Navigated to Stripe to confirm that even though the form submission process was interrupted, a record of the order was still made in Stripe and sent to the database.
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/feature-gifs/webhook.gif" width="600">
+</div>
+
+<br>
+
+### 8. Stripe Payment Processing Testing
+
+Testing Process:
+
+- This was as simple as using the Test Card numbers and purchasing products. 
+- Then checking in Stripe under the Payments & Developers Tabs to verify that those dummy orders were processed successfully, with all attendent details attached.
+
 <br>
 
 #### back to [contents](#testing-table-of-contents) 

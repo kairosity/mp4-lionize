@@ -1638,8 +1638,9 @@ When a user is happy with their selection of products and wants to complete the 
 
 - Stripe webhooks have also been integrated, so even if something happens that cuts the user connection to the application mid-order, the webhooks add important redundancy to the payment process and a record of the order will be documented for Lionize.
 
-
 -  Once the order is finalized and the payment processed successfully, the order summary page is displayed alongside a toast message informing the user that the order was successful. 
+
+- After testing the application however, the decision was made to disable the webhooks as they were causing too many duplicate orders, which I suspect have to do with my on-again-off-again internet connection. The important thing is that, webhooks are functional, and could be finessed in the future to add that important redundancy.
 
 <br>
 
@@ -2072,6 +2073,79 @@ This was a late addition to the application, on the advice of my mentor, I had o
 <br>
 
 - Resolved messages are greyed out and un-resolved messages are highlighted in a bright blue colour.
+
+</details>
+
+<br>
+
+## 22. Error Pages
+Django has automatic error page functionality for the most common errors thrown. As such I have custom-designed pages for 404, 400, 403, 403 CSRF and 500 errors.  
+
+<details>
+<summary><b>click for error pages</b></summary>
+
+<br>
+
+__404 Page Not Found__
+
+- One of the most common errors, I liked the ice-cream for this.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/404error.png">
+</p>
+
+<br>
+
+__400 Bad Request__
+
+- The metaphorical bad apple.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/400.png">
+</p>
+
+<br>
+
+__403 Forbidden!__
+
+- This would be thrown if users try and access pages they should not.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/403error.png">
+</p>
+
+<br>
+
+__403 CSRF error__
+
+- This would be thrown if users try and access pages they should not in a CSRF threatening manner.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/csrferror.png">
+</p>
+
+<br>
+
+__500 Server error__
+
+- Any issues on the server side will throw this error.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/500.png">
+</p>
+
+<br>
+
 
 </details>
 

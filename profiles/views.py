@@ -41,8 +41,7 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    # template = 'profiles/profile.html'
-    template = '500.html'
+    template = 'profiles/profile.html'
 
     context = {
         'form': form,
