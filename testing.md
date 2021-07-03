@@ -1927,14 +1927,7 @@ Testing Process:
 - Purchased an item. 
 - Navigated to Stripe to confirm that even though the form submission process was interrupted, a record of the order was still made in Stripe and sent to the database.
 
-
-<br>
-
-<div align="center">
-    <img src="static/images/feature-gifs/webhook.gif" width="600">
-</div>
-
-<br>
+__PASS__
 
 ### 8. Stripe Payment Processing Testing
 
@@ -1942,6 +1935,8 @@ Testing Process:
 
 - This was as simple as using the Test Card numbers and purchasing products. 
 - Then checking in Stripe under the Payments & Developers tabs to verify that those dummy orders were processed successfully, with all attendent details attached.
+
+__PASS__
 
 <br>
 
