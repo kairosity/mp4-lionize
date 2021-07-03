@@ -1,7 +1,15 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 
-from home.views import index, webdesign, seo, social_media_management, content_creation
+from home.views import (index, 
+                        webdesign, 
+                        seo, 
+                        social_media_management, 
+                        content_creation,
+                        admin_dash_products,
+                        admin_dash_users,
+                        admin_dash_messages)
+
 
 class TestUrls(SimpleTestCase):
 
@@ -45,8 +53,33 @@ class TestUrls(SimpleTestCase):
         url = reverse('content-creation')
         self.assertEquals(resolve(url).func, content_creation)
 
-
     def test_get_content_creation_page(self):
         response = self.client.get('/content-creation')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/content_creation.html')
+
+    def test_admin_product_dashboard_url_is_resolved(self):
+        url = reverse('admin-dash-products')
+        self.assertEquals(resolve(url).func, admin_dash_products)
+
+    def test_get_admin_products_dashboard_page(self):
+        response = self.client.get('/admin-product-dashboard')
+        self.assertEqual(response.status_code, 302)
+        
+    def test_admin_user_dashboard_url_is_resolved(self):
+        url = reverse('admin-dash-users')
+        self.assertEquals(resolve(url).func, admin_dash_users)
+
+    def test_get_admin_user_dashboard_page(self):
+        response = self.client.get('/admin-user-dashboard')
+        self.assertEqual(response.status_code, 302)
+
+    def test_admin_messages_dashboard_url_is_resolved(self):
+        url = reverse('admin-dash-messages')
+        self.assertEquals(resolve(url).func, admin_dash_messages)
+
+    def test_get_admin_messages_dashboard_page(self):
+        response = self.client.get('/admin-messages-dashboard')
+        self.assertEqual(response.status_code, 302)
+
+    

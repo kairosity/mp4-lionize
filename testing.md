@@ -99,6 +99,9 @@
     * [4. Python Validators](#4-python-validators)
         * [PEP8 Online](#pep8-online)
 * [**Performance and Web Development Tools Testing**](#performance-and-web-development-tools-testing)
+* [**Automated Unit Tests**](#automated-unit-tests)
+
+<br>
 
 # User Story Testing
 
@@ -3357,3 +3360,94 @@ The application did well on all counts.
 
 <br>
 
+# Automated Unit Tests
+
+While this application was developed using TDD, unit tests were not used too extensively for development, however, they were integrated to a limited degree.
+
+<details>
+<summary><b>click for coverage reports by app</b></summary>
+
+<br>
+
+1. __Lionize__ - 63%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/lionizeut.png">
+</div>
+
+<br>
+
+2. __home__ - 64%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/homeut.png">
+</div>
+
+<br>
+
+3. __categories__ - 88%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/categoriesut.png">
+</div>
+
+<br>
+
+4. __checkout__ - 51%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/checkoutut.png">
+</div>
+
+<br>
+
+5. __bag__ - 50%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/bagut.png">
+</div>
+
+<br>
+
+6. __products__ - 46%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/productsut.png">
+</div>
+
+<br>
+
+7. __profiles__ - 65%
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/unit-tests/profilesut.png">
+</div>
+
+<br>
+
+<br>
+
+#### back to [contents](#testing-table-of-contents) 
+
+<br>
