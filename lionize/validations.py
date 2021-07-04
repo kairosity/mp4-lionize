@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 
 # Form Validations
 
-
 # Last Name must be at least 2 characters long
 def validate_min_length_2(value):
     if len(value) < 2:
@@ -14,6 +13,12 @@ def validate_min_length_2(value):
 def validate_min_length_50(value):
     if len(value) < 50:
         raise ValidationError(_('This field must be at least 50 characters long.'), code='invalid')
+
+
+# Must be a minimum of 20 chars in length
+def validate_min_length_20(value):
+    if len(value) < 20:
+        raise ValidationError(_('This field must be at least 20 characters long.'), code='invalid')
 
 
 # Phone Number must be at least 5 numbers long
@@ -35,3 +40,14 @@ def validate_handle(value):
         raise ValidationError(_('Your username must include the @ symbol.'), code='invalid')
 
 
+# Input must not be purely numerical.
+def validate_text_input(value):
+    if value.isdigit():
+        raise ValidationError(_('This field cannot be purely numerical.'), code='invalid')
+
+
+# Must be a number
+def validate_number(value):
+    for char in value:
+        if char.isalpha():
+            raise ValidationError(_('This field must be a number.'), code='invalid')

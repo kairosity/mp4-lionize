@@ -31,13 +31,15 @@
 * [**Functionality Testing**](#functionality-testing)
   * [**Base Functionality**](#base-functionality)
     * [1. Navigation](#1-navigation)
-    * [2. Login](#2-login)
-    * [3. Links](#3-links)
-    * [4. Buttons](#4-buttons)
-    * [5. Forms](#5-forms)
-    * [6. Input Validations](#6-input-validations)
-    * [7. Email](#7-email)
-    * [8. Logout](#8-logout)
+    * [2. Registration](#2-registration)
+    * [3. Login](#3-login)
+    * [4. Links](#4-links)
+    * [5. Buttons](#5-buttons)
+    * [6. Forms](#6-forms)
+    * [7. Input Validations](#7-input-validations)
+    * [8. Email](#8-email)
+    * [9. Logout](#9-logout)
+    * [10. Reset Password](#10-reset-password)
   * [**Advanced CRUD Functionality: Regular Users**](#advanced-crud-functionality-regular-users)
     * [User Portal](#user-portal-functionality)
         * [1. Updating Profile (Update)](#1-updating-profile-update)
@@ -117,7 +119,7 @@
 
 2. __Quickly and easily understand how to navigate and access information on the website.__
 
-  - The navbar at the top of the application is conventional and intutitive. 
+  - The navbar at the top of the application is conventional and intutitive.
 
 - The content of the homepage itself clearly tells the user what is expected of them and what "next steps" to take i.e. registering.
 - The top navbar is mirrored by a footer, which also has links to all pages available to a first-time user.
@@ -177,7 +179,7 @@ Receive an email confirmation of my registration.__
 
 2. __Be redirected to the User Portal and easily view the various custom user pages.__
 
-- On successful login, users are immediately redirected to their profile page, from which (on larger screens) they can view the other User Portal pages from the side navigation, or on mobile from the dropdown menus. 
+- On successful login, users are immediately redirected to their profile page, from which (on larger screens) they can view the other User Portal pages from the side navigation, or on mobile from the dropdown menus.
 
     __PASS__
 
@@ -1319,7 +1321,28 @@ Testing process:
 - Clicked throught every external link to ensure they opened in a new browser tab. -- __PASS__
 - Used W3 Link Checker to ensure there were no broken links on the page. -- __PASS__
 
-## 2. Login 
+## 2. Registration
+
+__PASS__
+
+Testing Process:
+
+- Set up a temporary email address using [email on deck](https://www.emailondeck.com/).
+- Filled out the registration form on the register page.
+- Navigated to the email confirmation link that was sent to the temporary email address.
+- Clicked on the "Confirm" button to verify the email address.
+- Logged in with the email and password I just set up to verify the process worked correctly. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/feature-gifs/register.gif">
+</p>
+
+<br>
+
+
+## 3. Login 
 
 __PASS__
 
@@ -1343,7 +1366,7 @@ Testing Process:
 
 <br>
 
-## 3. Links
+## 4. Links
 
 Testing Process
 
@@ -1354,7 +1377,7 @@ __PASS__
 - I used W3 Link Checker to ensure there were no broken links. -- __PASS__
 
 
-## 4. Buttons
+## 5. Buttons
 
 Testing Process:
 
@@ -1365,7 +1388,7 @@ __PASS__
 - Manually checked each button to ensure that they are only used to submit data and not as a substitute for link tags. -- __PASS__
 
 
-## 5. Forms 
+## 6. Forms 
 
 __PASS__
 
@@ -1374,7 +1397,7 @@ Testing Process:
 - Submitted all forms and then immediately checked the Django backend and the application response to ensure they submitted successfully. -- __PASS__
 - Submitted each form with various incorrect or forbidden inputs to ensure that the form was not submitted, that the validations were functional and that the appropriate error messages were displayed to the user. -- __PASS__
 
-## 6. Input Validations
+## 7. Input Validations
 
 __PASS__
 
@@ -1393,17 +1416,19 @@ __1. Contact Form Validations.__
 
 <br>
 
-- The subject field has 3 validators:
+- The subject field has 4 validators:
 
   - It is a required field.
   - It must have a minimum length of 1
   - It must have a maximum length of 100
+  - It cannot be purely numerical.
 
-- The message field has 3 validators:
+- The message field has 4 validators:
 
   - It is a required field.
   - It must have a minimum length of 20
   - It must have a maximum length of 2000
+  - It cannot be purely numerical.
 
 <br>
 
@@ -1590,9 +1615,17 @@ __5. Review Form Validations__
 
 - The review title cannot be longer than 120 characters.
 
+- The review title must be a minimum of 2 characters long.
+
+- The review title cannot be purely numerical. 
+
 - The review itself cannot be longer than 500 characters.
 
-6. Checkout Form Validations
+- The review must be a minimum of 20 characters long.
+
+- The review cannot be purely numerical.
+
+__6. Checkout Form Validations__
 
 - Full Name, Email, Phone Number, Street Address 1, Town / City and Country are all required fields.
 
@@ -1611,6 +1644,7 @@ __7. Admin: Add a new product Form__
 - The Name field must be a minimum of 2 characters long.
 - The Friendly_name field must be a minimum of 2 characters long.
 - The Description must be a minimum of 50 characters long.
+- The name, friendly_name and description fields must not be purely numerical. 
 
 <br>
 
@@ -1644,7 +1678,7 @@ __8. Admin: Edit Product Form__
 
 - All of the above validations apply to the edit form as well. 
 
-## 7. Email
+## 8. Email
 
 __PASS__
 
@@ -1670,7 +1704,7 @@ Testing Process:
 
 <br>
 
-## 8. Logout
+## 9. Logout
 
 __PASS__
 
@@ -1691,6 +1725,30 @@ Testing Process:
 - Tried again to access one of the logged in only pages e.g. /products/ and confirmed that the application redirected the now guest user to the login page.-- __PASS__
 
 - Checked in Chrome Dev Tools to ensure that Django flushes the session variable. The session variables does not disappear from Chrome Dev Tools, but it changes to reflect the new (non-logged in) session. -- __PASS__
+
+<br>
+
+## 10. Reset Password
+
+__PASS__
+
+Testing Process:
+
+- Navigated to the login page.
+- Clicked on the "Forgot Password?" link.
+- Entered a dummy email address that I have access to via email on deck. 
+- Opened the email I received from Lionize. 
+- Navigated to the link in the email
+- Typed in a new password.
+- Clicked the "Change password" button.
+- Navigated back to login and entered the login email and new password.
+- Verified that the new password worked.
+
+<br>
+
+<p align="">
+  <img src="static/images/feature-gifs/reset-password.gif">
+</p>
 
 <br>
 

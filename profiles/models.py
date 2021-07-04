@@ -7,6 +7,7 @@ from lionize.validations import (validate_handle,
                                 validate_min_length_2, 
                                 validate_phone_number, 
                                 validate_min_length_5_phone,
+                                validate_text_input,
                                 )
 
 from django.db.models.signals import post_save
