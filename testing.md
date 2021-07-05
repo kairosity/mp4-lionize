@@ -24,6 +24,8 @@
     * [12. Gmail Connection Issue](#gmail-connection-issue)
     * [13. Messages Date Updating](#messages-date-updating)
     * [14. Stripe Webhooks Race Conditions](#stripe-webhooks-race-conditions)
+    * [15. Shopping Bag Update Error](#shopping-bag-update-error)
+    * [16. Shopping Bag Update Error 2](#shopping-bag-update-error-2)
 * [**Status Code Testing**](#status-code-testing)
     * [1. 200 Status Code Testing](#200-status-code-testing)
     * [2. 302 Status Code Testing](#302-status-code-testing)
@@ -910,6 +912,72 @@ __Fix:__ After researching this problem in Slack and reading a long thread by ck
 
 <br>
 
+## Shopping Bag Update Error
+
+__Issue:__ The input validation on the product quantity selector stipulates that no less than 1 and no more than 20 amounts of a single product can be purchased at one time. This works perfectly on the product detail page, where the user clicks the "Add To Bag" button and submits the "form" of the quantity to their shopping bag. However on the shopping bag page, if a user types 99 into the input field and clicks "update", the shopping bag updates and allows 99 items to be added. Likewise, a user can "update" the quantity to -1200 items and this also processes. In the latter case the product is just removed from the bag completely (assuming there was not over 1200 items in the bag).
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/shopping-bag-bug.png">
+</div>
+
+<br>
+
+__Fix:__ The issue was in the way the validation took place in the shopping bag. On the product detail page, the quantity "form" was POSTed and thus the input validations on the html ```<input>``` of ```min=1``` and ```max=20``` were operational and the form would not submit if these were breached. However on the shopping bag page, JavaScript was used to submit the form using the following 'on page' code:
+
+        $('.update-link').click(function(e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
+
+This method seems to have bypassed those validations. To fix the issue, I changed the ```<a>``` update link to a button and just submitted the form as I did on the product details page, to maintain the link 'look', I used css to alter the default button styles.
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/quan-fix1.png">
+</div>
+
+<br>
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/quan-fix-2.png">
+</div>
+
+<br>
+
+
+## Shopping Bag Update Error 2
+
+__Issue:__ Notwithstanding the above fix. If a user deleted the quantity in the input and then tried to submit a blank amount, the following error was thrown.
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/shopping-bag-bug2.png">
+</div>
+
+<br>
+
+__Fix:__ Adding 'required' to both html inputs as below fixed the issue:
+
+<br>
+
+    <input class="qty_input form-control form-control-sm" type="number" name="quantity" value="1" min="1" max="20" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}" required>
+
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/quanfix3.png">
+</div>
+
+<br>
+
+
 #### back to [contents](#testing-table-of-contents) 
 
 <br>
@@ -1628,13 +1696,62 @@ __5. Review Form Validations__
 
 <br>
 
-__6. Checkout Form Validations__
+__6. Shopping Bag Validations__
+
+- The shopping bag has a single input: the quantity selector.
+- There is a validation on the html input that stipulates the min and max values allowed.
+- Also on the html input, there is a required attribute that stops the users from submitting a null value.
+- The increment and decrement buttons only allow the user to decrease the quantity to a minimum of 1 and to increase the quantity to a maximum of 20. The buttons do not work if those limits are exceeded.
+
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/review-req-fields.png">
+</p>
+
+<br>
+
+
+__7. Checkout Form Validations__
 
 - Full Name, Email, Phone Number, Street Address 1, Town / City and Country are all required fields.
 
+<br>
+
+<p align="">
+  <img src="static/images/validations/checkout-required.png">
+</p>
+
+<br>
+
 - The phone number must be purely numerical.
 
-- Stripe takes care of the Payment validation - the credit card number entered must be valid.
+<br>
+
+<p align="">
+  <img src="static/images/validations/checkout-phone-valid.png">
+</p>
+
+<br>
+
+- Stripe takes care of the Payment validation - the credit card number, security code & postcode entered must be valid and without processing errors.
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/card-valid-1.png">
+</p>
+
+<br>
+
+<br>
+
+<p align="">
+  <img src="static/images/validations/card-valid-2.png">
+</p>
+
+<br>
 
 <br>
 
@@ -1644,7 +1761,8 @@ __6. Checkout Form Validations__
 
 <br>
 
-__7. Admin: Add a new product Form__
+
+__8. Admin: Add a new product Form__
 
 - The Name field must be a minimum of 2 characters long.
 - The Friendly_name field must be a minimum of 2 characters long.
@@ -1679,7 +1797,7 @@ __7. Admin: Add a new product Form__
 
 <br>
 
-__8. Admin: Edit Product Form__
+__9. Admin: Edit Product Form__
 
 - All of the above validations apply to the edit form as well. 
 

@@ -747,6 +747,10 @@ small.form-heading{
     cursor: pointer;
     text-decoration: none;
 }
+button.update-link{
+    background-color: #FFF;
+    border: none;
+}
 .image-container{
     display: -webkit-box;
     display: -ms-flexbox;
