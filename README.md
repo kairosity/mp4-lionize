@@ -37,7 +37,7 @@ This project is an application and company website for a digital marketing busin
         - [*Deletion Confirmation Modals*](#deletion-confirmation-modals)
         - [*State Changes*](#state-changes)
         - [*Error Pages*](#error-pages)
-        - [*Pre-Loader*](#pre-loader)
+        - [*Pre-Loaders*](#pre-loaders)
       - [*Information Architecture and User Flow*](#information-architecture-and-user-flow)
   * [Skeleton](#skeleton)
       - [*Progressive Disclosure*](#progressive-disclosure)
@@ -507,9 +507,28 @@ Likewise if a user decided
 
 There are a number of specific error pages that cover the gamut of common errors a user might encounter. The pages are all clear as to what the error was and why it was thrown.
 
-### Pre-Loader
+### Pre-Loaders
+
+When the pages are first loading, there is a pre-loader implemented to give that feedback to users, so they know the application is doing something.
 
 <br>
+
+<p align="center">
+  <img src="static/images/features/preloader.gif">
+</p>
+
+<br>
+
+There is a separate but similar pre-loader incorporated into the checkout process, but its design is different and it is set against a fully coloured background. As the checkout pre-loader illustrates the payment process, I felt it was more important to make it stand out to really emphasize that the user should wait.
+
+<br>
+
+<p align="center">
+  <img src="static/images/features/checkoutpreloader.gif">
+</p>
+
+<br>
+
 
 ## Information Architecture and User Flow
 
@@ -4309,6 +4328,14 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 - ### [Combining CSS Pseudo-elements, “:after” the “:last-child”](https://stackoverflow.com/questions/2351623/combining-css-pseudo-elements-after-the-last-child)
 
     Used to help style the "SEE REVIEWS" section of the product details page.
+
+- ### [Awesome pre-made pre-loaders](https://tobiasahlin.com/spinkit/)
+
+    I used one of these for the application's pre-loader.
+
+- ## [How to add CSS Preloader to your Website](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
+
+    Tutorial explaining how to implement the pre-loader referenced above.
 
 ## 3. JavaScript
 
