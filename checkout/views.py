@@ -105,7 +105,15 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form.\
                 Please double check your information')
-            # return redirect(reverse('checkout'))
+        
+            template = 'checkout/checkout.html'
+
+            context = {
+                'order_form': order_form,
+                'stripe_public_key': stripe_public_key,
+            }
+            return render(request, template, context)
+
     else:
         bag = request.session.get('bag', {})
         if not bag:

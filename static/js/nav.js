@@ -7,7 +7,8 @@ within a long if/else statement.
 Then it also adds an event listener to the cart link so that when clicked it changes 
 the title to "Shopping Cart".
 
-Finally it adds an event listener to show and hide the shopping cart.
+Finally it adds an event listener to show and hide the shopping cart if the shopping cart
+variables are present in the document (i.e. if the user is logged in).
 */
 $(function(){
 
@@ -58,9 +59,6 @@ $(function(){
 
     let registerLink = document.querySelector('#register-link');
     let logoutLink = document.querySelector('#logout-link');
-
-    let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
-    let cartTitle = document.querySelector('#cart-title');
     
     let currentActiveElements = document.getElementsByClassName('active-page');
     let currentActiveSideNavElements = document.getElementsByClassName('active-page-side-nav');
@@ -148,13 +146,18 @@ $(function(){
     } else if (splitPath[1] == 'logout'){
         logoutLink.classList.add('active-page');
     }
+    // If there is a cart menu link in the document, then listen for clicks on it. 
+    if(document.querySelector('#navbarDropdownMenuLinkCart')){
+        let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
+        let cartTitle = document.querySelector('#cart-title');
 
-    cartLink.addEventListener('click', function(){
-        cartTitle.textContent = 'Shopping Cart:';
-    });
+        cartLink.addEventListener('click', function(){
+            cartTitle.textContent = 'Shopping Cart:';
+        });
 
-    $("#dropdown-mob-cart").click(function(){
-        $("#cart-ul").toggleClass("show");
-    });
+        $("#dropdown-mob-cart").click(function(){
+            $("#cart-ul").toggleClass("show");
+        });
+    }
 
 });

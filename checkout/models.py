@@ -10,7 +10,7 @@ from lionize.validations import validate_phone_number
 
 class Order(models.Model):
     '''
-    For creating product orders from user action in the shop.
+    For saving order details from user purchases from the shop.
     '''
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, 

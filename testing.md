@@ -1626,9 +1626,13 @@ __5. Review Form Validations__
 
 - The review cannot be purely numerical.
 
+<br>
+
 __6. Checkout Form Validations__
 
 - Full Name, Email, Phone Number, Street Address 1, Town / City and Country are all required fields.
+
+- The phone number must be purely numerical.
 
 - Stripe takes care of the Payment validation - the credit card number entered must be valid.
 
