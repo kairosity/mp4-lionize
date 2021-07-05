@@ -17,7 +17,7 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     '''
-    A user profile model for maintaining default delivery information and order history. 
+    A user profile model for maintaining default delivery information, order history and other user details.
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_first_name = models.CharField(max_length=40, null=True, blank=True)
@@ -52,7 +52,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 class Message(models.Model):
     '''
-    A Messages model for keeping track of user communication with Lionize.
+    A Messages model for keeping track of user communication with Lionize (using the contact form).
     '''
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_messages')
     subject = models.CharField(max_length=120, null=True, blank=True)

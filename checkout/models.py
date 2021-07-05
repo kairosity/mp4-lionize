@@ -61,7 +61,7 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     '''
-    For each unique product ordered in the "Order" model above.
+    Each unique product ordered in the "Order" model above is saved to the database as an Order Line Item.
     '''
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)

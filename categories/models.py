@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Category(models.Model):
+    '''
+    Every product in the shop is designated a Category.
+    '''
     class Meta: 
         verbose_name_plural = 'Categories'
         

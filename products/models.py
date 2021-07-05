@@ -10,6 +10,9 @@ from lionize.validations import (validate_min_length_2,
 
 
 class Product(models.Model):
+    '''
+    Each product potentially for sale in the shop is saved with these details.
+    '''
     category = models.ForeignKey('categories.Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254, validators=[validate_min_length_2, validate_text_input])
     friendly_name = models.CharField(max_length=254, validators=[validate_min_length_2, validate_text_input])
@@ -28,6 +31,9 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    '''
+    For every unique product type a user orders, they can write a review of that product.
+    '''
 
     CHOICES = (
         ('option1', '1 Star'), ('option2', '2 Stars'), ('option3', '3 Stars'), ('option4', '4 Stars'), ('option5', '5 Stars')
