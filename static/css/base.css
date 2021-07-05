@@ -728,6 +728,19 @@ small.form-heading{
     margin-top: 4rem;
     padding-top: 2rem;
 }
+#profile-update-form .form-control{
+    color: #000;
+}
+#profile-update-form input::placeholder{
+    color: #aab7c4;
+}
+#id_default_country,
+#id_default_country option:not(:first-child){
+    color: #000;
+}
+#id_default_country option:first-child{
+    color: #aab7c4;
+}
 /*-------------------------- Shopping Bag Page */
 .update-link, 
 .remove-item {
