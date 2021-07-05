@@ -13,16 +13,17 @@
     * [1. Toast Initialization](#toast-initialization)
     * [2. Removing Items from Shopping Bag](#removing-items-from-shopping-bag)
     * [3. Development version of application css not loading](#development-version-of-application-css-not-loading)
-    * [4. Passing Data from the Homepage to an external JavaScript File.](#passing-data-from-the-homepage-to-an-external-javascript-file)
-    * [5. Product Review Model Errors](#product-review-model-errors)
-    * [6. First and Last Name Disconnect Issue](#first-and-last-name-disconnect-issue)
-    * [7. Error in Console When Attempting to Fire Bootstrap Modal](#error-in-console-when-attempting-to-fire-bootstrap-modal)
-    * [8. Changing Site Domain and Name](#changing-site-domain-and-name)
-    * [9. Communicating effectively with the user on the Reviews Page](#communicating-effectively-with-the-user-on-the-reviews-page)
-    * [10. Skip To Main and Autofocus](#skip-to-main-and-autofocus)
-    * [11. Gmail Connection Issue](#gmail-connection-issue)
-    * [12. Messages Date Updating](#messages-date-updating)
-    * [13. Stripe Webhooks Race Conditions](#stripe-webhooks-race-conditions)
+    * [4. Deployed version of application css not loading.](#deployed-version-of-application-css-not-loading)
+    * [5. Passing Data from the Homepage to an external JavaScript File.](#passing-data-from-the-homepage-to-an-external-javascript-file)
+    * [6. Product Review Model Errors](#product-review-model-errors)
+    * [7. First and Last Name Disconnect Issue](#first-and-last-name-disconnect-issue)
+    * [8. Error in Console When Attempting to Fire Bootstrap Modal](#error-in-console-when-attempting-to-fire-bootstrap-modal)
+    * [9. Changing Site Domain and Name](#changing-site-domain-and-name)
+    * [10. Communicating effectively with the user on the Reviews Page](#communicating-effectively-with-the-user-on-the-reviews-page)
+    * [11. Skip To Main and Autofocus](#skip-to-main-and-autofocus)
+    * [12. Gmail Connection Issue](#gmail-connection-issue)
+    * [13. Messages Date Updating](#messages-date-updating)
+    * [14. Stripe Webhooks Race Conditions](#stripe-webhooks-race-conditions)
 * [**Status Code Testing**](#status-code-testing)
     * [1. 200 Status Code Testing](#200-status-code-testing)
     * [2. 302 Status Code Testing](#302-status-code-testing)
@@ -704,7 +705,7 @@ __Issue:__ Static files stopped serving locally once I had successfully deployed
 
 __Fix:__ As part of the CI Django tutorial I had added the code ```DEBUG = 'DEVELOPMENT' in os.environ``` in my settings.py file which effectively stopped Django serving static files locally if the DEVELOPMENT variable was not present in the environment settings. Adding that variable to my env.py file fixed the issue. 
 
-## Deployed version of application css not loading.
+## Deployed version of application css not loading.
 
 __Issue:__ Static files stopped serving in production once I had successfully solved the above issue. 
 
@@ -1964,11 +1965,12 @@ Testing Process:
 
 - Navigated to the shopping bag.
 - Clicked on "Secure Checkout".
-- Verified that the Form Details were entered correctly.
+- Verified that the Form Details were entered correctly and that the form auto-populated data that it already had.
 - Entered the test credit card number. 
 - Clicked "Complete Order"
 - Viewed checkout successful order confirmation. 
 - Clicked on "Your Orders" and verified that new order is now listed at the top.
+- Checked in Stripe to verify that the dummy order information was correctly received.
 
 
 <br>
@@ -3503,6 +3505,8 @@ While this application was developed using TDD, unit tests were not used too ext
 </div>
 
 <br>
+
+</details>
 
 <br>
 

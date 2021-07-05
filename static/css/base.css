@@ -956,6 +956,12 @@ footer a.nav-link:hover{
     color: var(--white);
     font-size: 0.9rem;
 }
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
 /*-------------------------- MEDIA QUERIES */
 /*-------------------------- MEDIA QUERIES: Bootstrap sm */
 @media (min-width: 576px ) {
