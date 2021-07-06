@@ -360,7 +360,7 @@ a.navbar-brand>i{
 p.cart-dropdown-text{
     font-size: 0.9rem;
 }
-ul.dropdown-menu-cart{
+div.dropdown-menu-cart{
     border: none;
     background-color: var(--main-colour);
     height: 0;
