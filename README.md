@@ -5,7 +5,19 @@
 ## Code Institute Milestone Project 4
 
 This project is an application and company website for a digital marketing business called "Lionize". The application showcases the digital services offered and also allows clients to register a free account. Once registered, the client is given access to further information about the services, given access to the shop, and a User Portal where they can engage in more customised interactions with application.
+
+<br>
+
+<a href="https://lionize-ms4.herokuapp.com/"><img src="static/images/features/lionize-mockup.png"></a>
  
+<br>
+
+### [Click to view the live website](https://lionize-ms4.herokuapp.com/)
+
+<br>
+
+<br>
+
 # Table of Contents
 
 - [1. UX](#ux)
@@ -4462,6 +4474,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 - ### [Browser Stack](https://www.browserstack.com/)
 
     Used to test the application on various desktop and mobile browsers.
+
+- ### [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+
+    Used to create the mockup at the beginning of this README.
 
 <br>
 
