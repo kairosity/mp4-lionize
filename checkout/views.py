@@ -211,9 +211,13 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
+        split_order_name = order.full_name.split(' ')
+
         # Save the user's info
         if save_info:
             profile_data = {
+                'default_first_name': split_order_name[0],
+                'default_last_name': split_order_name[1],
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
@@ -221,6 +225,11 @@ def checkout_success(request, order_number):
                 'default_street_address1': order.street_address1,
                 'default_street_address2': order.street_address2,
                 'default_county': order.county,
+                'instagram_handle': profile.instagram_handle,
+                'linkedin_handle': profile.linkedin_handle,
+                'facebook_handle': profile.facebook_handle,
+                'twitter_handle': profile.twitter_handle,
+                'consultation': profile.consultation,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():

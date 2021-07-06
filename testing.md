@@ -766,6 +766,15 @@ __Fix:__ I intially tried to combine two forms on the User Portal's Profile Page
             user_to_update.last_name = form.cleaned_data['default_last_name']
             user_to_update.save()
 
+And in the checkout_success function, if the checkbox to "save information to profile" is checked, I split the order.full_name field and save it to profile.first_name & profile.last_name like so:
+
+            split_order_name = order.full_name.split(' ')
+
+            if save_info:
+                profile_data = {
+                    'default_first_name': split_order_name[0],
+                    'default_last_name': split_order_name[1],
+
 
 ## Error in Console When Attempting to Fire Bootstrap Modal
 
