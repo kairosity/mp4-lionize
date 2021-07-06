@@ -152,7 +152,7 @@
 
 - The register and login links along the top navbar are set to the right hand side so as to distinguish them from informational pages. 
 - This also makes them more noticeable. 
-- The login button is also style differently to draw further attention to it and its' use.
+- The login button is also styled differently to draw further attention to it and its' use.
 
     __PASS__
 
@@ -165,7 +165,7 @@
 8. __Easily register a free account using my email.
 Receive an email confirmation of my registration.__
 
-- Registration via the registration form asks for a user's email and then send a confirmation email to the user asking them to confirm their address. 
+- Registration via the registration form asks for a user's email and then sends a confirmation email to the user asking them to confirm their address. 
 
     __PASS__
 
@@ -332,9 +332,9 @@ Receive an email confirmation of my registration.__
 
 6. __Easily view all the items in my shopping bag.__
 
-- Shopping bag contents can be viewed in 3 ways: 
+- Shopping bag content can be viewed in 3 ways: 
 
-  1. The toast pop-up mentioned above displays the current bag contents anytime a user updates their bag in any way. 
+  1. The toast pop-up mentioned above displays the current bag content anytime a user updates their bag in any way. 
   2. Clicking the shopping cart icon opens a dropdown box with the shopping bag contents displayed. 
   3. Navigating to the shopping bag page under the User Portal navigation link, brings the user to the most detailed shopping bag view.
 
@@ -353,7 +353,7 @@ Receive an email confirmation of my registration.__
     __PASS__
 
 
-9. __Make changes to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.__
+9. __Add items to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.__
 
 - When an item is added to the shopping bag, those changes are reflected in the toast pop-up that follows the action. 
 
@@ -483,9 +483,9 @@ Receive an email confirmation of my registration.__
     __PASS__
 
 ### David Murphy - Entrepreneurial Make-up Artist
-### *As a createive professional whose brand is focused around my personality, I want to be able to...*
+### *As a creative professional whose brand is focused around my personality, I want to be able to...*
 
-1. __Confidently delegate social media management, secure in the knowledge that tone and content will be in keeping with my personal brand.__
+1. __Confidently delegate social media management secure in the knowledge that tone and content will be in keeping with my personal brand.__
 
 - Lionize's various social media management products will fulfill this.
 
@@ -509,7 +509,9 @@ Receive an email confirmation of my registration.__
 
 - The application has been fully tested for colourblind users and employs sufficient contrast across the board.
 
-- Testing was done using the ["Web Disability Simulator"](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla?hl=en), a very useful and important tool.
+- Visual testing was done using the ["Web Disability Simulator"](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla?hl=en), a very useful and important tool.
+
+- Further testing using Lighthouse and WAVE highlighted the fact that the contrast was not strong enough, so I changed it to ensure it was within the web standard limit.
 
 __Total Colourblindness__:
 <br>
@@ -553,7 +555,7 @@ __Yellow / Blue Colourblindness__:
 3. __*As a user using screen reader technology*__, I want my screen reader to describe the page elements correctly.
 
 - Aria-Labels have been used extensively.
-- [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) tech has been used to test the application.
+- [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) tech has been used to test the application. 
 
     __PASS__
 
@@ -568,16 +570,16 @@ __Yellow / Blue Colourblindness__:
 
 2. __Edit an existing product.__
 
-- By navigation to the Products dashboard, under the Admin Portal navigation option, admin users can click to "Edit" any aspect of a product's listing. 
+- By navigating to the Products dashboard, under the Admin Portal navigation option, admin users can click "Edit" to edit any aspect of a product's listing. 
 
     __PASS__
 
 3. __Delete a product from the shop.__
 
-- Again, by navigating to the admin product dashboard, admin users can click the black "Delete" button. 
-- They will be prompted by a modal asking them to confirm deletion, and when they do so that product is deleted. 
+- Again, by navigating to the admin product dashboard, admin users (superusers only) can click the black "Delete" button. 
+- They will be prompted by a modal asking them to confirm deletion, and when they do so that product is deleted from the database.
 
-- However, in a late addition to the original application design, I also decided to include "Add to Shop" and "Remove from Shop" options, which are less destructive than the "Delete" option. 
+- However, in a late addition to the original application design, I also decided to include "Add to Shop" and "Remove from Shop" options, which are less destructive than the "Delete" option. These are available to staff admin users, whereas the "Delete" option is not.
 
     __PASS__
 
@@ -604,7 +606,7 @@ __Yellow / Blue Colourblindness__:
 
 2. __Ensure that the application is as accessible as possible to include as wide a variety of users as possible.__
 
-- As already delved into during accessibility user testing, care was given to ensure the application is accessible for a wide variety of users.
+- As already mentioned during accessibility user story testing, care was taken to ensure the application is accessible for a wide variety of users.
 
     __PASS__
 
@@ -870,7 +872,7 @@ __Issue:__ This application is connected to a Gmail email account via 2-factor a
 
 <br>
 
-__Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is depedent on there being that functional email connection present.
+__Fix:__ I changed the email address I was using and reconnected everything from scratch for the new email lionizedigitalmarketing56@gmail.com and at the time of writing this, everything is functional, however as there was no obvious trigger for the last disconnection, there is no way of guaranteeing that the same won't happen again. This is unfortunate because the registration process is dependent on there being a functional email connection present.
 
 
 
@@ -1917,10 +1919,10 @@ Testing Process:
 
 Testing Process:
 
-- Navigate to the "Your Profile" page in the User Portal.
-- Alter the profile form data in some way. 
-- Click the "Update Information".
-- Check that the profile form now displays the new information.
+- Navigated to the "Your Profile" page in the User Portal.
+- Altered the profile form data in some way. 
+- Clicked the "Update Information".
+- Checked that the profile form displayed the new information.
 
 <br>
 
@@ -1936,8 +1938,8 @@ __PASS__
 
 Testing Process:
 
-- Navigate to the "Your Orders" Page. 
-- Click on any of the orders to see more details about that past order. 
+- Navigated to the "Your Orders" Page. 
+- Clicked on any of the orders to see more details about that past order. 
 
 
 <br>
@@ -1954,15 +1956,15 @@ __PASS__
 
 Testing Process:
 
-- Navigate to and view, the "Your Reviews" Page.
-- Click on the "Review" button under any of the "Products To Review".
-- Add a review title. 
-- Select a star rating from 1-5.
-- Write the review.
-- Click Submit. 
-- Check that the review was added to the product details page.
-- Check that the review is now in the "Your Reviews" list on the "Your Reviews" Page.
-- Check that that product is no longer listed in the "Products to Review" list.
+- Navigated to and viewed, the "Your Reviews" Page.
+- Clicked on the "Review" button under any of the "Products To Review".
+- Added a review title. 
+- Selected a star rating from 1-5.
+- Wrote the review.
+- Clicked Submit. 
+- Checked that the review was added to the product details page.
+- Checked that the review was present in the "Your Reviews" list on the "Your Reviews" Page.
+- Checked that that product is no longer listed in the "Products to Review" list.
 
 <br>
 
@@ -1978,13 +1980,13 @@ __PASS__
 
 Testing Process:
 
-- Navigate to and view, the "Your Reviews" Page.
-- Click on the "Edit" button.
-- Click on "Cancel" to check functionality.
-- Click back into Edit.
-- Make any changes to the review. 
-- Click on Update Review
-- Verify the changes have been made on the review page and on the product details page.
+- Navigated to and viewed, the "Your Reviews" Page.
+- Clicked on the "Edit" button.
+- Clicked on "Cancel" to check functionality.
+- Clicked back into Edit.
+- Made any changes to the review. 
+- Clicked on Update Review
+- Verified the changes were made on the review page and on the product details page.
 
 <br>
 
@@ -2000,12 +2002,12 @@ __PASS__
 
 Testing Process:
 
-- Navigate to and view, the "Your Reviews" Page.
-- Click on the "Delete" button under a review.
-- Click on "No, Cancel" to check functionality.
-- Click back into Delete.
-- Click "Yes, Delete it!" to confirm deletion.
-- Verify the changes have been made on the review page and verify that that specific product is now back in the "Products to review" section of the page.
+- Navigated to and viewed, the "Your Reviews" Page.
+- Clicked on the "Delete" button under a review.
+- Clicked on "No, Cancel" to check functionality.
+- Clicked back into Delete.
+- Clicked "Yes, Delete it!" to confirm deletion.
+- Verified the changes were made on the review page and verified that the specific product was back listed in the "Products to review" section of the page.
 
 <br>
 
@@ -2433,7 +2435,7 @@ __PASS__
 
 ## 4. Chrome Dev Tools Security Check
 
-- I checked the security summary using Chrome Dev Tools and it passed. __PASS__
+- I checked the security summary using Chrome Dev Tools and it passed. -- __PASS__
 
 <br>
 
@@ -2585,8 +2587,9 @@ The application's contrast ratio was: 2.58:1 and the accessibility acceptable ra
 
 - So I darkened my main blue colour until the ratio was 3.11:1 
 
-- It took issue with there being 2 links to the home page: home & the brand icon, I think this is acceptable.
-- It took issue with the skip to main link because it has a "positive tabindex". This is somewhat suprising given that it's an accessibility feature. So I can safely disregard that as well. 
+- It took issue with there being 2 links to the home page: home & the brand icon, but I don't think this is a huge deal. 
+
+- It took issue with the skip to main link because it has a "positive tabindex". This is somewhat suprising given that it's an accessibility feature and its positive tab index is intentional, so that it is the first tabbable element. So I can safely disregard that as well. 
 
 <br>
 
@@ -2619,7 +2622,7 @@ __PASS__
 
 ## Screen Reader Testing
 
-- I used Apple's voice over utility as well as the ChromeVox extension to test screen reader's ability to correctly interpret the site. 
+- I used Apple's voice over utility as well as the Chrome Screen Reader extension to test the ability of screen readers to correctly interpret the site.
 
 __PASS__
 

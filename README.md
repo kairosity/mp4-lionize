@@ -193,7 +193,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 6. Easily view all the items in my shopping bag.
 7. Update the items in my shopping bag, by adding more or less of an item.
 8. Remove any item from my shopping bag.
-9. Make changes to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.
+9. Add items to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.
 10. Email Lionize with a custom quotation request for a specific product/service I have in mind that I cannot find in the shop.
 
 ### Purchasing
@@ -4458,6 +4458,10 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 - ### [Mozilla Observatory](https://observatory.mozilla.org/)
 
     Used to test the security of my application.
+
+- ### [Browser Stack](https://www.browserstack.com/)
+
+    Used to test the application on various desktop and mobile browsers.
 
 <br>
 
