@@ -36,8 +36,7 @@ class StripeWH_Handler:
             \n\nSubtotal: €{order.order_total}\
             \nVAT Total @23%: €{order.vat_total}\
             \nGrand Total: €{order.grand_total}\
-            \n\nA more comprehensive breakdown of this order as well as a full\
-            order history can be found in the User Portal Order History section of our site. \n \
+            \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
             \nJust login & navigate to your User Portal.\n\
             \nThank you again from all of us at Lionize!"
         

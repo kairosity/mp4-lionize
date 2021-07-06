@@ -50,9 +50,14 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         '''
         Override the original save method to set the order number if it has not already been set.
+        And ensure that all three totals are displayed to only 2 decimal places.
         '''
         if not self.order_number:
             self.order_number = self._generate_order_number()
+        
+        self.order_total = round(self.order_total, 2)
+        self.vat_total = round(self.vat_total, 2)
+        self.grand_total = round(self.grand_total, 2)
         super().save(*args, **kwargs)
 
     def __str__(self):

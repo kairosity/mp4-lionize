@@ -14,6 +14,7 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from .models import OrderLineItem, Order
+from django.template.loader import render_to_string
 
 import os
 import stripe
@@ -100,6 +101,36 @@ def checkout(request):
             order.update_total()
             request.session['save_info'] = \
                 'save-info' in request.POST
+
+            # Send Confirmation Email 
+            all_items = []
+            for item in order.lineitems.all():
+                all_items.append(item.product.friendly_name)
+
+            newline = '\n - '
+
+            cust_email = order.email
+            subject = render_to_string(
+                'checkout/confirmation_emails/confirmation_email_subject.txt',
+                {'order': order})
+            body = f"Hello {order.full_name}, \
+                \n\nThank you for trusting Lionize with your digital presence!\n \
+                \nYour order was processed successfully!\
+                \n\nYou ordered the following products:\n - { newline.join(item for item in all_items) }.\
+                \n\nSubtotal: €{order.order_total}\
+                \nVAT Total @23%: €{order.vat_total}\
+                \nGrand Total: €{order.grand_total}\
+                \n\nA more comprehensive breakdown of this order as well as a full order history can be found in the User Portal Order History section of our site. \n \
+                \nJust login & navigate to your User Portal.\n\
+                \nThank you again from all of us at Lionize!"
+            
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [cust_email]
+            )        
+
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
         else:

@@ -26,6 +26,7 @@
     * [14. Stripe Webhooks Race Conditions](#stripe-webhooks-race-conditions)
     * [15. Shopping Bag Update Error](#shopping-bag-update-error)
     * [16. Shopping Bag Update Error 2](#shopping-bag-update-error-2)
+    * [17. Checkout Email Disappeared](#checkout-email-disappeared)
 * [**Status Code Testing**](#status-code-testing)
     * [1. 200 Status Code Testing](#200-status-code-testing)
     * [2. 302 Status Code Testing](#302-status-code-testing)
@@ -974,6 +975,35 @@ __Fix:__ Adding 'required' to both html inputs as below fixed the issue:
 <div align="center">
     <img src="static/images/issues/quanfix3.png">
 </div>
+
+<br>
+
+## Checkout Email Disappeared
+
+__Issue:__ The order confirmation was not being emailed to the clients after checkout.
+
+__Fix:__ The email was being sent by the webhook handler, and since I disabled the webhook handler due to duplicate orders, the email was no longer being sent out. To fix this I added the email sending code to the checkout function. 
+
+This issue also alerted me to the fact that multiple zeroes were being placed after the totals in the email being sent to the clients as below:
+
+<br>
+
+<div align="center">
+    <img src="static/images/issues/email0s.png">
+</div>
+
+<br>
+
+To fix this I added a small bit of code to the Order model's save() method to ensure that on save, only 2 decimal places were used:
+
+        def save(self, *args, **kwargs):
+            if not self.order_number:
+                self.order_number = self._generate_order_number()
+            
+            self.order_total = round(self.order_total, 2)
+            self.vat_total = round(self.vat_total, 2)
+            self.grand_total = round(self.grand_total, 2)
+            super().save(*args, **kwargs)
 
 <br>
 
@@ -2093,6 +2123,7 @@ Testing Process:
 - Viewed checkout successful order confirmation. 
 - Clicked on "Your Orders" and verified that new order is now listed at the top.
 - Checked in Stripe to verify that the dummy order information was correctly received.
+- Checked the user's email inbox to verify that the order confirmation email was received successfully.
 
 
 <br>
