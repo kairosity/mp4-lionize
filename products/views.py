@@ -181,6 +181,9 @@ def product_detail(request, product_id):
     else:
         referring_page_path1 = None
 
+    referring_page_path_str = ''.join(referring_page_path)
+    full_req_path = ''.join(request.get_full_path().split('/')[1:])
+
     # To determine if the logged in user
     # should be allowed to leave a review
     for order in users_orders:
@@ -226,6 +229,8 @@ def product_detail(request, product_id):
                 'referring_page': referring_page,
                 'referring_page_path0': referring_page_path[0],
                 'referring_page_path1': referring_page_path1,
+                'full_req_path': full_req_path,
+                'referring_page_path_str' : referring_page_path_str,
                 'features': features,
                 'user_purchased_product_and_can_review':
                     user_purchased_project_and_can_review,
@@ -244,6 +249,8 @@ def product_detail(request, product_id):
             'referring_page': referring_page,
             'referring_page_path0': referring_page_path[0],
             'referring_page_path1': referring_page_path1,
+            'full_req_path': full_req_path,
+            'referring_page_path_str' : referring_page_path_str,
             'features': features,
             'user_purchased_product_and_can_review':
                 user_purchased_project_and_can_review,

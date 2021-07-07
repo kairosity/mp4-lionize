@@ -7,6 +7,13 @@
     <div class="row flex-grow-1">
         <div class="col col-12">
 <!-- Back Link -->
+        {% if full_req_path == referring_page_path_str %}
+        <div class="backlink">
+            <a class="button button-back hvr-underline-from-right" href="{% url 'products' %}">
+                <i class="fas fa-arrow-left"></i> To All Products
+            </a>
+        </div>
+        {% else %}
         <div class="backlink">
             <a class="button button-back hvr-underline-from-right" href="{{ referring_page }}">
                 <i class="fas fa-arrow-left"></i>
@@ -31,6 +38,7 @@
                 {% endif %}
             </a>
         </div>
+        {% endif %}
         <section class="d-flex flex-column">
             <div class="d-flex details-page-info">
                 {% include 'includes/skip-to-main.html' %}
