@@ -116,11 +116,13 @@
     - [10. Security Vulnerabilities](#10-security-vulnerabilities)
 - [7. Testing](#testing)
 - [8. Future Features To Implement and Issues Remaining](#future-features-to-implement-and-issues-remaining)
-  - [Adding Features to Products](#adding-features-to-products)
-  - [Adding Subscription Services for Social Media Management](#adding-subscription-services-for-social-media-management)
+   - [Adding Features to Products](#adding-features-to-products)
+   - [Adding Subscription Services for Social Media Management](#adding-subscription-services-for-social-media-management)
    - [Filtering Messages by "Date" or "Resolved"](#filtering-messages-by-date-or-resolved)
    - [Pagination or Ajax loading](#pagination-or-ajax-loading)
    - [Product Deletion](#product-deletion)
+   - [Content Security Policy](#content-security-policy)
+   - [Shopping Cart Dropdown not working on Chrome for mobile](#shopping-cart-dropdown-not-working-on-chrome-for-mobile)
 - [9. Attribution](#attribution)
 - [10. Deployment](#deployment)
 - [11. Tools and Other Resources Used](#tools-and-other-resources-used)
@@ -3996,13 +3998,13 @@ When an admin deletes a product it automatically deletes the order line items as
 
 After much tinkering with trying to add a CSP, I eventually decided that its' integration would have to be done at a later date.
 
-
 ## Shopping Cart Dropdown not working on Chrome for mobile
 
 Clicking the shopping cart icon is not triggering the dropdown menu on Chrome for mobile. There is plenty of discussion online about how many issues there are with Bootstrap integration into Chrome on mobile, further evidenced by the fact that it works perfectly on all other mobile browsers.
 
-- I tried changing ```data-toggle="dropdown"``` to ```data-toggle="collapse"``` - but that didn't make a difference.
-- I tried restructuring the html, so that the ```<ul>``` and ```<li>``` tags were replaced 
+I've gone into a lot of detail in the testing doc about how I attempted to fix this issue, but in the end I have settled for replacing the dropdown shopping bag menu on mobiles using Chrome, with a shopping cart icon, that links to the shopping bag page. So not a perfect solution, but the user experience is not massively impacted.
+
+This is definitely something that needs further investigation and if possible, a solution that brings the Chrome User Experience up to the same level as all the other browsers.
 
 
 #### back to [contents](#table-of-contents) 

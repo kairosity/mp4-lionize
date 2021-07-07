@@ -1059,7 +1059,9 @@ __Fix:__ After a lot of searching online for a solution, I tried various fixes:
 
 - The variables target Chrome browsers specifically, and if the browser is Chrome and the mobile navigation is present, the above code adds a class that hides the icon completely. 
 
-Obviously this is not the ideal solution as it removes the handy cart shortcut icon for Chrome mobile users, as a consolation prize, I used JavaScript to create a faster link 
+- Then I used JavaScript to replace the cart dropdown with a very similar cart icon that simply links to the shopping bag page. So the functionality was not perfect, but not too degraded.
+
+- Then finally, I noticed that the original design and dropdown was working perfectly on Chrome's mobile incognito mode, so I cleared the Chrome browser mobile cache, and it worked.
 
 
 #### back to [contents](#testing-table-of-contents) 
