@@ -13,7 +13,6 @@ variables are present in the document (i.e. if the user is logged in).
 $(function(){
 
     let path = window.location.href;
-    
     let splitPath = path.split('/').slice(3);
     
     let homeLink = document.querySelector('#home-link');

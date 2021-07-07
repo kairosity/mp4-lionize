@@ -164,6 +164,23 @@ def product_detail(request, product_id):
     vat = float((product.price * 23)) * .01
     total_incl_vat = float(product.price) + vat
 
+    if product.features:
+            features = product.features.split(",")
+    else:
+        features = None
+
+    if 'HTTP_REFERER' in request.META:
+        referring_page = request.META['HTTP_REFERER']
+        referring_page_path = referring_page.split('/')[3:]
+    else:
+        referring_page = '/products/'
+        referring_page_path = '/products/'
+
+    if len(referring_page_path) > 1:
+        referring_page_path1 = referring_page_path[1]
+    else:
+        referring_page_path1 = None
+
     # To determine if the logged in user
     # should be allowed to leave a review
     for order in users_orders:
@@ -190,7 +207,7 @@ def product_detail(request, product_id):
                     if item.product.id == featured_product_id:
                         item.reviewed = True
                         item.save()
-                        break
+                        # break
 
             messages.success(request,
                              'Your review was added successfully!')
@@ -198,25 +215,26 @@ def product_detail(request, product_id):
         else:
             messages.error(request, 'Failed to add your review. \
                     Please ensure the form is valid.')
+
+            template = 'products/product_detail.html'
+
+            context = {
+                'product': product,
+                'vat': vat,
+                'total_incl_vat': total_incl_vat,
+                'category': category,
+                'referring_page': referring_page,
+                'referring_page_path0': referring_page_path[0],
+                'referring_page_path1': referring_page_path1,
+                'features': features,
+                'user_purchased_product_and_can_review':
+                    user_purchased_project_and_can_review,
+                'reviews': reviews,
+                'form': form,
+            }
+            return render(request, template, context)
     else:
         form = ReviewForm()
-
-        if product.features:
-            features = product.features.split(",")
-        else:
-            features = None
-
-        if 'HTTP_REFERER' in request.META:
-            referring_page = request.META['HTTP_REFERER']
-            referring_page_path = referring_page.split('/')[3:]
-        else:
-            referring_page = '/products/'
-            referring_page_path = '/products/'
-
-        if len(referring_page_path) > 1:
-            referring_page_path1 = referring_page_path[1]
-        else:
-            referring_page_path1 = None
 
         context = {
             'product': product,
