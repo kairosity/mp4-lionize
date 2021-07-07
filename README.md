@@ -647,7 +647,7 @@ A relational database was used to structure this project. Relational databases a
 
 For development SQLite was used and Postgres was used for the deployed project. The relationships in the database are kept as simplified as possible to maintain good structural integrity and transparency. Wherever possible, constraints were defined to maintain data integrity. I tried to minimize redundancy as much as possible, the only obvious outlier being that I duplicated the first_name & last_name variables of the Django auth model in the profile model, but that was in order to enhance user experience, so I decided it was a valid concession.
 
-As you will see below the relationships mapped have an *almost* linear archictecture, whereby the Django __allauth model__ leads into the __UserProfile__ model with a One-to-one relationship. This model represents users who can create __Orders__ which can have various __OrderLineItems__ each of which has an associated __Product__ which belongs to a specific __Category__. Futhermore, those __Products__ can also be __Review__(ed) by __UserProfiles__ who can also email Lionize __Messages__.
+As you will see below the relationships mapped have an *almost* linear archictecture, whereby the Django __allauth model__ leads into the __UserProfile__ model with a One-to-one relationship. The __UserProfile__ model represents 'users' who can create __Orders__ which can have various __OrderLineItems__ each of which has an associated __Product__ which belongs to a specific __Category__. Futhermore, those __Products__ can also be __Review__(ed) by __UserProfiles__ who can also email Lionize __Messages__.
 
 These relationships and the details of their associated models have been further outlined below:
 
@@ -1013,7 +1013,7 @@ For guest users the navigation is limited to the main navbar and the footer navi
 
 <br>
 
-As you can see above, the login link is highlighted to look like a button, to differentiate it from register, and to emphasize the relevance of logging in.
+As you can see above, the login link is highlighted to look like a button, to differentiate it from register, and to emphasize the importance of logging in.
 
 On mobile devices the top navbar is accessible via the Hamburger icon.
 

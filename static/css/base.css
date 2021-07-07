@@ -673,12 +673,14 @@ p.side-nav-heading{
 }
 img.industry-image{
     width: auto;
-    height: 200px;
+    height: 250px;
     padding: 2rem;
+    object-fit: cover;
 }
 img.web-design-example{
-    max-width: 500px;
+    max-height: 300px;
     padding: 2rem;
+    object-fit: cover;
 }
 .details-page-text{
     font-family: var(--main-text-font);
