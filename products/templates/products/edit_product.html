@@ -19,6 +19,12 @@
             <div class="col-12 col-md-10 col-lg-8">
                 {% include 'includes/skip-to-main.html' %}
                 <br>
+                <!-- Back Link -->
+                <div class="backlink d-lg-none">
+                    <a class="button button-back hvr-underline-from-right" href="{% url 'admin-dash-products' %}">
+                        <i class="fas fa-arrow-left"></i> Products Admin
+                    </a>
+                </div>
                 <h2 id="main" class="admin-page-heading mb-3 details-page-heading">Edit Product "{{product.friendly_name|title}}"</h2>
             </div>
         </div>
