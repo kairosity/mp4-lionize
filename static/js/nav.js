@@ -156,8 +156,19 @@ $(function(){
         let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
         let secondCartUl = document.querySelector('#cart-ul');
 
+        /* Hide the mobile cart icon on Chrome and add a link in Chrome's navbar to shopping bag page */
         if (firstCartUl && isChrome || firstCartUl && isChromium){
-            firstCartUl.classList.add('hide-on-chrome-mobile')
+            firstCartUl.classList.add('hide-on-chrome-mobile');
+
+            let hamburger = document.querySelector('.navbar-toggler');
+            let newCart = document.createElement("ul");
+
+            newCartClasses = document.createAttribute('class');
+            newCartClasses.value = 'text-center list-inline list-unstyled mb-0 d-lg-none shopping-cart-ul';
+            newCart.setAttributeNode(newCartClasses);
+            newCart.innerHTML = `<li class="nav-item dropdown show"><a href="/bag/" class="navbar-brand nav-link m-0 p-0 me-3"><i class="fas fa-shopping-cart"></i></a></li>`
+
+            hamburger.parentNode.insertBefore(newCart, hamburger);
         }
 
         cartLink.addEventListener('click', function(){

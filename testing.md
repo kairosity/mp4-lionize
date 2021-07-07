@@ -1059,7 +1059,7 @@ __Fix:__ After a lot of searching online for a solution, I tried various fixes:
 
 - The variables target Chrome browsers specifically, and if the browser is Chrome and the mobile navigation is present, the above code adds a class that hides the icon completely. 
 
-Obviously this is not the ideal solution as it removes the handy cart shortcut icon for Chrome mobile users, but it will suffice for the time being, especially as affected users can still access the information via the User Portal: Shopping Bag page.
+Obviously this is not the ideal solution as it removes the handy cart shortcut icon for Chrome mobile users, as a consolation prize, I used JavaScript to create a faster link 
 
 
 #### back to [contents](#testing-table-of-contents) 
