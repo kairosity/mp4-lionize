@@ -152,12 +152,12 @@ $(function(){
         let cartTitle = document.querySelector('#cart-title');
         var isChrome = !!window.chrome && !!window.chrome.webstore;
         var isChromium = !!window.chrome;
-        const cartUl = document.querySelector('.shopping-cart-ul');
+        const firstCartUl = document.querySelector('.shopping-cart-ul');
         let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
-        let cartUl = document.querySelector('#cart-ul');
+        let secondCartUl = document.querySelector('#cart-ul');
 
-        if (cartUl && isChrome || cartUl && isChromium){
-            cartUl.classList.add('hide-on-chrome-mobile')
+        if (firstCartUl && isChrome || firstCartUl && isChromium){
+            firstCartUl.classList.add('hide-on-chrome-mobile')
         }
 
         cartLink.addEventListener('click', function(){
@@ -165,7 +165,7 @@ $(function(){
         });
 
         dropdownMobCart.onclick = function(){
-            cartUl.classList.toggle('show');
+            secondCartUl.classList.toggle('show');
         }
     }
 
