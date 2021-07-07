@@ -1018,6 +1018,28 @@ To fix this I added a small bit of code to the Order model's save() method to en
 
 <br>
 
+## Shopping Cart Dropdown not working on Chrome for mobile
+
+__Issue:__ Clicking the cart icon does not trigger the dropdown menu in Chrome on mobile devices, although it works perfectly on all other mobile devices. 
+
+__Fix:__ After a lot of searching online for a solution, I tried various fixes:
+
+- I tried changing ```data-toggle="dropdown"``` to ```data-toggle="collapse"``` - but that didn't make a difference.
+- I tried restructuring the html, so that the ```<ul>``` and ```<li>``` tags were deleted and the ```<a>``` tag was the first element.
+- I tried replacing the JQuery from:
+
+        $("#dropdown-mob-cart").click(function(){
+            $("#cart-ul").toggleClass("show");
+        }));
+
+To:
+
+        $("#dropdown-mob-cart").on('click touchstart', (function(){
+            $("#cart-ul").toggleClass("show");
+        }));
+
+- 
+
 
 #### back to [contents](#testing-table-of-contents) 
 

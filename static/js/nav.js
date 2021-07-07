@@ -162,9 +162,16 @@ $(function(){
             cartTitle.textContent = 'Shopping Cart:';
         });
 
-        $("#dropdown-mob-cart").on('click touchstart', (function(){
-            $("#cart-ul").toggleClass("show");
-        }));
+        // $("#dropdown-mob-cart").on('click touchstart', (function(){
+        //     $("#cart-ul").toggleClass("show");
+        // }));
+        let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
+        let cartUl = document.querySelector('#cart-ul');
+
+        dropdownMobCart.onclick = function(){
+            cartUl.classList.toggle('show');
+        }
+
     }
 
 });
