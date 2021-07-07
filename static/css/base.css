@@ -897,10 +897,11 @@ button.update-link{
             justify-content: center;
 }
 img.empty-shopping-bag{
-    max-width: 300px;
+    max-width: auto;
     -o-object-fit: cover;
     object-fit: cover;
     margin-top: 1rem;
+    height: 300px;
 }
 .keep-shopping-button{
     padding: 0.53rem;
@@ -1132,6 +1133,9 @@ footer a.nav-link:hover{
     .bag-table{
         margin-right: 2rem;
     }
+    img.empty-shopping-bag{
+        height: 400px;
+    }
     .cart-body{
         width: 310px;
         top: 2px;
@@ -1198,6 +1202,9 @@ footer a.nav-link:hover{
         top: -3px;
         right: 142px;
         border: var(--accent-colour) 3px solid;
+    }
+    img.empty-shopping-bag{
+        height: 500px;
     }
     .homepage-header {
         height: 500px;

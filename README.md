@@ -1124,8 +1124,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 ## 5. Register
 
-The guest user is guided towards this registration page, which acts as a gateway to the more advanced functionality of the application, including the shop. The registration form in intentionally simple, so as not to put users off at 
-the final hurdle. More detailed user information is collected later using the User Profile page.
+The guest user is guided towards this registration page, which acts as a gateway to the more advanced functionality of the application, including the shop. The registration form in intentionally simple, so as not to deter users at the final hurdle. More detailed user information is collected later on the User Profile page.
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1143,6 +1142,7 @@ the final hurdle. More detailed user information is collected later using the Us
 <br>
 
 - Once they click to register, they are brought to a screen telling them to confirm their registration via a link that has been emailed to them. This is to avoid users signing up with fake email addresses.
+
 <br>
 
 <p align="center">
@@ -1161,7 +1161,7 @@ the final hurdle. More detailed user information is collected later using the Us
 
 <br>
 
-- When they click to confirm, they are redirected to login to their new account, and a toast message confirms that registration was successful.
+- When they click to confirm, they are redirected to login to their new account and a toast message confirms that registration was successful.
 
 
 <br>
@@ -1243,7 +1243,7 @@ This form page takes in further user data to enhance their experience of using t
 
 ## 8. User Portal: Shopping Bag
 
-Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its' data is connected to the user's use of the app. Therefore grouping it with orders felt more logically consistent to me.
+Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its data is connected to the user's use of the app. Therefore grouping it with orders felt more logically consistent to me.
 
 <details>
 <summary><b>click for features</b></summary>
