@@ -8,11 +8,11 @@
 
 <br>
 
-<a href="https://lionize-ms4.herokuapp.com/" target="_blank"><img src="static/images/features/lionize-mockup.png"></a>
+<a href="https://lionize-ms4.herokuapp.com/"><img src="static/images/features/lionize-mockup.png"></a>
  
 <br>
 
-<a href="https://lionize-ms4.herokuapp.com/" target="_blank">Click here to view the live website</a>
+<a href="https://lionize-ms4.herokuapp.com/">Click here to view the live website</a>
 
 <br>
 
