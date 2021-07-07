@@ -673,12 +673,12 @@ p.side-nav-heading{
 }
 img.industry-image{
     width: 300px;
-    height: auto;
+    /* height: auto; */
     padding: 2rem;
 }
 img.web-design-example{
     max-width: 500px;
-    height: auto;
+    /* height: auto; */
     padding: 2rem;
 }
 .details-page-text{
