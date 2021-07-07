@@ -122,7 +122,6 @@
    - [Pagination or Ajax loading](#pagination-or-ajax-loading)
    - [Product Deletion](#product-deletion)
    - [Content Security Policy](#content-security-policy)
-   - [Shopping Cart Dropdown not working on Chrome for mobile](#shopping-cart-dropdown-not-working-on-chrome-for-mobile)
 - [9. Attribution](#attribution)
 - [10. Deployment](#deployment)
 - [11. Tools and Other Resources Used](#tools-and-other-resources-used)
@@ -2180,7 +2179,7 @@ __400 Bad Request__
 
 __403 Forbidden!__
 
-- This would be thrown if users try and access pages they should not.
+- This is thrown if users try and access pages they should not.
 
 <br>
 
@@ -2192,7 +2191,7 @@ __403 Forbidden!__
 
 __403 CSRF error__
 
-- This would be thrown if users try and access pages they should not in a CSRF threatening manner.
+- This is thrown if users try and access pages they should not in a CSRF threatening manner.
 
 <br>
 
@@ -2732,7 +2731,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
   <img src="static/images/responsivity/login-reg-logout/desk-log-2.png">
 </p>
 
-<br>sfd
+<br>
 
 </details>
 <br>
@@ -2815,10 +2814,10 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <details>
 <summary><b>click for responsivity breakdown</b></summary>
 
-### Mobile
+### Mobile
 
 - In comparison and with reference to the shopping bag layout used for larger desktop screens, the layout on mobile and tablets is rather different. 
-- While the larger desktop shopping bag is laid out as a table, doing so on smaller screens necessitated horizontal scrolling, to which I am very averse. 
+- While the larger desktop shopping bag is laid out as a table, doing so on smaller screens necessitated horizontal scrolling, to which I am averse. 
 - Instead each table heading is repeated per item in the bag and those items are listed one above the other. 
 - While this requires more vertical scrolling, I feel this is preferable. 
 
@@ -2832,23 +2831,12 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 - The layout leans somewhat to the left of the page, but again, as the information presented is numerical and data-centric, I did not think it was necessary or beneficial to center the text.
 
-- This slight imbalance is somewhat counteracted by the totals right-alignment at the bottom of the list.
+- This slight imbalance is somewhat counteracted by the right-aligned totals at the bottom of the list.
 
 <br>
 
 <p align="center">
   <img src="static/images/responsivity/shoppingbag/mob-vert-sb-rf-1.png">
-</p>
-
-<br>
-
-
-- When there is nothing in the shopping bag, the image below is centered on all screens. 
-
-<br>
-
-<p align="center">
-  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-3.png">
 </p>
 
 <br>
@@ -2862,6 +2850,18 @@ These pages are very similar in their layouts and so will be looked at jointly.
 </p>
 
 <br>
+
+- When there is nothing in the shopping bag, the image below is centered on all screens. 
+
+<br>
+
+<p align="center">
+  <img src="static/images/responsivity/shoppingbag/mob-vert-bag-3.png">
+</p>
+
+<br>
+
+
 
 
 ### Tablet 
@@ -3852,7 +3852,7 @@ Bootstrap integration is actually pretty excellent for many accessibility concer
 
 <br>
 
-The only element Bootstrap focus did not cover was my Side Navigation, as it was written as links within <li> elements. Therefore I added some custom JavaScript to cover the side nav.
+The only element Bootstrap focus did not cover was my Side Navigation, as it was written as links within ```<li>``` elements. Therefore I added some custom JavaScript to cover the side nav.
 
 ## 3. Accessibility for Users with Hearing Impairments 
 
@@ -3955,7 +3955,7 @@ I tried to integrate django-csp to take care of the content security policy, as 
 
 - Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
 
-- The lack of a CSP is something of a vulnerability and as testament to its impact, it is the reason the application scores somewhat poorly using Mozilla's secruity testing (outlined further in testing.md). It will have to be implemented at a later date.
+- The lack of a CSP is something of a vulnerability evidenced by the lesser scores the app received from Mozilla's secruity testing (outlined further in testing.md). A CSP will have to be implemented at a later date.
 
 #### back to [contents](#table-of-contents) 
 
@@ -3993,17 +3993,9 @@ If the application were to grow, pagination or infinite scroll loading on pages 
 
 When an admin deletes a product it automatically deletes the order line items associated with that product. To avoid this issue, I implemented a "remove from shop" feature, as a less drastic solution, however if an admin user does decide to delete a product, the order line item references to that product are also gone. The order record remains, however there is definitely scope to implement some form of order line item recording irrespective of product deletion.
 
-## Content Security Policy
+## Content Security Policy
 
-After much tinkering with trying to add a CSP, I eventually decided that its' integration would have to be done at a later date.
-
-## Shopping Cart Dropdown not working on Chrome for mobile
-
-Clicking the shopping cart icon is not triggering the dropdown menu on Chrome for mobile. There is plenty of discussion online about how many issues there are with Bootstrap integration into Chrome on mobile, further evidenced by the fact that it works perfectly on all other mobile browsers.
-
-I've gone into a lot of detail in the testing doc about how I attempted to fix this issue, but in the end I have settled for replacing the dropdown shopping bag menu on mobiles using Chrome, with a shopping cart icon, that links to the shopping bag page. So not a perfect solution, but the user experience is not massively impacted.
-
-This is definitely something that needs further investigation and if possible, a solution that brings the Chrome User Experience up to the same level as all the other browsers.
+After much tinkering with trying to add a CSP, I eventually decided that its integration would have to be done at a later date.
 
 
 #### back to [contents](#table-of-contents) 
@@ -4016,11 +4008,16 @@ This is definitely something that needs further investigation and if possible, a
 
 - Anywhere the code is taken in its entirety I have made a note about that specific block of code.
 
+- The code for the application's main pre-loader came from [Tobias Ahlin](https://tobiasahlin.com/spinkit/)
+
+- The initial boilerplate code for transforming the Shopping Bag Table to be responsive on mobile is from: [CSS Tricks](https://css-tricks.com/responsive-data-tables/)
+
 - All the really nice illustrations come from [unDraw](https://undraw.co/) which is an amazing resource. 
 
 <br>
 
-# Unsplash Images Used
+## Unsplash Images Used
+
 
 - Photo by <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> on <a href="https://unsplash.com/s/photos/women-headshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
@@ -4074,7 +4071,7 @@ This is definitely something that needs further investigation and if possible, a
   <img src="static/images/deployment/heroku-deployment-postgres-db.png">
 </p>
 
-3. Instal dj_database_url & psycopg2 to enable the connection between Django and Postgres.
+3. Install dj_database_url & psycopg2 to enable the connection between Django and Postgres.
 
 4. Then run:  
   ``` pip3 freeze > requirements.txt ```
@@ -4083,7 +4080,7 @@ This is definitely something that needs further investigation and if possible, a
         <img src="static/images/deployment/deployment-psyco-djdb.png">
     </p>
 
-5. Import dj_database_url into the project's settings.py file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database, when in development:
+5. Import dj_database_url into the project's settings file and then add the POSTGRES database connection as the default database when in production mode alongside the sqlite database, when in development:
 
 <p align="center">
     <img src="static/images/deployment/deployment-db-connection.png">
@@ -4222,7 +4219,7 @@ This is definitely something that needs further investigation and if possible, a
 
 12. Commit these changes and push to github & thus Heroku (because of automatic deployments) and the build will collect all the Static files and place them in the S3 bucket and Heroku will then serve them successfully. 
 
-13. Then create a new folder in the S3 bucket called Media and set permissions to grant publin-read access as below:
+13. Then create a new folder in the S3 bucket called Media and set permissions to grant publib-read access as below:
 
 <p align="center">
     <img src="static/images/deployment/s3-media-files-permissions.png">
@@ -4354,7 +4351,7 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
     I used one of these for the application's pre-loader.
 
-- ## [How to add CSS Preloader to your Website](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
+- ### [How to add CSS Preloader to your Website](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
 
     Tutorial explaining how to implement the pre-loader referenced above.
 
@@ -4362,11 +4359,11 @@ Typing ```pip3 install virutalenv``` in your terminal will get you started with 
 
 - ### [Integrating a Modern JavaScript Pipeline into a Django Application](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
 
-    - Very succinct and accurate guide to the above. Didn't end up using it though.
+    Very succinct and accurate guide to the above. Didn't end up using it though.
 
 - ### [How can I get the values of data attributes in JavaScript code?](https://stackoverflow.com/questions/33760520/how-can-i-get-the-values-of-data-attributes-in-javascript-code)
 
-    - Used to help with transferring variables from Django to JavaScript.
+    Used to help with transferring variables from Django to JavaScript.
 
 - ### [Bootstrap v5 modal show issue](https://stackoverflow.com/questions/67440523/bootstrap-v5-modal-show-issue)
 

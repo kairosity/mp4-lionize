@@ -205,7 +205,6 @@ a.yellow-link:hover{
         transform: scale(1);
     }
 }
-
 @keyframes sk-circleBounceDelay {
     0%, 80%, 100% {
         -webkit-transform: scale(0);
@@ -1393,9 +1392,3 @@ only screen and (max-width: 1200px)  {
         font-weight: 500;
     }
 }
-/* Targeting just Chrome Browsers on Mobile */
-/* @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm)  { 
-    .hide-on-chrome-mobile {
-        display: none;
-    } 
-} */
