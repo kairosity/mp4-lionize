@@ -1418,7 +1418,7 @@ When a user orders and purchases a product, they are automatically entitled to r
 - These reviews are listed most recent first.
 - When an order of a specific product has been reviewed, any orders of that product are no longer listed on the left hand side of the User Portal's Review page.
 - Even if the user has ordered multiple quantities of that product they are only allowed to leave 1 review.
-- This is to prevent against multiple reviews by the same person, which if someone were to order a weekly social media product, would fill up their review page very quickly and create a bad User Experience for them.
+- This is to prevent against multiple reviews by the same person, which if someone were to order a weekly social media product, would fill up their review page very quickly and create a bad User Experience.
 
 <br>
 
