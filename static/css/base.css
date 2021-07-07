@@ -672,13 +672,12 @@ p.side-nav-heading{
     margin-bottom: 2rem;
 }
 img.industry-image{
-    width: 300px;
-    /* height: auto; */
+    width: auto;
+    height: 200px;
     padding: 2rem;
 }
 img.web-design-example{
     max-width: 500px;
-    /* height: auto; */
     padding: 2rem;
 }
 .details-page-text{

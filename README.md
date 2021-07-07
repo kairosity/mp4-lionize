@@ -283,10 +283,9 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 To create a web application that successfully showcases Lionize's services and offers clients access to a B2B shopping and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
 
 ## Target Users
-As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella.
+As outlined above, Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders, partnerships and larger corporations all fall under this umbrella.
 
 ## Research
-
 To research the best design and structural mechanisms to use for this project, I visited a number of Saas and online store websites to see how they present their information and how they structure their payment portals.
 
 ## Value to the User
@@ -399,13 +398,13 @@ The crux of this application's purpose is as a B2B service provider that allows 
 3. Users can view a list of their past orders.
 4. Users can view a list of items available for them to review.
 5. Users can view a list of their reviews.
-6. Users can add, edit and delete reviews of products they have ordered.
+6. Users can add, edit and delete reviews they have written about products they have purchased.
 ### Searching & Filtering
-1. Users can view categories of products to shop for using a side navigation bar.
+1. Users can view categories of products, using a side navigation bar.
 2. Users can perform a keyword search against the product names, descriptions & features.
 3. Admin users can filter users by keyword search & can filter products using category buttons or keyword search.
 ### Shopping
-1. Users can shop directly from the user portal / shop area of the application.
+1. Users can shop directly from the shop area of the application.
 2. When shopping, users can view the lists of all products (whether in the all products section of divided by category) and they can click into view the specific product details and to add it to their shopping bag if they want. 
 3. Users can see the VAT amount on individual products in their shopping bag as well as the total VAT being charged.
 4. Users get instant confirmation of any changes to their shopping bag via a modal message on the page.
@@ -459,7 +458,7 @@ All content, navigation, typography and information hierarchy are consistent and
 - All of the most important content is visible on the page and should a user need to scroll this is made amply evident to them.
 - The application's aesthetics are consistent throughout the site and rely on the same small set of colours and fonts.
 - Spacing is used to create a clean aethestic and the application never feels crowded or claustrophobic.
-- All fonts used in the application are clean and elegant sans-serifs.
+- I've used clean and elegant sans-serif fonts to further enhance the clean-lines aesthetic.
 - Icons (such as the search magnifying glass and the airplane send email icon etc..) are used to enhance metaphorical thinking.
 - Images are used to the same effect as above. Each product has an associated illustration that reflects the content of the product itself to futher reassure the user.
 - All forms rely on labels and / or placeholders to guarantee the user knows what they are doing at all times.
@@ -468,15 +467,15 @@ All content, navigation, typography and information hierarchy are consistent and
 
 ### Learnability and communication of functionality
 
-- Because of all of the above consistent and convention attributes, learnability is very high and quick for this application.
-- There is very little about it that the user will not be expecting or anticipating.
+- This targeted focus on consistency means that learnability is very high as is ease of use.
+- Structurally, there is very little (if anything) in this application that the user will not be expecting or anticipating.
 - On all pages that require the user to *do* something, what they are expected to do, is clearly and succinctly explained.
 
-The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance the fame and standing in the world of something or someone. This is followed by a further explanation of the business' raison d'etre. Scrolling down further elucidates what is on offer by grouping and summarizing the four different categories of products. Introductions to each of these product / services can be viewed by clicking on the "Learn More" buttons. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products, they are then told explicitly why they should register, and ideally the homepage user flow ends with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch to ask any questions.
+The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance the fame and standing in the world of something or someone. This is followed by a further explanation of the business' raison d'etre. Scrolling down further elucidates what is on offer by grouping and summarizing the four different categories of products. Introductions to each of these product / services can be viewed by clicking on the "Learn More" buttons. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products, they are then told explicitly why they should register, and ideally the homepage user flow ends with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form if they want to get in touch to ask any questions.
 
 ### Feedback
 
-- Most actions a user can do on the application are followed by various forms of immediate feedback.
+- Most user actions are followed by various forms of immediate feedback.
 - Clicking the logout button brings the user to a logout confirmation page and then when they confirm their logout intent, they see a toast message telling them they have successfully signed out.
 - Registration is confirmed via email.
 - Logging in brings the user directly to their user portal as well as delivering a login confirmation message via toast that communicates both the action and reassures them of its accuracy with the inclusion of their username in the message content itself.
@@ -582,7 +581,7 @@ Value is established by ensuring consistency in design and typography, the colou
 
 ## Reassuring Conventions
 
-As aforementioned in design and structure and feedback, I've kept everything about the application predictable and conventional. The level of user trust needs to be exceptionally high for any application that is seeking to sell something and take user payment information.
+As aforementioned in design and structure and feedback, I've kept everything about the application predictable and conventional. The level of user trust needs to be exceptionally high for any application that is looking to sell something and take user payment information.
 
 ## Contextually Organised Content
 
@@ -609,7 +608,7 @@ If you do opt to view them this way, please click download as the GitHub viewer 
 
 ## Design Considerations
 
-My aim was keep the design as simple, clear and open as possible. I think light tones have a more transparent and trustworthy quality for e-commerce and as the business is service / digital based, I thought a light blue tone worked perfectly with yellow as the main colours. Space and clarity were the two driving factors behind the design I opted for and I think they achieve those perception aims well.
+My aim was keep the design as simple, clear and open as possible. I think light tones have a more transparent and trustworthy quality for e-commerce and as the business is service / digital based, I thought a light blue tone worked perfectly with yellow as the main colours. Space and clarity were the two driving factors behind the design I opted for and I think they achieve those aims.
 
 ## Colour Palette
 
@@ -629,7 +628,7 @@ I played it really safe with the typography, I thought Quicksilver worked well f
 
 I haven't done extensive mockups, rather I have chosen a selection of important pages and limited my mockups to them for a desktop view. As my wireframes are relatively detailed and the colour theme and design does not change dramatically from page to page, I felt that these five mockups were sufficient to get a clear picture of what I would build.
 
-Again, the best way to view these is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41) - As well as the Mockups linked below, the Figma link also has pages dedicated to first draft mockups and style ideas. 
+Again, the best way to view these is by visiting my [public Figma workspace here.](https://www.figma.com/file/PeEEgePG0JpxThhMTRARTu/lionize?node-id=13%3A41) - As well as the Mockups linked below, the Figma link also has pages dedicated to first draft mockups and style ideas.
 
 [Alternatively click here for the individual mockups.](static/images/mockups/lionize-mockups.pdf)
 
