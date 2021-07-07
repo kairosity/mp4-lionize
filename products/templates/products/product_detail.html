@@ -96,17 +96,13 @@
                                             <span class="icon"><i class="fas fa-plus"></i></span>
                                     </button>
                                 </div>
-
-                            
-                            <div class="input-group mt-4 justify-content-center">
-                                <input type="submit" class="button button-accent special-input-group-button" value="Add to Bag">
-                                <input type="hidden" name="redirect_url" value="{% url 'view_shopping_bag' %}">
+                                <div class="input-group mt-4 justify-content-center">
+                                    <input type="submit" class="button button-accent special-input-group-button" value="Add to Bag">
+                                    <input type="hidden" name="redirect_url" value="{% url 'view_shopping_bag' %}">
+                                </div>
                             </div>
                         </div>
-                        </div>
-                  
                 </form>
-            
         </div>
 <!-- Review Section -->
         <div class="row d-flex flex-column">
@@ -147,7 +143,6 @@
                         </div>
                     </div>
                 {% endif %}
-
                 {% if reviews %}
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
@@ -180,19 +175,12 @@
                     </div>
                 </div>
                 {% endif %}
-            
-        </div>
-
+            </div>
         </div> 
         </div>
-    
-
-</div>
-
-
+    </div>
 <!-- Flex Container End -->
 </div> 
-
 
 
 {% endblock %}

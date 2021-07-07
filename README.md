@@ -4,7 +4,9 @@
 
 ## Code Institute Milestone Project 4
 
-"Lionize" is a cutting-edge digital marketing business. This application has been built to encourage clients and prospective clients to buy their products. It offers information about the digital services and products on offer. Functionality and interactivity is increased once users register for a free account. When registered, users are able to view further information about the services and they are given access to the shop, as well as to the User Portal where they can engage in more customised interactions.
+"Lionize" is a cutting-edge digital marketing business. This application has been built to encourage clients and prospective clients to buy their products. It offers information about the digital services and products on offer. Functionality and interactivity is increased once a user registers for a free account. When registered, users are able to view further information about the services and they are given access to the shop, as well as to the User Portal where they can engage in more customised interactions. Users can purchase products in the shop, their orders are recorded for them to view and they can review the products they have ordered.
+
+Please note that this project is for educational purposes only. "Lionize" is not a real business, the products on display are not for sale. Do not attempt to purchase any of the products.
 
 <br>
 
@@ -279,7 +281,18 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 # Strategy
 
 ## Project Goals
-To create a web application that successfully showcases Lionize's services and offers clients access to a B2B shopping and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
+
+- To create a web application that successfully showcases Lionize's services.
+
+- To create a functional B2B shopping application.
+
+- To create an application that provides an excellent user experience.
+
+- To create an application that has excellent accessibility.
+
+- To create an application that incorporates Stripe and is able to process payments efficiently and securely.
+
+- To create an application that both enhances user experience *and* increases customer loyalty and trust.
 
 ## Target Users
 As outlined above, Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders, partnerships and larger corporations all fall under this umbrella.
@@ -293,6 +306,8 @@ All classes of users benefit from a simple online ordering and payment system.
 The informational aspects of the website deliver value insofar as they succinctly communicate information about the services/products on offer, allowing potential clients to make informed purchasing decisions.
 
 The user portal access gained after registration delivers a more personalized, efficient user experience that is in sync with the fast pace of technological innovation.
+
+The application is a fully functional B2B shop, its primary purpose and value lies in its ability to solve user problems by selling them solutions in the form of digital products.
 
 #### back to [contents](#table-of-contents) 
 <br>

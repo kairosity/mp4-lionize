@@ -111,7 +111,6 @@ def content_creation_products(request):
     context = {
         'products': products,
     }
-
     return render(request, 'products/content_creation_products.html', context)
 
 
@@ -133,7 +132,6 @@ def social_media_management(request):
     context = {
         'products': products,
     }
-
     return render(request, 'products/social_media_management.html', context)
 
 
@@ -257,7 +255,6 @@ def product_detail(request, product_id):
             'reviews': reviews,
             'form': form,
         }
-
         return render(request, 'products/product_detail.html', context)
 
 
@@ -272,7 +269,6 @@ def add_product(request):
     * POST adds a new product to the shop.
     * GET displays the add product form.
     '''
-
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized\
             to add new products! If you have an admin account,\
@@ -297,7 +293,6 @@ def add_product(request):
     context = {
         'form': form,
     }
-
     return render(request, template, context)
 
 
@@ -313,7 +308,6 @@ def edit_product(request, product_id):
     * POST saves the alterations to the product.
     * GET displays the edit product form.
     '''
-
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized\
             to edit Lionize products! If you have an admin account,\
@@ -344,7 +338,6 @@ def edit_product(request, product_id):
         'form': form,
         'product': product,
     }
-
     return render(request, template, context)
 
 
@@ -392,7 +385,6 @@ def edit_review(request, review_id):
         'form': form,
         'review': review,
     }
-
     return render(request, template, context)
 
 
@@ -408,7 +400,6 @@ def delete_product(request, product_id):
     * POST deletes the product.
     * GET displays the delete product page.
     '''
-
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, but you are not authorized\
             to delete Lionize products! If you have an admin account,\
@@ -426,7 +417,6 @@ def delete_product(request, product_id):
     context = {
         'product': product,
     }
-
     return render(request, template, context)
 
 
@@ -443,7 +433,6 @@ def delete_review(request, review_id):
     * POST deletes the review.
     * GET displays the delete review page.
     '''
-
     review = get_object_or_404(Review, pk=review_id)
     profile = get_object_or_404(UserProfile, user=request.user)
     users_orders = profile.orders.all()
@@ -478,9 +467,7 @@ def delete_review(request, review_id):
     context = {
         'review': review,
     }
-
     return render(request, template, context)
-
 
 
 @login_required
@@ -494,7 +481,6 @@ def remove_from_shop(request, product_id):
     \n Returns:
     * Removes the product from the shop.
     '''
-
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized\
             to remove a product from the Shop! If you have an admin\
@@ -521,7 +507,6 @@ def add_to_shop(request, product_id):
     \n Returns:
     * Adds the product to the shop.
     '''
-
     if not request.user.is_staff:
         messages.error(request, 'Sorry, but you are not authorized\
             to alter products! If you have an admin account,\

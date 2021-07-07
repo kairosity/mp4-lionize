@@ -5,7 +5,7 @@ to the removal GET request if the user confirms deletion. */
 
 var removeProductModal = document.getElementById('removeProductModal');
 removeProductModal.addEventListener('show.bs.modal', function (event) {
-    // Button that triggered the modal
+    // Button that triggers the modal
     var button = event.relatedTarget;
     // Extract info from data-bs-* attributes
     var productId = button.getAttribute('data-bs-product-id');

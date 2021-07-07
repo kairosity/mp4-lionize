@@ -26,6 +26,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
+
             # Save the first & last name from the profile to
             # the Django user auth form.
             User = get_user_model()
@@ -60,13 +61,10 @@ def order_history_user_portal(request):
     \n Returns:
     * Template displaying the user's order history'.
     '''
-
     profile = get_object_or_404(UserProfile, user=request.user)
-
     orders = profile.orders.all().order_by('-date')
 
     template = 'profiles/orders.html'
-
     context = {
         'orders': orders,
     }
@@ -105,7 +103,6 @@ def order_history(request, order_number):
         'from_profile': True,
         'referring_page': referring_page,
     }
-
     return render(request, template, context)
 
 
@@ -120,7 +117,6 @@ def your_reviews(request):
     * Template displaying the products a user can review.
     * And the reviews they have already written.
     '''
-
     profile = get_object_or_404(
         UserProfile, user=request.user)
     orders = profile.orders.all()
@@ -132,7 +128,6 @@ def your_reviews(request):
         'orders': orders,
         'reviews': reviews,
     }
-
     return render(request, template, context)
 
 
