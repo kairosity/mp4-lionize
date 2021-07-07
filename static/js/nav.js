@@ -150,14 +150,21 @@ $(function(){
     if(document.querySelector('#navbarDropdownMenuLinkCart')){
         let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
         let cartTitle = document.querySelector('#cart-title');
+        // var isChrome = !!window.chrome && !!window.chrome.webstore;
+        // var isChromium = !!window.chrome;
+        // const cartUl = document.querySelector('.shopping-cart-ul');
+
+        // if (cartUl && isChrome || cartUl && isChromium){
+        //     cartUl.classList.add('hide-on-chrome-mobile')
+        // }
 
         cartLink.addEventListener('click', function(){
             cartTitle.textContent = 'Shopping Cart:';
         });
 
-        $("#dropdown-mob-cart").click(function(){
+        $("#dropdown-mob-cart").on('click touchstart', (function(){
             $("#cart-ul").toggleClass("show");
-        });
+        }));
     }
 
 });

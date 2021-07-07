@@ -3996,6 +3996,15 @@ When an admin deletes a product it automatically deletes the order line items as
 
 After much tinkering with trying to add a CSP, I eventually decided that its' integration would have to be done at a later date.
 
+
+## Shopping Cart Dropdown not working on Chrome for mobile
+
+Clicking the shopping cart icon is not triggering the dropdown menu on Chrome for mobile. There is plenty of discussion online about how many issues there are with Bootstrap integration into Chrome on mobile, further evidenced by the fact that it works perfectly on all other mobile browsers.
+
+- I tried changing ```data-toggle="dropdown"``` to ```data-toggle="collapse"``` - but that didn't make a difference.
+- I tried restructuring the html, so that the ```<ul>``` and ```<li>``` tags were replaced 
+
+
 #### back to [contents](#table-of-contents) 
 
 <br>

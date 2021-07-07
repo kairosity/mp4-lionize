@@ -66,6 +66,9 @@ a.yellow-link{
 a.yellow-link:hover{
     color: var(--accent-lighter);
 }
+.hide-on-chrome-mobile {
+    display: none;
+} 
 /*-------------------------- Skip To Main: Accessibility for keyboard users. */
 .skip-to-main {
     text-transform: uppercase;
@@ -1383,6 +1386,8 @@ only screen and (max-width: 1200px)  {
     }
 }
 /* Targeting just Chrome Browsers on Mobile */
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) and (max-width: 992px)  { 
-    .selector {} 
-}
+/* @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm)  { 
+    .hide-on-chrome-mobile {
+        display: none;
+    } 
+} */
