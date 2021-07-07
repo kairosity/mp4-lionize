@@ -4,15 +4,15 @@
 
 ## Code Institute Milestone Project 4
 
-This project is an application and company website for a digital marketing business called "Lionize". The application showcases the digital services offered and also allows clients to register a free account. Once registered, the client is given access to further information about the services, given access to the shop, and a User Portal where they can engage in more customised interactions with application.
+"Lionize" is a cutting-edge digital marketing business. This application has been built to encourage clients and prospective clients to buy their products. It offers information about the digital services and products on offer. Functionality and interactivity is increased once users register for a free account. When registered, users are able to view further information about the services and they are given access to the shop, as well as to the User Portal where they can engage in more customised interactions.
 
 <br>
 
-<a href="https://lionize-ms4.herokuapp.com/"><img src="static/images/features/lionize-mockup.png"></a>
+<a href="https://lionize-ms4.herokuapp.com/" target="_blank"><img src="static/images/features/lionize-mockup.png"></a>
  
 <br>
 
-### [Click to view the live website](https://lionize-ms4.herokuapp.com/)
+<a href="https://lionize-ms4.herokuapp.com/" target="_blank">Click here to view the live website</a>
 
 <br>
 
@@ -203,7 +203,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 4. Filter products by keyword using a search form.
 5. Add products to my shopping bag and have this visually confirmed for me.
 6. Easily view all the items in my shopping bag.
-7. Update the items in my shopping bag, by adding more or less of an item.
+7. Adjust the number of items in my shopping bag, by adding more or less of an item.
 8. Remove any item from my shopping bag.
 9. Add items to my shopping bag and see these changes reflected immediately without having to visit the shopping bag page.
 10. Email Lionize with a custom quotation request for a specific product/service I have in mind that I cannot find in the shop.
@@ -278,7 +278,7 @@ This application is targeted at Sole Traders, SMEs and larger businesses who are
 # Strategy
 
 ## Project Goals
-To create a web application that successfully showcases Lionize's services and offers clients access to a B2B order and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
+To create a web application that successfully showcases Lionize's services and offers clients access to a B2B shopping and payment portal, that both enhances their user experience *and* increases Lionize's customer loyalty and trust.
 
 ## Target Users
 As outlined above Lionize's target market are businesses in need of digital marketing services. SMEs, sole traders and larget corporations all fall under this umbrella.
@@ -395,11 +395,11 @@ The crux of this application's purpose is as a B2B service provider that allows 
 1. Users can view & change their profile information for use with billing and other app functionality.
 2. Users can click in to see their shopping bag.
 3. Users can view a list of their past orders.
-4. Users can view a list of items availble for them to review.
+4. Users can view a list of items available for them to review.
 5. Users can view a list of their reviews.
 6. Users can add, edit and delete reviews of products they have ordered.
 ### Searching & Filtering
-1. Users can view categories of products to shop using a side navigation bar.
+1. Users can view categories of products to shop for using a side navigation bar.
 2. Users can perform a keyword search against the product names, descriptions & features.
 3. Admin users can filter users by keyword search & can filter products using category buttons or keyword search.
 ### Shopping
@@ -457,7 +457,7 @@ All content, navigation, typography and information hierarchy are consistent and
 - All of the most important content is visible on the page and should a user need to scroll this is made amply evident to them.
 - The application's aesthetics are consistent throughout the site and rely on the same small set of colours and fonts.
 - Spacing is used to create a clean aethestic and the application never feels crowded or claustrophobic.
-- All fonts used a clean and elegant sans-serif.
+- All fonts used in the application are clean and elegant sans-serifs.
 - Icons (such as the search magnifying glass and the airplane send email icon etc..) are used to enhance metaphorical thinking.
 - Images are used to the same effect as above. Each product has an associated illustration that reflects the content of the product itself to futher reassure the user.
 - All forms rely on labels and / or placeholders to guarantee the user knows what they are doing at all times.
@@ -470,7 +470,7 @@ All content, navigation, typography and information hierarchy are consistent and
 - There is very little about it that the user will not be expecting or anticipating.
 - On all pages that require the user to *do* something, what they are expected to do, is clearly and succinctly explained.
 
-The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance something's or someone's fame and standing in the world. This is followed by a further explanation of the business's raison d'etre. Scrolling down further elucidates what is on offer by grouping and summarizing the four different categories of products. Each of these product / services introductions can be clicked on to view more details. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products they are then told explicitly why they should register and ideally the homepage user flows ends here, with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch to ask any questions.
+The name of the application itself communicates the essence of what the business does. "Lionize" means to enhance the fame and standing in the world of something or someone. This is followed by a further explanation of the business' raison d'etre. Scrolling down further elucidates what is on offer by grouping and summarizing the four different categories of products. Introductions to each of these product / services can be viewed by clicking on the "Learn More" buttons. This process of unfolding follows formulaic lines and is structured this way so as to first pique the user's interest and then slowly feed them more information without overloading them. Once they learn about the products, they are then told explicitly why they should register, and ideally the homepage user flow ends with them clicking the "Register" button. Should they choose to keep scrolling there is an introduction to the main stakeholders in the business and then a contact form should they wish to get in touch to ask any questions.
 
 ### Feedback
 
@@ -478,7 +478,7 @@ The name of the application itself communicates the essence of what the business
 - Clicking the logout button brings the user to a logout confirmation page and then when they confirm their logout intent, they see a toast message telling them they have successfully signed out.
 - Registration is confirmed via email.
 - Logging in brings the user directly to their user portal as well as delivering a login confirmation message via toast that communicates both the action and reassures them of its accuracy with the inclusion of their username in the message content itself.
-- Adding anything to the shopping bag pops up a small toast modal that confirms the addition.
+- Adding anything to the shopping bag triggers a pop-up toast modal that confirms the addition.
 - On the shopping bag page, if a user chooses to remove an item from their bag, this is also confirmed via a toast message.
 - When the order is being processed after checkout, a page loading icon informs the user that something is happening.
 - When the order is processed the user is brought to the order success page and also sees an order success toast. A confirmation email is also sent to them.
@@ -496,7 +496,7 @@ The name of the application itself communicates the essence of what the business
 
 ### Messages Framework
 
-- As abovementioned users are given feedback in the form of Bootstrap's toast messages after all major actions.
+- As abovementioned, users are given feedback in the form of Bootstrap's toast messages after all major actions.
 - This informs them of the success (or failure) of their actions.
 
 ### Form Validation Messages
@@ -508,7 +508,7 @@ The name of the application itself communicates the essence of what the business
 
 If an admin superuser chooses to delete a product, they are asked to confirm this deletion via a pop-up modal. This adds an extra level of protection against accidental deletion.
 
-Likewise if a user decided
+Likewise if a user decides to delete a review they have written, they will also be prompted to confirm the deletion via pop-up modal.
 
 ### State Changes
 
@@ -554,7 +554,7 @@ For registered users, this flexibility is enhanced further, they are able to bro
 
             Shopping Bag ---> Checkout ---> Payment ---> Order Confirmation
 
-And then they are free to browse the application again it whatever manner they see fit.
+And then they are free to browse the application again in whatever manner they see fit.
 
 The biggest departure from accepted convention in terms of ecommerce, is not allowing guest users to view the shop without registering. This was done intentionally and is a valid marketing strategy for larger priced products. The idea is to cultivate 
 engagement through a lack of detailed information, forcing users to register by piquing their interest.
@@ -576,7 +576,7 @@ Icons and illustrations are used throughout the application to enhance and reinf
 
 ## Establishing Value Through Design
 
-Value is established by ensuring consistency in design and typography, the colour scheme and design elements are consistence throughout and thus the user knows to trust the quality of what is on offer. Space is also used to create a feeling of freedom and clarity, which I think is very important when it comes to ecommerce. Nothing is more off-putting than a crammed online shop.
+Value is established by ensuring consistency in design and typography, the colour scheme and design elements are consistent throughout and thus the user knows to trust the quality of what is on offer. Space is also used to create a feeling of freedom and clarity, which I think is very important when it comes to ecommerce. Nothing is more off-putting than a crammed online shop.
 
 ## Reassuring Conventions
 
@@ -803,7 +803,7 @@ The Message model stores all emails send by registered users via the contact for
 
 ## 1. Home
 
-The landing page's aim is to deliver a strong and positive first impression to the user and to clearly explain the application's purpose and how it works. It also guides the user towards registering.
+The aim of the landing page is to deliver a strong and positive first impression to the user and to clearly explain the purpose of the app and how it works. It also guides the user towards registering.
 
 <details>
 <summary><b>click for features</b></summary>
@@ -992,7 +992,7 @@ Alongside the repeated "register with us" call to action that is on each of thes
 
 ## 4. Navigation
 
-Navigation has been divided into a main navbar and a side navbar for logged in users. This division's purpose is dual:
+Navigation has been divided into a main navbar and a side navbar for logged in users. This division serves a dual purpose:
 Firstly to simplify the contextual ordering of the different pages and secondly to create a sort of user portal / dashboard *feel* to the application. There is also footer navigation.
 
 <details>
@@ -1123,8 +1123,7 @@ Great care as been taken to ensure that the active page navigation links are hig
 
 ## 5. Register
 
-The guest user is guided towards this registration page, which acts as the gateway to most of the application's more
-advanced functionality, including the shop. The registration form in intentionally simple, so as not to put users off at 
+The guest user is guided towards this registration page, which acts as a gateway to the more advanced functionality of the application, including the shop. The registration form in intentionally simple, so as not to put users off at 
 the final hurdle. More detailed user information is collected later using the User Profile page.
 
 <details>
@@ -1243,7 +1242,7 @@ This form page takes in further user data to enhance their experience of using t
 
 ## 8. User Portal: Shopping Bag
 
-Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its changing data is connected to the user's use of the application, and therefore grouping it with orders specifically felt more logically consistent to me.
+Although technically connected to the Shop section of the site, I have chosen to include this in the User Portal grouping, as its' data is connected to the user's use of the app. Therefore grouping it with orders felt more logically consistent to me.
 
 <details>
 <summary><b>click for features</b></summary>
@@ -1268,7 +1267,7 @@ Although technically connected to the Shop section of the site, I have chosen to
 
 - The very last column is for removing all quantities of a particular product in the bag. Initially this "remove" button was next to the "update" button, but my mentor suggested I move it to its own column for better User Experience. 
 
-- At the page bottom it displays the subtotal, vat total & grand total amounts, as well as buttons for "Keep Shopping" and "Secure Checkout".
+- The subtotal, vat total & grand total amounts, as well as buttons for "Keep Shopping" and "Secure Checkout" are displayed at the bottom of the page. 
 
 - The page is both detailed and simple with all the required functionality. 
 
@@ -1291,15 +1290,15 @@ Although technically connected to the Shop section of the site, I have chosen to
 <br>
 
 
-### 2. User prompted Toast Pop-Ups
+### 2. User Prompted Toast Pop-Ups
 
-- The second way a user has access to their shopping bag information is when they edit the bag in any way, for example adding an item to it from the Shop, or updating an item quantity from the shopping bag page itself.
+- The second way a user has access to their shopping bag information is when they edit the bag in any way, for example adding an item to it from the Shop, or updating the quantity of existing items from the shopping bag page itself.
 
-- A detailed toast Success message pops up informing the user of the bag alteration.
+- A detailed toast Success message pops up informing the user of any adjustments.
 - The action does not redirect away from the page the user is currently on, as that would be discommoding to the user.
 - Instead they are given the information and allowed to continue browsing or shopping.
 - Should they want to look at a more detailed snapshot of their bag, or update any of the items, they can opt to click on the toast's "Edit Bag" button.
-- Or they can choose close the toast using they X button.
+- Or they can choose to close the toast using they X button.
 
 
 <br>
@@ -1334,14 +1333,14 @@ The shopping bag/cart... (I have used both of these intentionally - not to confu
 
 ## 9. User Portal: Order History
 
-When a user orders of the products on sale, a record of that order is stored in the database and the User Portal "Orders" page displays these records for the user to access their order data.
+When a user orders one of the products on sale, a record of that order is stored in the database and the User Portal "Orders" page displays these records for the user to access their order data.
 
 <details>
 <summary><b>click for features</b></summary>
 
 <br>
 
-- The order history information listed includes: the first 5 characters of the order number, the date of the order, the items in the order & the quantity of them ordered and the order total including VAT.
+- The order history information listed includes: the first 5 characters of the order number, the date of the order, the items in the order & the quantity ordered and the order total including VAT.
 
 - The orders are listed with the most recent orders at the top.
 
@@ -1356,7 +1355,7 @@ When a user orders of the products on sale, a record of that order is stored in 
 - Clicking on any of the order numbers brings the user to that order summary page, which is a copy of the checkout success page they would have seen upon ordering the product.
 - They are also shown a toast alert informing them that this summary is a copy of a past order confirmation.
 - This page goes into more detail, listing all of the associated order details including the client billing details and price breakdowns.
-- This page also makes use of the extra navigation ease afforded by an obvious back button.
+- This page also makes use of an obvious back button with increases the user's ease of navigation.
 
 <br>
 
@@ -1404,7 +1403,7 @@ When a user orders and purchases a product, they are automatically entitled to r
 <br>
 
 - When the user submits a review, they see a toast message telling them their review was submitted successfully and the option to review that product disappears.
-- Instead the user can now view her review on the product page, as can any logged in users.
+- Instead the user can now view his/her review on the product page, as can any logged in users.
 
 <br>
 
@@ -1428,7 +1427,7 @@ When a user orders and purchases a product, they are automatically entitled to r
 
 <br>
 
-- Instead of allowing multiple reviews of the same product, a user can choose to Edit their review, if they do wish to change anything. 
+- Instead of allowing multiple reviews of the same product, a user can choose to edit their review, if they wish to change anything.
 - Only the creator of a review can edit that review.
 - They can choose to change the review title, the review content and the star rating.
 
@@ -2021,7 +2020,7 @@ Category, name, friendly_name, description, features, price ex. VAT and image.
 
 4.  Staff and superuser admin users can also choose to "Remove" or "Add" the product from/to the shop. This is arguably more useful than deleting the product in its entirety, and less permanent. 
 
-- All the shop product views are programmed to only show products who have the in_shop boolean field checked to True, these buttons toggle that field.
+- All the shop product views are programmed to only show products which have the in_shop boolean field checked to True, these buttons toggle that field.
 
 - I set the remove from shop to have a confirmation modal, but did not apply that to the "add to shop". However, because both actions are non-destructive, there is arguably no need for a modal confirmation on the remove button, but I prefer to keep my deletion actions consistent, so felt it was better for User Experience to include the confirmation modal.
 
@@ -2112,7 +2111,7 @@ This was a late addition to the application, on the advice of my mentor, I had o
 
 - When a user sends an email using the Lionize contact form, a database message entry is automatically created.
 
-- I it would be useful for staff admin to have a reference to all communication from users to Lionize in one place, so that they might quickly be able to get a sense of any issues users are having.
+- It would be useful for staff admin to have a reference to all users' communications with Lionize in one place, so that they might quickly be able to get a sense of any issues users are having.
 
 - Details included are: the username, the date sent, the subject of the message, the message itself and whether the message issue has been marked as "Resolved" or not. 
 
@@ -2382,7 +2381,7 @@ This application was developed to be fully responsive and accessible on all devi
 
 ### Wide Desktop
 
-- On a wider desktop, the first impression has substantially more breathing room.
+- On a wider desktop, the first impression has substantially more breathing space.
 
 <br>
 
@@ -2939,7 +2938,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 <br>
 
-- Clicking any of the truncated order reference numbers bring the user to that order's individual summary page, which on vertical mobile stacks the titles above each respective value. 
+- Clicking any of the truncated order reference numbers brings the user to that order's individual summary page, which on vertical mobile stacks the titles above each respective value. 
 
 <br>
 
@@ -2950,7 +2949,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 <br>
 
 - The same is true of both these pages on landscape mobile. 
-- Although as is the case with many layouts, landscape mobile makes them harder to view comfortably.
+- As is the case with many layouts, it is harder to view them comfortably on a landscape orientation.
 
 <br>
 
@@ -3202,7 +3201,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 ### Desktop
 
-- The layout doesn't change for small desktops, they just have slightly more breathing room.
+- The layout doesn't change for small desktops, they just have slightly more breathing space.
 
 <br>
 
@@ -3680,7 +3679,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 ### Desktop
 
-- On desktop screens this layout does not change, however there is more breathing room.
+- On desktop screens this layout does not change, however there is more breathing space.
 
 <br>
 
@@ -3755,7 +3754,7 @@ These pages are very similar in their layouts and so will be looked at jointly.
 
 ### Desktop
 
-- On small desktop screens this layout does not change, however there is more breathing room.
+- On small desktop screens this layout does not change, however there is more breathing space.
 
 <br>
 
@@ -3791,7 +3790,7 @@ I ensured that wherever possible I was careful to use semantic HTML5 so as to pr
 
 ### Aria Labels
 
-Whenever possible I tried not to include elements without a clear textual references to accompany them.
+Whenever possible I tried not to include elements without clear textual references to accompany them.
 Most of the buttons and links I've incorporated into this application are textual, however there are exceptions that I used for space and aesthetic reasons.
 
 These exceptions are:
@@ -3944,7 +3943,7 @@ In this way a hierarchy of security is created for this application based on the
 
 ## 8. Request Methods
 
-- The application does not server any database altering requests using GET (except for altering message status.)
+- The application does not serve any database altering requests using GET (except for altering message status.)
 - All ADD, EDIT, DELETE functions are based on POST requests. 
 
 ## 9. Content Security Policy
@@ -3955,7 +3954,7 @@ I tried to integrate django-csp to take care of the content security policy, as 
 
 - Admin can upload their own files, therefore opening up a long list of potential security vulnerabilities. While Django has some pretty good security protection, as part of further development I would look to expand upon that protection with features that specifically target uploaded files.
 
-- The lack of a CSP is something of a vulnerability and as testamount to its impact, it is the reason thr application scores somewhat poorly using Mozilla's secruity testing (outlined further in testing.md). It will have to be implemented at a later date.
+- The lack of a CSP is something of a vulnerability and as testament to its impact, it is the reason the application scores somewhat poorly using Mozilla's secruity testing (outlined further in testing.md). It will have to be implemented at a later date.
 
 #### back to [contents](#table-of-contents) 
 
