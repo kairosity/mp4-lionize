@@ -27,6 +27,7 @@
     * [15. Shopping Bag Update Error](#shopping-bag-update-error)
     * [16. Shopping Bag Update Error 2](#shopping-bag-update-error-2)
     * [17. Checkout Email Disappeared](#checkout-email-disappeared)
+    * [18. Shopping Cart Dropdown not working on Chrome for mobile](#shopping-cart-dropdown-not-working-on-chrome-for-mobile)
 * [**Status Code Testing**](#status-code-testing)
     * [1. 200 Status Code Testing](#200-status-code-testing)
     * [2. 302 Status Code Testing](#302-status-code-testing)
@@ -1020,7 +1021,7 @@ To fix this I added a small bit of code to the Order model's save() method to en
 
 ## Shopping Cart Dropdown not working on Chrome for mobile
 
-__Issue:__ Clicking the cart icon does not trigger the dropdown menu in Chrome on mobile devices, although it works perfectly on all other mobile devices. 
+__Issue:__ Clicking the cart icon does not trigger the dropdown menu in Chrome on mobile devices, although it works perfectly on all other mobile browsers. 
 
 __Fix:__ After a lot of searching online for a solution, I tried various fixes:
 
@@ -1032,13 +1033,33 @@ __Fix:__ After a lot of searching online for a solution, I tried various fixes:
             $("#cart-ul").toggleClass("show");
         }));
 
-To:
+- To:
 
         $("#dropdown-mob-cart").on('click touchstart', (function(){
             $("#cart-ul").toggleClass("show");
         }));
 
-- 
+- I tried changing the jQuery to vanilla JavaScript, as many online sources say that Chrome for mobile has issues reading Bootstrap jQuery sometimes. So the above was changed to:
+
+        let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
+        let cartUl = document.querySelector('#cart-ul');
+
+        dropdownMobCart.onclick = function(){
+            cartUl.classList.toggle('show');
+        }
+
+- None of these solutions worked, so as a temporary fix, I decided to hide the icon on mobile, but only in Chrome Browsers. To achieve this I used the following targets which I got from [Browser Hacks](http://browserhacks.com/#hack-ac2480b5c83038f2d838e2a62e28a307)
+
+        var isChrome = !!window.chrome && !!window.chrome.webstore;
+        var isChromium = !!window.chrome;
+
+        if (cartUl && isChrome || cartUl && isChromium){
+            cartUl.classList.add('hide-on-chrome-mobile')
+        }
+
+- The variables target Chrome browsers specifically, and if the browser is Chrome and the mobile navigation is present, the above code adds a class that hides the icon completely. 
+
+Obviously this is not the ideal solution as it removes the handy cart shortcut icon for Chrome mobile users, but it will suffice for the time being, especially as affected users can still access the information via the User Portal: Shopping Bag page.
 
 
 #### back to [contents](#testing-table-of-contents) 
