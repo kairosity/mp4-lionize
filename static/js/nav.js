@@ -149,16 +149,19 @@ $(function(){
     if(document.querySelector('#navbarDropdownMenuLinkCart')){
         let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
         let cartTitle = document.querySelector('#cart-title');
-        let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
-        let secondCartUl = document.querySelector('#cart-ul');
+        
 
         cartLink.addEventListener('click', function(){
             cartTitle.textContent = 'Shopping Cart:';
         });
-
-        dropdownMobCart.onclick = function(){
-            secondCartUl.classList.toggle('show');
-        }
     }
 
+    if (document.querySelector('#dropdown-mob-cart')) {
+        let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
+        let secondCartUl = document.querySelector('#cart-ul');
+
+        dropdownMobCart.onclick = function(){
+        secondCartUl.classList.toggle('show');
+        }
+    }    
 });
