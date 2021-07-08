@@ -145,17 +145,16 @@ $(function(){
     } else if (splitPath[1] == 'logout'){
         logoutLink.classList.add('active-page');
     }
-    // If there is a cart menu link in the document, then listen for clicks on it. 
+    // If there is a desktop cart menu link in the document, then listen for clicks on it. 
     if(document.querySelector('#navbarDropdownMenuLinkCart')){
         let cartLink = document.querySelector('#navbarDropdownMenuLinkCart');
         let cartTitle = document.querySelector('#cart-title');
         
-
         cartLink.addEventListener('click', function(){
             cartTitle.textContent = 'Shopping Cart:';
         });
     }
-
+    // If the mobile dropdown cart element is present, then listen for clicks on it.
     if (document.querySelector('#dropdown-mob-cart')) {
         let dropdownMobCart = document.querySelector('#dropdown-mob-cart');
         let secondCartUl = document.querySelector('#cart-ul');

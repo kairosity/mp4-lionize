@@ -516,6 +516,7 @@ The name of the application itself communicates the essence of what the business
 
 ### Form Validation Messages
 
+- Whereever possible defensive design has been implemented via error pages and specifically using form validation on some of the most important user actions.
 - The register, login, add product, edit product, add review, edit review and checkout forms include form validation that immediately communicates a message back to the user if they either fail to complete a required field or complete a field incorrectly.
 - If the user attempts to log in with incorrect details the message delivered is above the form and in red to communicate the error clearly.
 
