@@ -8,3 +8,4 @@ node_modules/
 globals.scss
 _customVariables.scss
 .coverage
+.DS_Store
